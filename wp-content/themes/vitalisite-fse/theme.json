@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "border": {
+      "radius": true
+    },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        { "slug": "vital-blue", "name": "Vital Blue", "color": "#0B3D91" },
+        { "slug": "vital-sky", "name": "Vital Sky", "color": "#6EC1E4" },
+        { "slug": "vital-ink", "name": "Vital Ink", "color": "#0F172A" },
+        { "slug": "vital-mist", "name": "Vital Mist", "color": "#F1F5F9" }
+      ]
+    },
+    "custom": {
+      "imageRadius": "20px"
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+          "slug": "system-sans",
+          "name": "System Sans"
+        },
+        {
+          "fontFamily": "ui-serif, Georgia, serif",
+          "slug": "system-serif",
+          "name": "System Serif"
+        },
+        {
+          "fontFamily": "\"Trebuchet MS\", \"Segoe UI\", system-ui, sans-serif",
+          "slug": "humanist-sans",
+          "name": "Humanist Sans"
+        },
+        {
+          "fontFamily": "\"Georgia\", \"Times New Roman\", serif",
+          "slug": "classique-serif",
+          "name": "Classique Serif"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1100px",
+      "wideSize": "1400px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--vital-mist)",
+      "text": "var(--wp--preset--color--vital-ink)"
+    },
+    "blocks": {
+      "core/image": {
+        "border": {
+          "radius": "var(--wp--custom--image-radius)"
+        },
+        "css": "&, & img { border-radius: var(--wp--custom--image-radius); } & { overflow: hidden; }"
+      }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-serif)"
+        }
+      }
+    }
+  }
+}

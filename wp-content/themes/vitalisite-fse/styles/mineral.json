@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Mineral",
+  "settings": {
+    "custom": {
+      "imageRadius": "0px"
+    },
+    "color": {
+      "palette": [
+        { "name": "Primaire", "slug": "primary", "color": "#4A5568" },
+        { "name": "Primaire doux", "slug": "primary-accent", "color": "#CBD5E1" },
+        { "name": "Secondaire", "slug": "secondary", "color": "#3A6B5B" },
+        { "name": "Secondaire doux", "slug": "secondary-accent", "color": "#DDEDE7" },
+        { "name": "Encre", "slug": "ink", "color": "#1F2937" },
+        { "name": "Encre douce", "slug": "ink-soft", "color": "#475569" },
+        { "name": "Base", "slug": "base", "color": "#F8FAFC" },
+        { "name": "Base douce", "slug": "base-soft", "color": "#EEF2F6" },
+        { "name": "Bordure", "slug": "border", "color": "#D1D9E2" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Mineral Sans",
+          "slug": "mineral-sans",
+          "fontFamily": "\"Helvetica Neue\", Arial, system-ui, sans-serif"
+        },
+        {
+          "name": "Mineral Serif",
+          "slug": "mineral-serif",
+          "fontFamily": "\"Times New Roman\", Times, serif"
+        }
+      ],
+      "fontSizes": [
+        { "name": "XS", "slug": "xs", "size": "0.875rem", "fluid": { "min": "0.8rem", "max": "0.95rem" } },
+        { "name": "S", "slug": "sm", "size": "1rem", "fluid": { "min": "0.95rem", "max": "1.05rem" } },
+        { "name": "M", "slug": "md", "size": "1.125rem", "fluid": { "min": "1.05rem", "max": "1.25rem" } },
+        { "name": "L", "slug": "lg", "size": "1.5rem", "fluid": { "min": "1.3rem", "max": "1.75rem" } },
+        { "name": "XL", "slug": "xl", "size": "2.25rem", "fluid": { "min": "1.9rem", "max": "2.75rem" } },
+        { "name": "XXL", "slug": "xxl", "size": "3rem", "fluid": { "min": "2.4rem", "max": "3.5rem" } }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--base)",
+      "text": "var(--wp--preset--color--ink)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--mineral-serif)",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--mineral-sans)",
+          "lineHeight": "1.2"
+        }
+      }
+    }
+  }
+}
