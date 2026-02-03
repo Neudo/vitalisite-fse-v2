@@ -2,12 +2,27 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
   "settings": {
-    "appearanceTools": true,
+    "appearanceTools": false,
     "border": {
-      "radius": true
+      "radius": false,
+      "color": false,
+      "style": false,
+      "width": false
+    },
+    "background": {
+      "backgroundImage": false,
+      "backgroundSize": false,
+      "backgroundPosition": false,
+      "backgroundRepeat": false
     },
     "color": {
+      "custom": false,
+      "customGradient": false,
+      "customDuotone": false,
+      "defaultGradients": false,
       "defaultPalette": false,
+      "background": false,
+      "text": false,
       "palette": [
         { "slug": "vital-blue", "name": "Vital Blue", "color": "#0B3D91" },
         { "slug": "vital-sky", "name": "Vital Sky", "color": "#6EC1E4" },
@@ -15,11 +30,23 @@
         { "slug": "vital-mist", "name": "Vital Mist", "color": "#F1F5F9" }
       ]
     },
+    "spacing": {
+      "margin": false,
+      "padding": false,
+      "blockGap": false
+    },
     "custom": {
       "imageRadius": "20px"
     },
     "typography": {
       "fluid": true,
+      "customFontSize": false,
+      "lineHeight": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "letterSpacing": false,
       "fontFamilies": [
         {
           "fontFamily": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
@@ -46,6 +73,30 @@
     "layout": {
       "contentSize": "1100px",
       "wideSize": "1400px"
+    },
+    "blocks": {
+      "core/group": {
+        "color": {
+          "background": true,
+          "text": true
+        },
+        "border": {
+          "radius": false
+        },
+        "spacing": {
+          "margin": false,
+          "padding": false,
+          "blockGap": false
+        },
+        "typography": {
+          "fontFamily": false,
+          "fontSize": false,
+          "lineHeight": false,
+          "textDecoration": false,
+          "textTransform": false,
+          "letterSpacing": false
+        }
+      }
     }
   },
   "styles": {
