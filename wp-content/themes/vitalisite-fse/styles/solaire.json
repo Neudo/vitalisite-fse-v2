@@ -4,7 +4,9 @@
   "title": "Solaire",
   "settings": {
     "custom": {
-      "imageRadius": "8px"
+      "imageRadius": "8px",
+      "heroMaxWidth": "1200px",
+      "heroPadX": "clamp(20px, 4vw, 40px)"
     },
     "color": {
       "palette": [

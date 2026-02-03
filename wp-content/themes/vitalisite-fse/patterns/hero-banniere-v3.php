@@ -8,10 +8,10 @@
  * Description: Bannière avec image en bas, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"64px","bottom":"64px"}}}} -->
-<section class="wp-block-group" style="padding-top:64px;padding-bottom:64px">
-  <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"blockGap":"16px"}}} -->
-  <div class="wp-block-group">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull vitalisite-hero">
+  <!-- wp:group {"className":"vitalisite-hero__inner","layout":{"type":"constrained"},"style":{"spacing":{"blockGap":"16px"}}} -->
+  <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
     <h1 style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Un accueil soigné dès le premier regard</h1>
     <!-- /wp:heading -->

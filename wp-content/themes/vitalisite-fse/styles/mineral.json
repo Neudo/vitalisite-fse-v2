@@ -4,7 +4,9 @@
   "title": "Mineral",
   "settings": {
     "custom": {
-      "imageRadius": "0px"
+      "imageRadius": "0px",
+      "heroMaxWidth": "100%",
+      "heroPadX": "0px"
     },
     "color": {
       "palette": [

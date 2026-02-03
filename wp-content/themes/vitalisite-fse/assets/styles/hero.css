@@ -1,0 +1,68 @@
+.has-background {
+  border-radius: var(--wp--custom--image-radius);
+  overflow: hidden;
+  background-clip: padding-box;
+}
+
+.vitalisite-hero__inner {
+  max-width: var(--wp--custom--hero-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--wp--custom--hero-pad-x);
+  padding-right: var(--wp--custom--hero-pad-x);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.vitalisite-hero {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.vitalisite-hero--tall {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.vitalisite-hero__columns {
+  gap: 48px;
+  align-items: center;
+}
+
+.vitalisite-hero__columns > .wp-block-column {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.vitalisite-hero__title {
+  font-size: clamp(2.25rem, 3vw + 1rem, 3.75rem);
+  line-height: 1.1;
+}
+
+.vitalisite-hero__lead {
+  font-size: 1.125rem;
+  margin-top: 16px;
+}
+
+.vitalisite-hero--tight .vitalisite-hero__lead {
+  margin-top: 8px;
+}
+
+.vitalisite-hero__actions {
+  margin-top: 24px;
+}
+
+.vitalisite-hero__actions .wp-block-button__link {
+  border-radius: 999px;
+  padding: 12px 24px;
+}
+
+.vitalisite-hero__actions .is-style-outline .wp-block-button__link {
+  border-width: 1px;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+.vitalisite-hero__image {
+  margin-top: 32px;
+}

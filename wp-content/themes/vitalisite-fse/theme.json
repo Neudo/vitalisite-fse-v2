@@ -36,7 +36,9 @@
       "blockGap": false
     },
     "custom": {
-      "imageRadius": "20px"
+      "imageRadius": "20px",
+      "heroMaxWidth": "100%",
+      "heroPadX": "0px"
     },
     "typography": {
       "fluid": true,
@@ -71,8 +73,8 @@
       ]
     },
     "layout": {
-      "contentSize": "1100px",
-      "wideSize": "1400px"
+      "contentSize": "100%",
+      "wideSize": "100%"
     },
     "blocks": {
       "core/group": {
@@ -85,7 +87,7 @@
         },
         "spacing": {
           "margin": false,
-          "padding": false,
+          "padding": true,
           "blockGap": false
         },
         "typography": {
