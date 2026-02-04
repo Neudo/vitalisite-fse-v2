@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Solaire Warm",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#C24B3A"
+        },
+        {
+          "name": "Primary Accent",
+          "slug": "primary-accent",
+          "color": "#F7C3A0"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#E07A5F"
+        },
+        {
+          "name": "Secondary Accent",
+          "slug": "secondary-accent",
+          "color": "#FFE8D6"
+        },
+        {
+          "name": "Contrast",
+          "slug": "main",
+          "color": "#3B2F2F"
+        },
+        {
+          "name": "Contrast Accent",
+          "slug": "main-accent",
+          "color": "#5E4A4A"
+        },
+        {
+          "name": "Base",
+          "slug": "base",
+          "color": "#FFF9F4"
+        },
+        {
+          "name": "Tint",
+          "slug": "tertiary",
+          "color": "#FFF1E6"
+        },
+        {
+          "name": "Border Light",
+          "slug": "border-light",
+          "color": "#E6D5C8"
+        },
+        {
+          "name": "Border Dark",
+          "slug": "border-dark",
+          "color": "#8B6F5C"
+        }
+      ]
+    }
+  }
+}

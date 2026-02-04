@@ -1,0 +1,38 @@
+.nav-links{
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 1rem;
+	@media (max-width: 768px) {
+		gap: 0.5rem;
+	}
+	a,span {
+		cursor: pointer;
+		background-color: rgb(241 245 249);
+		border-radius: 50%;
+		width: 52px;
+		height: 52px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease-in-out;
+		line-height: 0;
+		@media (max-width: 768px) {
+			width: 35px;
+			height: 35px;
+		}
+		&:hover {
+			opacity: .8;
+		}
+	}
+	span.current{
+		background-color: var(--secondary-color);
+		color: var(--secondary-text-color);
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.prev, .next {
+		background: unset;
+	}
+}

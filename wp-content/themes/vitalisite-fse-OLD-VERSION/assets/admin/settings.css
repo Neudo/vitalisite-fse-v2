@@ -1,0 +1,209 @@
+/**
+ * Styles pour la page de paramètres Vitalisite
+ *
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+.vitalisite-settings-wrap {
+	max-width: 1200px;
+}
+
+.vitalisite-settings-wrap h1 {
+	margin-bottom: 20px;
+}
+
+/* Header */
+.vitalisite-settings-header {
+	background: #fff;
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.vitalisite-settings-header p {
+	margin: 0;
+	color: #50575e;
+}
+
+.vitalisite-settings-actions {
+	flex-shrink: 0;
+}
+
+.vitalisite-settings-actions .button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.vitalisite-settings-actions .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Tabs */
+.vitalisite-settings-tabs {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	margin-top: 20px;
+}
+
+.nav-tab-wrapper {
+	border-bottom: 1px solid #c3c4c7;
+	margin: 0;
+	padding: 0 20px;
+}
+
+.tab-content {
+	display: none;
+	padding: 20px;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+/* Form */
+.vitalisite-settings-form .form-table {
+	margin-top: 0;
+}
+
+.vitalisite-settings-form .form-table th {
+	width: 220px;
+	padding: 20px 10px 20px 0;
+	vertical-align: top;
+}
+
+.vitalisite-settings-form .form-table td {
+	padding: 15px 10px;
+}
+
+.vitalisite-settings-form .required {
+	color: #d63638;
+	margin-left: 2px;
+}
+
+.vitalisite-settings-form .description {
+	margin-top: 6px;
+	color: #646970;
+	font-size: 13px;
+}
+
+/* Photo upload */
+.photo-upload-wrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.photo-preview {
+	position: relative;
+	max-width: 200px;
+}
+
+.photo-preview img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.photo-preview .remove-photo {
+	margin-top: 10px;
+}
+
+.upload-photo-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.upload-photo-button .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Submit button */
+.vitalisite-settings-form .submit {
+	margin-top: 0;
+	padding: 20px;
+	background: #f6f7f7;
+	border-top: 1px solid #c3c4c7;
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-bottom: -20px;
+}
+
+/* Reset button */
+.reset-wizard-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.reset-wizard-button .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Status icons */
+.form-table .dashicons {
+	vertical-align: middle;
+	margin-right: 6px;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.vitalisite-settings-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.vitalisite-settings-form .form-table th,
+	.vitalisite-settings-form .form-table td {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.vitalisite-settings-form .form-table th {
+		padding-bottom: 5px;
+	}
+
+	.nav-tab-wrapper {
+		padding: 0 10px;
+	}
+
+	.tab-content {
+		padding: 15px;
+	}
+
+	.vitalisite-settings-form .submit {
+		padding: 15px;
+		margin-left: -15px;
+		margin-right: -15px;
+		margin-bottom: -15px;
+	}
+}
+
+/* Success message */
+.updated, .error {
+	margin: 20px 0;
+}
+
+/* Loading state */
+.vitalisite-settings-form.loading {
+	opacity: 0.6;
+	pointer-events: none;
+}

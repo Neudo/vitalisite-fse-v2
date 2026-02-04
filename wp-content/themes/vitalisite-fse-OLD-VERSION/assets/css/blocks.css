@@ -1,0 +1,475 @@
+/**
+ * Vitalisite FSE - Blocks Styles
+ *
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Common Styles
+   ========================================================================== */
+
+.vitalisite-no-content {
+  text-align: center;
+  padding: 2rem;
+  color: var(--wp--preset--color--medium-gray, #6c757d);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Testimonials Block
+   ========================================================================== */
+
+.vitalisite-testimonials {
+  padding: 2rem 0;
+}
+
+.vitalisite-testimonials__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.vitalisite-testimonials--cols-1 .vitalisite-testimonials__grid {
+  grid-template-columns: 1fr;
+}
+
+.vitalisite-testimonials--cols-2 .vitalisite-testimonials__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vitalisite-testimonials--cols-3 .vitalisite-testimonials__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.vitalisite-testimonials--cols-4 .vitalisite-testimonials__grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .vitalisite-testimonials--cols-2 .vitalisite-testimonials__grid,
+  .vitalisite-testimonials--cols-3 .vitalisite-testimonials__grid,
+  .vitalisite-testimonials--cols-4 .vitalisite-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .vitalisite-testimonials--cols-3 .vitalisite-testimonials__grid,
+  .vitalisite-testimonials--cols-4 .vitalisite-testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vitalisite-testimonial-card {
+  background: var(--wp--preset--color--base, #fff);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vitalisite-testimonial-card__rating {
+  display: flex;
+  gap: 2px;
+}
+
+.vitalisite-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.vitalisite-star {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.vitalisite-star--filled {
+  color: #f1c40f;
+}
+
+.vitalisite-star--empty {
+  color: #ddd;
+}
+
+.vitalisite-testimonial-card__content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--wp--preset--color--contrast, #111);
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+}
+
+.vitalisite-testimonial-card__content::before {
+  content: '"';
+  font-size: 1.5em;
+  color: var(--wp--preset--color--primary, #03045e);
+  opacity: 0.5;
+}
+
+.vitalisite-testimonial-card__content::after {
+  content: '"';
+  font-size: 1.5em;
+  color: var(--wp--preset--color--primary, #03045e);
+  opacity: 0.5;
+}
+
+.vitalisite-testimonial-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--wp--preset--color--light-gray, #f8f9fa);
+}
+
+.vitalisite-testimonial-card__name {
+  font-weight: 600;
+  color: var(--wp--preset--color--contrast, #111);
+}
+
+.vitalisite-testimonial-card__role,
+.vitalisite-testimonial-card__date {
+  font-size: 0.875rem;
+  color: var(--wp--preset--color--medium-gray, #6c757d);
+}
+
+/* ==========================================================================
+   Specialities Block
+   ========================================================================== */
+
+.vitalisite-specialities {
+  padding: 0;
+}
+
+.vitalisite-specialities__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Slider layout */
+.vitalisite-specialities--slider {
+  position: relative;
+}
+
+.vitalisite-specialities__swiper {
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.vitalisite-specialities__navigation {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.vitalisite-specialities__nav {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--wp--preset--color--primary, #03045e);
+  background: transparent;
+  color: var(--wp--preset--color--primary, #03045e);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.vitalisite-specialities__nav:hover {
+  background: var(--wp--preset--color--primary, #03045e);
+  color: var(--wp--preset--color--base, #fff);
+}
+
+.vitalisite-specialities__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vitalisite-specialities__nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.vitalisite-specialities--cols-1 .vitalisite-specialities__grid {
+  grid-template-columns: 1fr;
+}
+
+.vitalisite-specialities--cols-2 .vitalisite-specialities__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vitalisite-specialities--cols-3 .vitalisite-specialities__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.vitalisite-specialities--cols-4 .vitalisite-specialities__grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .vitalisite-specialities--cols-2 .vitalisite-specialities__grid,
+  .vitalisite-specialities--cols-3 .vitalisite-specialities__grid,
+  .vitalisite-specialities--cols-4 .vitalisite-specialities__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .vitalisite-specialities--cols-3 .vitalisite-specialities__grid,
+  .vitalisite-specialities--cols-4 .vitalisite-specialities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vitalisite-speciality-card {
+  background: transparent;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.vitalisite-speciality-card:hover {
+  transform: translateY(-4px);
+}
+
+.vitalisite-speciality-card__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.vitalisite-speciality-card__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wp--preset--color--light-gray, #f8f9fa);
+  border-radius: 50%;
+  color: var(--wp--preset--color--primary, #03045e);
+}
+
+.vitalisite-speciality-card__icon .dashicons {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.vitalisite-speciality-card__icon img {
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.vitalisite-speciality-card__image {
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.vitalisite-speciality-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.vitalisite-speciality-card:hover .vitalisite-speciality-card__image img {
+  transform: scale(1.05);
+}
+
+.vitalisite-speciality-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem;
+  color: var(--wp--preset--color--contrast, #111);
+}
+
+.vitalisite-speciality-card__description {
+  font-size: 0.9rem;
+  color: var(--wp--preset--color--medium-gray, #6c757d);
+  margin: 0;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Team Block
+   ========================================================================== */
+
+.vitalisite-team {
+  padding: 2rem 0;
+}
+
+.vitalisite-team__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.vitalisite-team--cols-1 .vitalisite-team__grid {
+  grid-template-columns: 1fr;
+}
+
+.vitalisite-team--cols-2 .vitalisite-team__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vitalisite-team--cols-3 .vitalisite-team__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.vitalisite-team--cols-4 .vitalisite-team__grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .vitalisite-team--cols-2 .vitalisite-team__grid,
+  .vitalisite-team--cols-3 .vitalisite-team__grid,
+  .vitalisite-team--cols-4 .vitalisite-team__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .vitalisite-team--cols-3 .vitalisite-team__grid,
+  .vitalisite-team--cols-4 .vitalisite-team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vitalisite-team-card {
+  background: var(--wp--preset--color--base, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vitalisite-team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.vitalisite-team-card__image {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.vitalisite-team-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vitalisite-team-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wp--preset--color--light-gray, #f8f9fa);
+  color: var(--wp--preset--color--medium-gray, #6c757d);
+}
+
+.vitalisite-team-card__placeholder .dashicons {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+}
+
+.vitalisite-team-card__online-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--wp--preset--color--accent, #c6e000);
+  color: var(--wp--preset--color--contrast, #111);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vitalisite-team-card__online-badge .dashicons {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.vitalisite-team-card__content {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.vitalisite-team-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.vitalisite-team-card__name a {
+  color: var(--wp--preset--color--contrast, #111);
+  text-decoration: none;
+}
+
+.vitalisite-team-card__name a:hover {
+  color: var(--wp--preset--color--primary, #03045e);
+}
+
+.vitalisite-team-card__speciality {
+  font-size: 0.875rem;
+  color: var(--wp--preset--color--primary, #03045e);
+  margin: 0 0 0.75rem;
+  font-weight: 500;
+}
+
+.vitalisite-team-card__phone {
+  font-size: 0.875rem;
+  margin: 0 0 0.75rem;
+}
+
+.vitalisite-team-card__phone a {
+  color: var(--wp--preset--color--medium-gray, #6c757d);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.vitalisite-team-card__phone a:hover {
+  color: var(--wp--preset--color--primary, #03045e);
+}
+
+.vitalisite-team-card__phone .dashicons {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.vitalisite-team-card__booking {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: opacity 0.2s ease;
+}
+
+.vitalisite-team-card__booking:hover {
+  opacity: 0.9;
+}

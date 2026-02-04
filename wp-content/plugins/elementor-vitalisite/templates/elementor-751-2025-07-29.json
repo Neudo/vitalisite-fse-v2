@@ -1,0 +1,56 @@
+{
+  "content": [
+    {
+      "id": "55f33a75",
+      "settings": [],
+      "elements": [
+        {
+          "id": "63a4c4b8",
+          "settings": {
+            "hero_title": "Contact page",
+            "hero_content": "<p>Voici ma page de contact</p>",
+            "image": {
+              "url": "https://fl.vitalisite-wp.local:8890/wp-content/uploads/2025/01/pexels-apasaric-325185-scaled.jpg",
+              "id": 160,
+              "size": "",
+              "alt": "",
+              "source": "library"
+            }
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "hero",
+          "elType": "widget"
+        }
+      ],
+      "isInner": false,
+      "elType": "container"
+    },
+    {
+      "id": "28cd1636",
+      "settings": { "flex_direction": "column" },
+      "elements": [
+        {
+          "id": "3c38a170",
+          "settings": {
+            "form_title": "Contactez-moi",
+            "form_address": "Avenue de la Redoute",
+            "form_tel": "0660170284",
+            "form_email": "neudo92@gmail.com",
+            "form_fields": []
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "custom_form",
+          "elType": "widget"
+        }
+      ],
+      "isInner": false,
+      "elType": "container"
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Page de contact",
+  "type": "page"
+}

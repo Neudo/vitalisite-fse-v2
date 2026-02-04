@@ -1,0 +1,7 @@
+.cta {
+	background-color: var(--cta-color) !important;
+	color: var(--cta-text-color) !important;
+	&:hover {
+		background-color: var(--cta-hover-color) !important;
+	}
+}

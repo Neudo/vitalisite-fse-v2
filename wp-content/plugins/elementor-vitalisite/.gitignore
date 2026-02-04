@@ -1,0 +1,14 @@
+# 🚀 Ignorer les fichiers liés à Node.js & Tailwind
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 🚀 Ignorer les fichiers générés par Tailwind
+tailwind.css
+tailwind.min.css
+style.css
+
+# 🚀 Ignorer les fichiers temporaires & OS
+.DS_Store
+Thumbs.db

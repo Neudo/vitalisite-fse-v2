@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Mono Tech",
+  "slug": "typography-mono-tech",
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "ui-monospace, \"SF Mono\", Monaco, \"Cascadia Code\", monospace",
+          "name": "Monospace",
+          "slug": "monospace"
+        },
+        {
+          "fontFamily": "system-ui, sans-serif",
+          "name": "System Sans",
+          "slug": "system-sans"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "fontSize": "1rem",
+      "lineHeight": "1.75"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--monospace)",
+          "fontWeight": "700",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "textTransform": "uppercase"
+        }
+      }
+    }
+  }
+}

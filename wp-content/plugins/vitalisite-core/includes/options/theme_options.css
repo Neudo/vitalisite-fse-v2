@@ -1,0 +1,9 @@
+#customize-controls .section-meta .description {
+    border: 3px solid #98c2f5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.thumbnail.thumbnail-image {
+    max-width: 100px;
+}

@@ -1,0 +1,76 @@
+.hero {
+  p,
+  h2,
+  h1 {
+    text-align: left;
+    color: #fff;
+  }
+  strong {
+    color: white;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+#elementor-panel-category-wordpress,
+#elementor-panel-category-theme-elements-single,
+#elementor-panel-category-basic,
+#elementor-panel-category-pro-elements,
+#elementor-panel-category-general {
+  display: none !important;
+}
+
+.rounded-3xl-important {
+  border-radius: 1.5rem !important;
+}
+
+/* Custom Swiper Navigation */
+.vitalisite-before-after-swiper .swiper-button-next,
+.vitalisite-before-after-swiper .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vitalisite-before-after-swiper .swiper-button-next:hover,
+.vitalisite-before-after-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.vitalisite-before-after-swiper .swiper-button-next::after,
+.vitalisite-before-after-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+  color: #374151;
+}
+
+/* Custom Swiper Pagination */
+.vitalisite-before-after-swiper .swiper-pagination {
+  bottom: 20px !important;
+}
+
+.vitalisite-before-after-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vitalisite-before-after-swiper .swiper-pagination-bullet-active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}

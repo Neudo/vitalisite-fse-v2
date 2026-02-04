@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite/hero",
+  "version": "1.0.0",
+  "title": "Hero Vitalisite",
+  "category": "vitalisite-heroes",
+  "icon": "cover-image",
+  "description": "Hero principal avec image de fond, overlay et contenu personnalisable",
+  "keywords": [
+    "hero",
+    "header",
+    "banner",
+    "accueil"
+  ],
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "default": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80"
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#111111"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 30
+    },
+    "minHeight": {
+      "type": "number",
+      "default": 50
+    },
+    "minHeightUnit": {
+      "type": "string",
+      "default": "vh"
+    },
+    "title": {
+      "type": "string",
+      "default": "Bonjour, je suis<br>Angel Osborne"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Psychologue clinicienne"
+    },
+    "description": {
+      "type": "string",
+      "default": "J'accueille les patients en thérapie ou en analyse. Les consultations sont organisées autour de la méthode dite de l'association libre."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "En savoir plus"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "contentPosition": {
+      "type": "string",
+      "default": "center left"
+    }
+  },
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

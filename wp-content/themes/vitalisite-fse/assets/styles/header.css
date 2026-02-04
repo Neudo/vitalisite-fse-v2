@@ -1,200 +1,277 @@
-/* ==========================================================================
-   VITALISITE HEADERS - Inspiré d'Ollie
-   ========================================================================== */
+/**
+ * Header Styles - Vitalisite FSE
+ * Inspired by Ollie theme - minimal, clean, modern
+ */
 
-/* Variables CSS personnalisées
-   ========================================================================== */
+/* ============================================
+   BASE HEADER STYLES
+   ============================================ */
+
 .vitalisite-header {
-  --header-spacing-y: 1.25rem;
-  --header-spacing-x: 1.5rem;
-  --header-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --header-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --header-shadow-lg: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
-  --header-border-radius: 16px;
-}
-
-/* Base Header Styles
-   ========================================================================== */
-.vitalisite-header {
-  margin-top: 0;
-  transition: var(--header-transition);
-}
-
-/* Wrapper pour headers avec fond
-   ========================================================================== */
-.vitalisite-header__wrapper {
-  padding: var(--header-spacing-y) var(--header-spacing-x);
-  box-sizing: border-box;
-  transition: var(--header-transition);
-}
-
-/* Barre de bannière supérieure
-   ========================================================================== */
-.vitalisite-header__bar {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.vitalisite-header__bar-text {
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* CTA Buttons dans le header
-   ========================================================================== */
-.vitalisite-header__cta .wp-block-button__link {
-  border-radius: 999px;
-  padding: 0.65rem 1.5rem;
-  font-weight: 500;
-  transition: var(--header-transition);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.vitalisite-header__cta .wp-block-button__link:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* CTA dans la barre de bannière
-   ========================================================================== */
-.vitalisite-header__bar-cta .wp-block-button__link {
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: var(--header-transition);
-}
-
-.vitalisite-header__bar-cta .wp-block-button__link:hover {
-  transform: translateY(-1px);
-}
-
-/* Header avec fond (header-fond.php)
-   ========================================================================== */
-.vitalisite-header__bg {
-  padding: 1rem 1.5rem;
-  box-sizing: border-box;
-  border-radius: var(--header-border-radius);
-  box-shadow: var(--header-shadow);
-  transition: var(--header-transition);
-}
-
-.vitalisite-header__bg:hover {
-  box-shadow: var(--header-shadow-lg);
-}
-
-/* VARIANT: Header Minimal
-   ========================================================================== */
-.vitalisite-header--minimal {
-  padding: 0.75rem 0;
-}
-
-.vitalisite-header--minimal .wp-block-group {
-  gap: 2rem;
-}
-
-.vitalisite-header--minimal .vitalisite-header__cta .wp-block-button__link {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.925rem;
-}
-
-/* VARIANT: Header Transparent (glassmorphism)
-   ========================================================================== */
-.vitalisite-header--transparent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 100;
 }
 
-.vitalisite-header--transparent .vitalisite-header__wrapper {
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+/* ============================================
+   HEADER MINIMAL VARIANT
+   ============================================ */
+
+.vitalisite-header--minimal {
+  background-color: var(--wp--preset--color--vital-mist);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* Dark mode support pour transparent header */
-@media (prefers-color-scheme: dark) {
-  .vitalisite-header--transparent .vitalisite-header__wrapper {
-    background-color: rgba(15, 23, 42, 0.7);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
+/* Sticky header effect (optional - can be enabled via theme settings) */
+.vitalisite-header--minimal.is-sticky {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background-color: rgba(241, 245, 249, 0.95);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
-/* Logo et Site Title
-   ========================================================================== */
-.vitalisite-header .wp-block-site-logo img {
-  transition: var(--header-transition);
-}
+/* ============================================
+   SITE LOGO & TITLE
+   ============================================ */
 
-.vitalisite-header .wp-block-site-logo:hover img {
-  transform: scale(1.05);
-}
-
-.vitalisite-header .wp-block-site-title {
+.vitalisite-header--minimal .wp-block-site-logo {
   margin: 0;
-  line-height: 1;
 }
 
-/* Navigation
-   ========================================================================== */
-.vitalisite-header .wp-block-navigation {
-  font-size: 0.95rem;
+.vitalisite-header--minimal .wp-block-site-logo img {
+  display: block;
+  height: auto;
+  transition: opacity 0.2s ease;
 }
 
-.vitalisite-header .wp-block-navigation__container {
-  gap: 1.5rem;
+.vitalisite-header--minimal .wp-block-site-logo a:hover img {
+  opacity: 0.8;
 }
 
-/* Responsive Design
-   ========================================================================== */
-
-/* Tablet */
-@media (max-width: 782px) {
-  .vitalisite-header {
-    --header-spacing-y: 1rem;
-    --header-spacing-x: 1.25rem;
-  }
-
-  .vitalisite-header__bar {
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-  }
-
-  .vitalisite-header__bg {
-    padding: 0.875rem 1.25rem;
-    border-radius: 12px;
-  }
+.vitalisite-header--minimal .wp-block-site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .vitalisite-header {
-    --header-spacing-y: 0.875rem;
-    --header-spacing-x: 1rem;
+.vitalisite-header--minimal .wp-block-site-title a {
+  color: var(--wp--preset--color--vital-ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vitalisite-header--minimal .wp-block-site-title a:hover {
+  color: var(--wp--preset--color--vital-blue);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.vitalisite-header--minimal .wp-block-navigation {
+  gap: 0.5rem;
+}
+
+.vitalisite-header--minimal .wp-block-navigation__responsive-container {
+  gap: 0.5rem;
+}
+
+.vitalisite-header--minimal .wp-block-navigation-item {
+  margin: 0;
+}
+
+.vitalisite-header--minimal .wp-block-navigation-item a {
+  color: var(--wp--preset--color--vital-ink);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.vitalisite-header--minimal .wp-block-navigation-item a:hover {
+  color: var(--wp--preset--color--vital-blue);
+  background-color: rgba(11, 61, 145, 0.05);
+}
+
+.vitalisite-header--minimal .wp-block-navigation-item a:focus-visible {
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+/* Active/Current page indicator */
+.vitalisite-header--minimal .wp-block-navigation-item.current-menu-item a {
+  color: var(--wp--preset--color--vital-blue);
+  font-weight: 600;
+}
+
+/* Submenu styles */
+.vitalisite-header--minimal .wp-block-navigation__submenu-container {
+  background-color: var(--wp--preset--color--vital-mist);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  padding: 0.5rem;
+  min-width: 200px;
+}
+
+.vitalisite-header--minimal
+  .wp-block-navigation__submenu-container
+  .wp-block-navigation-item
+  a {
+  display: block;
+  width: 100%;
+}
+
+/* Mobile menu button */
+.vitalisite-header--minimal .wp-block-navigation__responsive-container-open {
+  color: var(--wp--preset--color--vital-ink);
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.vitalisite-header--minimal
+  .wp-block-navigation__responsive-container-open:hover {
+  background-color: rgba(11, 61, 145, 0.05);
+  color: var(--wp--preset--color--vital-blue);
+}
+
+.vitalisite-header--minimal
+  .wp-block-navigation__responsive-container-open:focus-visible {
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   CTA BUTTON
+   ============================================ */
+
+.vitalisite-header__cta {
+  margin: 0;
+}
+
+.vitalisite-header__cta .wp-block-button {
+  margin: 0;
+}
+
+.vitalisite-header__cta .wp-block-button__link {
+  background-color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--vital-mist);
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(11, 61, 145, 0.2);
+}
+
+.vitalisite-header__cta .wp-block-button__link:hover {
+  background-color: #0a3278;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(11, 61, 145, 0.25);
+}
+
+.vitalisite-header__cta .wp-block-button__link:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(11, 61, 145, 0.2);
+}
+
+.vitalisite-header__cta .wp-block-button__link:focus-visible {
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 781px) {
+  .vitalisite-header--minimal .wp-block-group.alignwide {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .vitalisite-header__bar-text {
-    font-size: 0.85rem;
+  .vitalisite-header--minimal .wp-block-navigation {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .vitalisite-header__cta {
+    width: 100%;
+  }
+
+  .vitalisite-header__cta .wp-block-button {
+    width: 100%;
   }
 
   .vitalisite-header__cta .wp-block-button__link {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile menu overlay */
+@media (max-width: 781px) {
+  .vitalisite-header--minimal
+    .wp-block-navigation__responsive-container.is-menu-open {
+    background-color: var(--wp--preset--color--vital-mist);
+    padding: 2rem;
   }
 
-  .vitalisite-header__bg {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
+  .vitalisite-header--minimal .wp-block-navigation__responsive-container-close {
+    color: var(--wp--preset--color--vital-ink);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Skip to content link (for screen readers and keyboard navigation) */
+.vitalisite-header .skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--vital-mist);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+
+.vitalisite-header .skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .vitalisite-header--minimal {
+    border-bottom-width: 2px;
   }
 
-  .vitalisite-header--minimal .wp-block-group {
-    gap: 1rem;
+  .vitalisite-header--minimal .wp-block-navigation-item a:hover {
+    background-color: rgba(11, 61, 145, 0.15);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .vitalisite-header--minimal,
+  .vitalisite-header--minimal *,
+  .vitalisite-header__cta .wp-block-button__link {
+    transition: none !important;
+    animation: none !important;
   }
 }

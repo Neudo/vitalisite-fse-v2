@@ -1,0 +1,12 @@
+.sticky-mobile-cta {
+	transition: transform 0.3s ease-in-out;
+	transform: translateY(150%);
+}
+
+.sticky-mobile-cta.show {
+	transform: translateY(0);
+}
+
+.sticky-mobile-cta.hide {
+	transform: translateY(150%);
+}

@@ -1,0 +1,221 @@
+/**
+ * Styles pour le panneau de style dans l'éditeur de site (Global Styles)
+ *
+ * @package Vitalisite_FSE
+ */
+
+/* Bouton de navigation dans la liste Styles */
+.vitalisite-theme-style-nav-button {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px !important;
+  gap: 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: left;
+  color: #1e1e1e;
+  font-size: 13px;
+  height: auto !important;
+  min-height: 40px;
+  margin-bottom: 1px;
+}
+
+.vitalisite-theme-style-nav-button:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1e1e1e;
+}
+
+.vitalisite-nav-icon {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.vitalisite-nav-label {
+  flex: 1;
+  font-weight: 400;
+}
+
+.vitalisite-nav-arrow {
+  color: #757575;
+  flex-shrink: 0;
+}
+
+/* Écran de style du thème */
+.vitalisite-theme-style-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vitalisite-screen-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vitalisite-back-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  color: #1e1e1e !important;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+}
+
+.vitalisite-back-btn:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.vitalisite-screen-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e1e1e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vitalisite-screen-description {
+  padding: 12px 16px;
+  margin: 0;
+  font-size: 12px;
+  color: #757575;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Contenu du panel */
+.vitalisite-screen-content,
+.vitalisite-panel-content {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.vitalisite-global-styles-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cartes de style */
+.vitalisite-style-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vitalisite-style-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.vitalisite-style-card:hover {
+  border-color: var(--wp-admin-theme-color, #3858e9);
+  background: #f8f9fa;
+}
+
+.vitalisite-style-card.is-selected {
+  border-color: var(--wp-admin-theme-color, #3858e9);
+  background: linear-gradient(to right, rgba(56, 88, 233, 0.04), transparent);
+  box-shadow: inset 0 0 0 1px var(--wp-admin-theme-color, #3858e9);
+}
+
+.vitalisite-style-card:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Preview image */
+.vitalisite-style-card__preview {
+  width: 72px;
+  height: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f0f0f1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vitalisite-style-card__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content */
+.vitalisite-style-card__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.vitalisite-style-card__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+
+.vitalisite-style-card__check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--wp-admin-theme-color, #3858e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* Messages */
+.vitalisite-style-message {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.vitalisite-style-message--success {
+  background: #edfaef;
+  color: #00a32a;
+}
+
+.vitalisite-style-message--error {
+  background: #fcf0f1;
+  color: #d63638;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

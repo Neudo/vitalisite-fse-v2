@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- Background -->
+  <rect width="400" height="250" fill="#F8F9FA"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="400" height="50" fill="#03045e"/>
+  <rect x="20" y="18" width="60" height="14" rx="2" fill="#fff" opacity="0.9"/>
+  <rect x="280" y="20" width="30" height="10" rx="2" fill="#fff" opacity="0.6"/>
+  <rect x="320" y="20" width="30" height="10" rx="2" fill="#fff" opacity="0.6"/>
+  <rect x="360" y="20" width="25" height="10" rx="2" fill="#fff" opacity="0.6"/>
+  
+  <!-- Bento Grid Layout -->
+  <!-- Large card -->
+  <rect x="20" y="65" width="180" height="120" rx="12" fill="#03045e"/>
+  <rect x="35" y="80" width="100" height="12" rx="2" fill="#fff" opacity="0.9"/>
+  <rect x="35" y="100" width="130" height="8" rx="2" fill="#fff" opacity="0.5"/>
+  <rect x="35" y="115" width="110" height="8" rx="2" fill="#fff" opacity="0.5"/>
+  <rect x="35" y="145" width="70" height="25" rx="12" fill="#c6e000"/>
+  
+  <!-- Small cards - top right -->
+  <rect x="210" y="65" width="85" height="55" rx="10" fill="#c6e000"/>
+  <rect x="225" y="80" width="55" height="8" rx="2" fill="#03045e" opacity="0.8"/>
+  <rect x="225" y="95" width="40" height="6" rx="2" fill="#03045e" opacity="0.5"/>
+  
+  <rect x="305" y="65" width="75" height="55" rx="10" fill="#e8e8e8"/>
+  <rect x="320" y="80" width="45" height="8" rx="2" fill="#6C757D"/>
+  <rect x="320" y="95" width="35" height="6" rx="2" fill="#6C757D" opacity="0.5"/>
+  
+  <!-- Small cards - bottom right -->
+  <rect x="210" y="130" width="75" height="55" rx="10" fill="#e8e8e8"/>
+  <rect x="225" y="145" width="45" height="8" rx="2" fill="#6C757D"/>
+  <rect x="225" y="160" width="35" height="6" rx="2" fill="#6C757D" opacity="0.5"/>
+  
+  <rect x="295" y="130" width="85" height="55" rx="10" fill="#155287"/>
+  <rect x="310" y="145" width="55" height="8" rx="2" fill="#fff" opacity="0.9"/>
+  <rect x="310" y="160" width="40" height="6" rx="2" fill="#fff" opacity="0.5"/>
+  
+  <!-- Bottom row -->
+  <rect x="20" y="195" width="115" height="45" rx="8" fill="#e8e8e8"/>
+  <rect x="145" y="195" width="115" height="45" rx="8" fill="#e8e8e8"/>
+  <rect x="270" y="195" width="110" height="45" rx="8" fill="#e8e8e8"/>
+  
+  <!-- Label -->
+  <text x="200" y="245" font-family="system-ui" font-size="8" fill="#6C757D" text-anchor="middle">Style Bento</text>
+</svg>
