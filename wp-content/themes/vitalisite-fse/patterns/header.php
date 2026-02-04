@@ -26,8 +26,8 @@
 
     <!-- wp:buttons {"className":"vitalisite-header__cta"} -->
     <div class="wp-block-buttons vitalisite-header__cta">
-      <!-- wp:button -->
-      <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Contact</a></div>
+      <!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
+      <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Contact</a></div>
       <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->
