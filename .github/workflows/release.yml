@@ -3,7 +3,7 @@ name: Create Release from Tag
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v[1-9]*.*.*" # Only v1.0.0 and above (production releases)
 
 permissions:
   contents: write
