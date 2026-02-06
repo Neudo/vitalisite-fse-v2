@@ -17,11 +17,11 @@
     <!-- wp:column {"verticalAlignment":"center","className":"vitalisite-hero__column"} -->
     <div class="wp-block-column is-vertically-aligned-center vitalisite-hero__column">
       <!-- wp:heading {"level":1,"className":"vitalisite-hero__title"} -->
-      <h1 class="vitalisite-hero__title">Des soins attentifs, un accompagnement humain</h1>
+      <h1 class="vitalisite-hero__title">Lorem ipsum dolor sit amet consectetur</h1>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph {"className":"vitalisite-hero__lead"} -->
-      <p class="vitalisite-hero__lead">Présentez votre offre de santé ou de bien‑être avec une bannière claire, moderne et rassurante. Mettez en avant votre promesse de valeur en quelques lignes.</p>
+      <p class="vitalisite-hero__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:buttons {"className":"vitalisite-hero__actions"} -->
@@ -31,7 +31,7 @@
         <!-- /wp:button -->
 
         <!-- wp:button {"textColor":"vital-ink","borderColor":"vital-ink","className":"is-style-outline"} -->
-        <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-vital-ink-color has-text-color">Découvrir nos services</a></div>
+        <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-vital-ink-color has-text-color">En savoir plus</a></div>
         <!-- /wp:button -->
       </div>
       <!-- /wp:buttons -->

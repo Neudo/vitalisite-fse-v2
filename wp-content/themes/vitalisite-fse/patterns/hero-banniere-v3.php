@@ -13,21 +13,21 @@
   <!-- wp:group {"className":"vitalisite-hero__inner","layout":{"type":"constrained"},"style":{"spacing":{"blockGap":"16px"}}} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
-    <h1 style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Un accueil soigné dès le premier regard</h1>
+    <h1 style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Lorem ipsum dolor sit amet</h1>
     <!-- /wp:heading -->
 
     <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"8px"}}}} -->
-    <p style="margin-top:8px;font-size:1.125rem">Créez une section héro élégante avec un message rassurant, puis illustrez vos services avec une image pleine largeur placée sous le contenu.</p>
+    <p style="margin-top:8px;font-size:1.125rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <!-- /wp:paragraph -->
 
     <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"24px"}}}} -->
     <div class="wp-block-buttons" style="margin-top:24px">
       <!-- wp:button {"backgroundColor":"primary","textColor":"base","style":{"border":{"radius":"999px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}}} -->
-      <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background" style="border-radius:999px;padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">Demander un devis</a></div>
+      <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background" style="border-radius:999px;padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">Prendre rendez-vous</a></div>
       <!-- /wp:button -->
 
       <!-- wp:button {"textColor":"ink","style":{"border":{"radius":"999px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"borderColor":"ink","className":"is-style-outline"} -->
-      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ink-color has-text-color" style="border-radius:999px;border-width:1px;border-style:solid;padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">Voir les prestations</a></div>
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ink-color has-text-color" style="border-radius:999px;border-width:1px;border-style:solid;padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">En savoir plus</a></div>
       <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

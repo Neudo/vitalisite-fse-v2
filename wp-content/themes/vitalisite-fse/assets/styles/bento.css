@@ -1,0 +1,44 @@
+/**
+ * Vitalisite FSE - Bento Grid Styles
+ * 
+ * CSS Grid layout for the Bento Grid pattern
+ * 
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* Container */
+.vitalisite-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px; /* Larger gap for premium feel */
+  width: 100%;
+}
+
+/* Base Item Styles */
+.vitalisite-bento-item {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0 !important; /* Override global block spacing */
+}
+
+/* Tablet & Desktop (Switch to 3-column grid for 2/3 + 1/3 layout) */
+@media (min-width: 960px) {
+  .vitalisite-bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto); /* Let content define height */
+  }
+
+  /* Spans */
+  .vitalisite-bento-item--span-2 {
+    grid-column: span 2;
+  }
+
+  .vitalisite-bento-item--span-1 {
+    grid-column: span 1;
+  }
+}

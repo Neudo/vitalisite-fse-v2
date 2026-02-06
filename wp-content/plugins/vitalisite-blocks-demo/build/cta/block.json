@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite/cta",
+  "version": "0.1.0",
+  "title": "Cta",
+  "category": "elements",
+  "icon": "smiley",
+  "description": "Bouton",
+  "example": {},
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true
+    }
+  },
+  "attributes": {
+    "buttonText": {
+      "type": "string",
+      "default": "En savoir plus"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "/"
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "variant": {
+      "type": "string",
+      "default": "primary"
+    }
+  },
+  "textdomain": "cta",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

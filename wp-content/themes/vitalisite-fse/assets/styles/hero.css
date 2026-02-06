@@ -48,21 +48,22 @@
   margin-top: 8px;
 }
 
-.vitalisite-hero__actions {
-  margin-top: 24px;
-}
-
 .vitalisite-hero__actions .wp-block-button__link {
   border-radius: 999px;
   padding: 12px 24px;
+  border: 1px solid transparent;
 }
 
 .vitalisite-hero__actions .is-style-outline .wp-block-button__link {
-  border-width: 1px;
-  border-style: solid;
   border-color: currentColor;
 }
 
 .vitalisite-hero__image {
   margin-top: 32px;
+}
+
+.vitalisite-hero__actions {
+  align-items: flex-start;
+  margin-top: 90px;
+  gap: 10px !important;
 }
