@@ -11,8 +11,8 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Footer"},"align":"full","backgroundColor":"main","textColor":"base","style":{"spacing":{"padding":{"top":"48px","bottom":"48px"},"margin":{"top":"0px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-base-color has-main-background-color has-text-color has-background" style="margin-top:0px;padding-top:48px;padding-bottom:48px">
+<!-- wp:group {"metadata":{"name":"Footer"},"align":"full","className":"vitalisite-footer","backgroundColor":"main","textColor":"base","style":{"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group alignfull vitalisite-footer has-base-color has-main-background-color has-text-color has-background" style="padding-top:48px;padding-bottom:48px">
   <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"32px"}}} -->
   <div class="wp-block-columns alignwide">
     <!-- wp:column -->

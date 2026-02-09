@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/card",
+  "version": "1.0.0",
+  "title": "Card",
+  "category": "vitalisite-cards",
+  "icon": "index-card",
+  "description": "Carte individuelle avec titre, description et bouton.",
+  "keywords": ["card", "service", "feature"],
+  "textdomain": "vitalisite-fse",
+  "parent": ["vitalisite-fse/cards-container"],
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h3",
+      "default": "Titre du service"
+    },
+    "description": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": "Description du service..."
+    },
+    "ctaText": {
+      "type": "string",
+      "source": "html",
+      "selector": "a",
+      "default": "En savoir plus"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#"
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}

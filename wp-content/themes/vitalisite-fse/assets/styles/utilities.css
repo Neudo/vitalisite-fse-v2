@@ -1,0 +1,73 @@
+/**
+ * Vitalisite FSE - Layout Utilities
+ * 
+ * Global layout and utility classes
+ * 
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* Main Section Wrapper - content width + vertical spacing */
+.vitalisite-section {
+  max-width: 960px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: var(--wp--preset--spacing--80); /* Vertical rhythm */
+}
+
+.vitalisite-section.big-section {
+  max-width: 1440px;
+}
+
+.vitalisite-section.full-section {
+  max-width: 100%;
+}
+
+/* Footer spacing */
+.vitalisite-footer {
+  margin-top: 70px;
+}
+
+/* ==========================================================================
+   Accessibility Utilities (A11y)
+   ========================================================================== */
+
+/* Skip to Content Link - Hidden by default, visible on focus */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  background-color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--primary);
+  padding: 1rem;
+  z-index: 9999;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+/* Improved Focus Visibility */
+:focus-visible {
+  outline: 2px solid var(--wp--preset--color--primary);
+  outline-offset: 2px;
+}
+
+/* Accordion Fixes */
+details.vitalisite-accordion-item.is-layout-flow > * {
+  margin-block-start: 0 !important;
+}
+
+details.vitalisite-accordion-item.is-layout-flow > summary + * {
+  margin-top: 0 !important;
+}

@@ -8,8 +8,8 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-carrousel-section vitalisite-container vitalisite-section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group vitalisite-carrousel-section vitalisite-container vitalisite-section">
+<!-- wp:group {"tagName":"section","className":"vitalisite-carrousel-section vitalisite-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group vitalisite-carrousel-section vitalisite-section">
 	
 	<!-- wp:heading {"textAlign":"center","level":2,"className":"vitalisite-carrousel__title"} -->
 	<h2 class="wp-block-heading has-text-align-center vitalisite-carrousel__title">Lorem ipsum dolor sit amet</h2>

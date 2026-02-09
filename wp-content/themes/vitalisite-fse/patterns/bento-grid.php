@@ -8,8 +8,8 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-bento-grid vitalisite-container vitalisite-section","layout":{"type":"default"}} -->
-<section class="wp-block-group vitalisite-bento-grid vitalisite-container vitalisite-section">
+<!-- wp:group {"tagName":"section","className":"vitalisite-bento-grid vitalisite-section full-section"} -->
+<section class="wp-block-group vitalisite-bento-grid vitalisite-section full-section">
 
     <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"backgroundColor":"tertiary","className":"vitalisite-bento-item vitalisite-bento-item--span-2"} -->
     <div class="wp-block-group vitalisite-bento-item vitalisite-bento-item--span-2 has-tertiary-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--60)">

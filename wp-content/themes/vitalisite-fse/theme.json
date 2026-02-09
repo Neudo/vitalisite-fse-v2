@@ -117,8 +117,8 @@
       "imageRadius": "8px"
     },
     "layout": {
-      "contentSize": "1440px",
-      "wideSize": "1600px"
+      "contentSize": "56rem",
+      "wideSize": "60rem"
     },
     "shadow": {
       "defaultPresets": false,
@@ -515,7 +515,7 @@
       }
     },
     "spacing": {
-      "blockGap": "var(--wp--preset--spacing--80)",
+      "blockGap": "0",
       "padding": {
         "top": "0",
         "right": "0",

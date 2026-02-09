@@ -13,6 +13,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Header Minimal"},"align":"full","className":"vitalisite-header vitalisite-header--minimal","layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group alignfull vitalisite-header vitalisite-header--minimal">
+  <a class="skip-link screen-reader-text" href="#primary">Aller au contenu principal</a>
   <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap","orientation":"horizontal"}} -->
   <div class="wp-block-group alignwide">
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->

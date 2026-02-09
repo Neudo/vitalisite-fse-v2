@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/cards-container",
+  "version": "1.0.0",
+  "title": "Cards Container",
+  "category": "vitalisite-cards",
+  "icon": "grid-view",
+  "description": "Grille de cartes Vitalisite (conteneur repeater).",
+  "keywords": ["grid", "cards", "service", "repeater"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

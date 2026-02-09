@@ -8,9 +8,9 @@
  * Description: Bannière avec image en bas, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero","layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull vitalisite-hero">
-  <!-- wp:group {"className":"vitalisite-hero__inner","layout":{"type":"constrained"},"style":{"spacing":{"blockGap":"16px"}}} -->
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-section big-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero vitalisite-section big-section">
+  <!-- wp:group {"className":"vitalisite-hero__inner","style":{"spacing":{"blockGap":"16px"}}} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
     <h1 style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Lorem ipsum dolor sit amet</h1>

@@ -13,6 +13,7 @@
 ?>
 <!-- wp:group {"tagName":"header","metadata":{"name":"Header Minimal"},"align":"full","className":"vitalisite-header vitalisite-header--minimal","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <header class="wp-block-group alignfull vitalisite-header vitalisite-header--minimal" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)">
+  <a class="skip-link screen-reader-text" href="#primary">Aller au contenu principal</a>
   <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
   <div class="wp-block-group alignwide">
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->

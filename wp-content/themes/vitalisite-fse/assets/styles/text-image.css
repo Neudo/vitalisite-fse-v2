@@ -1,0 +1,27 @@
+/**
+ * Vitalisite FSE - Text + Image Block Styles
+ * 
+ * Styles for the text-image pattern and related elements.
+ * 
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Image Styles
+   ========================================================================== */
+
+/* Enforce theme radius on specific images used in patterns */
+.vitalisite-text-image .vitalisite-rounded-image img {
+  border-radius: var(--wp--custom--image-radius);
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure columns stack nicely on mobile if core doesn't handle it perfectly with padding */
+@media (max-width: 781px) {
+  .vitalisite-text-image .wp-block-columns {
+    gap: var(--wp--preset--spacing--50);
+  }
+}

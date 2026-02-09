@@ -1,0 +1,107 @@
+/**
+ * Vitalisite FSE - Accordion Styles
+ * 
+ * Styles for core/details block customization
+ * 
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Base Detail Styles
+   ========================================================================== */
+
+.vitalisite-accordion-item {
+  border-bottom: 1px solid var(--wp--preset--color--border-light);
+  margin-bottom: 0;
+  padding: var(--wp--preset--spacing--30) 0;
+  transition: all 0.3s ease;
+}
+
+.vitalisite-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.vitalisite-accordion-item summary {
+  list-style: none; /* Hide default triangle */
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--wp--preset--spacing--20) 0;
+}
+
+.vitalisite-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom Icon (Chevron) */
+.vitalisite-accordion-item summary::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B3D91' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.vitalisite-accordion-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.vitalisite-accordion-item[open] summary {
+  margin-bottom: 1.5rem; /* Increased from spacing-30 (0.5rem) */
+  color: var(--wp--preset--color--primary);
+}
+
+/* ==========================================================================
+   Variant: Vitalisite Legacy (Boxed)
+   ========================================================================== */
+
+.vitalisite-accordion-variant-legacy .vitalisite-accordion-item {
+  border: 1px solid var(--wp--preset--color--border-light);
+  border-radius: var(--wp--custom--image-radius);
+  margin-bottom: var(--wp--preset--spacing--30);
+  padding: 0;
+  background-color: var(--wp--preset--color--base);
+  overflow: hidden;
+}
+
+.vitalisite-accordion-variant-legacy .vitalisite-accordion-item summary {
+  background-color: var(--wp--preset--color--tertiary);
+  padding: var(--wp--preset--spacing--40);
+  transition: background-color 0.3s ease;
+}
+
+.vitalisite-accordion-variant-legacy .vitalisite-accordion-item[open] summary {
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--base);
+  margin-bottom: 0;
+}
+
+/* White chevron when active/primary background */
+.vitalisite-accordion-variant-legacy
+  .vitalisite-accordion-item[open]
+  summary::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Content padding for legacy variant */
+.vitalisite-accordion-variant-legacy .wp-block-group {
+  padding: var(--wp--preset--spacing--40);
+}
+
+/* Custom Accordion Block Container */
+.vitalisite-accordion-container .vitalisite-accordion-item {
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid var(--wp--preset--color--border-light);
+}
+
+.vitalisite-accordion-container .vitalisite-accordion-item:last-child {
+  border-bottom: none;
+}

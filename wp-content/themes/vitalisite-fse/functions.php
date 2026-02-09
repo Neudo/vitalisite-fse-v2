@@ -20,10 +20,14 @@ function vitalisite_is_dev_mode() {
 
 add_action('after_setup_theme', function () {
     add_editor_style(array(
-        'style.css',
+        'assets/styles/utilities.css',
         'assets/styles/header.css',
         'assets/styles/hero.css',
         'assets/styles/bento.css',
+        'assets/styles/accordion.css',
+        'assets/styles/accordion.css',
+        'assets/styles/cards.css',
+        'assets/styles/text-image.css',
     ));
     // Hide core block patterns to keep the inserter focused on theme patterns.
     remove_theme_support('core-block-patterns');
@@ -37,6 +41,12 @@ add_action('wp_enqueue_scripts', function () {
         'vitalisite-fse',
         get_template_directory_uri() . '/style.css',
         array(),
+        wp_get_theme()->get('Version')
+    );
+    wp_enqueue_style(
+        'vitalisite-fse-utilities',
+        get_template_directory_uri() . '/assets/styles/utilities.css',
+        array('vitalisite-fse'),
         wp_get_theme()->get('Version')
     );
     wp_enqueue_style(
@@ -54,6 +64,24 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style(
         'vitalisite-fse-bento',
         get_template_directory_uri() . '/assets/styles/bento.css',
+        array('vitalisite-fse'),
+        VITALISITE_FSE_VERSION
+    );
+    wp_enqueue_style(
+        'vitalisite-fse-accordion',
+        get_template_directory_uri() . '/assets/styles/accordion.css',
+        array('vitalisite-fse'),
+        VITALISITE_FSE_VERSION
+    );
+    wp_enqueue_style(
+        'vitalisite-fse-cards',
+        get_template_directory_uri() . '/assets/styles/cards.css',
+        array('vitalisite-fse'),
+        VITALISITE_FSE_VERSION
+    );
+    wp_enqueue_style(
+        'vitalisite-fse-text-image',
+        get_template_directory_uri() . '/assets/styles/text-image.css',
         array('vitalisite-fse'),
         VITALISITE_FSE_VERSION
     );
@@ -131,10 +159,37 @@ add_action('init', function () {
         'vitalisite-bento',
         array('label' => __('Bento Grid', 'vitalisite-fse'))
     );
+    register_block_pattern_category(
+        'vitalisite-accordion',
+        array('label' => __('FAQ / Accordion', 'vitalisite-fse'))
+    );
+    register_block_pattern_category(
+        'vitalisite-cards',
+        array('label' => __('Cards', 'vitalisite-fse'))
+    );
     
     // Register custom blocks
     register_block_type( __DIR__ . '/build/slider' );
+    register_block_type( __DIR__ . '/build/cards-container' );
+    register_block_type( __DIR__ . '/build/card' );
 });
+
+add_action( 'enqueue_block_editor_assets', function() {
+    wp_enqueue_script(
+        'vitalisite-accordion-block',
+        get_template_directory_uri() . '/assets/js/accordion-block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
+        filemtime( get_template_directory() . '/assets/js/accordion-block.js' )
+    );
+
+    wp_enqueue_script(
+        'vitalisite-accordion-item-block',
+        get_template_directory_uri() . '/assets/js/accordion-item-block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
+        filemtime( get_template_directory() . '/assets/js/accordion-item-block.js' )
+    );
+
+} );
 
 add_action('init', function () {
     $allowed_categories = array(
@@ -145,7 +200,12 @@ add_action('init', function () {
         'vitalisite-header',
         'vitalisite-footer',
         'vitalisite-carrousel',
+        'vitalisite-carrousel',
         'vitalisite-bento',
+        'vitalisite-carrousel',
+        'vitalisite-bento',
+        'vitalisite-accordion',
+        'vitalisite-cards',
     );
 
     if (class_exists('WP_Block_Pattern_Categories_Registry')) {

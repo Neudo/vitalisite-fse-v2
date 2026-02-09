@@ -1,0 +1,28 @@
+// Editor-specific styles for the cards container block
+
+.wp-block-vitalisite-fse-cards-container {
+  // Remove Gutenberg default max-width on the container itself
+  max-width: 100% !important;
+
+  > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    // Remove Gutenberg default max-width on card children so they fill grid cells
+    > .wp-block {
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

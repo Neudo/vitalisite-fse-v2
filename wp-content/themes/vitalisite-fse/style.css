@@ -7,40 +7,17 @@ Description: Theme FSE de base pour le projet Vitalisite.
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Version: 0.1.4
+Version: 0.1.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: vitalisite-fse
 Tags: full-site-editing, block-theme, custom-colors, custom-logo
 */
 
-/* Styles additionnels si besoin */
-
-/* ==========================================================================
-   Layout Utilities
-   ========================================================================== */
-
-/* Main Container - Keeps content within 1440px */
-.vitalisite-container {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-}
-
-/* Section Spacing - Handles vertical rhythm between major blocks */
-.vitalisite-section {
-  margin-bottom: var(--wp--preset--spacing--80); /* ~4rem / 64px */
-}
-
-/* Responsive adjustments for spacing */
-@media (min-width: 782px) {
-  .vitalisite-section {
-    margin-bottom: var(--wp--preset--spacing--80);
-  }
-}
+/* 
+   Layout utilities are now in assets/styles/utilities.css 
+   Component styles are in their respective files in assets/styles/
+*/
 
 /* ==========================================================================
    Base Styles
