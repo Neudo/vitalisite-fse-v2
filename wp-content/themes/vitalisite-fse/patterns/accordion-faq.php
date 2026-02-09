@@ -15,38 +15,44 @@
     <h2 class="wp-block-heading has-text-align-center">Questions Fréquentes</h2>
     <!-- /wp:heading -->
 
-    <!-- wp:group {"layout":{"type":"default"}} -->
-    <div class="wp-block-group">
+    <!-- wp:vitalisite-fse/accordion {"variant":"simple"} -->
+    <div class="wp-block-vitalisite-fse-accordion vitalisite-accordion-container">
         
-        <!-- wp:details {"className":"vitalisite-accordion-item","showContent":true} -->
-        <details class="wp-block-details vitalisite-accordion-item" open>
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Lorem ipsum dolor sit amet ?"} -->
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
             <summary>Lorem ipsum dolor sit amet ?</summary>
-            <!-- wp:paragraph -->
-            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-            <!-- /wp:paragraph -->
+            <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
+                <!-- wp:paragraph -->
+                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                <!-- /wp:paragraph -->
+            </div>
         </details>
-        <!-- /wp:details -->
+        <!-- /wp:vitalisite-fse/accordion-item -->
 
-        <!-- wp:details {"className":"vitalisite-accordion-item"} -->
-        <details class="wp-block-details vitalisite-accordion-item">
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Duis aute irure dolor in reprehenderit ?"} -->
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
             <summary>Duis aute irure dolor in reprehenderit ?</summary>
-            <!-- wp:paragraph -->
-            <p>Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-            <!-- /wp:paragraph -->
+            <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
+                <!-- wp:paragraph -->
+                <p>Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                <!-- /wp:paragraph -->
+            </div>
         </details>
-        <!-- /wp:details -->
+        <!-- /wp:vitalisite-fse/accordion-item -->
 
-        <!-- wp:details {"className":"vitalisite-accordion-item"} -->
-        <details class="wp-block-details vitalisite-accordion-item">
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Excepteur sint occaecat cupidatat non proident ?"} -->
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
             <summary>Excepteur sint occaecat cupidatat non proident ?</summary>
-            <!-- wp:paragraph -->
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-            <!-- /wp:paragraph -->
+            <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
+                <!-- wp:paragraph -->
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                <!-- /wp:paragraph -->
+            </div>
         </details>
-        <!-- /wp:details -->
+        <!-- /wp:vitalisite-fse/accordion-item -->
 
     </div>
-    <!-- /wp:group -->
+    <!-- /wp:vitalisite-fse/accordion -->
 
 </section>
 <!-- /wp:group -->

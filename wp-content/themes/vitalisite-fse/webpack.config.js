@@ -2,7 +2,13 @@ const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const blocks = ["slider", "cards-container", "card"];
+const blocks = [
+  "slider",
+  "cards-container",
+  "card",
+  "accordion",
+  "accordion-item",
+];
 
 module.exports = {
   ...defaultConfig,

@@ -172,24 +172,10 @@ add_action('init', function () {
     register_block_type( __DIR__ . '/build/slider' );
     register_block_type( __DIR__ . '/build/cards-container' );
     register_block_type( __DIR__ . '/build/card' );
+    register_block_type( __DIR__ . '/build/accordion' );
+    register_block_type( __DIR__ . '/build/accordion-item' );
 });
 
-add_action( 'enqueue_block_editor_assets', function() {
-    wp_enqueue_script(
-        'vitalisite-accordion-block',
-        get_template_directory_uri() . '/assets/js/accordion-block.js',
-        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
-        filemtime( get_template_directory() . '/assets/js/accordion-block.js' )
-    );
-
-    wp_enqueue_script(
-        'vitalisite-accordion-item-block',
-        get_template_directory_uri() . '/assets/js/accordion-item-block.js',
-        array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
-        filemtime( get_template_directory() . '/assets/js/accordion-item-block.js' )
-    );
-
-} );
 
 add_action('init', function () {
     $allowed_categories = array(

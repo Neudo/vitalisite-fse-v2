@@ -1,0 +1,30 @@
+// Editor-specific styles for the accordion item block
+
+.wp-block-vitalisite-fse-accordion-item {
+  &.vitalisite-accordion-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 0;
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+
+    .vitalisite-accordion-content {
+      padding: 1rem 0;
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
