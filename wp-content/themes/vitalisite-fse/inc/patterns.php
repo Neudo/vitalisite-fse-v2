@@ -29,7 +29,10 @@ function get_pattern_categories() {
 		'vitalisite-video'        => __( 'Vidéo', 'vitalisite-fse' ),
 		'vitalisite-testimonials'  => __( 'Témoignages', 'vitalisite-fse' ),
 		'vitalisite-before-after'  => __( 'Avant / Après', 'vitalisite-fse' ),
-		'vitalisite-text-image'    => __( 'Texte + Image', 'vitalisite-fse' ),
+		'vitalisite-text-image'      => __( 'Texte + Image', 'vitalisite-fse' ),
+		'vitalisite-pricing'         => __( 'Tarifs', 'vitalisite-fse' ),
+		'vitalisite-doctor'          => __( 'Présentation Docteur', 'vitalisite-fse' ),
+		'vitalisite-opening-hours'   => __( 'Horaires d\'ouverture', 'vitalisite-fse' ),
 	);
 }
 
@@ -62,7 +65,8 @@ function register_patterns_and_blocks() {
 	$ssr_blocks = array(
 		'testimonials'  => 'vitalisite_render_testimonials_block',
 		'video'         => 'vitalisite_render_video_block',
-		'before-after'  => 'vitalisite_render_before_after_block',
+		'before-after'   => 'vitalisite_render_before_after_block',
+		'opening-hours'  => 'vitalisite_render_opening_hours_block',
 	);
 
 	foreach ( $ssr_blocks as $block => $callback ) {

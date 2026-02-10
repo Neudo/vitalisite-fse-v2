@@ -19,6 +19,7 @@ require_once __DIR__ . '/inc/cpt-testimonials.php';
 require_once __DIR__ . '/inc/block-testimonials.php';
 require_once __DIR__ . '/inc/block-video.php';
 require_once __DIR__ . '/inc/block-before-after.php';
+require_once __DIR__ . '/inc/block-opening-hours.php';
 
 // Patterns & blocks registration.
 require_once __DIR__ . '/inc/patterns.php';
@@ -86,6 +87,7 @@ function enqueue_block_styles() {
 		'vitalisite-fse/video'           => 'video.css',
 		'vitalisite-fse/before-after'    => 'before-after.css',
 		'vitalisite-fse/slider'          => 'slider.css',
+		'vitalisite-fse/opening-hours'   => 'opening-hours.css',
 	);
 
 	foreach ( $block_styles as $block_name => $css_file ) {

@@ -12,6 +12,7 @@ const blocks = [
   "testimonials",
   "video",
   "before-after",
+  "opening-hours",
 ];
 
 module.exports = {
