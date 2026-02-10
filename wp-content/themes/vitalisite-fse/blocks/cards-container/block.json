@@ -4,7 +4,7 @@
   "name": "vitalisite-fse/cards-container",
   "version": "1.0.0",
   "title": "Cards Container",
-  "category": "vitalisite-cards",
+  "category": "vitalisite-blocks",
   "icon": "grid-view",
   "description": "Grille de cartes Vitalisite (conteneur repeater).",
   "keywords": ["grid", "cards", "service", "repeater"],

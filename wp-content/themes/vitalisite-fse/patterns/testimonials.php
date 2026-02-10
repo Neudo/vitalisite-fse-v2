@@ -3,7 +3,7 @@
  * Title: Témoignages
  * Slug: vitalisite-fse/testimonials
  * Description: Carousel de témoignages patients avec étoiles et Swiper.js
- * Categories: vitalisite-blocks
+ * Categories: vitalisite-testimonials
  * Keywords: testimonials, temoignages, avis, carousel
  */
 

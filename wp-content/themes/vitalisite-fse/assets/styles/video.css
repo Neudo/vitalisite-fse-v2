@@ -1,0 +1,35 @@
+.vitalisite-video-section {
+    padding: var(--wp--preset--spacing--70) 0;
+}
+
+.vitalisite-video-player {
+    position: relative;
+    width: 100%;
+    border-radius: var(--wp--custom--image-radius);
+    overflow: hidden;
+    background-color: #000;
+}
+
+.vitalisite-video-player iframe,
+.vitalisite-video-player video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.vitalisite-video-placeholder {
+    text-align: center;
+    padding: var(--wp--preset--spacing--50);
+    background-color: var(--wp--preset--color--tertiary);
+    border-radius: var(--wp--custom--image-radius);
+}
+
+.vitalisite-video-error {
+    color: #e74c3c;
+    text-align: center;
+    padding: var(--wp--preset--spacing--30);
+}

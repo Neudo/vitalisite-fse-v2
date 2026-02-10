@@ -4,7 +4,7 @@
   "name": "vitalisite-fse/accordion",
   "version": "1.0.0",
   "title": "Accordion Container",
-  "category": "vitalisite-accordion",
+  "category": "vitalisite-blocks",
   "icon": "list-view",
   "description": "Conteneur d'accordéon Vitalisite (repeater).",
   "keywords": ["accordion", "faq", "details", "repeater"],

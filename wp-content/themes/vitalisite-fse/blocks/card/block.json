@@ -4,7 +4,7 @@
   "name": "vitalisite-fse/card",
   "version": "1.0.0",
   "title": "Card",
-  "category": "vitalisite-cards",
+  "category": "vitalisite-blocks",
   "icon": "index-card",
   "description": "Carte individuelle avec titre, description et bouton.",
   "keywords": ["card", "service", "feature"],

@@ -3,7 +3,7 @@
  * Title: Bento Grid
  * Slug: vitalisite-fse/bento-grid
  * Description: Section bento avec carte principale large et carte secondaire latérale
- * Categories: vitalisite-bento, featured
+ * Categories: vitalisite-bento
  * Keywords: grid, bento, grille, modern, features
  */
 ?>

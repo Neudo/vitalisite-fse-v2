@@ -10,6 +10,8 @@ const blocks = [
   "accordion-item",
   "text-image",
   "testimonials",
+  "video",
+  "before-after",
 ];
 
 module.exports = {

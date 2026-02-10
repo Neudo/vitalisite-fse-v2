@@ -3,7 +3,7 @@
  * Title: Accordéon FAQ (Simple)
  * Slug: vitalisite-fse/accordion-faq
  * Description: Liste de questions fréquentes style minimaliste
- * Categories: vitalisite-accordion, vitalisite-blocks
+ * Categories: vitalisite-accordion
  * Keywords: faq, accordion, details, questions
  */
 ?>

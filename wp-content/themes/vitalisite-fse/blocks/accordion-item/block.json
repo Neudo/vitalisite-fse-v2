@@ -4,7 +4,7 @@
   "name": "vitalisite-fse/accordion-item",
   "version": "1.0.0",
   "title": "Accordion Item",
-  "category": "vitalisite-accordion",
+  "category": "vitalisite-blocks",
   "icon": "arrow-down-alt2",
   "description": "Élément d'accordéon avec question et réponse.",
   "keywords": ["accordion", "faq", "item", "details"],

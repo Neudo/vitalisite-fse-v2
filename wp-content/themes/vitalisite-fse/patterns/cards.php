@@ -3,7 +3,7 @@
  * Title: Cartes (Legacy Style)
  * Slug: vitalisite-fse/cards
  * Description: Grille de 3 cartes avec titre, texte et bouton (style bordé)
- * Categories: vitalisite-cards, vitalisite-blocks
+ * Categories: vitalisite-cards
  * Keywords: cards, grid, feature, services
  */
 ?>
