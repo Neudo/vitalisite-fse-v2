@@ -3,13 +3,13 @@
  * Title: Texte + Image
  * Slug: vitalisite-fse/text-image
  * Description: Section classique avec texte d'un côté et image de l'autre
- * Categories: vitalisite-blocks, featured
+ * Categories: vitalisite-blocks
  * Keywords: about, feature, text, image
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-text-image vitalisite-section"} -->
-<section class="wp-block-group vitalisite-text-image vitalisite-section">
+<!-- wp:vitalisite-fse/text-image -->
+<section class="wp-block-vitalisite-fse-text-image vitalisite-text-image vitalisite-section">
 
     <!-- wp:columns {"verticalAlignment":"center"} -->
     <div class="wp-block-columns are-vertically-aligned-center">
@@ -46,4 +46,4 @@
     <!-- /wp:columns -->
 
 </section>
-<!-- /wp:group -->
+<!-- /wp:vitalisite-fse/text-image -->

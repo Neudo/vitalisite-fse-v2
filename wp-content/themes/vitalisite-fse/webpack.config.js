@@ -8,6 +8,8 @@ const blocks = [
   "card",
   "accordion",
   "accordion-item",
+  "text-image",
+  "testimonials",
 ];
 
 module.exports = {

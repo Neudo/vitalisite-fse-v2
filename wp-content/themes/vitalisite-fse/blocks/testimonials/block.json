@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/testimonials",
+  "version": "1.0.0",
+  "title": "Témoignages",
+  "category": "vitalisite-blocks",
+  "icon": "testimonial",
+  "description": "Carousel de témoignages patients.",
+  "keywords": ["testimonials", "temoignages", "avis", "carousel"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "count": {
+      "type": "number",
+      "default": -1
+    },
+    "showRating": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}

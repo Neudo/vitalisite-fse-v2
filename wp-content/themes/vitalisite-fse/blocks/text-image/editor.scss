@@ -1,0 +1,19 @@
+// Editor-specific styles for the text-image block
+
+.wp-block-vitalisite-fse-text-image {
+  .wp-block-columns {
+    align-items: center !important;
+  }
+
+  &.is-reversed {
+    .wp-block-columns {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.has-background {
+    background-color: var(--wp--preset--color--tertiary);
+    border-radius: var(--wp--custom--image-radius);
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50);
+  }
+}

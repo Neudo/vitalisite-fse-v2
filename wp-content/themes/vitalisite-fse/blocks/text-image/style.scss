@@ -1,0 +1,40 @@
+// Frontend styles for the text-image block
+
+.wp-block-vitalisite-fse-text-image {
+  .wp-block-columns {
+    align-items: center !important;
+  }
+
+  &.is-reversed {
+    .wp-block-columns {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.has-background {
+    background-color: var(--wp--preset--color--tertiary);
+    border-radius: var(--wp--custom--image-radius);
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50);
+  }
+
+  .vitalisite-rounded-image img {
+    border-radius: var(--wp--custom--image-radius);
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 781px) {
+  .wp-block-vitalisite-fse-text-image {
+    &.is-reversed {
+      .wp-block-columns {
+        flex-direction: column;
+      }
+    }
+
+    &.has-background {
+      padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
+    }
+  }
+}

@@ -5,6 +5,12 @@
  */
 define('VITALISITE_FSE_VERSION', wp_get_theme()->get('Version'));
 
+// Include CPT registrations
+require_once __DIR__ . '/inc/cpt-testimonials.php';
+
+// Include block render callbacks
+require_once __DIR__ . '/inc/block-testimonials.php';
+
 /**
  * Vitalisite FSE theme setup.
  */
@@ -28,6 +34,7 @@ add_action('after_setup_theme', function () {
         'assets/styles/accordion.css',
         'assets/styles/cards.css',
         'assets/styles/text-image.css',
+        'assets/styles/testimonials.css',
     ));
     // Hide core block patterns to keep the inserter focused on theme patterns.
     remove_theme_support('core-block-patterns');
@@ -35,6 +42,30 @@ add_action('after_setup_theme', function () {
 
 // Disable remote patterns from the WordPress.org pattern directory.
 add_filter('should_load_remote_block_patterns', '__return_false');
+
+// Register custom block categories for the inserter.
+add_filter('block_categories_all', function ($categories, $block_editor_context) {
+    return array_merge(
+        array(
+            array(
+                'slug'  => 'vitalisite-blocks',
+                'title' => __('Vitalisite', 'vitalisite-fse'),
+                'icon'  => null,
+            ),
+            array(
+                'slug'  => 'vitalisite-cards',
+                'title' => __('Cards Vitalisite', 'vitalisite-fse'),
+                'icon'  => null,
+            ),
+            array(
+                'slug'  => 'vitalisite-accordion',
+                'title' => __('Accordion Vitalisite', 'vitalisite-fse'),
+                'icon'  => null,
+            ),
+        ),
+        $categories
+    );
+}, 10, 2);
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style(
@@ -119,6 +150,23 @@ add_action('wp_enqueue_scripts', function () {
         VITALISITE_FSE_VERSION,
         true // Load in footer
     );
+
+    // Enqueue Testimonials CSS
+    wp_enqueue_style(
+        'vitalisite-fse-testimonials',
+        get_template_directory_uri() . '/assets/styles/testimonials.css',
+        array('vitalisite-fse'),
+        VITALISITE_FSE_VERSION
+    );
+
+    // Enqueue Testimonials JS
+    wp_enqueue_script(
+        'vitalisite-fse-testimonials-js',
+        get_template_directory_uri() . '/assets/js/testimonials.js',
+        array('vitalisite-swiper'),
+        VITALISITE_FSE_VERSION,
+        true
+    );
 });
 
 add_action('init', function () {
@@ -174,6 +222,10 @@ add_action('init', function () {
     register_block_type( __DIR__ . '/build/card' );
     register_block_type( __DIR__ . '/build/accordion' );
     register_block_type( __DIR__ . '/build/accordion-item' );
+    register_block_type( __DIR__ . '/build/text-image' );
+    register_block_type( __DIR__ . '/build/testimonials', array(
+        'render_callback' => 'vitalisite_render_testimonials_block',
+    ) );
 });
 
 

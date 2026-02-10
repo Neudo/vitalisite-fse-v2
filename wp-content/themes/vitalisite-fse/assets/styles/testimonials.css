@@ -1,0 +1,114 @@
+.vitalisite-testimonials-section {
+  padding: var(--wp--preset--spacing--70) 0;
+}
+
+.vitalisite-testimonials-swiper {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: var(--wp--preset--spacing--50);
+}
+
+.vitalisite-testimonial-card {
+  background-color: var(--wp--preset--color--tertiary);
+  border-radius: var(--wp--custom--image-radius);
+  padding: var(--wp--preset--spacing--50);
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp--preset--spacing--30);
+}
+
+.vitalisite-testimonial-card__rating {
+  display: flex;
+  gap: 2px;
+}
+
+.vitalisite-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.vitalisite-stars .star {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.vitalisite-stars .star.filled {
+  color: #f1c40f;
+}
+
+.vitalisite-stars .star.empty {
+  color: #ddd;
+}
+
+.vitalisite-testimonial-card__content {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+  font-size: var(--wp--preset--font-size--small);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.vitalisite-testimonial-card__content::before {
+  content: "\201C";
+  font-size: 2rem;
+  line-height: 0.5;
+  vertical-align: -0.3em;
+  margin-right: 4px;
+  color: var(--wp--preset--color--primary);
+  font-style: normal;
+}
+
+.vitalisite-testimonial-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vitalisite-testimonial-card__name {
+  font-weight: 600;
+  font-size: var(--wp--preset--font-size--small);
+}
+
+.vitalisite-testimonial-card__role {
+  font-size: 0.8rem;
+  color: var(--wp--preset--color--main-accent);
+  opacity: 0.7;
+}
+
+/* Swiper overrides */
+.vitalisite-testimonials-swiper .swiper-button-prev,
+.vitalisite-testimonials-swiper .swiper-button-next {
+  color: var(--wp--preset--color--primary);
+  top: 45%;
+}
+
+.vitalisite-testimonials-swiper .swiper-button-prev::after,
+.vitalisite-testimonials-swiper .swiper-button-next::after {
+  font-size: 1.2rem;
+}
+
+.vitalisite-testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--wp--preset--color--primary);
+}
+
+@media (max-width: 781px) {
+  .vitalisite-testimonials-swiper .swiper-button-prev,
+  .vitalisite-testimonials-swiper .swiper-button-next {
+    display: none;
+  }
+}
+
+/* Editor: show all cards in a grid instead of Swiper carousel */
+.editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-pagination,
+.editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-button-prev,
+.editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-button-next {
+  display: none;
+}
