@@ -2,11 +2,7 @@
 /**
  * Server-side rendering for the opening hours block.
  *
- * Reads opening hours from theme_mod (Kirki / Customizer).
- * Expected theme_mods:
- *   open_hours_{day}_closed  (bool)
- *   open_hours_{day}_open    (string HH:MM)
- *   open_hours_{day}_close   (string HH:MM)
+ * Reads opening hours from the vitalisite_hours option (Settings API).
  *
  * @package Vitalisite_FSE
  * @since 1.0.0
@@ -21,6 +17,15 @@ function vitalisite_render_opening_hours_block( $attributes ) {
 	$show_emergency = isset( $attributes['showEmergency'] ) ? $attributes['showEmergency'] : false;
 	$emergency_text = ! empty( $attributes['emergencyText'] ) ? $attributes['emergencyText'] : '';
 
+	// Read from Settings API option.
+	$options         = get_option( 'vitalisite_hours', array() );
+	$globally_closed = ! empty( $options['globally_closed'] );
+
+	// Fallback emergency text from options if not set in block attributes.
+	if ( empty( $emergency_text ) && ! empty( $options['emergency_text'] ) ) {
+		$emergency_text = $options['emergency_text'];
+	}
+
 	$days = array(
 		'monday'    => __( 'Lundi', 'vitalisite-fse' ),
 		'tuesday'   => __( 'Mardi', 'vitalisite-fse' ),
@@ -31,14 +36,14 @@ function vitalisite_render_opening_hours_block( $attributes ) {
 		'sunday'    => __( 'Dimanche', 'vitalisite-fse' ),
 	);
 
-	// Build hours array from theme_mod.
+	// Build hours array from option.
 	$hours = array();
 	foreach ( array_keys( $days ) as $day ) {
-		$is_closed = get_theme_mod( "open_hours_{$day}_closed", false );
+		$day_data = isset( $options[ $day ] ) ? $options[ $day ] : array();
 		$hours[ $day ] = array(
-			'closed' => (bool) $is_closed,
-			'open'   => get_theme_mod( "open_hours_{$day}_open", '09:00' ),
-			'close'  => get_theme_mod( "open_hours_{$day}_close", '18:00' ),
+			'closed' => $globally_closed || ! empty( $day_data['closed'] ),
+			'open'   => isset( $day_data['open'] ) ? $day_data['open'] : '09:00',
+			'close'  => isset( $day_data['close'] ) ? $day_data['close'] : '18:00',
 		);
 	}
 
@@ -49,7 +54,7 @@ function vitalisite_render_opening_hours_block( $attributes ) {
 	$current_time    = $now->format( 'H:i' );
 
 	$is_open = false;
-	if ( isset( $hours[ $current_day_key ] ) && ! $hours[ $current_day_key ]['closed'] ) {
+	if ( ! $globally_closed && isset( $hours[ $current_day_key ] ) && ! $hours[ $current_day_key ]['closed'] ) {
 		$open  = $hours[ $current_day_key ]['open'];
 		$close = $hours[ $current_day_key ]['close'];
 		if ( $current_time >= $open && $current_time <= $close ) {

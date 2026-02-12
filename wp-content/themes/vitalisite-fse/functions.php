@@ -14,6 +14,7 @@ define( 'VITALISITE_FSE_VERSION', wp_get_theme()->get( 'Version' ) );
 
 // Include CPT registrations (global namespace – class-based).
 require_once __DIR__ . '/inc/cpt-testimonials.php';
+require_once __DIR__ . '/inc/cpt-specialities.php';
 
 // Include block render callbacks (global namespace – referenced by string).
 require_once __DIR__ . '/inc/block-testimonials.php';
@@ -23,6 +24,12 @@ require_once __DIR__ . '/inc/block-opening-hours.php';
 
 // Patterns & blocks registration.
 require_once __DIR__ . '/inc/patterns.php';
+
+// Admin settings page.
+require_once __DIR__ . '/inc/admin-settings.php';
+
+// Dynamic footer content injection.
+require_once __DIR__ . '/inc/footer-dynamic.php';
 
 /**
  * Check if the site is running in development mode.
@@ -68,6 +75,8 @@ function enqueue_global_styles() {
 	wp_enqueue_style( 'vitalisite-fse-utilities', $uri . '/assets/styles/utilities.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-header', $uri . '/assets/styles/header.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-hero', $uri . '/assets/styles/hero.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-bento', $uri . '/assets/styles/bento.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-footer', $uri . '/assets/styles/footer.css', array( 'vitalisite-fse' ), $version );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_global_styles' );
 

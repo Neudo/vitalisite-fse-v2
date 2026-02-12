@@ -19,7 +19,7 @@
     <div class="wp-block-column">
       <!-- wp:site-title {"level":0,"isLink":false} /-->
       <!-- wp:paragraph {"fontSize":"small"} -->
-      <p class="has-small-font-size">Un thème pensé pour inspirer confiance, avec des sections prêtes à l’emploi et faciles à personnaliser.</p>
+      <p class="has-small-font-size">Un thème pensé pour inspirer confiance, avec des sections prêtes à l'emploi et faciles à personnaliser.</p>
       <!-- /wp:paragraph -->
     </div>
     <!-- /wp:column -->
@@ -27,30 +27,9 @@
     <!-- wp:column -->
     <div class="wp-block-column">
       <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
-      <p style="font-weight:600">Entreprise</p>
+      <p style="font-weight:600">Navigation</p>
       <!-- /wp:paragraph -->
-      <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"fontSize":"small","layout":{"type":"constrained"}} -->
-      <div class="wp-block-group has-small-font-size">
-        <!-- wp:paragraph --><p>À propos</p><!-- /wp:paragraph -->
-        <!-- wp:paragraph --><p>Carrières</p><!-- /wp:paragraph -->
-        <!-- wp:paragraph --><p>Contact</p><!-- /wp:paragraph -->
-      </div>
-      <!-- /wp:group -->
-    </div>
-    <!-- /wp:column -->
-
-    <!-- wp:column -->
-    <div class="wp-block-column">
-      <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
-      <p style="font-weight:600">Ressources</p>
-      <!-- /wp:paragraph -->
-      <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"fontSize":"small","layout":{"type":"constrained"}} -->
-      <div class="wp-block-group has-small-font-size">
-        <!-- wp:paragraph --><p>Blog</p><!-- /wp:paragraph -->
-        <!-- wp:paragraph --><p>Guides</p><!-- /wp:paragraph -->
-        <!-- wp:paragraph --><p>Support</p><!-- /wp:paragraph -->
-      </div>
-      <!-- /wp:group -->
+      <!-- wp:navigation {"layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"8px"}},"fontSize":"small"} /-->
     </div>
     <!-- /wp:column -->
   </div>
@@ -61,13 +40,6 @@
     <!-- wp:paragraph {"fontSize":"small"} -->
     <p class="has-small-font-size">© 2026 Vitalisite. Tous droits réservés.</p>
     <!-- /wp:paragraph -->
-    <!-- wp:social-links {"iconColor":"primary","iconBackgroundColor":"base-soft","className":"is-style-default"} -->
-    <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default">
-      <!-- wp:social-link {"url":"#","service":"linkedin"} /-->
-      <!-- wp:social-link {"url":"#","service":"instagram"} /-->
-      <!-- wp:social-link {"url":"#","service":"facebook"} /-->
-    </ul>
-    <!-- /wp:social-links -->
   </div>
   <!-- /wp:group -->
 </div>
