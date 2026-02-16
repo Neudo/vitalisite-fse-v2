@@ -17,11 +17,6 @@
   gap: var(--wp--preset--spacing--30);
 }
 
-.vitalisite-testimonial-card__rating {
-  display: flex;
-  gap: 2px;
-}
-
 .vitalisite-stars {
   display: flex;
   gap: 2px;
@@ -111,4 +106,18 @@
 .editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-button-prev,
 .editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-button-next {
   display: none;
+}
+
+/* Ensure swiper-slide + card combo works */
+.swiper-slide.vitalisite-testimonial-card {
+  height: auto;
+}
+
+.vitalisite-testimonials-carousel {
+  padding-bottom: 15px;
+}
+
+.vitalisite-testimonials-carousel .swiper-pagination {
+  position: relative;
+  top: 5px !important;
 }
