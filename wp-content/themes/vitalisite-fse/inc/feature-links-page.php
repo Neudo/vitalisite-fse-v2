@@ -25,9 +25,16 @@ function links_page_add_excerpt_support() {
 add_action( 'init', __NAMESPACE__ . '\links_page_add_excerpt_support' );
 
 /**
- * Register the meta box for the links page.
+ * Register the meta box only on pages using the links template.
  */
-function links_page_add_meta_box() {
+function links_page_add_meta_box( $post_type, $post ) {
+	if ( 'page' !== $post_type || ! $post ) {
+		return;
+	}
+	$template = get_page_template_slug( $post->ID );
+	if ( 'template-links' !== $template ) {
+		return;
+	}
 	add_meta_box(
 		'vitalisite_links_page',
 		__( 'Liens de la page', 'vitalisite-fse' ),
@@ -37,7 +44,7 @@ function links_page_add_meta_box() {
 		'high'
 	);
 }
-add_action( 'add_meta_boxes', __NAMESPACE__ . '\links_page_add_meta_box' );
+add_action( 'add_meta_boxes', __NAMESPACE__ . '\links_page_add_meta_box', 10, 2 );
 
 /**
  * Toggle metabox visibility + hide block editor when template-links is active.

@@ -18,10 +18,6 @@
   transition: all 0.3s ease;
 }
 
-.vitalisite-accordion-item:last-child {
-  border-bottom: none;
-}
-
 .vitalisite-accordion-item summary {
   list-style: none; /* Hide default triangle */
   cursor: pointer;
@@ -98,7 +94,7 @@
 
 /* Custom Accordion Block Container */
 .vitalisite-accordion-container .vitalisite-accordion-item {
-  margin-bottom: 0 !important;
+  margin-bottom: 4px !important;
   border-bottom: 1px solid var(--wp--preset--color--border-light);
 }
 

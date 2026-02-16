@@ -7,7 +7,7 @@
  */
 
 if ( ! defined( 'VITALISITE_FSE_VERSION' ) ) {
-	define( 'VITALISITE_FSE_VERSION', '1.0.0' );
+	define( 'VITALISITE_FSE_VERSION', '1.0.1' );
 }
 
 // Désactiver TOUS les caches de patterns en développement

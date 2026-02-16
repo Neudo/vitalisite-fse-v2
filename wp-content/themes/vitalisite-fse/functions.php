@@ -83,6 +83,8 @@ function enqueue_global_styles() {
 	wp_enqueue_style( 'vitalisite-fse-bento', $uri . '/assets/styles/bento.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-footer', $uri . '/assets/styles/footer.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-features', $uri . '/assets/styles/features.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-pricing', $uri . '/assets/styles/pricing.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-doctor', $uri . '/assets/styles/doctor.css', array( 'vitalisite-fse' ), $version );
 
 	if ( is_page() && 'template-links' === get_page_template_slug() ) {
 		wp_enqueue_style( 'vitalisite-fse-links-page', $uri . '/assets/styles/links-page.css', array( 'vitalisite-fse' ), $version );

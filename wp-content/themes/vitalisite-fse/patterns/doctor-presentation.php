@@ -15,8 +15,8 @@
     <!-- wp:group {"className":"vitalisite-doctor-card","layout":{"type":"constrained","contentSize":"700px"}} -->
     <div class="wp-block-group vitalisite-doctor-card">
 
-        <!-- wp:image {"align":"center","width":"180px","height":"180px","scale":"cover","className":"is-style-rounded vitalisite-doctor-card__avatar"} -->
-        <figure class="wp-block-image aligncenter is-resized is-style-rounded vitalisite-doctor-card__avatar"><img alt="Photo du praticien" style="object-fit:cover;width:180px;height:180px"/></figure>
+        <!-- wp:image {"align":"center","width":"180px","height":"180px","scale":"cover","className":"vitalisite-doctor-card__avatar"} -->
+        <figure class="wp-block-image aligncenter is-resized vitalisite-doctor-card__avatar"><img alt="Photo du praticien" style="object-fit:cover;width:180px;height:180px"/></figure>
         <!-- /wp:image -->
 
         <!-- wp:heading {"textAlign":"center","level":3} -->
