@@ -24,9 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*  Constants                                                         */
 /* ------------------------------------------------------------------ */
 
-const OPTION_CABINET = 'vitalisite_cabinet';
-const OPTION_HOURS   = 'vitalisite_hours';
-const OPTION_SOCIAL  = 'vitalisite_social';
+const OPTION_CABINET  = 'vitalisite_cabinet';
+const OPTION_HOURS    = 'vitalisite_hours';
+const OPTION_SOCIAL   = 'vitalisite_social';
+const OPTION_FEATURES = 'vitalisite_features';
 
 /* ------------------------------------------------------------------ */
 /*  Helper: get a single option value with a default                  */
@@ -141,6 +142,57 @@ function register_settings() {
 			) )
 		);
 	}
+
+	/* ---- Tab 4: Features (Banner, Sticky CTA) ---- */
+
+	register_setting( 'vitalisite_tab_features', OPTION_FEATURES, array(
+		'type'              => 'array',
+		'sanitize_callback' => __NAMESPACE__ . '\sanitize_features',
+	) );
+
+	add_settings_section(
+		'vitalisite_banner_section',
+		__( 'Bannière d\'annonce', 'vitalisite-fse' ),
+		__NAMESPACE__ . '\section_banner_description',
+		'vitalisite_tab_features'
+	);
+
+	$banner_fields = get_banner_fields();
+	foreach ( $banner_fields as $id => $field ) {
+		add_settings_field(
+			$id,
+			$field['label'],
+			__NAMESPACE__ . '\render_field',
+			'vitalisite_tab_features',
+			'vitalisite_banner_section',
+			array_merge( $field, array(
+				'id'    => $id,
+				'group' => OPTION_FEATURES,
+			) )
+		);
+	}
+
+	add_settings_section(
+		'vitalisite_cta_section',
+		__( 'CTA sticky mobile', 'vitalisite-fse' ),
+		__NAMESPACE__ . '\section_cta_description',
+		'vitalisite_tab_features'
+	);
+
+	$cta_fields = get_cta_fields();
+	foreach ( $cta_fields as $id => $field ) {
+		add_settings_field(
+			$id,
+			$field['label'],
+			__NAMESPACE__ . '\render_field',
+			'vitalisite_tab_features',
+			'vitalisite_cta_section',
+			array_merge( $field, array(
+				'id'    => $id,
+				'group' => OPTION_FEATURES,
+			) )
+		);
+	}
 }
 add_action( 'admin_init', __NAMESPACE__ . '\register_settings' );
 
@@ -205,6 +257,68 @@ function get_cabinet_fields() {
 	);
 }
 
+function get_banner_fields() {
+	return array(
+		'banner_enabled' => array(
+			'label' => __( 'Activer la bannière', 'vitalisite-fse' ),
+			'type'  => 'checkbox',
+		),
+		'banner_text' => array(
+			'label'       => __( 'Texte de la bannière', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => __( 'Cabinet fermé du 24 au 31 décembre.', 'vitalisite-fse' ),
+		),
+		'banner_link_text' => array(
+			'label'       => __( 'Texte du lien (optionnel)', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => __( 'En savoir plus', 'vitalisite-fse' ),
+		),
+		'banner_link_url' => array(
+			'label'       => __( 'URL du lien (optionnel)', 'vitalisite-fse' ),
+			'type'        => 'url',
+			'placeholder' => 'https://…',
+		),
+		'banner_style' => array(
+			'label'       => __( 'Style de la bannière', 'vitalisite-fse' ),
+			'type'        => 'select',
+			'options'     => array(
+				'info'    => __( 'Information (bleu)', 'vitalisite-fse' ),
+				'warning' => __( 'Avertissement (orange)', 'vitalisite-fse' ),
+				'success' => __( 'Succès (vert)', 'vitalisite-fse' ),
+				'urgent'  => __( 'Urgent (rouge)', 'vitalisite-fse' ),
+			),
+		),
+		'banner_dismissible' => array(
+			'label' => __( 'Permettre de fermer la bannière', 'vitalisite-fse' ),
+			'type'  => 'checkbox',
+		),
+	);
+}
+
+function get_cta_fields() {
+	return array(
+		'cta_enabled' => array(
+			'label' => __( 'Activer le CTA sticky mobile', 'vitalisite-fse' ),
+			'type'  => 'checkbox',
+		),
+		'cta_text' => array(
+			'label'       => __( 'Texte du bouton', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => __( 'Prendre rendez-vous', 'vitalisite-fse' ),
+		),
+		'cta_url' => array(
+			'label'       => __( 'URL du bouton', 'vitalisite-fse' ),
+			'type'        => 'url',
+			'placeholder' => 'https://www.doctolib.fr/…',
+			'description' => __( 'Si vide, le lien de prise de RDV des infos du cabinet sera utilisé.', 'vitalisite-fse' ),
+		),
+		'cta_phone' => array(
+			'label' => __( 'Afficher aussi un bouton téléphone', 'vitalisite-fse' ),
+			'type'  => 'checkbox',
+		),
+	);
+}
+
 function get_social_fields() {
 	return array(
 		'facebook' => array(
@@ -252,6 +366,14 @@ function section_hours_description() {
 
 function section_social_description() {
 	echo '<p>' . esc_html__( 'Ajoutez vos liens de réseaux sociaux. Ils seront affichés dans le pied de page et les blocs sociaux.', 'vitalisite-fse' ) . '</p>';
+}
+
+function section_banner_description() {
+	echo '<p>' . esc_html__( 'Affichez une bannière d\'annonce en haut du site (fermeture exceptionnelle, promotion, info importante…).', 'vitalisite-fse' ) . '</p>';
+}
+
+function section_cta_description() {
+	echo '<p>' . esc_html__( 'Barre fixe en bas de l\'écran sur mobile avec un bouton d\'action (prise de RDV, appel…). Apparaît après un léger scroll.', 'vitalisite-fse' ) . '</p>';
 }
 
 /* ------------------------------------------------------------------ */
@@ -309,6 +431,20 @@ function render_field( $args ) {
 				esc_html( $description )
 			);
 			$description = ''; // Already rendered inline.
+			break;
+
+		case 'select':
+			$options = isset( $args['options'] ) ? $args['options'] : array();
+			printf( '<select name="%s" id="%s">', $name, esc_attr( $id ) );
+			foreach ( $options as $opt_value => $opt_label ) {
+				printf(
+					'<option value="%s" %s>%s</option>',
+					esc_attr( $opt_value ),
+					selected( $value, $opt_value, false ),
+					esc_html( $opt_label )
+				);
+			}
+			echo '</select>';
 			break;
 
 		default: // text, email, url
@@ -464,6 +600,36 @@ function sanitize_hours( $input ) {
 	return $clean;
 }
 
+function sanitize_features( $input ) {
+	$clean  = array();
+	$fields = array_merge( get_banner_fields(), get_cta_fields() );
+
+	foreach ( $fields as $id => $field ) {
+		$type = isset( $field['type'] ) ? $field['type'] : 'text';
+		if ( 'checkbox' === $type ) {
+			$clean[ $id ] = ! empty( $input[ $id ] ) ? '1' : '';
+			continue;
+		}
+		if ( ! isset( $input[ $id ] ) ) {
+			$clean[ $id ] = '';
+			continue;
+		}
+		switch ( $type ) {
+			case 'url':
+				$clean[ $id ] = esc_url_raw( $input[ $id ] );
+				break;
+			case 'select':
+				$valid = isset( $field['options'] ) ? array_keys( $field['options'] ) : array();
+				$clean[ $id ] = in_array( $input[ $id ], $valid, true ) ? $input[ $id ] : ( $valid[0] ?? '' );
+				break;
+			default:
+				$clean[ $id ] = sanitize_text_field( $input[ $id ] );
+				break;
+		}
+	}
+	return $clean;
+}
+
 function sanitize_social( $input ) {
 	$clean  = array();
 	$fields = get_social_fields();
@@ -484,9 +650,10 @@ function render_settings_page() {
 	}
 
 	$tabs = array(
-		'cabinet' => __( 'Infos du cabinet', 'vitalisite-fse' ),
-		'hours'   => __( 'Horaires', 'vitalisite-fse' ),
-		'social'  => __( 'Réseaux sociaux', 'vitalisite-fse' ),
+		'cabinet'  => __( 'Infos du cabinet', 'vitalisite-fse' ),
+		'hours'    => __( 'Horaires', 'vitalisite-fse' ),
+		'social'   => __( 'Réseaux sociaux', 'vitalisite-fse' ),
+		'features' => __( 'Fonctionnalités', 'vitalisite-fse' ),
 	);
 
 	$current_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'cabinet';

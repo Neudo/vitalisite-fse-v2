@@ -1,0 +1,180 @@
+/**
+ * Vitalisite FSE - Features Styles
+ *
+ * Announcement banner + Sticky mobile CTA bar.
+ *
+ * @package Vitalisite_FSE
+ * @since 1.0.0
+ */
+
+/* ══════════════════════════════════════════════
+   Announcement Banner
+   ══════════════════════════════════════════════ */
+
+.vitalisite-banner {
+  width: 100%;
+  font-size: var(--wp--preset--font-size--small, 0.875rem);
+  line-height: 1.5;
+  z-index: 100;
+}
+
+.vitalisite-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: var(--wp--style--global--wide-size, 1200px);
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.vitalisite-banner__text {
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.vitalisite-banner__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+  margin-left: 6px;
+}
+
+.vitalisite-banner__link:hover {
+  opacity: 0.85;
+}
+
+.vitalisite-banner__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.vitalisite-banner__close:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ── Banner style variants ── */
+
+.vitalisite-banner--info {
+  background-color: var(--wp--preset--color--primary, #0b3d91);
+  color: #fff;
+}
+
+.vitalisite-banner--warning {
+  background-color: var(--wp--preset--color--warning, #f59e0b);
+  color: #1a1a1a;
+}
+
+.vitalisite-banner--success {
+  background-color: var(--wp--preset--color--success, #10b981);
+  color: #fff;
+}
+
+.vitalisite-banner--urgent {
+  background-color: var(--wp--preset--color--error, #ef4444);
+  color: #fff;
+}
+
+.vitalisite-banner--hidden {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════
+   Sticky Mobile CTA Bar
+   ══════════════════════════════════════════════ */
+
+.vitalisite-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.vitalisite-sticky-cta.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vitalisite-sticky-cta__inner {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--wp--preset--color--border-light, #e2e8f0);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.vitalisite-sticky-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: var(--wp--preset--font-size--small, 0.875rem);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.vitalisite-sticky-cta__btn:active {
+  transform: scale(0.97);
+}
+
+.vitalisite-sticky-cta__btn--primary {
+  flex: 1;
+  background: var(--wp--preset--color--primary, #0b3d91);
+  color: #fff;
+  text-align: center;
+}
+
+.vitalisite-sticky-cta__btn--primary:hover {
+  background: #0a3278;
+}
+
+.vitalisite-sticky-cta__btn--phone {
+  flex-shrink: 0;
+  width: 48px;
+  padding: 12px;
+  background: var(--wp--preset--color--tertiary, #f1f5f9);
+  color: var(--wp--preset--color--primary, #0b3d91);
+}
+
+.vitalisite-sticky-cta__btn--phone:hover {
+  background: var(--wp--preset--color--border-light, #e2e8f0);
+}
+
+/* Hide on desktop (>= 768px) */
+@media (min-width: 768px) {
+  .vitalisite-sticky-cta {
+    display: none;
+  }
+}

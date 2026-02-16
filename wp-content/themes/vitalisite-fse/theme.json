@@ -528,5 +528,12 @@
       "fontSize": "var(--wp--preset--font-size--base)",
       "lineHeight": "var(--wp--custom--line-height--body)"
     }
-  }
+  },
+  "customTemplates": [
+    {
+      "name": "template-links",
+      "title": "Page de liens",
+      "postTypes": ["page"]
+    }
+  ]
 }

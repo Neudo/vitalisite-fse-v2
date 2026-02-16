@@ -31,6 +31,11 @@ require_once __DIR__ . '/inc/admin-settings.php';
 // Dynamic footer content injection.
 require_once __DIR__ . '/inc/footer-dynamic.php';
 
+// Features: announcement banner + sticky CTA + links page.
+require_once __DIR__ . '/inc/feature-banner.php';
+require_once __DIR__ . '/inc/feature-sticky-cta.php';
+require_once __DIR__ . '/inc/feature-links-page.php';
+
 /**
  * Check if the site is running in development mode.
  */
@@ -77,6 +82,11 @@ function enqueue_global_styles() {
 	wp_enqueue_style( 'vitalisite-fse-hero', $uri . '/assets/styles/hero.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-bento', $uri . '/assets/styles/bento.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-footer', $uri . '/assets/styles/footer.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-features', $uri . '/assets/styles/features.css', array( 'vitalisite-fse' ), $version );
+
+	if ( is_page() && 'template-links' === get_page_template_slug() ) {
+		wp_enqueue_style( 'vitalisite-fse-links-page', $uri . '/assets/styles/links-page.css', array( 'vitalisite-fse' ), $version );
+	}
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_global_styles' );
 
