@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/slider",
+  "version": "1.0.0",
+  "title": "Slider d'images",
+  "category": "vitalisite-blocks",
+  "description": "Carrousel d'images avec navigation automatique et manuelle",
+  "keywords": ["slider", "carrousel", "swiper", "images"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "showNavigation": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPagination": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplayDelay": {
+      "type": "number",
+      "default": 5000
+    },
+    "enableLoop": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

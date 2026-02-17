@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/accordion-item",
+  "version": "1.0.0",
+  "title": "Accordion Item",
+  "category": "vitalisite-blocks",
+  "icon": "arrow-down-alt2",
+  "description": "Élément d'accordéon avec question et réponse.",
+  "keywords": ["accordion", "faq", "item", "details"],
+  "textdomain": "vitalisite-fse",
+  "parent": ["vitalisite-fse/accordion"],
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "summary": {
+      "type": "string",
+      "source": "html",
+      "selector": "summary",
+      "default": "Question ?"
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}

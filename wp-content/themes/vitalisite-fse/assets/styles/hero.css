@@ -8,20 +8,31 @@
   max-width: var(--wp--custom--hero-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--wp--custom--hero-pad-x);
-  padding-right: var(--wp--custom--hero-pad-x);
+  padding: 64px 15px;
   box-sizing: border-box;
   width: 100%;
 }
 
-.vitalisite-hero {
-  padding-top: 64px;
-  padding-bottom: 64px;
+.vitalisite-hero__inner--filled {
+  background-color: var(--wp--preset--color--primary);
+  border-radius: var(--wp--custom--image-radius);
+  overflow: hidden;
+  padding: 64px 40px;
+  gap: 0;
 }
 
-.vitalisite-hero--tall {
-  padding-top: 72px;
-  padding-bottom: 72px;
+.vitalisite-style--mineral .vitalisite-hero__inner--filled {
+  border-radius: 0;
+}
+
+.vitalisite-hero {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.vitalisite-style--mineral .vitalisite-hero {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .vitalisite-hero__columns {

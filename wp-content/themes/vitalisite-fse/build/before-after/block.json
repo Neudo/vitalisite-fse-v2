@@ -1,0 +1,54 @@
+{
+  "apiVersion": 3,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vitalisite-fse/before-after",
+  "version": "1.0.0",
+  "title": "Avant / Après",
+  "category": "vitalisite-blocks",
+  "icon": "image-flip-horizontal",
+  "description": "Comparaison avant/après avec images côte à côte et labels.",
+  "keywords": ["avant", "apres", "before", "after", "comparaison"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "beforeImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "beforeImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "afterImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "afterImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "beforeLabel": {
+      "type": "string",
+      "default": "Avant"
+    },
+    "afterLabel": {
+      "type": "string",
+      "default": "Après"
+    },
+    "showLabels": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "disclaimerText": {
+      "type": "string",
+      "default": "Résultats individuels. Photos avec consentement du patient."
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}

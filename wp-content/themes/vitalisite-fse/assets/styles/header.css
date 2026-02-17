@@ -49,6 +49,10 @@
   opacity: 0.8;
 }
 
+.has-custom-logo .vitalisite-header--minimal .wp-block-site-title {
+  display: none;
+}
+
 .vitalisite-header--minimal .wp-block-site-title {
   margin: 0;
   font-size: 1.25rem;
@@ -195,26 +199,16 @@
 /* Tablet and below */
 @media (max-width: 781px) {
   .vitalisite-header--minimal .wp-block-group.alignwide {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
   }
 
   .vitalisite-header--minimal .wp-block-navigation {
-    width: 100%;
     justify-content: center;
   }
 
   .vitalisite-header__cta {
-    width: 100%;
-  }
-
-  .vitalisite-header__cta .wp-block-button {
-    width: 100%;
-  }
-
-  .vitalisite-header__cta .wp-block-button__link {
-    width: 100%;
-    text-align: center;
+    display: none;
   }
 }
 

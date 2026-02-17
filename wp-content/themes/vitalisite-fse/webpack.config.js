@@ -13,6 +13,7 @@ const blocks = [
   "video",
   "before-after",
   "opening-hours",
+  "contact-form",
 ];
 
 module.exports = {

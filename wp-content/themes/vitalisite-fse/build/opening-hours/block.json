@@ -1,0 +1,30 @@
+{
+  "apiVersion": 3,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vitalisite-fse/opening-hours",
+  "version": "1.0.0",
+  "title": "Horaires d'ouverture",
+  "category": "vitalisite-blocks",
+  "icon": "clock",
+  "description": "Affiche les horaires d'ouverture configurés dans les réglages du thème.",
+  "keywords": ["horaires", "ouverture", "planning", "heures"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "showStatus": {
+      "type": "boolean",
+      "default": true
+    },
+    "showEmergency": {
+      "type": "boolean",
+      "default": false
+    },
+    "emergencyText": {
+      "type": "string",
+      "default": "En cas d'urgence, appelez le 15."
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}

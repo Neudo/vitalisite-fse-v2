@@ -33,6 +33,7 @@ function get_pattern_categories() {
 		'vitalisite-pricing'         => __( 'Tarifs', 'vitalisite-fse' ),
 		'vitalisite-doctor'          => __( 'Présentation Docteur', 'vitalisite-fse' ),
 		'vitalisite-opening-hours'   => __( 'Horaires d\'ouverture', 'vitalisite-fse' ),
+		'vitalisite-contact'         => __( 'Contact', 'vitalisite-fse' ),
 	);
 }
 
@@ -63,10 +64,11 @@ function register_patterns_and_blocks() {
 
 	// Blocks with server-side render callbacks (global namespace functions).
 	$ssr_blocks = array(
-		'testimonials'  => 'vitalisite_render_testimonials_block',
-		'video'         => 'vitalisite_render_video_block',
+		'testimonials'   => 'vitalisite_render_testimonials_block',
+		'video'          => 'vitalisite_render_video_block',
 		'before-after'   => 'vitalisite_render_before_after_block',
 		'opening-hours'  => 'vitalisite_render_opening_hours_block',
+		'contact-form'   => 'vitalisite_render_contact_form_block',
 	);
 
 	foreach ( $ssr_blocks as $block => $callback ) {

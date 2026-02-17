@@ -1,9 +1,0 @@
-# Export ignore for distribution
-/.git export-ignore
-/.github export-ignore
-/_bmad export-ignore
-/_bmad-output export-ignore
-/node_modules export-ignore
-/.DS_Store export-ignore
-/CHANGELOG.md export-ignore
-/README.md export-ignore

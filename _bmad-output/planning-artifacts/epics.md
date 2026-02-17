@@ -13,6 +13,20 @@ This document provides the complete epic and story breakdown for wordpress-vital
 
 **User Priority:** Epic 1 (Block Patterns Migration) is the highest priority for immediate implementation.
 
+## Progress Tracker
+
+| Epic                                         | Status  | Progress                                                                                                    |
+| -------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------- | --- |
+| **Epic 1:** Block Patterns Migration         | ✅ DONE | 14/14 stories                                                                                               |
+| **Epic 2:** Theme Foundation & Design System | ✅ DONE | Templates, parts, theme.json, 5 style variations, 5 color palettes, 4 typography presets                    |
+| **Epic 3:** Custom Post Types                | ✅ DONE | CPT Testimonials ✅, CPT Specialities ✅ (CPT Doctors supprimé — non nécessaire)                            |     |
+| **Epic 4:** Admin Settings & Dynamic Content | ✅ DONE | Admin settings page (Cabinet, Horaires, Réseaux sociaux, Fonctionnalités), `vitalisite_get_option()` helper |
+| **Epic 5:** Forms & AJAX System              | ✅ DONE | Contact form AJAX + honeypot + rate limit + wp_mail                                                         |
+| **Epic 6:** Advanced Features & Enhancements | ✅ DONE | Banner ✅, Sticky CTA ✅, Links Page ✅                                                                     |
+| **Epic 7:** License System & Setup Wizard    | ✅ DONE | License API (activate/deactivate) + Setup Wizard 4 étapes                                                   |
+
+### Last Updated: 2026-02-16
+
 ## Requirements Inventory
 
 ### Functional Requirements
@@ -84,98 +98,131 @@ This document provides the complete epic and story breakdown for wordpress-vital
 
 ## Epic List
 
-### Epic 1: Block Patterns Migration (PRIORITÉ #1)
+### Epic 1: Block Patterns Migration (PRIORITÉ #1) — ✅ DONE
 
 **User Outcome:** Les utilisateurs peuvent créer des pages complètes avec tous les composants visuels de V1 (15 widgets Elementor) en utilisant l'éditeur de blocs WordPress natif.
 
 **FRs covered:** FR1, FR15
 
-**Implementation Notes:**
+**Implemented:**
 
-- Migration des 15 widgets Elementor vers Block Patterns FSE
-- Bundle Swiper.js 12.1.0 pour sliders/carousels
-- Patterns: Hero (3-5 variations), Slider, Bento Grid, Accordion, Cards, Text+Image, Forms, Testimonials, Doctor Profiles, Before/After, Opening Hours, Video, Pricing
-- CSS modulaire par composant (/assets/styles/)
-- JavaScript modulaire (slider.js, accordion.js, forms.js)
+- ✅ Swiper.js 12.1.0 bundled (`/assets/js/vendor/swiper.min.js`)
+- ✅ Hero patterns (3 variations: `hero-banniere.php`, `hero-banniere-v2.php`, `hero-banniere-v3.php`)
+- ✅ Slider block (`blocks/slider/`, `slider.js`, `slider.css`)
+- ✅ Bento Grid pattern (`bento-grid.php`, `bento.css`)
+- ✅ Accordion block (`blocks/accordion/`, `blocks/accordion-item/`, `accordion.css`)
+- ✅ Cards block (`blocks/cards-container/`, `blocks/card/`, `cards.css`)
+- ✅ Text+Image block (`blocks/text-image/`, `text-image.css`)
+- ✅ Testimonials block (`blocks/testimonials/`, `block-testimonials.php`, `testimonials.css`)
+- ✅ Doctor Presentation pattern (`doctor-presentation.php`, `doctor.css`)
+- ✅ Before/After block (`blocks/before-after/`, `block-before-after.php`, `before-after.css`)
+- ✅ Opening Hours block (`blocks/opening-hours/`, `block-opening-hours.php`, `opening-hours.css`)
+- ✅ Video block (`blocks/video/`, `block-video.php`, `video.css`)
+- ✅ Pricing pattern (`pricing.php`, `pricing.css`)
+- ❌ Contact Form — déplacé vers Epic 5 (Forms & AJAX)
 
-### Epic 2: Theme Foundation & Design System
+### Epic 2: Theme Foundation & Design System — ✅ DONE
 
 **User Outcome:** Le thème a une base solide FSE avec un design system cohérent, permettant une personnalisation visuelle complète sans code.
 
 **FRs covered:** FR14, FR12, FR13
 
-**Implementation Notes:**
+**Implemented:**
 
-- Implémenter theme.json avec design system complet (couleurs Vital Blue/Sky/Ink/Mist, typo Humanist Sans/Classique Serif, spacing)
-- Créer templates FSE (index, single-doctors, archive-doctors, single-specialities, archive-specialities, template-links-list)
-- Créer template parts (header, footer, sticky-cta)
-- Structure de fichiers organisée (/inc/, /patterns/, /templates/, /assets/)
+- ✅ `theme.json` complet (couleurs, typo, spacing, custom tokens `imageRadius`, `borderRadius`, etc.)
+- ✅ 5 style variations (`solaire.json`, `clinique.json`, `mineral.json`, `nocturne.json`, `nature.json`)
+- ✅ 5 palettes couleurs (`solaire-warm`, `clinique-blue`, `mineral-gray`, `nocturne-purple`, `nature-green`)
+- ✅ 4 presets typographiques (`system-modern`, `serif-classic`, `mixed-contrast`, `mono-tech`)
+- ✅ Templates FSE (`index.html`, `page.html`, `front-page.html`, `home.html`, `template-links.html`)
+- ✅ Template parts (`header.html`, `footer.html`)
+- ✅ Header pattern (`header.php`, `header-minimal.php`, `header.css`)
+- ✅ Footer pattern (`footer-simple.php`, `footer.css`, `footer-dynamic.php`)
+- ✅ CSS modulaire par composant (`/assets/styles/`)
+- ✅ Utilities CSS (`utilities.css`)
+- ⏳ Templates CPT manquants (`single-doctors`, `archive-doctors`, `single-specialities`, `archive-specialities`) — dépend d'Epic 3
 
-### Epic 3: Custom Post Types & Block Bindings
+### Epic 3: Custom Post Types — ✅ DONE
 
-**User Outcome:** Les utilisateurs peuvent gérer des profils de docteurs, spécialités et témoignages avec des champs personnalisés affichables via l'éditeur de blocs.
+**User Outcome:** Les utilisateurs peuvent gérer des spécialités et témoignages avec des champs personnalisés.
 
-**FRs covered:** FR2, FR3
+**FRs covered:** FR2
 
-**Implementation Notes:**
+**Implemented:**
 
-- Enregistrer 3 CPTs (Doctors, Specialities, Testimonials) dans /inc/cpt-registration.php
-- Implémenter meta fields avec Block Bindings API (WordPress 6.5+) dans /inc/block-bindings.php
-- Créer patterns pour afficher les CPTs (doctor-profile, testimonials carousel)
-- Templates CPT (single-doctors.html, archive-doctors.html, single-specialities.html, archive-specialities.html)
+- ✅ CPT Testimonials (`cpt-testimonials.php`) — meta fields (comment, rating, author_role) + metabox admin
+- ✅ CPT Specialities (`cpt-specialities.php`)
+- ~~CPT Doctors~~ — supprimé (décision utilisateur 2026-02-16, non nécessaire)
 
-### Epic 4: Customizer & Dynamic Content
+**Hors scope:**
 
-**User Outcome:** Les utilisateurs peuvent configurer les informations de leur cabinet (adresse, téléphone, horaires) via le Customizer WordPress natif, affichées automatiquement dans les patterns.
+- Block Bindings API (FR3) — non implémenté, les meta fields sont gérés via metabox classiques
+- Templates CPT archives — à ajouter si besoin ultérieurement
+
+### Epic 4: Admin Settings & Dynamic Content — ✅ DONE
+
+**User Outcome:** Les utilisateurs peuvent configurer les informations de leur cabinet (adresse, téléphone, horaires) via une page d'administration dédiée, affichées automatiquement dans les patterns.
 
 **FRs covered:** FR5, FR6, FR7
 
-**Implementation Notes:**
+**Implemented:**
 
-- Migrer de Kirki vers Customizer API native dans /inc/customizer.php
-- Global settings (adresse, téléphone, email, booking link)
-- Opening hours system (détaillé par jour avec toggle simple/détaillé)
-- Intégration Customizer ↔ Patterns via `get_theme_mod()`
+- ✅ Page admin settings (`admin-settings.php`) avec 4 onglets : Cabinet, Horaires, Réseaux sociaux, Fonctionnalités
+- ✅ Global settings (nom docteur, adresse, téléphone, email, booking link, spécialité, photo)
+- ✅ Opening hours system (par jour, matin/après-midi, fermé/ouvert)
+- ✅ Réseaux sociaux (Google, Doctolib, Facebook, Instagram, LinkedIn, YouTube)
+- ✅ Fonctionnalités (bannière, sticky CTA, toggle enable/disable)
+- ✅ Helper `vitalisite_get_option()` pour accès aux options depuis patterns/templates
+- ✅ Footer dynamique (`footer-dynamic.php`) — injection automatique des infos cabinet
 
-### Epic 5: Forms & AJAX System
+### Epic 5: Forms & AJAX System — ✅ DONE
 
 **User Outcome:** Les utilisateurs peuvent recevoir des demandes de contact via un formulaire AJAX intégré, sans plugin externe.
 
 **FRs covered:** FR4
 
-**Implementation Notes:**
+**Implemented:**
 
-- Créer custom contact form block ou utiliser core/form (WP 6.8+)
-- AJAX submission avec nonces dans /inc/ajax-handlers.php
-- Email notifications via wp_mail()
-- Spam protection
-- JavaScript dans /assets/js/forms.js
+- ✅ Contact form pattern (`patterns/contact-form.php`) — Nom, Email, Téléphone, Sujet, Message
+- ✅ AJAX handler (`inc/ajax-contact-form.php`) — nonce, validation, `wp_mail()`
+- ✅ Spam protection — honeypot (champ caché) + rate limiting (transient 30s par IP)
+- ✅ JavaScript (`assets/js/contact-form.js`) — submit AJAX, feedback, erreurs par champ, reset
+- ✅ CSS (`assets/styles/contact-form.css`) — responsive, tokens thème, états erreur/succès
+- ✅ Debug logging en mode `WP_DEBUG` pour tests locaux
 
-### Epic 6: Advanced Features & Enhancements
+### Epic 6: Advanced Features & Enhancements — ✅ DONE
 
 **User Outcome:** Les utilisateurs bénéficient de fonctionnalités avancées (CTA sticky, bannière annonces, page liens) pour améliorer l'engagement et la conversion.
 
 **FRs covered:** FR8, FR9, FR10
 
-**Implementation Notes:**
+**Implemented:**
 
-- Announcement banner system (enable/disable toggle via Customizer)
-- Sticky mobile CTA bar (scroll-based animation, template part sticky-cta.html)
-- Links Page (Linktree alternative) avec template custom template-links-list.html
-- Custom JS pour scroll behavior
+- ✅ Announcement banner (`feature-banner.php`) — texte, style, lien, dismiss avec localStorage persistence (hash-based)
+- ✅ Sticky mobile CTA bar (`feature-sticky-cta.php`) — bouton RDV + téléphone, scroll-based
+- ✅ Links Page (`feature-links-page.php`) — template custom `template-links.html`, metabox repeater (titre, description, liens), rendu PHP dynamique, CSS dédié (`links-page.css`)
+- ✅ CSS features (`features.css`) — banner + sticky CTA styles
+- ✅ Metabox conditionnelle (visible uniquement sur template "Page de liens")
+- ✅ Éditeur Gutenberg masqué sur le template Links Page
 
-### Epic 7: License System & Setup Wizard
+### Epic 7: License System & Setup Wizard — ✅ DONE
 
-**User Outcome:** Les nouveaux utilisateurs peuvent activer et configurer le thème facilement via un wizard guidé, avec validation de licence Supabase.
+**User Outcome:** Les nouveaux utilisateurs peuvent activer et configurer le thème facilement via un wizard guidé, avec validation de licence via l'API vitalisite.com.
 
 **FRs covered:** FR11
 
-**Implementation Notes:**
+**Implemented:**
 
-- Maintenir Supabase license validation dans /inc/license.php
-- Setup Wizard 4 étapes (license, doctor info, customization, done) dans /inc/setup-wizard.php
-- Migration depuis OLD-VERSION
-- Assets admin (wizard.css, wizard.js) dans /assets/admin/
+- ✅ License system (`inc/license.php`) — activate/deactivate via API `vitalisite.com/api/check-license` et `desactivate-license`
+- ✅ AJAX handlers sécurisés (nonce + `manage_options`) pour activation/désactivation
+- ✅ Helpers `is_license_active()`, `get_license_key()`
+- ✅ Setup Wizard 4 étapes (`inc/setup-wizard.php`) :
+  - Étape 1 : Activation licence (AJAX)
+  - Étape 2 : Infos cabinet (nom, spécialité, téléphone, email, adresse, booking URL)
+  - Étape 3 : Choix de style variation (lecture dynamique des fichiers `/styles/*.json`)
+  - Étape 4 : Terminé — liens vers éditeur de site, réglages, voir le site
+- ✅ Redirect automatique vers le wizard à la première activation du thème
+- ✅ Sous-menu "Assistant" dans le menu Vitalisite
+- ✅ Assets admin (`assets/admin/wizard.css`, `assets/admin/wizard.js`)
 
 ## Epic 1: Block Patterns Migration
 
@@ -617,4 +664,3 @@ So that I can display my service prices clearly.
 **Then** CSS should be in `/assets/styles/pricing.css`
 **And** pricing should use BEM naming (`.vitalisite-pricing`, `.vitalisite-pricing__card`)
 **And** featured card should have modifier class (`.vitalisite-pricing__card--featured`)
-

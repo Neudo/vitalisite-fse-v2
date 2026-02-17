@@ -1,0 +1,1 @@
+.vitalisite-cards-grid{display:grid;gap:2rem;grid-template-columns:1fr;justify-content:start;width:100%}@media(min-width:768px){.vitalisite-cards-grid{gap:2rem;grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.vitalisite-cards-grid{grid-template-columns:repeat(3,1fr)}}

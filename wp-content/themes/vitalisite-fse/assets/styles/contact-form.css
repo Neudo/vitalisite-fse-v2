@@ -1,0 +1,154 @@
+/* ===========================
+   Vitalisite Contact Form
+   =========================== */
+
+.vitalisite-contact-section {
+  padding: var(--wp--preset--spacing--70) 0;
+}
+
+.vitalisite-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp--preset--spacing--30);
+  max-width: 640px;
+  margin: 25px auto 0;
+}
+
+/* Field wrapper */
+.vitalisite-contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vitalisite-contact-form__field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--wp--preset--color--main);
+}
+
+.vitalisite-contact-form__field label .required {
+  color: var(--wp--preset--color--main-accent);
+  margin-left: 2px;
+}
+
+/* Inputs */
+.vitalisite-contact-form__field input,
+.vitalisite-contact-form__field textarea,
+.vitalisite-contact-form__field select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--wp--preset--color--border-light, #e2e8f0);
+  border-radius: var(--wp--custom--border-radius--cta, 6px);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--wp--preset--color--main);
+  background-color: var(--wp--preset--color--base, #fff);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.vitalisite-contact-form__field input:focus,
+.vitalisite-contact-form__field textarea:focus,
+.vitalisite-contact-form__field select:focus {
+  outline: none;
+  border-color: var(--wp--preset--color--main-accent);
+  box-shadow: 0 0 0 3px rgba(var(--wp--preset--color--main-accent), 0.15);
+}
+
+.vitalisite-contact-form__field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Two-column row */
+.vitalisite-contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--wp--preset--spacing--30);
+}
+
+@media (max-width: 600px) {
+  .vitalisite-contact-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Error state */
+.vitalisite-contact-form__field--error input,
+.vitalisite-contact-form__field--error textarea {
+  border-color: #dc2626;
+}
+
+.vitalisite-contact-form__error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  min-height: 0;
+}
+
+/* Honeypot — visually hidden */
+.vitalisite-contact-form__hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Submit button */
+.vitalisite-contact-form__submit {
+  align-self: flex-start;
+}
+
+.vitalisite-contact-form__submit button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--wp--custom--border-radius--cta, 6px);
+  background-color: var(--wp--preset--color--main-accent);
+  color: var(--wp--preset--color--base, #fff);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vitalisite-contact-form__submit button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.vitalisite-contact-form__submit button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Feedback messages */
+.vitalisite-contact-form__feedback {
+  padding: 14px 18px;
+  border-radius: var(--wp--custom--border-radius--cta, 6px);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.vitalisite-contact-form__feedback--success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.vitalisite-contact-form__feedback--error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}

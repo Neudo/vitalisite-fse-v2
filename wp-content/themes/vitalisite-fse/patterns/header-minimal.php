@@ -12,27 +12,17 @@
  */
 ?>
 <!-- wp:group {"tagName":"header","metadata":{"name":"Header Minimal"},"align":"full","className":"vitalisite-header vitalisite-header--minimal","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<header class="wp-block-group alignfull vitalisite-header vitalisite-header--minimal" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)">
-  <a class="skip-link screen-reader-text" href="#primary">Aller au contenu principal</a>
-  <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
-  <div class="wp-block-group alignwide">
-    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-    <div class="wp-block-group">
-      <!-- wp:site-logo {"width":44} /-->
-      <!-- wp:site-title {"level":0} /-->
-    </div>
-    <!-- /wp:group -->
+<header class="wp-block-group alignfull vitalisite-header vitalisite-header--minimal" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group alignfull" style="padding-right:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":165} /--></div>
+<!-- /wp:group -->
 
-    <!-- wp:navigation {"openSubmenusOnClick":true,"icon":"menu","layout":{"type":"flex","justifyContent":"center"}} /-->
+<!-- wp:navigation {"openSubmenusOnClick":true,"icon":"menu","layout":{"type":"flex","justifyContent":"center"}} /-->
 
-    <!-- wp:buttons {"className":"vitalisite-header__cta"} -->
-    <div class="wp-block-buttons vitalisite-header__cta">
-      <!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
-      <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Prendre rendez-vous</a></div>
-      <!-- /wp:button -->
-    </div>
-    <!-- /wp:buttons -->
-  </div>
-  <!-- /wp:group -->
-</header>
+<!-- wp:buttons {"className":"vitalisite-header__cta"} -->
+<div class="wp-block-buttons vitalisite-header__cta"><!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Prendre rendez-vous ok</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></header>
 <!-- /wp:group -->
