@@ -87,7 +87,7 @@
 }
 
 .vitalisite-header--minimal .wp-block-navigation-item a {
-  color: var(--wp--preset--color--vital-ink);
+  color: var(--wp--preset--color--base);
   text-decoration: none;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -111,6 +111,10 @@
 .vitalisite-header--minimal .wp-block-navigation-item.current-menu-item a {
   color: var(--wp--preset--color--vital-blue);
   font-weight: 600;
+}
+
+.vitalisite-drawer li {
+  color: var(--wp--preset--color--base);
 }
 
 /* Submenu styles */
@@ -193,35 +197,216 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE NAV — ANTI-FLASH
+   The header is hidden until JS determines the
+   nav mode (desktop vs mobile). The .is-nav-ready
+   class is added by responsive-nav.js after the
+   first overflow check.
    ============================================ */
 
-/* Tablet and below */
-@media (max-width: 781px) {
-  .vitalisite-header--minimal .wp-block-group.alignwide {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .vitalisite-header--minimal .wp-block-navigation {
-    justify-content: center;
-  }
-
-  .vitalisite-header__cta {
-    display: none;
-  }
+.vitalisite-header--minimal {
+  visibility: hidden;
 }
 
-/* Mobile menu overlay */
+.vitalisite-header--minimal.is-nav-ready {
+  visibility: visible;
+}
+
+/* ============================================
+   RESPONSIVE NAV — DESKTOP MODE
+   ============================================ */
+
+.vitalisite-header--minimal.is-desktop-nav .wp-block-navigation {
+  flex-grow: 1;
+}
+
+.vitalisite-header--minimal.is-desktop-nav .vitalisite-burger {
+  display: none;
+}
+
+/* ============================================
+   RESPONSIVE NAV — MOBILE MODE
+   In mobile mode, the inline nav + CTA are hidden.
+   A custom burger button + drawer are injected by JS.
+   ============================================ */
+
+.vitalisite-header--minimal.is-mobile-nav .wp-block-navigation {
+  display: none;
+}
+
+.vitalisite-header--minimal.is-mobile-nav .vitalisite-header__cta {
+  display: none;
+}
+
+/* --- Burger button (injected by JS) --- */
+
+.vitalisite-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--wp--preset--color--vital-ink);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  margin-left: auto;
+}
+
+.vitalisite-burger:hover {
+  background-color: rgba(11, 61, 145, 0.05);
+  color: var(--wp--preset--color--vital-blue);
+}
+
+.vitalisite-burger:focus-visible {
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+.is-mobile-nav .vitalisite-burger {
+  display: flex;
+}
+
+/* --- Backdrop --- */
+
+.vitalisite-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.25);
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+.vitalisite-drawer-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0s;
+}
+
+/* --- Drawer panel (slides from right) --- */
+
+.vitalisite-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--wp--preset--color--primary);
+  box-shadow: -4px 0 24px rgba(15, 23, 42, 0.12);
+  z-index: 100000;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.vitalisite-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* --- Close button --- */
+
+.vitalisite-drawer__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  padding: 0.625rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--wp--preset--color--base);
+  z-index: 1;
+}
+
+.vitalisite-drawer__close:focus-visible {
+  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline-offset: 2px;
+}
+
+/* --- Drawer nav content --- */
+
+.vitalisite-drawer__nav {
+  padding: 5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.vitalisite-drawer__nav .wp-block-navigation__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vitalisite-drawer__nav .wp-block-navigation-item {
+  margin: 0;
+}
+
+.vitalisite-drawer__nav .wp-block-navigation-item a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.vitalisite-drawer__nav .wp-block-navigation-item a:hover {
+  background-color: rgba(11, 61, 145, 0.05);
+  color: var(--wp--preset--color--vital-blue);
+}
+
+.vitalisite-drawer__nav .wp-block-navigation-item.current-menu-item a {
+  color: var(--wp--preset--color--vital-blue);
+  font-weight: 600;
+}
+
+/* Submenu inside drawer */
+.vitalisite-drawer__nav .wp-block-navigation__submenu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid rgba(15, 23, 42, 0.08);
+}
+
+.vitalisite-drawer__nav .wp-block-navigation__submenu-container a {
+  font-size: 0.9375rem;
+  padding: 0.5rem 1rem;
+}
+
+/* ============================================
+   FALLBACK — no JS
+   If JS never runs, reveal the header after 1s
+   and use a media query as fallback.
+   ============================================ */
+
 @media (max-width: 781px) {
-  .vitalisite-header--minimal
-    .wp-block-navigation__responsive-container.is-menu-open {
-    background-color: var(--wp--preset--color--vital-mist);
-    padding: 2rem;
+  .vitalisite-header--minimal:not(.is-nav-ready) {
+    visibility: visible;
   }
 
-  .vitalisite-header--minimal .wp-block-navigation__responsive-container-close {
-    color: var(--wp--preset--color--vital-ink);
+  .vitalisite-header--minimal:not(.is-nav-ready) .vitalisite-header__cta {
+    display: none;
   }
 }
 

@@ -198,6 +198,38 @@ function enqueue_block_styles() {
 add_action( 'init', __NAMESPACE__ . '\enqueue_block_styles' );
 
 /**
+ * Enqueue responsive nav script — render-blocking in <head> to prevent flash.
+ * Must run BEFORE first paint so the header is revealed only after the
+ * desktop/mobile mode has been determined.
+ */
+function enqueue_responsive_nav() {
+	$version = VITALISITE_FSE_VERSION;
+	$uri     = get_template_directory_uri();
+
+	// false = load in <head> (not in footer)
+	wp_enqueue_script(
+		'vitalisite-fse-responsive-nav',
+		$uri . '/assets/js/responsive-nav.js',
+		array(),
+		$version,
+		false
+	);
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_responsive_nav' );
+
+/**
+ * Remove defer/async from the responsive-nav script so it is truly
+ * render-blocking. WordPress 6.3+ adds defer by default.
+ */
+function responsive_nav_remove_defer( $tag, $handle ) {
+	if ( 'vitalisite-fse-responsive-nav' === $handle ) {
+		$tag = str_replace( array( ' defer', ' async' ), '', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', __NAMESPACE__ . '\responsive_nav_remove_defer', 10, 2 );
+
+/**
  * Enqueue vendor scripts (Swiper) and block-specific JS.
  */
 function enqueue_scripts() {

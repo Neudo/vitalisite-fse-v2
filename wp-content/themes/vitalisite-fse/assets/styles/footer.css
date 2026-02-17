@@ -9,7 +9,7 @@
 .vitalisite-footer {
   background-color: var(--wp--preset--color--main, #2d4a3e);
   color: var(--wp--preset--color--base, #fff);
-  padding: 48px 0 32px;
+  padding: 48px 20px 32px;
 }
 
 .vitalisite-footer__inner {

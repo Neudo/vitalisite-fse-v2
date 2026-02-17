@@ -17,11 +17,11 @@
 <div class="wp-block-group"><!-- wp:site-logo {"width":165} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"openSubmenusOnClick":true,"icon":"menu","layout":{"type":"flex","justifyContent":"center"}} /-->
+<!-- wp:navigation {"overlayMenu":"never","openSubmenusOnClick":true,"layout":{"type":"flex","justifyContent":"center"}} /-->
 
 <!-- wp:buttons {"className":"vitalisite-header__cta"} -->
 <div class="wp-block-buttons vitalisite-header__cta"><!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Prendre rendez-vous ok</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Prendre rendez-vous</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></header>

@@ -10,6 +10,7 @@
 /wp-content/languages
 /wp-content/plugins/index.php
 /wp-content/plugins/vitalisite-blocks-demo/node_modules
+/wp-content/themes/vitalisite-fse/node_modules
 /wp-content/themes/index.php
 # /wp-content/themes/ollie/*
 /wp-includes/

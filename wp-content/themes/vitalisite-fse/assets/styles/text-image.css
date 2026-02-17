@@ -11,17 +11,24 @@
    Image Styles
    ========================================================================== */
 
-/* Enforce theme radius on specific images used in patterns */
-.vitalisite-text-image .vitalisite-rounded-image img {
-  border-radius: var(--wp--custom--image-radius);
-  object-fit: cover;
-  width: 100%;
-  height: auto;
+/* Section padding */
+
+.vitalisite-text-image .wp-block-columns {
+  margin-bottom: 0;
 }
 
-/* Ensure columns stack nicely on mobile if core doesn't handle it perfectly with padding */
+/* Ensure columns stack nicely on mobile */
 @media (max-width: 781px) {
   .vitalisite-text-image .wp-block-columns {
     gap: var(--wp--preset--spacing--50);
+  }
+
+  .vitalisite-text-image .wp-block-image {
+    max-width: 100%;
+  }
+
+  .vitalisite-text-image .wp-block-image img {
+    max-width: 100%;
+    height: auto;
   }
 }
