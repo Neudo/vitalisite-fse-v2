@@ -26,8 +26,8 @@
 
             <!-- wp:buttons -->
             <div class="wp-block-buttons">
-                <!-- wp:button -->
-                <div class="wp-block-button"><a class="wp-block-button__link">En savoir plus</a></div>
+                <!-- wp:button {"className":"btn-primary"} -->
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link">En savoir plus</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->

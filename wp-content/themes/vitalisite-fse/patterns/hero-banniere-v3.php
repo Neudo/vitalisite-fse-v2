@@ -8,8 +8,8 @@
  * Description: Bannière avec image en bas, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-section big-section"} -->
-<section class="wp-block-group alignfull vitalisite-hero vitalisite-section big-section">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero vitalisite-section">
   <!-- wp:group {"className":"vitalisite-hero__inner","style":{"spacing":{"blockGap":"16px"}}} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
@@ -22,12 +22,12 @@
 
     <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"24px"}}}} -->
     <div class="wp-block-buttons" style="margin-top:24px">
-      <!-- wp:button {"backgroundColor":"primary","textColor":"base","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}}} -->
-      <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background" style="padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">Prendre rendez-vous</a></div>
+      <!-- wp:button {"className":"btn-primary"} -->
+      <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
       <!-- /wp:button -->
 
-      <!-- wp:button {"textColor":"ink","style":{"border":{"width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"borderColor":"ink","className":"is-style-outline"} -->
-      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ink-color has-text-color" style="border-width:1px;border-style:solid;padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px">En savoir plus</a></div>
+      <!-- wp:button {"className":"btn-secondary"} -->
+      <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">En savoir plus</a></div>
       <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

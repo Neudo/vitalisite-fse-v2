@@ -28,8 +28,8 @@
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
     <div class="wp-block-buttons mt-40">
-        <!-- wp:button -->
-        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Voir tous les avis</a></div>
+        <!-- wp:button {"className":"btn-primary"} -->
+        <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Voir tous les avis</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

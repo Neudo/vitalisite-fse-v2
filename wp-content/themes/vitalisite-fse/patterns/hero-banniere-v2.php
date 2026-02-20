@@ -22,12 +22,12 @@
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"vitalisite-hero__actions"} -->
     <div class="wp-block-buttons vitalisite-hero__actions">
-      <!-- wp:button {"backgroundColor":"base","textColor":"primary"} -->
-      <div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background">Prendre rendez-vous</a></div>
+      <!-- wp:button {"className":"btn-primary-soft"} -->
+      <div class="wp-block-button btn-primary-soft"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
       <!-- /wp:button -->
 
-      <!-- wp:button {"textColor":"base","borderColor":"base","className":"is-style-outline"} -->
-      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color">En savoir plus</a></div>
+      <!-- wp:button {"className":"btn-secondary-soft"} -->
+      <div class="wp-block-button btn-secondary-soft"><a class="wp-block-button__link">En savoir plus</a></div>
       <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

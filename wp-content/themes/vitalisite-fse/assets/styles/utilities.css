@@ -63,6 +63,32 @@
   outline-offset: 2px;
 }
 
+/* ==========================================================================
+   Button Utilities
+   ========================================================================== */
+
+.btn-primary .wp-block-button__link {
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--primary-foreground);
+  border: 2px solid var(--wp--preset--color--primary);
+}
+
+.btn-secondary .wp-block-button__link {
+  background-color: transparent;
+  color: var(--wp--preset--color--primary);
+  border: 2px solid var(--wp--preset--color--primary);
+}
+
+.btn-primary-soft .wp-block-button__link {
+  background-color: var(--wp--preset--color--primary-soft);
+  color: var(--wp--preset--color--primary);
+}
+
+.btn-secondary-soft .wp-block-button__link {
+  border: 2px solid var(--wp--preset--color--secondary-soft);
+  color: var(--wp--preset--color--primary-foreground);
+}
+
 /* Accordion Fixes */
 details.vitalisite-accordion-item.is-layout-flow > * {
   margin-block-start: 0 !important;

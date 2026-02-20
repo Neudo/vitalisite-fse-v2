@@ -43,8 +43,8 @@
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
-                <!-- wp:button -->
-                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Prendre rendez-vous</a></div>
+                <!-- wp:button {"className":"btn-primary"} -->
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -67,8 +67,8 @@
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
-                <!-- wp:button -->
-                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Prendre rendez-vous</a></div>
+                <!-- wp:button {"className":"btn-primary"} -->
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -91,8 +91,8 @@
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
-                <!-- wp:button -->
-                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Prendre rendez-vous</a></div>
+                <!-- wp:button {"className":"btn-primary"} -->
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -104,8 +104,8 @@
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
     <div class="wp-block-buttons mt-40">
-        <!-- wp:button {"className":"is-style-outline"} -->
-        <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#">Voir tous nos tarifs</a></div>
+        <!-- wp:button {"className":"btn-secondary"} -->
+        <div class="wp-block-button btn-secondary"><a class="wp-block-button__link" href="#">Voir tous nos tarifs</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

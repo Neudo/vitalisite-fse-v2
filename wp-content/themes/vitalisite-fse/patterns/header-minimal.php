@@ -20,8 +20,8 @@
 <!-- wp:navigation {"overlayMenu":"never","openSubmenusOnClick":true,"layout":{"type":"flex","justifyContent":"center"}} /-->
 
 <!-- wp:buttons {"className":"vitalisite-header__cta"} -->
-<div class="wp-block-buttons vitalisite-header__cta"><!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">Prendre rendez-vous</a></div>
+<div class="wp-block-buttons vitalisite-header__cta"><!-- wp:button {"className":"btn-primary"} -->
+<div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></header>

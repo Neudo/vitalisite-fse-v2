@@ -30,8 +30,8 @@
 
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"vitalisite-carrousel__cta","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-buttons vitalisite-carrousel__cta" style="margin-top:var(--wp--preset--spacing--40)">
-		<!-- wp:button {"className":"wp-element-button"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Prendre rendez-vous</a></div>
+		<!-- wp:button {"className":"btn-primary"} -->
+		<div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
