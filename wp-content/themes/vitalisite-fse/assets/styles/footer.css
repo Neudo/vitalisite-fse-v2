@@ -7,7 +7,7 @@
 
 /* ── Container ── */
 .vitalisite-footer {
-  background-color: var(--wp--preset--color--main, #2d4a3e);
+  background-color: var(--wp--preset--color--ink, #0f172a);
   color: var(--wp--preset--color--base, #fff);
   padding: 48px 20px 32px;
 }

@@ -18,22 +18,31 @@
     "color": {
       "palette": [
         { "name": "Primaire", "slug": "primary", "color": "#C24B3A" },
+        { "name": "Primaire doux", "slug": "primary-soft", "color": "#F7C3A0" },
         {
-          "name": "Primaire doux",
-          "slug": "primary-accent",
-          "color": "#F7C3A0"
+          "name": "Primaire texte",
+          "slug": "primary-foreground",
+          "color": "#FFFFFF"
         },
         { "name": "Secondaire", "slug": "secondary", "color": "#E07A5F" },
         {
           "name": "Secondaire doux",
-          "slug": "secondary-accent",
+          "slug": "secondary-soft",
           "color": "#FFE8D6"
         },
-        { "name": "Encre", "slug": "ink", "color": "#3B2F2F" },
-        { "name": "Encre douce", "slug": "ink-soft", "color": "#5E4A4A" },
+        {
+          "name": "Secondaire texte",
+          "slug": "secondary-foreground",
+          "color": "#FFFFFF"
+        },
         { "name": "Base", "slug": "base", "color": "#FFF9F4" },
         { "name": "Base douce", "slug": "base-soft", "color": "#FFF1E6" },
-        { "name": "Bordure", "slug": "border", "color": "#E6D5C8" }
+        { "name": "Bordure", "slug": "border", "color": "#E6D5C8" },
+        { "name": "Encre", "slug": "ink", "color": "#3B2F2F" },
+        { "name": "Encre douce", "slug": "ink-soft", "color": "#5E4A4A" },
+        { "name": "Succès", "slug": "success", "color": "#16A34A" },
+        { "name": "Avertissement", "slug": "warning", "color": "#D97706" },
+        { "name": "Erreur", "slug": "error", "color": "#DC2626" }
       ]
     },
     "typography": {

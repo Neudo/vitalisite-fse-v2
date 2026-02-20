@@ -5,56 +5,32 @@
   "settings": {
     "color": {
       "palette": [
+        { "name": "Primaire", "slug": "primary", "color": "#334155" },
+        { "name": "Primaire doux", "slug": "primary-soft", "color": "#CBD5E1" },
         {
-          "name": "Primary",
-          "slug": "primary",
-          "color": "#334155"
+          "name": "Primaire texte",
+          "slug": "primary-foreground",
+          "color": "#FFFFFF"
         },
+        { "name": "Secondaire", "slug": "secondary", "color": "#0F766E" },
         {
-          "name": "Primary Accent",
-          "slug": "primary-accent",
-          "color": "#CBD5E1"
-        },
-        {
-          "name": "Secondary",
-          "slug": "secondary",
-          "color": "#0F766E"
-        },
-        {
-          "name": "Secondary Accent",
-          "slug": "secondary-accent",
+          "name": "Secondaire doux",
+          "slug": "secondary-soft",
           "color": "#CCFBF1"
         },
         {
-          "name": "Contrast",
-          "slug": "main",
+          "name": "Secondaire texte",
+          "slug": "secondary-foreground",
           "color": "#0F172A"
         },
-        {
-          "name": "Contrast Accent",
-          "slug": "main-accent",
-          "color": "#64748B"
-        },
-        {
-          "name": "Base",
-          "slug": "base",
-          "color": "#FFFFFF"
-        },
-        {
-          "name": "Tint",
-          "slug": "tertiary",
-          "color": "#F8FAFC"
-        },
-        {
-          "name": "Border Light",
-          "slug": "border-light",
-          "color": "#E2E8F0"
-        },
-        {
-          "name": "Border Dark",
-          "slug": "border-dark",
-          "color": "#475569"
-        }
+        { "name": "Base", "slug": "base", "color": "#FFFFFF" },
+        { "name": "Base douce", "slug": "base-soft", "color": "#F8FAFC" },
+        { "name": "Bordure", "slug": "border", "color": "#E2E8F0" },
+        { "name": "Encre", "slug": "ink", "color": "#0F172A" },
+        { "name": "Encre douce", "slug": "ink-soft", "color": "#64748B" },
+        { "name": "Succès", "slug": "success", "color": "#16A34A" },
+        { "name": "Avertissement", "slug": "warning", "color": "#D97706" },
+        { "name": "Erreur", "slug": "error", "color": "#DC2626" }
       ]
     }
   }

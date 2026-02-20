@@ -124,7 +124,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--wp--preset--color--border-light, #e2e8f0);
+  border-top: 1px solid var(--wp--preset--color--border, #e2e8f0);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -164,12 +164,12 @@
   flex-shrink: 0;
   width: 48px;
   padding: 12px;
-  background: var(--wp--preset--color--tertiary, #f1f5f9);
+  background: var(--wp--preset--color--base-soft, #f1f5f9);
   color: var(--wp--preset--color--primary, #0b3d91);
 }
 
 .vitalisite-sticky-cta__btn--phone:hover {
-  background: var(--wp--preset--color--border-light, #e2e8f0);
+  background: var(--wp--preset--color--border, #e2e8f0);
 }
 
 /* Hide on desktop (>= 768px) */

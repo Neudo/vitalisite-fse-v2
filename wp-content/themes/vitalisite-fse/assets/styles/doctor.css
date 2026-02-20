@@ -8,12 +8,12 @@
 
 .vitalisite-doctor-card__avatar img {
   border-radius: var(--wp--custom--image-radius, 8px);
-  border: 4px solid var(--wp--preset--color--main-accent);
+  border: 4px solid var(--wp--preset--color--secondary);
 }
 
 .vitalisite-doctor-card__specialty {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--wp--preset--color--main-accent);
+  color: var(--wp--preset--color--secondary);
   opacity: 0.8;
 }

@@ -47,7 +47,7 @@
 
   /* Legacy visual styles */
   background-color: #fff;
-  border: 1px solid var(--wp--preset--color--border-light); /* Refined border thickness */
+  border: 1px solid var(--wp--preset--color--border); /* Refined border thickness */
   border-radius: var(
     --wp--custom--image-radius
   ); /* Inherited from theme.json */

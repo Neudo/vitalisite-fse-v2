@@ -18,6 +18,19 @@
     "showRating": {
       "type": "boolean",
       "default": true
+    },
+    "testimonials_source": {
+      "type": "string",
+      "default": "local",
+      "enum": ["local", "google"]
+    },
+    "show_google_header": {
+      "type": "boolean",
+      "default": true
+    },
+    "googlePlaceId": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

@@ -12,7 +12,7 @@
    ========================================================================== */
 
 .vitalisite-accordion-item {
-  border-bottom: 1px solid var(--wp--preset--color--border-light);
+  border-bottom: 1px solid var(--wp--preset--color--border);
   margin-bottom: 0;
   padding: var(--wp--preset--spacing--30) 0;
   transition: all 0.3s ease;
@@ -23,7 +23,7 @@
   cursor: pointer;
   font-weight: 600;
   font-family: var(--wp--preset--font-family--primary);
-  color: var(--wp--preset--color--main);
+  color: var(--wp--preset--color--ink);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +60,7 @@
    ========================================================================== */
 
 .vitalisite-accordion-variant-legacy .vitalisite-accordion-item {
-  border: 1px solid var(--wp--preset--color--border-light);
+  border: 1px solid var(--wp--preset--color--border);
   border-radius: var(--wp--custom--image-radius);
   margin-bottom: var(--wp--preset--spacing--30);
   padding: 0;
@@ -69,7 +69,7 @@
 }
 
 .vitalisite-accordion-variant-legacy .vitalisite-accordion-item summary {
-  background-color: var(--wp--preset--color--tertiary);
+  background-color: var(--wp--preset--color--base-soft);
   padding: var(--wp--preset--spacing--40);
   transition: background-color 0.3s ease;
 }
@@ -95,7 +95,7 @@
 /* Custom Accordion Block Container */
 .vitalisite-accordion-container .vitalisite-accordion-item {
   margin-bottom: 4px !important;
-  border-bottom: 1px solid var(--wp--preset--color--border-light);
+  border-bottom: 1px solid var(--wp--preset--color--border);
 }
 
 .vitalisite-accordion-container .vitalisite-accordion-item:last-child {

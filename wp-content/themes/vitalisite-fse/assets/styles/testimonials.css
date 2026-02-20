@@ -9,7 +9,7 @@
 }
 
 .vitalisite-testimonial-card {
-  background-color: var(--wp--preset--color--tertiary);
+  background-color: var(--wp--preset--color--accent);
   border-radius: var(--wp--custom--image-radius);
   padding: var(--wp--preset--spacing--50);
   display: flex;
@@ -68,7 +68,7 @@
 
 .vitalisite-testimonial-card__role {
   font-size: 0.8rem;
-  color: var(--wp--preset--color--main-accent);
+  color: var(--wp--preset--color--ink-soft);
   opacity: 0.7;
 }
 
@@ -111,6 +111,7 @@
 /* Ensure swiper-slide + card combo works */
 .swiper-slide.vitalisite-testimonial-card {
   height: auto;
+  background-color: var(--wp--preset--color--base-soft);
 }
 
 .vitalisite-testimonials-carousel {
@@ -120,4 +121,234 @@
 .vitalisite-testimonials-carousel .swiper-pagination {
   position: relative;
   top: 5px !important;
+}
+
+/* ========================================================================
+   Google Reviews Integration Styles
+   ======================================================================== */
+
+/* Google Reviews Header */
+.vitalisite-google-reviews-header {
+  margin-bottom: var(--wp--preset--spacing--50);
+  padding: var(--wp--preset--spacing--40);
+  background: var(--wp--preset--color--base-soft);
+  border-radius: var(--wp--custom--border-radius--medium, 12px);
+  border: 1px solid var(--wp--preset--color--border);
+}
+
+.vitalisite-google-reviews-header__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp--preset--spacing--30);
+}
+
+@media (min-width: 782px) {
+  .vitalisite-google-reviews-header__content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.vitalisite-google-reviews-header__logo {
+  width: 80px;
+  height: auto;
+}
+
+.vitalisite-google-reviews-header__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vitalisite-google-reviews-header__rating {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vitalisite-google-reviews-header__score {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vitalisite-google-reviews-header__number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--wp--preset--color--ink);
+}
+
+.vitalisite-google-reviews-header__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.vitalisite-google-reviews-header__stars .vitalisite-star {
+  width: 20px;
+  height: 20px;
+}
+
+.vitalisite-google-reviews-header__stars .vitalisite-star--filled {
+  color: #fbbf24;
+}
+
+.vitalisite-google-reviews-header__stars .vitalisite-star--empty {
+  color: #d1d5db;
+}
+
+.vitalisite-google-reviews-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--wp--preset--color--ink-soft);
+}
+
+.vitalisite-google-reviews-header__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .vitalisite-google-reviews-header__cta {
+    flex-direction: row;
+  }
+}
+
+.vitalisite-google-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--wp--custom--border-radius--cta, 8px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
+}
+
+.vitalisite-google-cta__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.vitalisite-google-cta--primary {
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--base);
+}
+
+.vitalisite-google-cta--primary:hover {
+  background-color: var(--wp--preset--color--primary);
+  box-shadow: 0 4px 12px rgba(11, 61, 145, 0.25);
+  transform: translateY(-2px);
+}
+
+.vitalisite-google-cta--outline {
+  background-color: transparent;
+  color: var(--wp--preset--color--primary);
+  border: 2px solid var(--wp--preset--color--primary);
+}
+
+.vitalisite-google-cta--outline:hover {
+  background-color: var(--wp--preset--color--primary-soft);
+  box-shadow: 0 4px 12px rgba(11, 61, 145, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Google Review Card Styles */
+.vitalisite-testimonial-card--google {
+  background-color: var(--wp--preset--color--accent);
+  border: 1px solid var(--wp--preset--color--border);
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__author-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--wp--preset--color--ink);
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vitalisite-testimonial-card--google
+  .vitalisite-testimonial-card__rating
+  .vitalisite-star {
+  width: 16px;
+  height: 16px;
+}
+
+.vitalisite-testimonial-card--google
+  .vitalisite-testimonial-card__rating
+  .vitalisite-star--filled {
+  fill: #fcd987;
+}
+
+.vitalisite-testimonial-card--google
+  .vitalisite-testimonial-card__rating
+  .vitalisite-star--empty {
+  stroke: #c4c3c3;
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__time {
+  font-size: 0.75rem;
+  color: var(--wp--preset--color--ink-soft);
+}
+
+.vitalisite-testimonial-card--google .vitalisite-testimonial-card__content {
+  font-style: italic;
+  color: var(--wp--preset--color--ink-soft);
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.vitalisite-testimonial-card--google
+  .vitalisite-testimonial-card__content::before {
+  display: none;
+}
+
+.vitalisite-testimonial-card__quote-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--wp--preset--color--primary, #4f46e5);
+  opacity: 0.4;
+  flex-shrink: 0;
+  position: relative;
+  top: -20px;
+}
+
+/* Ghost slide — permet d'afficher la dernière slide à 100% */
+.vitalisite-testimonials-ghost-slide {
+  pointer-events: none;
+  visibility: hidden;
+  flex-shrink: 0;
 }

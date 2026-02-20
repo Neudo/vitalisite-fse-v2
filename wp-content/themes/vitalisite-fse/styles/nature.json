@@ -5,71 +5,32 @@
   "settings": {
     "color": {
       "palette": [
+        { "name": "Primaire", "slug": "primary", "color": "#2D6A4F" },
+        { "name": "Primaire doux", "slug": "primary-soft", "color": "#E8F5E9" },
         {
-          "name": "Primary",
-          "slug": "primary",
-          "color": "#2D6A4F"
+          "name": "Primaire texte",
+          "slug": "primary-foreground",
+          "color": "#FFFFFF"
         },
+        { "name": "Secondaire", "slug": "secondary", "color": "#52B788" },
         {
-          "name": "Primary Accent",
-          "slug": "primary-accent",
-          "color": "#E8F5E9"
-        },
-        {
-          "name": "Secondary",
-          "slug": "secondary",
-          "color": "#52B788"
-        },
-        {
-          "name": "Secondary Accent",
-          "slug": "secondary-accent",
+          "name": "Secondaire doux",
+          "slug": "secondary-soft",
           "color": "#D8F3DC"
         },
         {
-          "name": "Contrast",
-          "slug": "main",
+          "name": "Secondaire texte",
+          "slug": "secondary-foreground",
           "color": "#1B4332"
         },
-        {
-          "name": "Contrast Accent",
-          "slug": "main-accent",
-          "color": "#74C69D"
-        },
-        {
-          "name": "Base",
-          "slug": "base",
-          "color": "#FFFFFF"
-        },
-        {
-          "name": "Tint",
-          "slug": "tertiary",
-          "color": "#F1F8F4"
-        },
-        {
-          "name": "Border Light",
-          "slug": "border-light",
-          "color": "#B7E4C7"
-        },
-        {
-          "name": "Border Dark",
-          "slug": "border-dark",
-          "color": "#40916C"
-        },
-        {
-          "name": "Success",
-          "slug": "success",
-          "color": "#52B788"
-        },
-        {
-          "name": "Warning",
-          "slug": "warning",
-          "color": "#F77F00"
-        },
-        {
-          "name": "Error",
-          "slug": "error",
-          "color": "#D62828"
-        }
+        { "name": "Base", "slug": "base", "color": "#FFFFFF" },
+        { "name": "Base douce", "slug": "base-soft", "color": "#F1F8F4" },
+        { "name": "Bordure", "slug": "border", "color": "#B7E4C7" },
+        { "name": "Encre", "slug": "ink", "color": "#1B4332" },
+        { "name": "Encre douce", "slug": "ink-soft", "color": "#40916C" },
+        { "name": "Succès", "slug": "success", "color": "#16A34A" },
+        { "name": "Avertissement", "slug": "warning", "color": "#D97706" },
+        { "name": "Erreur", "slug": "error", "color": "#DC2626" }
       ],
       "gradients": [
         {
@@ -107,7 +68,7 @@
   "styles": {
     "color": {
       "background": "var(--wp--preset--color--base)",
-      "text": "var(--wp--preset--color--main)"
+      "text": "var(--wp--preset--color--ink)"
     },
     "elements": {
       "button": {
@@ -116,7 +77,7 @@
         },
         "color": {
           "background": "var(--wp--preset--color--primary)",
-          "text": "var(--wp--preset--color--base)"
+          "text": "var(--wp--preset--color--primary-foreground)"
         },
         ":hover": {
           "color": {
@@ -140,7 +101,7 @@
           "fontWeight": "600"
         },
         "color": {
-          "text": "var(--wp--preset--color--main)"
+          "text": "var(--wp--preset--color--ink)"
         }
       }
     },

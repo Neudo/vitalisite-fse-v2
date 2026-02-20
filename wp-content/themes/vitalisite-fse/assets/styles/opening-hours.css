@@ -1,99 +1,100 @@
 .vitalisite-opening-hours-section {
-    padding: var(--wp--preset--spacing--70) 0;
+  padding: var(--wp--preset--spacing--70) 0;
 }
 
 .vitalisite-opening-hours {
-    max-width: 700px;
-    margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .vitalisite-opening-hours__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--wp--preset--spacing--20) 0;
-    border-bottom: 1px solid var(--wp--preset--color--tertiary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--wp--preset--spacing--20) 0;
+  border-bottom: 1px solid var(--wp--preset--color--border);
 }
 
 .vitalisite-opening-hours__row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .vitalisite-opening-hours__row--today {
-    font-weight: 700;
-    background: var(--wp--preset--color--tertiary);
-    border-radius: 8px;
-    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
-    border-bottom: none;
+  font-weight: 700;
+  background: var(--wp--preset--color--base-soft);
+  border-radius: 8px;
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+  border-bottom: none;
 }
 
 .vitalisite-opening-hours__day {
-    font-weight: 600;
-    color: var(--wp--preset--color--contrast);
+  font-weight: 600;
+  color: var(--wp--preset--color--ink);
 }
 
 .vitalisite-opening-hours__time {
-    color: var(--wp--preset--color--contrast);
-    opacity: 0.7;
+  color: var(--wp--preset--color--ink);
+  opacity: 0.7;
 }
 
 .vitalisite-opening-hours__closed {
-    color: var(--wp--preset--color--main-accent);
-    opacity: 0.5;
-    font-style: italic;
+  color: var(--wp--preset--color--ink-soft);
+  opacity: 0.5;
+  font-style: italic;
 }
 
 .vitalisite-opening-hours__status {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: var(--wp--preset--spacing--40);
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: var(--wp--preset--spacing--40);
+  justify-content: center;
 }
 
 .vitalisite-opening-hours__status--open {
-    background: #dcfce7;
-    color: #16a34a;
+  background: #dcfce7;
+  color: #16a34a;
 }
 
 .vitalisite-opening-hours__status--closed {
-    background: #fef2f2;
-    color: #dc2626;
+  background: #fef2f2;
+  color: #dc2626;
 }
 
 .vitalisite-opening-hours__status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .vitalisite-opening-hours__status--open .vitalisite-opening-hours__status-dot {
-    background: #16a34a;
+  background: #16a34a;
 }
 
-.vitalisite-opening-hours__status--closed .vitalisite-opening-hours__status-dot {
-    background: #dc2626;
+.vitalisite-opening-hours__status--closed
+  .vitalisite-opening-hours__status-dot {
+  background: #dc2626;
 }
 
 .vitalisite-opening-hours__emergency {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--wp--preset--color--main-accent);
-    margin-top: var(--wp--preset--spacing--30);
-    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
-    border: 1px solid var(--wp--preset--color--main-accent);
-    border-radius: 8px;
-    opacity: 0.7;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--wp--preset--color--ink-soft);
+  margin-top: var(--wp--preset--spacing--30);
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+  border: 1px solid var(--wp--preset--color--border);
+  border-radius: 8px;
+  opacity: 0.7;
 }
 
 .vitalisite-opening-hours-placeholder {
-    text-align: center;
-    padding: var(--wp--preset--spacing--50);
-    background-color: var(--wp--preset--color--tertiary);
-    border-radius: var(--wp--custom--image-radius);
+  text-align: center;
+  padding: var(--wp--preset--spacing--50);
+  background-color: var(--wp--preset--color--base-soft);
+  border-radius: var(--wp--custom--image-radius);
 }

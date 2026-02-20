@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid var(--wp--preset--color--border-light, #e2e8f0);
+  border: 2px solid var(--wp--preset--color--border, #e2e8f0);
   border-radius: var(--wp--custom--image-radius, 12px);
   padding: var(--wp--preset--spacing--50);
   text-align: center;
@@ -23,7 +23,7 @@
 
 .vitalisite-pricing-card:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border-color: var(--wp--preset--color--main-accent);
+  border-color: var(--wp--preset--color--primary);
 }
 
 .vitalisite-pricing-card .wp-block-buttons {
@@ -34,7 +34,7 @@
 .vitalisite-pricing-card__price {
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 800;
-  color: var(--wp--preset--color--main-accent);
+  color: var(--wp--preset--color--primary);
   margin-bottom: var(--wp--preset--spacing--20) !important;
 }
 
