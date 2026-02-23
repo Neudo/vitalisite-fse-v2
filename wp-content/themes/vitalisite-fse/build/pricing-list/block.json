@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/pricing-list",
+  "version": "1.0.0",
+  "title": "Pricing List",
+  "category": "vitalisite-blocks",
+  "icon": "list-view",
+  "description": "Container for pricing cards with repeater functionality.",
+  "keywords": ["pricing", "list", "container"],
+  "textdomain": "vitalisite-fse",
+  "editorScript": "file:./index.js",
+  "attributes": {},
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  }
+}

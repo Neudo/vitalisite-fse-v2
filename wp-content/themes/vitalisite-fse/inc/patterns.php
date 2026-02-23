@@ -56,6 +56,7 @@ function register_patterns_and_blocks() {
 		'accordion',
 		'accordion-item',
 		'text-image',
+		'pricing-list',
 	);
 
 	foreach ( $blocks as $block ) {
@@ -69,6 +70,7 @@ function register_patterns_and_blocks() {
 		'before-after'   => 'vitalisite_render_before_after_block',
 		'opening-hours'  => 'vitalisite_render_opening_hours_block',
 		'contact-form'   => 'vitalisite_render_contact_form_block',
+		'pricing-item'   => 'vitalisite_render_pricing_item_block',
 	);
 
 	foreach ( $ssr_blocks as $block => $callback ) {

@@ -86,7 +86,7 @@ export default function Edit({ attributes, setAttributes }) {
       </InspectorControls>
 
       <section {...blockProps}>
-        <InnerBlocks template={TEMPLATE} templateLock="all" />
+        <InnerBlocks template={TEMPLATE} />
       </section>
     </>
   );

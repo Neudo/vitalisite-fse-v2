@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vitalisite-fse/pricing-item",
+  "version": "1.0.0",
+  "title": "Pricing Item",
+  "category": "vitalisite-blocks",
+  "icon": "money-alt",
+  "description": "Individual pricing card for the pricing list.",
+  "keywords": ["pricing", "price", "item"],
+  "textdomain": "vitalisite-fse",
+  "parent": ["vitalisite-fse/pricing-list"],
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Titre du service"
+    },
+    "description": {
+      "type": "string",
+      "default": "Description détaillée du service..."
+    },
+    "price": {
+      "type": "string",
+      "default": "00€"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Prendre rendez-vous"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    }
+  },
+  "supports": {
+    "html": false,
+    "reusable": false
+  }
+}

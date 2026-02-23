@@ -14,6 +14,8 @@ const blocks = [
   "before-after",
   "opening-hours",
   "contact-form",
+  "pricing-list",
+  "pricing-item",
 ];
 
 module.exports = {

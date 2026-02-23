@@ -21,6 +21,7 @@ require_once __DIR__ . '/inc/block-testimonials.php';
 require_once __DIR__ . '/inc/block-video.php';
 require_once __DIR__ . '/inc/block-before-after.php';
 require_once __DIR__ . '/inc/block-opening-hours.php';
+require_once __DIR__ . '/inc/block-pricing.php';
 
 // Patterns & blocks registration.
 require_once __DIR__ . '/inc/patterns.php';

@@ -58,7 +58,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--wp--preset--color--base, #ffffff);
-  border-radius: var(--wp--custom--image-radius, 12px);
   padding: var(--wp--preset--spacing--50);
   border-left: 6px solid var(--wp--preset--color--secondary);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);

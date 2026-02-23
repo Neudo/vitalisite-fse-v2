@@ -1,13 +1,32 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { useBlockProps, InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
-import { PanelBody, SelectControl, TextControl, Button, Disabled } from "@wordpress/components";
+import {
+  useBlockProps,
+  InspectorControls,
+  MediaUpload,
+  MediaUploadCheck,
+} from "@wordpress/block-editor";
+import {
+  PanelBody,
+  SelectControl,
+  TextControl,
+  Button,
+  Disabled,
+} from "@wordpress/components";
 import ServerSideRender from "@wordpress/server-side-render";
 import { __ } from "@wordpress/i18n";
 import metadata from "./block.json";
 
 registerBlockType(metadata.name, {
   edit: function Edit({ attributes, setAttributes }) {
-    const { videoType, youtubeUrl, videoId, videoUrl, posterUrl, posterId, aspectRatio } = attributes;
+    const {
+      videoType,
+      youtubeUrl,
+      videoId,
+      videoUrl,
+      posterUrl,
+      posterId,
+      aspectRatio,
+    } = attributes;
     const blockProps = useBlockProps({
       className: "vitalisite-video-block",
     });
@@ -45,13 +64,23 @@ registerBlockType(metadata.name, {
                   value={videoId}
                   render={({ open }) => (
                     <>
-                      <Button onClick={open} variant="secondary" className="editor-media-placeholder__button">
+                      <Button
+                        onClick={open}
+                        variant="secondary"
+                        className="editor-media-placeholder__button"
+                      >
                         {videoUrl
                           ? __("Changer la vidéo", "vitalisite-fse")
                           : __("Choisir une vidéo", "vitalisite-fse")}
                       </Button>
                       {videoUrl && (
-                        <p style={{ marginTop: "8px", fontSize: "12px", wordBreak: "break-all" }}>
+                        <p
+                          style={{
+                            marginTop: "8px",
+                            fontSize: "12px",
+                            wordBreak: "break-all",
+                          }}
+                        >
                           {videoUrl}
                         </p>
                       )}
@@ -62,7 +91,10 @@ registerBlockType(metadata.name, {
             )}
           </PanelBody>
 
-          <PanelBody title={__("Réglages", "vitalisite-fse")} initialOpen={false}>
+          <PanelBody
+            title={__("Réglages", "vitalisite-fse")}
+            initialOpen={false}
+          >
             <SelectControl
               label={__("Ratio", "vitalisite-fse")}
               value={aspectRatio}
@@ -94,10 +126,16 @@ registerBlockType(metadata.name, {
                         <img
                           src={posterUrl}
                           alt="poster"
-                          style={{ marginTop: "8px", maxWidth: "100%", borderRadius: "4px" }}
+                          style={{
+                            marginTop: "8px",
+                            maxWidth: "100%",
+                            borderRadius: "4px",
+                          }}
                         />
                         <Button
-                          onClick={() => setAttributes({ posterId: 0, posterUrl: "" })}
+                          onClick={() =>
+                            setAttributes({ posterId: 0, posterUrl: "" })
+                          }
                           variant="link"
                           isDestructive
                           style={{ marginTop: "4px" }}
@@ -114,12 +152,11 @@ registerBlockType(metadata.name, {
         </InspectorControls>
 
         <div {...blockProps}>
-          <Disabled>
-            <ServerSideRender
-              block={metadata.name}
-              attributes={attributes}
-            />
-          </Disabled>
+          <ServerSideRender
+            block={metadata.name}
+            attributes={attributes}
+            key={JSON.stringify(attributes)}
+          />
         </div>
       </>
     );
