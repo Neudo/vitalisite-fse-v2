@@ -32,6 +32,7 @@
 }
 
 .vitalisite-pricing-card__price {
+  margin-block-start: unset;
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--wp--preset--color--primary);
@@ -41,4 +42,89 @@
 .vitalisite-pricing-card__desc {
   font-size: 0.9rem;
   opacity: 0.7;
+}
+
+/* --- Pricing List (Detailed Variant) --- */
+.vitalisite-pricing-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--wp--preset--spacing--40);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vitalisite-pricing-list-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--wp--preset--color--base, #ffffff);
+  border-radius: var(--wp--custom--image-radius, 12px);
+  padding: var(--wp--preset--spacing--50);
+  border-left: 6px solid var(--wp--preset--color--secondary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  width: 100%;
+  gap: var(--wp--preset--spacing--30) !important;
+  align-items: flex-start !important;
+}
+
+@media (min-width: 782px) {
+  .vitalisite-pricing-list-card {
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: space-between;
+    gap: var(--wp--preset--spacing--60) !important;
+  }
+}
+
+.vitalisite-pricing-list-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--wp--preset--color--primary);
+}
+
+.vitalisite-pricing-list-card__content {
+  flex: 1;
+  gap: 10px !important;
+}
+
+.vitalisite-pricing-list-card__content h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vitalisite-pricing-list-card__content p {
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.vitalisite-pricing-list-card__action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  min-width: 180px;
+  gap: 15px !important;
+}
+
+@media (min-width: 782px) {
+  .vitalisite-pricing-list-card__action {
+    align-items: flex-end !important;
+    text-align: right;
+  }
+}
+
+.vitalisite-pricing-list-card__price {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--wp--preset--color--primary);
+  margin: 0 !important;
+  line-height: 1;
+}
+
+.vitalisite-pricing-list-card__action .wp-block-button {
+  margin: 0;
 }

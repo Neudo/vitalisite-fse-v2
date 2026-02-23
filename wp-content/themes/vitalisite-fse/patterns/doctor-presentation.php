@@ -9,10 +9,10 @@
 
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-doctor-section vitalisite-section","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"section","className":"vitalisite-doctor-section vitalisite-section"} -->
 <section class="wp-block-group vitalisite-doctor-section vitalisite-section">
 
-    <!-- wp:group {"className":"vitalisite-doctor-card","layout":{"type":"constrained","contentSize":"700px"}} -->
+    <!-- wp:group {"className":"vitalisite-doctor-card","layout":{"contentSize":"700px"}} -->
     <div class="wp-block-group vitalisite-doctor-card">
 
         <!-- wp:image {"align":"center","width":"180px","height":"180px","scale":"cover","className":"vitalisite-doctor-card__avatar"} -->

@@ -1,11 +1,13 @@
 import { useBlockProps, RichText } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { title, description, ctaText, ctaUrl } = attributes;
+  const { title, description, ctaText, ctaUrl, textColor } = attributes;
 
   const blockProps = useBlockProps.save({
     className: "vitalisite-card",
   });
+
+  const textStyle = textColor ? { color: textColor } : {};
 
   return (
     <div {...blockProps}>
@@ -13,15 +15,12 @@ export default function save({ attributes }) {
         <RichText.Content
           tagName="h3"
           className="wp-block-heading"
-          style={{ fontWeight: "300" }}
+          style={{ fontWeight: "300", ...textStyle }}
           value={title}
         />
       )}
       {description && (
-        <RichText.Content
-          tagName="p"
-          value={description}
-        />
+        <RichText.Content tagName="p" style={textStyle} value={description} />
       )}
       {ctaText && (
         <div className="wp-block-buttons">

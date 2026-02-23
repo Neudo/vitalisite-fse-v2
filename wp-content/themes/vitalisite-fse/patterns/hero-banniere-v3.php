@@ -8,8 +8,8 @@
  * Description: Bannière avec image en bas, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-section"} -->
-<section class="wp-block-group alignfull vitalisite-hero vitalisite-section">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-img-bottom vitalisite-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero hero-img-bottom vitalisite-section">
   <!-- wp:group {"className":"vitalisite-hero__inner","style":{"spacing":{"blockGap":"16px"}}} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
@@ -33,10 +33,6 @@
     <!-- /wp:buttons -->
   </div>
   <!-- /wp:group -->
-
-  <!-- wp:spacer {"height":"32px"} -->
-  <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-  <!-- /wp:spacer -->
 
   <!-- wp:image {"sizeSlug":"large"} -->
   <figure class="wp-block-image size-large"><img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=1600" alt="Équipe médicale en discussion" /></figure>

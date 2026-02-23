@@ -74,15 +74,6 @@ export default function Edit({ attributes, setAttributes }) {
               renderAppender={InnerBlocks.ButtonBlockAppender}
             />
           </div>
-
-          {showNavigation && (
-            <>
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
-            </>
-          )}
-
-          {showPagination && <div className="swiper-pagination"></div>}
         </div>
       </div>
     </>

@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.vitalisite-hero.hero-img-bottom .vitalisite-hero__inner {
+  padding-bottom: 0px;
+}
+
 .vitalisite-hero__inner--filled {
   background-color: var(--wp--preset--color--primary);
   border-radius: var(--wp--custom--image-radius);
@@ -73,7 +77,10 @@
 }
 
 .vitalisite-hero__actions {
-  align-items: flex-start;
-  margin-top: 90px;
   gap: 10px !important;
+}
+
+.hero-bg .vitalisite-hero__actions {
+  margin-top: 90px;
+  align-items: flex-start;
 }

@@ -82,6 +82,7 @@
 .btn-primary-soft .wp-block-button__link {
   background-color: var(--wp--preset--color--primary-soft);
   color: var(--wp--preset--color--primary);
+  border: 2px solid var(--wp--preset--color--primary-soft);
 }
 
 .btn-secondary-soft .wp-block-button__link {
@@ -96,4 +97,24 @@ details.vitalisite-accordion-item.is-layout-flow > * {
 
 details.vitalisite-accordion-item.is-layout-flow > summary + * {
   margin-top: 0 !important;
+}
+
+.vitalisite-slider-wrapper .swiper-navigation-icon,
+.vitalisite-testimonials-swiper .swiper-navigation-icon {
+  height: 24px;
+}
+
+.vitalisite-slider-wrapper .swiper-pagination,
+.vitalisite-testimonials-swiper .swiper-pagination {
+  position: relative;
+}
+
+.vitalisite-slider-wrapper .swiper-pagination-bullet,
+.vitalisite-testimonials-swiper .swiper-pagination-bullet {
+  background-color: var(--wp--preset--color--primary);
+}
+
+.vitalisite-slider-wrapper .swiper-pagination-bullet-active,
+.vitalisite-testimonials-swiper .swiper-pagination-bullet-active {
+  opacity: 0.6;
 }

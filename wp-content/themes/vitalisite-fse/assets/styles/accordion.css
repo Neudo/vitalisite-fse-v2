@@ -51,7 +51,6 @@
 }
 
 .vitalisite-accordion-item[open] summary {
-  margin-bottom: 1.5rem; /* Increased from spacing-30 (0.5rem) */
   color: var(--wp--preset--color--primary);
 }
 
@@ -80,6 +79,15 @@
   margin-bottom: 0;
 }
 
+.vitalisite-accordion-variant-simple
+  .vitalisite-accordion-item[open]
+  .wp-block-group {
+  background-color: var(--wp--preset--color--secondary-soft);
+  color: var(--wp--preset--color--secondary-foreground);
+  border-radius: var(--wp--custom--image-radius);
+  margin-bottom: 0;
+}
+
 /* White chevron when active/primary background */
 .vitalisite-accordion-variant-legacy
   .vitalisite-accordion-item[open]
@@ -87,17 +95,12 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
-/* Content padding for legacy variant */
-.vitalisite-accordion-variant-legacy .wp-block-group {
-  padding: var(--wp--preset--spacing--40);
+.wp-block-vitalisite-fse-accordion-item.vitalisite-accordion-item p {
+  margin: 0;
 }
 
 /* Custom Accordion Block Container */
 .vitalisite-accordion-container .vitalisite-accordion-item {
   margin-bottom: 4px !important;
   border-bottom: 1px solid var(--wp--preset--color--border);
-}
-
-.vitalisite-accordion-container .vitalisite-accordion-item:last-child {
-  border-bottom: none;
 }

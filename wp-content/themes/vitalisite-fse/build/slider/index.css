@@ -1,1 +1,43 @@
-.vitalisite-slider-wrapper{max-width:100%;position:relative}.vitalisite-slider.swiper{background:#f9f9f9;border:2px dashed #ccc;border-radius:8px;padding:20px;position:relative}.vitalisite-slider.swiper .editor-preview{min-height:200px}.vitalisite-slider.swiper .editor-preview .block-editor-inner-blocks{display:flex;flex-direction:column;gap:10px}.vitalisite-slider.swiper .editor-preview .wp-block-image{margin:0}.vitalisite-slider.swiper .editor-preview .wp-block-image img{border-radius:4px;max-height:150px;-o-object-fit:cover;object-fit:cover}.vitalisite-slider.swiper .swiper-button-next,.vitalisite-slider.swiper .swiper-button-prev{align-items:center;background:rgba(0,0,0,.5);border-radius:50%;color:#fff;display:flex;font-size:20px;height:40px;justify-content:center;position:absolute;top:50%;transform:translateY(-50%);width:40px}.vitalisite-slider.swiper .swiper-button-next:after,.vitalisite-slider.swiper .swiper-button-prev:after{content:"→"}.vitalisite-slider.swiper .swiper-button-prev:after{content:"←"}.vitalisite-slider.swiper .swiper-button-next{right:10px}.vitalisite-slider.swiper .swiper-button-prev{left:10px}.vitalisite-slider.swiper .swiper-pagination{bottom:10px;left:0;position:absolute;right:0;text-align:center}.vitalisite-slider.swiper .swiper-pagination:before{color:rgba(0,0,0,.5);content:"● ● ●";font-size:12px}
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/slider/editor.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+.vitalisite-slider-wrapper {
+  position: relative;
+  max-width: 100%;
+  background-color: darkcyan;
+}
+
+.vitalisite-slider.swiper {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background: #f9f9f9;
+}
+.vitalisite-slider.swiper .editor-preview .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 120px);
+  gap: 8px;
+}
+.vitalisite-slider.swiper .editor-preview .wp-block-image {
+  margin: 0;
+  width: 120px !important;
+  height: 120px !important;
+}
+.vitalisite-slider.swiper .editor-preview .wp-block-image .components-resizable-box__container {
+  pointer-events: none;
+}
+.vitalisite-slider.swiper .editor-preview .wp-block-image figure {
+  width: 120px !important;
+  height: 120px !important;
+  margin: 0;
+}
+.vitalisite-slider.swiper .editor-preview .wp-block-image img {
+  width: 120px !important;
+  height: 120px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+/*# sourceMappingURL=index.css.map*/

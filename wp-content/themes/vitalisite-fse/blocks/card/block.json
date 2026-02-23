@@ -35,9 +35,17 @@
     "ctaUrl": {
       "type": "string",
       "default": "#"
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {
-    "html": false
+    "html": false,
+    "color": {
+      "background": true,
+      "text": false
+    }
   }
 }

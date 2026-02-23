@@ -8,8 +8,8 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-accordion-wrapper vitalisite-section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group vitalisite-accordion-wrapper vitalisite-section">
+<!-- wp:group {"tagName":"section","className":"vitalisite-accordion-wrapper vitalisite-accordion-variant-simple vitalisite-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group vitalisite-accordion-wrapper vitalisite-accordion-variant-simple vitalisite-section">
 
     <!-- wp:heading {"textAlign":"center","level":2,"className":"mb-60"} -->
     <h2 class="wp-block-heading has-text-align-center">Questions Fréquentes</h2>

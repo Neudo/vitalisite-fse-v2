@@ -1,1 +1,16 @@
-.wp-block-vitalisite-fse-text-image .wp-block-columns{align-items:center!important}.wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns{flex-direction:row-reverse}.wp-block-vitalisite-fse-text-image.has-background{background-color:var(--wp--preset--color--tertiary);border-radius:var(--wp--custom--image-radius);padding:50px 20px}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/text-image/editor.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-vitalisite-fse-text-image .wp-block-columns {
+  align-items: center !important;
+}
+.wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns {
+  flex-direction: row-reverse;
+}
+.wp-block-vitalisite-fse-text-image.has-background {
+  background-color: var(--wp--preset--color--tertiary);
+  border-radius: var(--wp--custom--image-radius);
+  padding: 50px 20px;
+}
+
+/*# sourceMappingURL=index.css.map*/

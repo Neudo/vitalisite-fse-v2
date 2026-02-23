@@ -2,17 +2,20 @@ import {
   useBlockProps,
   RichText,
   InspectorControls,
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 import { PanelBody, TextControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import "./editor.scss";
 
 export default function Edit({ attributes, setAttributes }) {
-  const { title, description, ctaText, ctaUrl } = attributes;
+  const { title, description, ctaText, ctaUrl, textColor } = attributes;
 
   const blockProps = useBlockProps({
     className: "vitalisite-card",
   });
+
+  const textStyle = textColor ? { color: textColor } : {};
 
   return (
     <>
@@ -25,19 +28,30 @@ export default function Edit({ attributes, setAttributes }) {
             help={__("Ex: /services ou https://…", "vitalisite-fse")}
           />
         </PanelBody>
+        <PanelColorSettings
+          title={__("Couleur du texte", "vitalisite-fse")}
+          colorSettings={[
+            {
+              value: textColor,
+              onChange: (value) => setAttributes({ textColor: value }),
+              label: __("Titre & description", "vitalisite-fse"),
+            },
+          ]}
+        />
       </InspectorControls>
 
       <div {...blockProps}>
         <RichText
           tagName="h3"
           className="wp-block-heading"
-          style={{ fontWeight: "300" }}
+          style={{ fontWeight: "300", ...textStyle }}
           value={title}
           onChange={(value) => setAttributes({ title: value })}
           placeholder={__("Titre...", "vitalisite-fse")}
         />
         <RichText
           tagName="p"
+          style={textStyle}
           value={description}
           onChange={(value) => setAttributes({ description: value })}
           placeholder={__("Description...", "vitalisite-fse")}

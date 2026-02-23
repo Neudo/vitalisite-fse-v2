@@ -8,8 +8,8 @@
  * Description: Bannière sans image, fond coloré, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section"} -->
-<section class="wp-block-group alignfull vitalisite-hero vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-bg vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero hero-bg vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section">
   <!-- wp:group {"className":"vitalisite-hero__inner vitalisite-hero__inner--filled","layout":{"type":"constrained"}} -->
   <div class="wp-block-group vitalisite-hero__inner vitalisite-hero__inner--filled">
     <!-- wp:heading {"textAlign":"center","level":1,"textColor":"base","className":"vitalisite-hero__title"} -->

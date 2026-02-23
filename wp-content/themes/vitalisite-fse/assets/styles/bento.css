@@ -23,7 +23,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: var(--wp--custom--image-radius);
   margin-top: 0 !important; /* Override global block spacing */
+}
+
+.vitalisite-bento-item p {
+  margin-block-start: 15px;
+}
+
+.vitalisite-bento-item--span-2 {
+  background-color: var(--wp--preset--color--secondary-soft);
+}
+
+.vitalisite-bento-item--span-1 {
+  background-color: var(--wp--preset--color--primary);
+}
+
+.vitalisite-bento-item--span-1 h1,
+.vitalisite-bento-item--span-1 h2,
+.vitalisite-bento-item--span-1 h3,
+.vitalisite-bento-item--span-1 h4,
+.vitalisite-bento-item--span-1 h5,
+.vitalisite-bento-item--span-1 h6,
+.vitalisite-bento-item--span-1 p {
+  color: var(--wp--preset--color--primary-foreground);
 }
 
 /* Tablet & Desktop (Switch to 3-column grid for 2/3 + 1/3 layout) */
