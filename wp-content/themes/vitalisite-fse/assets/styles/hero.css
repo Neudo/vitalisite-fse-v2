@@ -38,9 +38,10 @@
 }
 
 .vitalisite-hero .has-background {
-  border-radius: var(--wp--custom--border-radius--cta);
+  border-radius: var(--wp--custom--image-radius);
   overflow: hidden;
   background-clip: padding-box;
+  padding: 20px;
 }
 
 .vitalisite-style--mineral .vitalisite-hero {

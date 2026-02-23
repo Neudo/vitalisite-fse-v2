@@ -29,7 +29,7 @@ function get_pattern_categories() {
 		'vitalisite-video'        => __( 'Vidéo', 'vitalisite-fse' ),
 		'vitalisite-testimonials'  => __( 'Témoignages', 'vitalisite-fse' ),
 		'vitalisite-before-after'  => __( 'Avant / Après', 'vitalisite-fse' ),
-		'vitalisite-text-image'      => __( 'Texte + Image', 'vitalisite-fse' ),
+		'vitalisite-text'            => __( 'Contenus textuels', 'vitalisite-fse' ),
 		'vitalisite-pricing'         => __( 'Tarifs', 'vitalisite-fse' ),
 		'vitalisite-doctor'          => __( 'Présentation Docteur', 'vitalisite-fse' ),
 		'vitalisite-opening-hours'   => __( 'Horaires d\'ouverture', 'vitalisite-fse' ),

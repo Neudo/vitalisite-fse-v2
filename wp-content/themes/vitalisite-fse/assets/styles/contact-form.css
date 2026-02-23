@@ -157,9 +157,6 @@
    Contact V2 — Style Vitalisite (info panel + form)
    ========================================================================== */
 
-.vitalisite-contact-v2-section {
-}
-
 .vitalisite-contact-v2__columns {
   gap: 0 !important;
   align-items: stretch !important;
@@ -168,9 +165,21 @@
 .vitalisite-contact-v2__info {
   background-color: var(--wp--preset--color--primary);
   padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--60);
+  border-radius: var(--wp--custom--image-radius);
   display: flex;
   flex-direction: column;
   gap: var(--wp--preset--spacing--40);
+}
+
+.vitalisite-contact-v2__form.has-background {
+  border-radius: var(--wp--custom--image-radius);
+  margin-top: 15px;
+}
+@media screen and (min-width: 782px) {
+  .vitalisite-contact-v2__form.has-background {
+    margin-left: 10px;
+    margin-top: 0;
+  }
 }
 
 .vitalisite-contact-v2__info h2,

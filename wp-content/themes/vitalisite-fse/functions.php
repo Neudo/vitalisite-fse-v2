@@ -162,6 +162,7 @@ function enqueue_global_styles() {
 	wp_enqueue_style( 'vitalisite-fse-features', $uri . '/assets/styles/features.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-pricing', $uri . '/assets/styles/pricing.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-doctor', $uri . '/assets/styles/doctor.css', array( 'vitalisite-fse' ), $version );
+	wp_enqueue_style( 'vitalisite-fse-text-simple', $uri . '/assets/styles/text-simple.css', array( 'vitalisite-fse' ), $version );
 	wp_enqueue_style( 'vitalisite-fse-contact-form', $uri . '/assets/styles/contact-form.css', array( 'vitalisite-fse' ), $version );
 
 	if ( is_page() && 'template-links' === get_page_template_slug() ) {

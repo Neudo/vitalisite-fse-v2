@@ -8,7 +8,7 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"vitalisite-contact-v2-section vitalisite-section full-section","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"section","className":"vitalisite-contact-v2-section vitalisite-section full-section"} -->
 <section class="wp-block-group vitalisite-contact-v2-section vitalisite-section full-section">
 
     <!-- wp:columns {"verticalAlignment":"stretch","className":"vitalisite-contact-v2__columns"} -->

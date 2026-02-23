@@ -3,7 +3,7 @@
  * Title: Texte + Image
  * Slug: vitalisite-fse/text-image
  * Description: Section classique avec texte d'un côté et image de l'autre
- * Categories: vitalisite-text-image
+ * Categories: vitalisite-text
  * Keywords: about, feature, text, image
  */
 ?>

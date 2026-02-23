@@ -1,0 +1,4 @@
+.vitalisite-text-simple.has-background {
+  padding: var(--wp--preset--spacing--50);
+  border-radius: var(--wp--custom--image-radius, 12px);
+}
