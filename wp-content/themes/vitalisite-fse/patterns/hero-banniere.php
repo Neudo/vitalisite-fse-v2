@@ -8,8 +8,8 @@
  * Description: Bannière avec image, titre, description et deux CTA optionnels.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero vitalisite-section big-section"} -->
-<section class="wp-block-group alignfull vitalisite-hero vitalisite-section big-section">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-v1 vitalisite-section big-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero hero-v1 vitalisite-section big-section">
   <!-- wp:group {"className":"vitalisite-hero__inner"} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:columns {"verticalAlignment":"center","className":"vitalisite-hero__columns"} -->

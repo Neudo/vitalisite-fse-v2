@@ -37,7 +37,7 @@
 .vitalisite-before-after__disclaimer {
   text-align: center;
   font-size: 0.8rem;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
   opacity: 0.6;
   font-style: italic;
   margin-top: var(--wp--preset--spacing--30);
@@ -46,7 +46,7 @@
 .vitalisite-before-after-placeholder {
   text-align: center;
   padding: var(--wp--preset--spacing--50);
-  background-color: var(--wp--preset--color--base-soft);
+  background-color: var(--wp--preset--color--surface);
   border-radius: var(--wp--custom--image-radius);
 }
 

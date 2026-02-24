@@ -44,7 +44,7 @@ main {
   position: absolute;
   top: -9999px;
   left: 0;
-  background-color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--bg);
   color: var(--wp--preset--color--primary);
   padding: 1rem;
   z-index: 9999;
@@ -73,7 +73,7 @@ main {
 
 .btn-primary .wp-block-button__link {
   background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--primary-foreground);
+  color: var(--wp--preset--color--on-primary);
   border: 2px solid var(--wp--preset--color--primary);
 }
 
@@ -84,14 +84,14 @@ main {
 }
 
 .btn-primary-soft .wp-block-button__link {
-  background-color: var(--wp--preset--color--primary-soft);
+  background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--primary);
-  border: 2px solid var(--wp--preset--color--primary-soft);
+  border: 2px solid var(--wp--preset--color--primary);
 }
 
 .btn-secondary-soft .wp-block-button__link {
-  border: 2px solid var(--wp--preset--color--secondary-soft);
-  color: var(--wp--preset--color--primary-foreground);
+  border: 2px solid var(--wp--preset--color--surface);
+  color: var(--wp--preset--color--on-primary);
 }
 
 /* Accordion Fixes */

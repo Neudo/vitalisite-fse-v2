@@ -14,7 +14,7 @@
   background: linear-gradient(
     135deg,
     #ffffff 0%,
-    var(--wp--preset--color--base, #fff) 100%
+    var(--wp--preset--color--bg, #fff) 100%
   );
   transition:
     box-shadow 0.3s ease,
@@ -51,13 +51,13 @@
   gap: var(--wp--preset--spacing--40);
   max-width: 900px;
   width: 100%;
-  margin: 0 auto;
+  margin: 35px auto 0;
 }
 
 .vitalisite-pricing-list-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--wp--preset--color--base, #ffffff);
+  background-color: var(--wp--preset--color--bg, #ffffff);
   padding: var(--wp--preset--spacing--50);
   border-left: 6px solid var(--wp--preset--color--secondary);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -92,7 +92,7 @@
 
 .vitalisite-pricing-list-card__content h3 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 25px;
 }
 
 .vitalisite-pricing-list-card__content p {

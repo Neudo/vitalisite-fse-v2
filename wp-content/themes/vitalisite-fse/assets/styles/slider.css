@@ -48,7 +48,7 @@
 /* Navigation Arrows */
 .vitalisite-slider .swiper-button-next,
 .vitalisite-slider .swiper-button-prev {
-  color: var(--wp--preset--color--base, #ffffff);
+  color: var(--wp--preset--color--bg, #ffffff);
   background-color: rgba(0, 0, 0, 0.5);
   width: 44px;
   height: 44px;

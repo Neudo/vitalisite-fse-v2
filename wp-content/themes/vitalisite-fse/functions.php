@@ -273,9 +273,10 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
  * Clear caches in dev mode.
  */
 function dev_cache_busting() {
-	if ( ! is_dev_mode() ) {
-		return;
-	}
+	// DÉSACTIVÉ TEMPORAIREMENT POUR FORCER LE VIDAGE DU CACHE : 
+	// if ( ! is_dev_mode() ) {
+	// 	return;
+	// }
 	if ( function_exists( 'wp_clean_themes_cache' ) ) {
 		wp_clean_themes_cache( false );
 	}
@@ -284,6 +285,28 @@ function dev_cache_busting() {
 	}
 }
 add_action( 'init', __NAMESPACE__ . '\dev_cache_busting' );
+
+// TAMPON FORCE FLUSH
+add_action('init', function() {
+    if ( get_option('fse_flushed_v3') !== 'yes' ) {
+        $posts = get_posts([
+            'post_type' => 'wp_global_styles',
+            'post_status' => 'any',
+            'numberposts' => -1,
+        ]);
+        foreach ($posts as $p) {
+            wp_delete_post($p->ID, true);
+        }
+        
+        global $wpdb;
+        $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '_transient_theme_json%'");
+        wp_clean_themes_cache(false);
+        if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+            \WP_Theme_JSON_Resolver::clean_cached_data();
+        }
+        update_option('fse_flushed_v3', 'yes');
+    }
+});
 
 /**
  * Shortcode pour le lien de retour dynamique vers le blog

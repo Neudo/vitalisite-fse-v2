@@ -1,1 +1,34 @@
-.wp-block-vitalisite-fse-text-image{box-sizing:border-box;overflow:hidden}.wp-block-vitalisite-fse-text-image .wp-block-columns{align-items:center!important}.wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns{flex-direction:row-reverse}.wp-block-vitalisite-fse-text-image.has-background{background-color:var(--wp--preset--color--tertiary);border-radius:var(--wp--custom--image-radius);padding:50px 20px}.wp-block-vitalisite-fse-text-image .vitalisite-rounded-image img{border-radius:var(--wp--custom--image-radius);height:auto;-o-object-fit:cover;object-fit:cover;width:100%}@media(max-width:781px){.wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns{flex-direction:column}.wp-block-vitalisite-fse-text-image.has-background{padding:50px 20px}}
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/text-image/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.wp-block-vitalisite-fse-text-image {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wp-block-vitalisite-fse-text-image .wp-block-columns {
+  align-items: center !important;
+}
+.wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns {
+  flex-direction: row-reverse;
+}
+.wp-block-vitalisite-fse-text-image.has-background {
+  background-color: var(--wp--preset--color--tertiary);
+  border-radius: var(--wp--custom--image-radius);
+  padding: 50px 20px;
+}
+.wp-block-vitalisite-fse-text-image .vitalisite-rounded-image img {
+  border-radius: var(--wp--custom--image-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 781px) {
+  .wp-block-vitalisite-fse-text-image.is-reversed .wp-block-columns {
+    flex-direction: column;
+  }
+  .wp-block-vitalisite-fse-text-image.has-background {
+    padding: 50px 20px;
+  }
+}

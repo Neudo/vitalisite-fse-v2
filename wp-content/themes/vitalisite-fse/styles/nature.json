@@ -6,31 +6,26 @@
     "color": {
       "palette": [
         { "name": "Primaire", "slug": "primary", "color": "#2D6A4F" },
-        { "name": "Primaire doux", "slug": "primary-soft", "color": "#E8F5E9" },
         {
-          "name": "Primaire texte",
-          "slug": "primary-foreground",
+          "name": "Texte sur Primaire",
+          "slug": "on-primary",
           "color": "#FFFFFF"
         },
+
         { "name": "Secondaire", "slug": "secondary", "color": "#52B788" },
         {
-          "name": "Secondaire doux",
-          "slug": "secondary-soft",
-          "color": "#D8F3DC"
-        },
-        {
-          "name": "Secondaire texte",
-          "slug": "secondary-foreground",
+          "name": "Texte sur Secondaire",
+          "slug": "on-secondary",
           "color": "#1B4332"
         },
-        { "name": "Base", "slug": "base", "color": "#FFFFFF" },
-        { "name": "Base douce", "slug": "base-soft", "color": "#F1F8F4" },
-        { "name": "Bordure", "slug": "border", "color": "#B7E4C7" },
-        { "name": "Encre", "slug": "ink", "color": "#1B4332" },
-        { "name": "Encre douce", "slug": "ink-soft", "color": "#40916C" },
-        { "name": "Succès", "slug": "success", "color": "#16A34A" },
-        { "name": "Avertissement", "slug": "warning", "color": "#D97706" },
-        { "name": "Erreur", "slug": "error", "color": "#DC2626" }
+
+        { "name": "Background", "slug": "bg", "color": "#FFFFFF" },
+        { "name": "Surface", "slug": "surface", "color": "#F1F8F4" },
+        { "name": "Surface 2", "slug": "surface-2", "color": "#F1F8F4" },
+        { "name": "Border", "slug": "border", "color": "#B7E4C7" },
+
+        { "name": "Text", "slug": "text", "color": "#1B4332" },
+        { "name": "Muted Text", "slug": "muted", "color": "#40916C" }
       ],
       "gradients": [
         {
@@ -67,8 +62,8 @@
   },
   "styles": {
     "color": {
-      "background": "var(--wp--preset--color--base)",
-      "text": "var(--wp--preset--color--ink)"
+      "background": "var(--wp--preset--color--bg)",
+      "text": "var(--wp--preset--color--text)"
     },
     "elements": {
       "button": {
@@ -77,7 +72,7 @@
         },
         "color": {
           "background": "var(--wp--preset--color--primary)",
-          "text": "var(--wp--preset--color--primary-foreground)"
+          "text": "var(--wp--preset--color--on-primary)"
         },
         ":hover": {
           "color": {
@@ -101,7 +96,7 @@
           "fontWeight": "600"
         },
         "color": {
-          "text": "var(--wp--preset--color--ink)"
+          "text": "var(--wp--preset--color--text)"
         }
       }
     },

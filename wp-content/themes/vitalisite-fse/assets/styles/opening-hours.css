@@ -21,7 +21,7 @@
 
 .vitalisite-opening-hours__row--today {
   font-weight: 700;
-  background: var(--wp--preset--color--base-soft);
+  background: var(--wp--preset--color--surface);
   border-radius: 8px;
   padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
   border-bottom: none;
@@ -29,16 +29,16 @@
 
 .vitalisite-opening-hours__day {
   font-weight: 600;
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
 }
 
 .vitalisite-opening-hours__time {
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
   opacity: 0.7;
 }
 
 .vitalisite-opening-hours__closed {
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
   opacity: 0.5;
   font-style: italic;
 }
@@ -84,7 +84,7 @@
 .vitalisite-opening-hours__emergency {
   text-align: center;
   font-size: 0.85rem;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
   margin-top: var(--wp--preset--spacing--30);
   padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
   border: 1px solid var(--wp--preset--color--border);
@@ -95,6 +95,6 @@
 .vitalisite-opening-hours-placeholder {
   text-align: center;
   padding: var(--wp--preset--spacing--50);
-  background-color: var(--wp--preset--color--base-soft);
+  background-color: var(--wp--preset--color--surface);
   border-radius: var(--wp--custom--image-radius);
 }

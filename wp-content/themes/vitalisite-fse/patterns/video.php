@@ -24,7 +24,9 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:vitalisite-fse/video /-->
+    <!-- wp:video -->
+    <figure class="wp-block-video"></figure>
+    <!-- /wp:video -->
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
     <div class="wp-block-buttons mt-40">

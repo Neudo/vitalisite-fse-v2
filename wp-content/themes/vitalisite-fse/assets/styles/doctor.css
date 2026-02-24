@@ -38,7 +38,7 @@
 
 /* --- Doctor Presentation V2 --- */
 .vitalisite-doctor-card-v2 {
-  background-color: var(--wp--preset--color--base, #ffffff);
+  background-color: var(--wp--preset--color--bg, #ffffff);
   border-radius: var(--wp--custom--image-radius, 16px);
   overflow: hidden;
   gap: 0 !important;
@@ -102,7 +102,7 @@
 }
 
 .vitalisite-timeline-item {
-  background: var(--wp--preset--color--base, #ffffff);
+  background: var(--wp--preset--color--bg, #ffffff);
   padding: var(--wp--preset--spacing--50);
   margin-bottom: var(--wp--preset--spacing--40);
   border-left: 6px solid var(--wp--preset--color--secondary);
@@ -152,7 +152,7 @@
 
 .vitalisite-timeline-year {
   background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--base, #ffffff);
+  color: var(--wp--preset--color--bg, #ffffff);
   padding: 4px 14px;
   border-radius: 30px;
   font-weight: 700;

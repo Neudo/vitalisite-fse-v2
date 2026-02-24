@@ -15,20 +15,16 @@ if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) {
 
 function vitalisite_debug_colors_panel() {
 	$colors = [
+		[ 'slug' => 'bg',                   'name' => 'Background' ],
+		[ 'slug' => 'surface',              'name' => 'Surface' ],
+		[ 'slug' => 'surface-2',            'name' => 'Surface 2' ],
+		[ 'slug' => 'border',               'name' => 'Border' ],
+		[ 'slug' => 'text',                 'name' => 'Text' ],
+		[ 'slug' => 'muted',                'name' => 'Muted Text' ],
 		[ 'slug' => 'primary',              'name' => 'Primaire' ],
-		[ 'slug' => 'primary-soft',         'name' => 'Primaire doux' ],
-		[ 'slug' => 'primary-foreground',   'name' => 'Primaire texte' ],
+		[ 'slug' => 'on-primary',           'name' => 'Texte sur Primaire' ],
 		[ 'slug' => 'secondary',            'name' => 'Secondaire' ],
-		[ 'slug' => 'secondary-soft',       'name' => 'Secondaire doux' ],
-		[ 'slug' => 'secondary-foreground', 'name' => 'Secondaire texte' ],
-		[ 'slug' => 'base',                 'name' => 'Base' ],
-		[ 'slug' => 'base-soft',            'name' => 'Base douce' ],
-		[ 'slug' => 'border',               'name' => 'Bordure' ],
-		[ 'slug' => 'ink',                  'name' => 'Encre' ],
-		[ 'slug' => 'ink-soft',             'name' => 'Encre douce' ],
-		[ 'slug' => 'success',              'name' => 'Succès' ],
-		[ 'slug' => 'warning',              'name' => 'Avertissement' ],
-		[ 'slug' => 'error',                'name' => 'Erreur' ],
+		[ 'slug' => 'on-secondary',         'name' => 'Texte sur Secondaire' ],
 	];
 
 	// Cherche aussi la couleur "accent" si elle existe dans les style variations
@@ -77,6 +73,15 @@ function vitalisite_debug_colors_panel() {
 		<div style="display:flex;flex-direction:column;gap:6px;">
 			<?php foreach ( $all_colors as $color ) :
 				$var = '--wp--preset--color--' . $color['slug'];
+				$hex = '';
+				if ( ! empty( $theme_json['color']['palette']['theme'] ) ) {
+					foreach ( $theme_json['color']['palette']['theme'] as $t_color ) {
+						if ( $t_color['slug'] === $color['slug'] && ! empty( $t_color['color'] ) ) {
+							$hex = $t_color['color'];
+							break;
+						}
+					}
+				}
 			?>
 			<div style="display:flex;align-items:center;gap:10px;" title="<?php echo esc_attr( $var ); ?>">
 				<div style="
@@ -88,7 +93,12 @@ function vitalisite_debug_colors_panel() {
 					flex-shrink: 0;
 				"></div>
 				<div>
-					<div style="color:#f1f5f9;font-weight:600;"><?php echo esc_html( $color['name'] ); ?></div>
+					<div style="color:#f1f5f9;font-weight:600;">
+						<?php echo esc_html( $color['name'] ); ?>
+						<?php if ( $hex ) : ?>
+							<span style="color:#94a3b8;font-weight:normal;font-size:10px;margin-left:6px;"><?php echo esc_html( strtoupper( $hex ) ); ?></span>
+						<?php endif; ?>
+					</div>
 					<div style="color:#64748b;"><?php echo esc_html( $var ); ?></div>
 				</div>
 			</div>

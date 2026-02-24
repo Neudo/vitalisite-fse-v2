@@ -24,7 +24,7 @@
 .vitalisite-video-placeholder {
   text-align: center;
   padding: var(--wp--preset--spacing--50);
-  background-color: var(--wp--preset--color--base-soft);
+  background-color: var(--wp--preset--color--surface);
   border-radius: var(--wp--custom--image-radius);
 }
 

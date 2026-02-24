@@ -68,7 +68,7 @@
 
 .vitalisite-testimonial-card__role {
   font-size: 0.8rem;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
   opacity: 0.7;
 }
 
@@ -111,7 +111,7 @@
 /* Ensure swiper-slide + card combo works */
 .swiper-slide.vitalisite-testimonial-card {
   height: auto;
-  background-color: var(--wp--preset--color--base-soft);
+  background-color: var(--wp--preset--color--surface);
 }
 
 .vitalisite-testimonials-carousel {
@@ -131,7 +131,7 @@
 .vitalisite-google-reviews-header {
   margin-bottom: var(--wp--preset--spacing--50);
   padding: var(--wp--preset--spacing--40);
-  background: var(--wp--preset--color--base-soft);
+  background: var(--wp--preset--color--surface);
   border-radius: var(--wp--custom--border-radius--medium, 12px);
   border: 1px solid var(--wp--preset--color--border);
 }
@@ -176,7 +176,7 @@
 .vitalisite-google-reviews-header__number {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
 }
 
 .vitalisite-google-reviews-header__stars {
@@ -202,7 +202,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.875rem;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
 }
 
 .vitalisite-google-reviews-header__cta {
@@ -238,7 +238,7 @@
 
 .vitalisite-google-cta--primary {
   background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--bg);
 }
 
 .vitalisite-google-cta--primary:hover {
@@ -254,7 +254,7 @@
 }
 
 .vitalisite-google-cta--outline:hover {
-  background-color: var(--wp--preset--color--primary-soft);
+  background-color: var(--wp--preset--color--primary);
   box-shadow: 0 4px 12px rgba(11, 61, 145, 0.15);
   transform: translateY(-2px);
 }
@@ -290,7 +290,7 @@
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__name {
   font-weight: 600;
   font-size: 1rem;
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
 }
 
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__rating {
@@ -320,12 +320,12 @@
 
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__time {
   font-size: 0.75rem;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
 }
 
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__content {
   font-style: italic;
-  color: var(--wp--preset--color--ink-soft);
+  color: var(--wp--preset--color--muted);
   display: flex;
   flex-direction: row;
   gap: 8px;

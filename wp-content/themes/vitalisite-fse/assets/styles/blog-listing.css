@@ -33,8 +33,8 @@ ul.vitalisite-blog-categories li {
 ul.vitalisite-blog-categories a {
   display: inline-block;
   padding: 8px 16px;
-  background-color: var(--wp--preset--color--base-soft, #f7f9fa);
-  color: var(--wp--preset--color--ink);
+  background-color: var(--wp--preset--color--surface, #f7f9fa);
+  color: var(--wp--preset--color--text);
   border-radius: 30px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -46,14 +46,14 @@ ul.vitalisite-blog-categories a {
 ul.vitalisite-blog-categories a:hover,
 ul.vitalisite-blog-categories li.current-cat a {
   background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--primary-foreground, #fff);
+  color: var(--wp--preset--color--on-primary, #fff);
 }
 
 /* Blog Card */
 .vitalisite-blog-grid .wp-block-post {
   display: flex;
   flex-direction: column;
-  background-color: var(--wp--preset--color--base, #fff);
+  background-color: var(--wp--preset--color--bg, #fff);
   border-radius: var(--wp--custom--image-radius, 12px);
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
@@ -98,7 +98,7 @@ ul.vitalisite-blog-categories li.current-cat a {
   gap: 12px;
   margin-bottom: 12px;
   font-size: 0.85rem;
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
   opacity: 0.7;
 }
 

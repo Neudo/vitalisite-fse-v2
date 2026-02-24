@@ -164,7 +164,7 @@
   flex-shrink: 0;
   width: 48px;
   padding: 12px;
-  background: var(--wp--preset--color--base-soft, #f1f5f9);
+  background: var(--wp--preset--color--surface, #f1f5f9);
   color: var(--wp--preset--color--primary, #0b3d91);
 }
 

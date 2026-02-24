@@ -18,11 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var(--wp--preset--spacing--40)"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
 		
-		<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-		<figure class="wp-block-image size-large is-style-rounded">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder-image.webp' ); ?>" alt="Présentation médicale"/>
-			<figcaption class="wp-element-caption">Légende de la photo (optionnelle) - Équipement de dernière génération</figcaption>
-		</figure>
+		<!-- wp:image -->
+		<figure class="wp-block-image"></figure>
 		<!-- /wp:image -->
 
 	</div>

@@ -23,7 +23,6 @@ function get_pattern_categories() {
 		'vitalisite-footer'     => __( 'Footer Vitalisite', 'vitalisite-fse' ),
 		'banniere-vitalisite'   => __( 'Bannière Vitalisite', 'vitalisite-fse' ),
 		'vitalisite-carrousel'  => __( 'Carrousel', 'vitalisite-fse' ),
-		'vitalisite-bento'      => __( 'Bento Grid', 'vitalisite-fse' ),
 		'vitalisite-accordion'  => __( 'FAQ / Accordion', 'vitalisite-fse' ),
 		'vitalisite-cards'           => __( 'Cards', 'vitalisite-fse' ),
 		'vitalisite-media'           => __( 'Images et Médias', 'vitalisite-fse' ),

@@ -8,22 +8,22 @@
  * Description: Bannière sans image, fond coloré, titre, description et CTA.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-bg vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section"} -->
-<section class="wp-block-group alignfull vitalisite-hero hero-bg vitalisite-hero--tall vitalisite-hero--tight vitalisite-section full-section">
+<!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-bg vitalisite-hero--tight vitalisite-section full-section"} -->
+<section class="wp-block-group alignfull vitalisite-hero hero-bg vitalisite-hero--tight vitalisite-section full-section">
   <!-- wp:group {"className":"vitalisite-hero__inner vitalisite-hero__inner--filled","layout":{"type":"constrained"}} -->
   <div class="wp-block-group vitalisite-hero__inner vitalisite-hero__inner--filled">
-    <!-- wp:heading {"textAlign":"center","level":1,"textColor":"base","className":"vitalisite-hero__title"} -->
-    <h1 class="has-text-align-center has-base-color has-text-color vitalisite-hero__title">Lorem ipsum dolor sit amet</h1>
+    <!-- wp:heading {"textAlign":"center","level":1,"className":"vitalisite-hero__title"} -->
+    <h1 class="has-text-align-center vitalisite-hero__title">Lorem ipsum dolor sit amet</h1>
     <!-- /wp:heading -->
 
-    <!-- wp:paragraph {"align":"center","textColor":"base","className":"vitalisite-hero__lead"} -->
-    <p class="has-text-align-center has-base-color has-text-color vitalisite-hero__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <!-- wp:paragraph {"align":"center","className":"vitalisite-hero__lead"} -->
+    <p class="has-text-align-center vitalisite-hero__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <!-- /wp:paragraph -->
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"vitalisite-hero__actions"} -->
     <div class="wp-block-buttons vitalisite-hero__actions">
       <!-- wp:button {"className":"btn-primary-soft"} -->
-      <div class="wp-block-button btn-primary-soft"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
+      <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
       <!-- /wp:button -->
 
       <!-- wp:button {"className":"btn-secondary-soft"} -->

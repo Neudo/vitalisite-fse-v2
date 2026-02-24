@@ -87,7 +87,7 @@
 }
 
 .vitalisite-header--minimal .wp-block-navigation-item a {
-  color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--bg);
   text-decoration: none;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -114,7 +114,7 @@
 }
 
 .vitalisite-drawer li {
-  color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--bg);
 }
 
 /* Submenu styles */
@@ -326,7 +326,7 @@
   padding: 0.625rem;
   border-radius: 8px;
   cursor: pointer;
-  color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--bg);
   z-index: 1;
 }
 

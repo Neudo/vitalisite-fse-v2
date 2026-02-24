@@ -18,31 +18,26 @@
     "color": {
       "palette": [
         { "name": "Primaire", "slug": "primary", "color": "#C24B3A" },
-        { "name": "Primaire doux", "slug": "primary-soft", "color": "#F7C3A0" },
         {
-          "name": "Primaire texte",
-          "slug": "primary-foreground",
+          "name": "Texte sur Primaire",
+          "slug": "on-primary",
           "color": "#FFFFFF"
         },
+
         { "name": "Secondaire", "slug": "secondary", "color": "#E07A5F" },
         {
-          "name": "Secondaire doux",
-          "slug": "secondary-soft",
-          "color": "#FFE8D6"
-        },
-        {
-          "name": "Secondaire texte",
-          "slug": "secondary-foreground",
+          "name": "Texte sur Secondaire",
+          "slug": "on-secondary",
           "color": "#FFFFFF"
         },
-        { "name": "Base", "slug": "base", "color": "#FFF9F4" },
-        { "name": "Base douce", "slug": "base-soft", "color": "#FFF1E6" },
-        { "name": "Bordure", "slug": "border", "color": "#E6D5C8" },
-        { "name": "Encre", "slug": "ink", "color": "#3B2F2F" },
-        { "name": "Encre douce", "slug": "ink-soft", "color": "#5E4A4A" },
-        { "name": "Succès", "slug": "success", "color": "#16A34A" },
-        { "name": "Avertissement", "slug": "warning", "color": "#D97706" },
-        { "name": "Erreur", "slug": "error", "color": "#DC2626" }
+
+        { "name": "Background", "slug": "bg", "color": "#FFF9F4" },
+        { "name": "Surface", "slug": "surface", "color": "#FFF1E6" },
+        { "name": "Surface 2", "slug": "surface-2", "color": "#FFF1E6" },
+        { "name": "Border", "slug": "border", "color": "#E6D5C8" },
+
+        { "name": "Text", "slug": "text", "color": "#3B2F2F" },
+        { "name": "Muted Text", "slug": "muted", "color": "#5E4A4A" }
       ]
     },
     "typography": {
@@ -100,8 +95,8 @@
   },
   "styles": {
     "color": {
-      "background": "var(--wp--preset--color--base)",
-      "text": "var(--wp--preset--color--ink)"
+      "background": "var(--wp--preset--color--bg)",
+      "text": "var(--wp--preset--color--text)"
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--solaire-sans)",

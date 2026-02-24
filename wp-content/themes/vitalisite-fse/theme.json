@@ -37,19 +37,44 @@
       ],
       "palette": [
         {
+          "color": "#FFFFFF",
+          "name": "Background",
+          "slug": "bg"
+        },
+        {
+          "color": "#F8FAFC",
+          "name": "Surface",
+          "slug": "surface"
+        },
+        {
+          "color": "#F1F5F9",
+          "name": "Surface 2",
+          "slug": "surface-2"
+        },
+        {
+          "color": "#E2E8F0",
+          "name": "Border",
+          "slug": "border"
+        },
+        {
+          "color": "#0F172A",
+          "name": "Text",
+          "slug": "text"
+        },
+        {
+          "color": "#64748B",
+          "name": "Muted Text",
+          "slug": "muted"
+        },
+        {
           "color": "#0B3D91",
           "name": "Primaire",
           "slug": "primary"
         },
         {
-          "color": "#E8EEF7",
-          "name": "Primaire doux",
-          "slug": "primary-soft"
-        },
-        {
           "color": "#FFFFFF",
-          "name": "Primaire texte",
-          "slug": "primary-foreground"
+          "name": "Texte sur Primaire",
+          "slug": "on-primary"
         },
         {
           "color": "#6EC1E4",
@@ -57,54 +82,9 @@
           "slug": "secondary"
         },
         {
-          "color": "#E0F5FC",
-          "name": "Secondaire doux",
-          "slug": "secondary-soft"
-        },
-        {
           "color": "#0F172A",
-          "name": "Secondaire texte",
-          "slug": "secondary-foreground"
-        },
-        {
-          "color": "#FFFFFF",
-          "name": "Base",
-          "slug": "base"
-        },
-        {
-          "color": "#F1F5F9",
-          "name": "Base douce",
-          "slug": "base-soft"
-        },
-        {
-          "color": "#E2E8F0",
-          "name": "Bordure",
-          "slug": "border"
-        },
-        {
-          "color": "#0F172A",
-          "name": "Encre",
-          "slug": "ink"
-        },
-        {
-          "color": "#64748B",
-          "name": "Encre douce",
-          "slug": "ink-soft"
-        },
-        {
-          "color": "#16A34A",
-          "name": "Succès",
-          "slug": "success"
-        },
-        {
-          "color": "#D97706",
-          "name": "Avertissement",
-          "slug": "warning"
-        },
-        {
-          "color": "#DC2626",
-          "name": "Erreur",
-          "slug": "error"
+          "name": "Texte sur Secondaire",
+          "slug": "on-secondary"
         }
       ]
     },
@@ -288,7 +268,7 @@
         },
         "color": {
           "background": "var(--wp--preset--color--primary)",
-          "text": "var(--wp--preset--color--base)"
+          "text": "var(--wp--preset--color--on-primary)"
         },
         "spacing": {
           "padding": {
@@ -309,8 +289,8 @@
           "width": "0px"
         },
         "color": {
-          "background": "var(--wp--preset--color--base-soft)",
-          "text": "var(--wp--preset--color--ink)"
+          "background": "var(--wp--preset--color--surface)",
+          "text": "var(--wp--preset--color--text)"
         },
         "spacing": {
           "padding": {
@@ -376,7 +356,7 @@
         "elements": {
           "cite": {
             "color": {
-              "text": "var(--wp--preset--color--ink-soft)"
+              "text": "var(--wp--preset--color--muted)"
             },
             "typography": {
               "fontSize": "var(--wp--preset--font-size--small)"
@@ -425,8 +405,8 @@
       }
     },
     "color": {
-      "background": "var(--wp--preset--color--base)",
-      "text": "var(--wp--preset--color--ink)"
+      "background": "var(--wp--preset--color--bg)",
+      "text": "var(--wp--preset--color--text)"
     },
     "elements": {
       "button": {
@@ -441,7 +421,7 @@
         },
         "color": {
           "background": "var(--wp--preset--color--primary)",
-          "text": "var(--wp--preset--color--base)"
+          "text": "var(--wp--preset--color--on-primary)"
         },
         "spacing": {
           "padding": {
@@ -500,7 +480,7 @@
       },
       "heading": {
         "color": {
-          "text": "var(--wp--preset--color--main)"
+          "text": "var(--wp--preset--color--primary)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--clinique-sans)",

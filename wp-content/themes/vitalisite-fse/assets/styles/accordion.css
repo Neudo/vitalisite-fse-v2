@@ -23,7 +23,7 @@
   cursor: pointer;
   font-weight: 600;
   font-family: var(--wp--preset--font-family--primary);
-  color: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,27 +63,27 @@
   border-radius: var(--wp--custom--image-radius);
   margin-bottom: var(--wp--preset--spacing--30);
   padding: 0;
-  background-color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--bg);
   overflow: hidden;
 }
 
 .vitalisite-accordion-variant-legacy .vitalisite-accordion-item summary {
-  background-color: var(--wp--preset--color--base-soft);
+  background-color: var(--wp--preset--color--surface);
   padding: var(--wp--preset--spacing--40);
   transition: background-color 0.3s ease;
 }
 
 .vitalisite-accordion-variant-legacy .vitalisite-accordion-item[open] summary {
   background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--bg);
   margin-bottom: 0;
 }
 
 .vitalisite-accordion-variant-simple
   .vitalisite-accordion-item[open]
   .wp-block-group {
-  background-color: var(--wp--preset--color--secondary-soft);
-  color: var(--wp--preset--color--secondary-foreground);
+  background-color: var(--wp--preset--color--surface);
+  color: var(--wp--preset--color--on-secondary);
   border-radius: var(--wp--custom--image-radius);
   margin-bottom: 0;
 }
@@ -97,6 +97,7 @@
 
 .wp-block-vitalisite-fse-accordion-item.vitalisite-accordion-item p {
   margin: 0;
+  color: var(--wp--preset--color--text);
 }
 
 /* Custom Accordion Block Container */

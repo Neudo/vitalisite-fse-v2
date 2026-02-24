@@ -26,7 +26,7 @@
 
 .vitalisite-hero__inner--filled,
 .vitalisite-hero__inner--filled * {
-  color: var(--wp--preset--color--primary-foreground);
+  color: var(--wp--preset--color--on-primary);
 }
 
 .vitalisite-style--mineral .vitalisite-hero__inner--filled {
@@ -44,7 +44,7 @@
   padding: 20px;
 }
 
-.vitalisite-style--mineral .vitalisite-hero {
+.vitalisite-style--mineral .vitalisite-hero--tight {
   padding-left: 0;
   padding-right: 0;
 }
