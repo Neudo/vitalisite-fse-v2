@@ -3,7 +3,7 @@
  * Title: Avant / Après
  * Slug: vitalisite-fse/before-after
  * Description: Comparaison avant/après avec titre, description et CTA.
- * Categories: vitalisite-before-after
+ * Categories: vitalisite-media
  * Keywords: avant, apres, before, after, comparaison
  */
 

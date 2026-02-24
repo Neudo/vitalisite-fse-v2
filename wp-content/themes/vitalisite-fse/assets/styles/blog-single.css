@@ -1,0 +1,146 @@
+/* ===========================
+   Vitalisite Blog Single Article
+   =========================== */
+
+.vitalisite-single-article {
+  padding-top: 0;
+  padding-bottom: var(--wp--preset--spacing--70);
+}
+
+/* Header Banner (core/cover) */
+.vitalisite-single-header {
+  border-radius: 0 0 var(--wp--custom--image-radius, 24px)
+    var(--wp--custom--image-radius, 24px);
+  overflow: hidden;
+  margin-bottom: var(--wp--preset--spacing--60);
+  border: none;
+}
+
+.vitalisite-single-header__categories {
+  margin-bottom: 20px;
+}
+
+.vitalisite-single-header__categories a {
+  display: inline-block;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--primary-foreground, #fff);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 8px;
+}
+
+.vitalisite-single-header__title {
+  color: #fff !important;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.vitalisite-single-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.vitalisite-single-header__meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vitalisite-single-header__meta i {
+  opacity: 0.7;
+}
+
+/* Article Content */
+.vitalisite-single-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--wp--preset--color--ink);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vitalisite-single-content p {
+  margin-bottom: 1.5em;
+}
+
+.vitalisite-single-content h2 {
+  font-size: 2rem;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  color: var(--wp--preset--color--ink);
+}
+
+.vitalisite-single-content h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+}
+
+.vitalisite-single-content img {
+  border-radius: var(--wp--custom--image-radius, 12px);
+  margin: 2em 0;
+}
+
+.vitalisite-single-content blockquote {
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--wp--preset--color--primary);
+  border-left: 4px solid var(--wp--preset--color--primary);
+  padding-left: 24px;
+  margin: 2.5em 0;
+}
+
+.vitalisite-single-content ul,
+.vitalisite-single-content ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.vitalisite-single-content li {
+  margin-bottom: 0.5em;
+}
+
+/* Back Link */
+.vitalisite-single-back {
+  max-width: 800px;
+  margin: 0 auto var(--wp--preset--spacing--50) auto;
+  display: block;
+}
+
+.vitalisite-single-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wp--preset--color--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.vitalisite-single-back a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Related Posts (Optional wrapper) */
+.vitalisite-single-related {
+  margin-top: var(--wp--preset--spacing--70);
+  padding-top: var(--wp--preset--spacing--60);
+  border-top: 1px solid var(--wp--preset--color--border, #e2e8f0);
+}
+
+.vitalisite-single-related h3 {
+  text-align: center;
+  margin-bottom: var(--wp--preset--spacing--50);
+}

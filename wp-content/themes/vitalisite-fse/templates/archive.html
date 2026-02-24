@@ -4,15 +4,11 @@
 <main class="wp-block-group vitalisite-blog-listing vitalisite-section">
   <!-- wp:group {"className":"vitalisite-blog-header","layout":{"type":"constrained"}} -->
   <div class="wp-block-group vitalisite-blog-header">
-    <!-- wp:heading {"textAlign":"center","level":1} -->
-    <h1 class="wp-block-heading has-text-align-center">
-      Actualités & Conseils
-    </h1>
-    <!-- /wp:heading -->
+    <!-- wp:query-title {"type":"archive","textAlign":"center","level":1} /-->
 
     <!-- wp:paragraph {"align":"center"} -->
     <p class="has-text-align-center">
-      Retrouvez nos derniers articles, conseils santé et actualités du cabinet.
+      Retrouvez nos derniers articles de cette catégorie.
     </p>
     <!-- /wp:paragraph -->
 
@@ -20,7 +16,7 @@
   </div>
   <!-- /wp:group -->
 
-  <!-- wp:query {"query":{"perPage":9,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3},"className":"vitalisite-blog-grid"} -->
+  <!-- wp:query {"queryId":0,"query":{"inherit":true,"perPage":9},"displayLayout":{"type":"flex","columns":3},"className":"vitalisite-blog-grid"} -->
   <div class="wp-block-query vitalisite-blog-grid">
     <!-- wp:post-template -->
     <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9"} /-->

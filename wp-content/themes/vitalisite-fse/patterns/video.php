@@ -3,7 +3,7 @@
  * Title: Vidéo
  * Slug: vitalisite-fse/video
  * Description: Section vidéo avec titre, description et bouton CTA.
- * Categories: vitalisite-video
+ * Categories: vitalisite-media
  * Keywords: video, youtube, media
  */
 

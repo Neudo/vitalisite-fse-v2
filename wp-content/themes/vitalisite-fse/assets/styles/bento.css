@@ -25,6 +25,7 @@
   justify-content: center;
   border-radius: var(--wp--custom--image-radius);
   margin-top: 0 !important; /* Override global block spacing */
+  padding: 40px 25px;
 }
 
 .vitalisite-bento-item p {

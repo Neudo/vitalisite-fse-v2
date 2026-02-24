@@ -11,8 +11,8 @@
 <!-- wp:group {"tagName":"section","className":"vitalisite-bento-grid vitalisite-section full-section"} -->
 <section class="wp-block-group vitalisite-bento-grid vitalisite-section full-section">
 
-    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"className":"vitalisite-bento-item vitalisite-bento-item--span-2"} -->
-    <div class="wp-block-group vitalisite-bento-item vitalisite-bento-item--span-2" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--60)">
+    <!-- wp:group {"className":"vitalisite-bento-item vitalisite-bento-item--span-2"} -->
+    <div class="wp-block-group vitalisite-bento-item vitalisite-bento-item--span-2">
         
         <!-- wp:columns {"verticalAlignment":"center"} -->
         <div class="wp-block-columns are-vertically-aligned-center">
@@ -25,7 +25,7 @@
             <!-- /wp:column -->
 
             <!-- wp:column {"width":"5%"} -->
-            <div class="wp-block-column" style="flex-basis:5%"></div>
+            <div class="wp-block-column hidden-mobile" style="flex-basis:5%"></div>
             <!-- /wp:column -->
 
             <!-- wp:column {"width":"50%"} -->
@@ -45,8 +45,8 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"className":"vitalisite-bento-item vitalisite-bento-item--span-1"} -->
-    <div class="wp-block-group vitalisite-bento-item vitalisite-bento-item--span-1" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--50)">
+    <!-- wp:group {"className":"vitalisite-bento-item vitalisite-bento-item--span-1"} -->
+    <div class="wp-block-group vitalisite-bento-item vitalisite-bento-item--span-1">
         <!-- wp:heading {"level":3,"fontSize":"large"} -->
         <h3 class="wp-block-heading has-large-font-size">Lorem Ipsum</h3>
         <!-- /wp:heading -->

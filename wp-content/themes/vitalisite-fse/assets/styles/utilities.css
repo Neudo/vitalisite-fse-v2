@@ -7,6 +7,10 @@
  * @since 1.0.0
  */
 
+main {
+  min-height: 77vh;
+}
+
 /* Main Section Wrapper - content width + vertical spacing */
 .vitalisite-section {
   max-width: 1290px;
@@ -117,4 +121,11 @@ details.vitalisite-accordion-item.is-layout-flow > summary + * {
 .vitalisite-slider-wrapper .swiper-pagination-bullet-active,
 .vitalisite-testimonials-swiper .swiper-pagination-bullet-active {
   opacity: 0.6;
+}
+
+.hidden-mobile {
+  display: none;
+  @media screen and (min-width: 782px) {
+    display: flex;
+  }
 }

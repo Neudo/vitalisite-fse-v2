@@ -1,0 +1,60 @@
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"vitalisite-single-article","layout":{"type":"default"}} -->
+<main class="wp-block-group vitalisite-single-article">
+  <!-- wp:cover {"useFeaturedImage":true,"dimRatio":40,"overlayColor":"base","customOverlayColor":"#1a1f24","minHeight":450,"minHeightUnit":"px","isDark":true,"align":"full","className":"vitalisite-single-header","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--70)","right":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)","left":"var(--wp--preset--spacing--60)"}}}} -->
+  <div
+    class="wp-block-cover alignfull is-dark vitalisite-single-header has-background-color has-primary-background-color"
+    style="
+      padding-top: var(--wp--preset--spacing--70);
+      padding-right: var(--wp--preset--spacing--60);
+      padding-bottom: var(--wp--preset--spacing--60);
+      padding-left: var(--wp--preset--spacing--60);
+      min-height: 450px;
+      background-color: #1a1f24;
+    "
+  >
+    <span
+      aria-hidden="true"
+      class="wp-block-cover__background has-background-dim-40 has-background-dim"
+      style="background-color: #1a1f24"
+    ></span>
+    <div class="wp-block-cover__inner-container">
+      <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px","justifyContent":"left"}} -->
+      <div class="wp-block-group">
+        <!-- wp:post-title {"level":1,"className":"vitalisite-single-header__title"} /-->
+
+        <!-- wp:group {"className":"vitalisite-single-header__meta","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group vitalisite-single-header__meta">
+          <!-- wp:post-terms {"term":"category","className":"vitalisite-single-header__categories"} /-->
+          <!-- wp:post-date {"isLink":false} /-->
+          <!-- wp:post-author-name {"isLink":false} /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+  </div>
+  <!-- /wp:cover -->
+
+  <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
+  <div class="wp-block-group">
+    <!-- wp:spacer {"height":"40px"} -->
+    <div style="height: 40px" aria-hidden="true" class="wp-block-spacer"></div>
+    <!-- /wp:spacer -->
+
+    <!-- wp:shortcode -->
+    [vitalisite_back_to_blog]
+    <!-- /wp:shortcode -->
+
+    <!-- wp:group {"className":"vitalisite-single-content","layout":{"inherit":true}} -->
+    <div class="wp-block-group vitalisite-single-content">
+      <!-- wp:post-content {"layout":{"inherit":true}} /-->
+    </div>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->

@@ -28,6 +28,7 @@ const OPTION_CABINET  = 'vitalisite_cabinet';
 const OPTION_HOURS    = 'vitalisite_hours';
 const OPTION_SOCIAL   = 'vitalisite_social';
 const OPTION_FEATURES = 'vitalisite_features';
+const OPTION_BLOG     = 'vitalisite_blog';
 
 /* ------------------------------------------------------------------ */
 /*  Helper: get a single option value with a default                  */
@@ -193,6 +194,35 @@ function register_settings() {
 			) )
 		);
 	}
+
+	/* ---- Tab 5: Blog ---- */
+
+	register_setting( 'vitalisite_tab_blog', OPTION_BLOG, array(
+		'type'              => 'array',
+		'sanitize_callback' => __NAMESPACE__ . '\sanitize_blog',
+	) );
+
+	add_settings_section(
+		'vitalisite_blog_section',
+		__( 'Blog & Actualités', 'vitalisite-fse' ),
+		__NAMESPACE__ . '\section_blog_description',
+		'vitalisite_tab_blog'
+	);
+
+	$blog_fields = get_blog_fields();
+	foreach ( $blog_fields as $id => $field ) {
+		add_settings_field(
+			$id,
+			$field['label'],
+			__NAMESPACE__ . '\render_field',
+			'vitalisite_tab_blog',
+			'vitalisite_blog_section',
+			array_merge( $field, array(
+				'id'    => $id,
+				'group' => OPTION_BLOG,
+			) )
+		);
+	}
 }
 add_action( 'admin_init', __NAMESPACE__ . '\register_settings' );
 
@@ -350,6 +380,31 @@ function get_social_fields() {
 	);
 }
 
+function get_blog_fields() {
+	return array(
+		'back_text' => array(
+			'label'       => __( 'Texte du lien Retour', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => 'Retour aux actualités',
+		),
+		'read_more_text' => array(
+			'label'       => __( 'Texte "Lire l\'article"', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => 'Lire l\'article',
+		),
+		'excerpt_length' => array(
+			'label'       => __( 'Longueur de l\'extrait (en mots)', 'vitalisite-fse' ),
+			'type'        => 'number',
+			'placeholder' => '20',
+		),
+		'all_categories_text' => array(
+			'label'       => __( 'Texte de réinitialisation des filtres ("Tous")', 'vitalisite-fse' ),
+			'type'        => 'text',
+			'placeholder' => 'Tous',
+		),
+	);
+}
+
 /* ------------------------------------------------------------------ */
 /*  4. Section descriptions                                           */
 /* ------------------------------------------------------------------ */
@@ -374,6 +429,10 @@ function section_banner_description() {
 
 function section_cta_description() {
 	echo '<p>' . esc_html__( 'Barre fixe en bas de l\'écran sur mobile avec un bouton d\'action (prise de RDV, appel…). Apparaît après un léger scroll.', 'vitalisite-fse' ) . '</p>';
+}
+
+function section_blog_description() {
+	echo '<p>' . esc_html__( 'Personnalisez les textes de la section actualités/blog du site.', 'vitalisite-fse' ) . '</p>';
 }
 
 /* ------------------------------------------------------------------ */
@@ -447,7 +506,7 @@ function render_field( $args ) {
 			echo '</select>';
 			break;
 
-		default: // text, email, url
+		default: // text, email, url, number
 			printf(
 				'<input type="%s" name="%s" id="%s" class="regular-text" value="%s" placeholder="%s">',
 				esc_attr( $type ),
@@ -640,6 +699,21 @@ function sanitize_social( $input ) {
 	return $clean;
 }
 
+function sanitize_blog( $input ) {
+	$clean = array();
+	$fields = get_blog_fields();
+
+	foreach ( $fields as $id => $field ) {
+		$type = isset( $field['type'] ) ? $field['type'] : 'text';
+		if ( 'number' === $type ) {
+			$clean[ $id ] = absint( $input[ $id ] );
+		} else {
+			$clean[ $id ] = sanitize_text_field( $input[ $id ] );
+		}
+	}
+	return $clean;
+}
+
 /* ------------------------------------------------------------------ */
 /*  8. Render the settings page                                       */
 /* ------------------------------------------------------------------ */
@@ -654,6 +728,7 @@ function render_settings_page() {
 		'hours'    => __( 'Horaires', 'vitalisite-fse' ),
 		'social'   => __( 'Réseaux sociaux', 'vitalisite-fse' ),
 		'features' => __( 'Fonctionnalités', 'vitalisite-fse' ),
+		'blog'     => __( 'Blog', 'vitalisite-fse' ),
 	);
 
 	$current_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'cabinet';

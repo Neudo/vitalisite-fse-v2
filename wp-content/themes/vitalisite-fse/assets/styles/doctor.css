@@ -105,17 +105,19 @@
   background: var(--wp--preset--color--base, #ffffff);
   padding: var(--wp--preset--spacing--50);
   margin-bottom: var(--wp--preset--spacing--40);
-  border-left: 6px solid var(--wp--preset--color--primary);
+  border-left: 6px solid var(--wp--preset--color--secondary);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border-left 0.3s ease;
   width: 100%;
 }
 
 .vitalisite-timeline-item:hover {
-  transform: translateX(4px);
+  transform: translateX(2px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid var(--wp--preset--color--primary);
 }
 
 .vitalisite-timeline-header {
