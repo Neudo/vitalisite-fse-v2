@@ -47,7 +47,7 @@ require_once __DIR__ . '/inc/block-contact-form.php';
 require_once __DIR__ . '/inc/google-reviews-functions.php';
 
 // Debug visuel couleurs (WP_DEBUG uniquement).
-// require_once __DIR__ . '/inc/debug-colors.php';
+require_once __DIR__ . '/inc/debug-colors.php';
 
 // License system & setup wizard.
 require_once __DIR__ . '/inc/license.php';

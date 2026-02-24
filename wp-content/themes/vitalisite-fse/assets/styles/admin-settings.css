@@ -1,79 +1,84 @@
 .vitalisite-settings-wrap {
-    max-width: 900px;
+  max-width: 900px;
 }
 
 .vitalisite-settings-wrap h1 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .vitalisite-tabs {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .vitalisite-settings-form .form-table th {
-    width: 200px;
-    padding-top: 20px;
+  width: 200px;
+  padding-top: 20px;
 }
 
 .vitalisite-settings-form .form-table td {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 /* Image field */
 .vitalisite-image-field {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .vitalisite-image-preview img {
-    display: block;
-    border: 2px solid #ddd;
+  display: block;
+  border: 2px solid #ddd;
 }
 
 /* Hours table */
 .vitalisite-hours-settings {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .vitalisite-global-closed {
-    display: block;
-    padding: 16px 20px;
-    background: #fff3cd;
-    border-left: 4px solid #ffc107;
-    border-radius: 4px;
-    margin-bottom: 1.5em;
-    cursor: pointer;
+  display: block;
+  padding: 16px 20px;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+  margin-bottom: 1.5em;
+  cursor: pointer;
 }
 
 .vitalisite-global-closed input[type="checkbox"] {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .vitalisite-global-closed .description {
-    margin-top: 6px;
-    margin-left: 26px;
-    font-style: italic;
+  margin-top: 6px;
+  margin-left: 26px;
+  font-style: italic;
 }
 
 .vitalisite-hours-table {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 .vitalisite-hours-table th,
 .vitalisite-hours-table td {
-    padding: 10px 12px;
+  padding: 10px 12px;
 }
 
 .vitalisite-hours-table input[type="time"] {
-    width: 130px;
+  width: 130px;
 }
 
 .vitalisite-hours-table tr.vitalisite-day-disabled td {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .vitalisite-hours-table input[type="time"]:disabled {
-    background: #f0f0f0;
+  background: #f0f0f0;
+}
+
+.block-editor-block-list__layout.is-root-container
+  > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: unset !important;
 }
