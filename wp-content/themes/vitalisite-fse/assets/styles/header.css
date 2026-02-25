@@ -17,9 +17,14 @@
    ============================================ */
 
 .vitalisite-header--minimal {
-  background-color: var(--wp--preset--color--vital-mist);
+  background-color: var(--wp--preset--color--on-primary);
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   transition: all 0.3s ease;
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
+}
+
+.vitalisite-header--minimal > .wp-block-group {
+  padding: 0 var(--wp--preset--spacing--60);
 }
 
 /* Sticky header effect (optional - can be enabled via theme settings) */
@@ -61,13 +66,13 @@
 }
 
 .vitalisite-header--minimal .wp-block-site-title a {
-  color: var(--wp--preset--color--vital-ink);
+  color: var(--wp--preset--color--text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .vitalisite-header--minimal .wp-block-site-title a:hover {
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
 }
 
 /* ============================================
@@ -98,18 +103,18 @@
 }
 
 .vitalisite-header--minimal .wp-block-navigation-item a:hover {
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
   background-color: rgba(11, 61, 145, 0.05);
 }
 
 .vitalisite-header--minimal .wp-block-navigation-item a:focus-visible {
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 
 /* Active/Current page indicator */
 .vitalisite-header--minimal .wp-block-navigation-item.current-menu-item a {
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
   font-weight: 600;
 }
 
@@ -119,7 +124,7 @@
 
 /* Submenu styles */
 .vitalisite-header--minimal .wp-block-navigation__submenu-container {
-  background-color: var(--wp--preset--color--vital-mist);
+  background-color: var(--wp--preset--color--on-primary);
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
@@ -137,7 +142,7 @@
 
 /* Mobile menu button */
 .vitalisite-header--minimal .wp-block-navigation__responsive-container-open {
-  color: var(--wp--preset--color--vital-ink);
+  color: var(--wp--preset--color--text);
   padding: 0.5rem;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -146,12 +151,12 @@
 .vitalisite-header--minimal
   .wp-block-navigation__responsive-container-open:hover {
   background-color: rgba(11, 61, 145, 0.05);
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
 }
 
 .vitalisite-header--minimal
   .wp-block-navigation__responsive-container-open:focus-visible {
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 
@@ -168,16 +173,11 @@
 }
 
 .vitalisite-header__cta .wp-block-button__link {
-  background-color: var(--wp--preset--color--vital-blue);
-  color: var(--wp--preset--color--vital-mist);
-  border: none;
-  border-radius: 6px;
-  padding: 0.625rem 1.25rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  text-decoration: none;
+  border-radius: var(--wp--custom--border-radius--cta, 6px);
+  padding: 15px 30px;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--on-primary);
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(11, 61, 145, 0.2);
 }
 
 .vitalisite-header__cta .wp-block-button__link:hover {
@@ -192,7 +192,7 @@
 }
 
 .vitalisite-header__cta .wp-block-button__link:focus-visible {
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 
@@ -208,8 +208,11 @@
   visibility: hidden;
 }
 
-.vitalisite-header--minimal.is-nav-ready {
-  visibility: visible;
+.vitalisite-header--minimal.is-nav-ready,
+body.wp-admin .vitalisite-header--minimal,
+.block-editor-iframe__body .vitalisite-header--minimal,
+.editor-styles-wrapper .vitalisite-header--minimal {
+  visibility: visible !important;
 }
 
 /* ============================================
@@ -249,7 +252,7 @@
   padding: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
-  color: var(--wp--preset--color--vital-ink);
+  color: var(--wp--preset--color--text);
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -258,11 +261,11 @@
 
 .vitalisite-burger:hover {
   background-color: rgba(11, 61, 145, 0.05);
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
 }
 
 .vitalisite-burger:focus-visible {
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 
@@ -331,7 +334,7 @@
 }
 
 .vitalisite-drawer__close:focus-visible {
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 
@@ -370,11 +373,11 @@
 
 .vitalisite-drawer__nav .wp-block-navigation-item a:hover {
   background-color: rgba(11, 61, 145, 0.05);
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
 }
 
 .vitalisite-drawer__nav .wp-block-navigation-item.current-menu-item a {
-  color: var(--wp--preset--color--vital-blue);
+  color: var(--wp--preset--color--primary);
   font-weight: 600;
 }
 
@@ -419,8 +422,8 @@
   position: absolute;
   top: -100px;
   left: 0;
-  background-color: var(--wp--preset--color--vital-blue);
-  color: var(--wp--preset--color--vital-mist);
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--on-primary);
   padding: 0.75rem 1rem;
   text-decoration: none;
   font-weight: 600;
@@ -430,7 +433,7 @@
 
 .vitalisite-header .skip-link:focus {
   top: 0;
-  outline: 2px solid var(--wp--preset--color--vital-blue);
+  outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 2px;
 }
 

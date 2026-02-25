@@ -190,6 +190,17 @@
     header = document.querySelector(HEADER_SEL);
     if (!header) return;
 
+    // Do not run the responsive script inside the WordPress Block/Site Editor
+    if (
+      document.body.classList.contains("editor-styles-wrapper") ||
+      document.body.classList.contains("block-editor-iframe__body") ||
+      document.body.classList.contains("wp-admin") ||
+      window.frameElement
+    ) {
+      header.classList.add(CLASS_READY); // Ensure it's visible in editor
+      return;
+    }
+
     flexContainer = getFlexContainer(header);
     if (!flexContainer) return;
 
