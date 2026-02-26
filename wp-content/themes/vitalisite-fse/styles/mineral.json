@@ -26,7 +26,7 @@
         {
           "name": "Texte sur Secondaire",
           "slug": "on-secondary",
-          "color": "#0F172A"
+          "color": "#fff4f4"
         },
 
         { "name": "Background", "slug": "bg", "color": "#FFFFFF" },

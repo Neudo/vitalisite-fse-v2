@@ -32,10 +32,11 @@ require_once __DIR__ . '/inc/admin-settings.php';
 // Dynamic footer content injection.
 require_once __DIR__ . '/inc/footer-dynamic.php';
 
-// Features: announcement banner + sticky CTA + links page.
+// Features: announcement banner + sticky CTA + links page + social links shortcode.
 require_once __DIR__ . '/inc/feature-banner.php';
 require_once __DIR__ . '/inc/feature-sticky-cta.php';
 require_once __DIR__ . '/inc/feature-links-page.php';
+require_once __DIR__ . '/inc/feature-social-links.php';
 
 // AJAX contact form handler.
 require_once __DIR__ . '/inc/ajax-contact-form.php';

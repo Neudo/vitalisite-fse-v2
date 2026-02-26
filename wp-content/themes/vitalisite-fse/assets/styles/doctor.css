@@ -2,6 +2,57 @@
   padding: var(--wp--preset--spacing--70) 0;
 }
 
+/* --- Doctor Profile Card --- */
+.vitalisite-doctor-profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vitalisite-doctor-profile__avatar img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 5px solid var(--wp--preset--color--surface);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.vitalisite-doctor-profile__stats {
+  display: flex;
+  gap: var(--wp--preset--spacing--50);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vitalisite-doctor-profile__badge {
+  background: var(--wp--preset--color--surface);
+  border: 1px solid var(--wp--preset--color--border);
+  border-radius: var(--wp--custom--border-radius--large, 12px);
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
+  min-width: 140px;
+  flex: 1;
+}
+
+.vitalisite-doctor-profile__badge-number {
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+  font-weight: 800 !important;
+  color: var(--wp--preset--color--primary) !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.vitalisite-doctor-profile__badge-label {
+  font-size: 0.8rem;
+  color: var(--wp--preset--color--muted);
+  margin: 4px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
 .vitalisite-doctor-section.has-background,
 .vitalisite-doctor-section-v2.has-background {
   padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--60);
@@ -59,7 +110,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover !important;
-  border-radius: 0;
 }
 
 .vitalisite-doctor-card-v2__name {
@@ -154,7 +204,6 @@
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--bg, #ffffff);
   padding: 4px 14px;
-  border-radius: 30px;
   font-weight: 700;
   font-size: 0.9rem;
   display: inline-flex;
@@ -166,4 +215,167 @@
   margin-bottom: 0;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+/* --- Doctor Presentation Sticky (V3) --- */
+.vitalisite-doctor-sticky__layout {
+  position: relative;
+  align-items: flex-start !important;
+}
+
+@media (min-width: 782px) {
+  .vitalisite-doctor-sticky__content {
+    position: sticky;
+    top: 15vh;
+  }
+}
+
+.vitalisite-doctor-sticky__content,
+.vitalisite-doctor-sticky__content h2 {
+  color: var(--wp--preset--color--on-primary);
+}
+
+.vitalisite-doctor-sticky__images .wp-block-image img {
+  border-radius: var(--wp--custom--image-radius, 12px);
+}
+
+.vitalisite-doctor-sticky__img img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  width: 100%;
+}
+
+.vitalisite-doctor-sticky__img + .vitalisite-doctor-sticky__img {
+  margin-top: var(--wp--preset--spacing--40);
+}
+
+.vitalisite-doctor__portrait img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* --- Doctor Cover Card Pattern --- */
+.vitalisite-doctor-cover__layout {
+  align-items: stretch !important;
+}
+
+.vitalisite-doctor-cover__photo-col {
+  overflow: hidden;
+}
+
+.vitalisite-doctor-cover__photo,
+.vitalisite-doctor-cover__photo a,
+.vitalisite-doctor-cover__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vitalisite-doctor-cover__photo img {
+  aspect-ratio: 4 / 5;
+  min-height: 400px;
+}
+
+/* La carte vient se superposer à l'image */
+@media (min-width: 782px) {
+  .vitalisite-doctor-cover__right {
+    position: relative;
+    z-index: 1;
+  }
+
+  .vitalisite-doctor-cover__card {
+    border-radius: var(--wp--custom--image-radius, 6px);
+    transform: translateX(-80px);
+  }
+}
+
+.vitalisite-doctor-cover__divider {
+  width: 60px !important;
+  margin: 0 !important;
+  border-top: 2px solid currentColor;
+}
+
+/* Tous les textes dans la carte héritent de on-primary via CSS */
+.vitalisite-doctor-cover__card,
+.vitalisite-doctor-cover__card h2,
+.vitalisite-doctor-cover__card p,
+.vitalisite-doctor-cover__card .wp-block-heading {
+  color: var(--wp--preset--color--on-primary);
+  margin-block-start: 15px;
+}
+
+/* Sous-titre spécialité */
+.vitalisite-doctor-cover__specialty {
+  opacity: 0.75;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vitalisite-doctor-cover__card hr {
+  border-color: var(--wp--preset--color--on-primary);
+  opacity: 0.25;
+}
+
+.vitalisite-doctor-cover__social {
+  gap: 12px !important;
+  padding-left: 20px;
+}
+
+/* Social links depuis shortcode */
+.vitalisite-social-links {
+  list-style: none;
+  padding: 0 0 0 15px;
+  margin: var(--wp--preset--spacing--40) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vitalisite-social-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--on-secondary);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  text-decoration: none;
+}
+
+.vitalisite-social-link a:hover {
+  background: var(--wp--preset--color--secondary);
+  transform: translateY(-2px);
+}
+
+.vitalisite-social-link svg {
+  fill: currentColor;
+  display: block;
+}
+
+.vitalisite-doctor-cover__social .wp-block-social-link a {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transition: background 0.2s ease;
+}
+
+.vitalisite-doctor-cover__social .wp-block-social-link a:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+@media (max-width: 781px) {
+  .vitalisite-doctor-cover__right {
+    transform: none;
+  }
+
+  .vitalisite-doctor-cover__photo img {
+    aspect-ratio: 4/3;
+    height: auto;
+  }
 }
