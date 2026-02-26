@@ -9,6 +9,7 @@
 
 main {
   min-height: 77vh;
+  margin-top: 0;
 }
 
 /* Main Section Wrapper - content width + vertical spacing */
