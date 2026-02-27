@@ -11,8 +11,8 @@
 <!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull vitalisite-section" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 
-    <!-- wp:group {"align":"wide","className":"vitalisite-doctor-profile"} -->
-    <div class="wp-block-group alignwide vitalisite-doctor-profile">
+    <!-- wp:group {"align":"wide","className":"vitalisite-doctor-profile reveal-y"} -->
+    <div class="wp-block-group alignwide vitalisite-doctor-profile reveal-y">
 
         <!-- wp:image {"aspectRatio":"1","scale":"cover","align":"center","className":"vitalisite-doctor-profile__avatar"} -->
         <figure class="wp-block-image aligncenter vitalisite-doctor-profile__avatar"><img alt="Portrait du praticien" style="aspect-ratio:1;object-fit:cover"/></figure>
@@ -26,8 +26,8 @@
         <h2 class="wp-block-heading has-text-align-center" style="font-weight:700">Dr. Prénom Nom</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center","textColor":"primary","style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontWeight":"600"},"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-        <p class="has-text-align-center has-primary-color has-text-color" style="font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:4px;margin-bottom:0">Spécialité — Diplôme</p>
+        <!-- wp:paragraph {"align":"center","textColor":"primary","style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontWeight":"600"},"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"0"}}}} -->
+        <p class="has-text-align-center has-primary-color has-text-color" style="font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:var(--wp--preset--spacing--30);margin-bottom:0">Spécialité — Diplôme</p>
         <!-- /wp:paragraph -->
 
         <!-- wp:group {"className":"vitalisite-doctor-profile__stats","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->

@@ -15,7 +15,7 @@
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
         <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Nos tarifs</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Nos tarifs</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center"} -->
@@ -25,12 +25,12 @@
     <!-- /wp:group -->
 
     <!-- wp:columns {"className":"vitalisite-pricing-grid"} -->
-    <div class="wp-block-columns vitalisite-pricing-grid">
+    <div class="wp-block-columns vitalisite-pricing-grid reveal-stagger">
 
         <!-- wp:column {"className":"vitalisite-pricing-card"} -->
         <div class="wp-block-column vitalisite-pricing-card">
             <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="wp-block-heading has-text-align-center">Consultation initiale</h3>
+            <h3 class="wp-block-heading has-text-align-center reveal-y">Consultation initiale</h3>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__price"} -->
@@ -54,7 +54,7 @@
         <!-- wp:column {"className":"vitalisite-pricing-card"} -->
         <div class="wp-block-column vitalisite-pricing-card">
             <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="wp-block-heading has-text-align-center">Séance de suivi</h3>
+            <h3 class="wp-block-heading has-text-align-center reveal-y">Séance de suivi</h3>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__price"} -->
@@ -78,7 +78,7 @@
         <!-- wp:column {"className":"vitalisite-pricing-card"} -->
         <div class="wp-block-column vitalisite-pricing-card">
             <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="wp-block-heading has-text-align-center">Forfait 5 séances</h3>
+            <h3 class="wp-block-heading has-text-align-center reveal-y">Forfait 5 séances</h3>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__price"} -->

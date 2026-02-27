@@ -21,7 +21,7 @@ function vitalisite_render_pricing_item_block( $attributes ) {
 
 	ob_start();
 	?>
-	<div class="wp-block-vitalisite-fse-pricing-item vitalisite-pricing-list-card">
+	<div class="wp-block-vitalisite-fse-pricing-item vitalisite-pricing-list-card reveal-y">
 		<div class="vitalisite-pricing-list-card__content">
 			<?php if ( $title ) : ?>
 				<h3><?php echo wp_kses_post( $title ); ?></h3>

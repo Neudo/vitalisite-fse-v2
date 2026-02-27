@@ -28,7 +28,7 @@
 
 .vitalisite-pricing-card .wp-block-buttons {
   margin-top: auto;
-  padding-top: 25px;
+  padding-top: var(--wp--preset--spacing--50);
 }
 
 .vitalisite-pricing-card__price {
@@ -51,7 +51,7 @@
   gap: var(--wp--preset--spacing--40);
   max-width: 900px;
   width: 100%;
-  margin: 35px auto 0;
+  margin: var(--wp--preset--spacing--60) auto 0;
 }
 
 .vitalisite-pricing-list-card {
@@ -87,12 +87,12 @@
 
 .vitalisite-pricing-list-card__content {
   flex: 1;
-  gap: 10px !important;
+  gap: var(--wp--preset--spacing--30) !important;
 }
 
 .vitalisite-pricing-list-card__content h3 {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: var(--wp--preset--spacing--50);
 }
 
 .vitalisite-pricing-list-card__content p {
@@ -106,7 +106,7 @@
   flex-direction: column;
   align-items: flex-start !important;
   min-width: 180px;
-  gap: 15px !important;
+  gap: var(--wp--preset--spacing--40) !important;
 }
 
 @media (min-width: 782px) {

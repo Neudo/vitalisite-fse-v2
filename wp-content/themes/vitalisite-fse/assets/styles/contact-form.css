@@ -18,7 +18,7 @@
 .vitalisite-contact-form__field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--wp--preset--spacing--30);
 }
 
 .vitalisite-contact-form__field label {
@@ -37,7 +37,7 @@
 .vitalisite-contact-form__field textarea,
 .vitalisite-contact-form__field select {
   width: 100%;
-  padding: 12px 16px;
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
   border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
   border-radius: min(var(--wp--custom--border-radius--cta, 6px), 12px);
   font-family: inherit;
@@ -107,8 +107,8 @@
 .vitalisite-contact-form__submit button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
+  gap: var(--wp--preset--spacing--30);
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--60);
   border: none;
   border-radius: var(--wp--custom--border-radius--cta, 6px);
   background-color: var(--wp--preset--color--primary);
@@ -135,7 +135,7 @@
 
 /* Feedback messages */
 .vitalisite-contact-form__feedback {
-  padding: 14px 18px;
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
   border-radius: var(--wp--custom--border-radius--cta, 6px);
   font-size: 0.9rem;
   font-weight: 500;

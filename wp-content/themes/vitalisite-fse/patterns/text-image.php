@@ -17,7 +17,7 @@
         <!-- wp:column {"width":"50%"} -->
         <div class="wp-block-column" style="flex-basis:50%">
             <!-- wp:heading {"level":2} -->
-            <h2 class="wp-block-heading">Titre de la section</h2>
+            <h2 class="wp-block-heading reveal-y">Titre de la section</h2>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph -->

@@ -24,7 +24,7 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:vitalisite-fse/before-after /-->
+    <!-- wp:vitalisite-fse/before-after {"className":"reveal-before-after"} /-->
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
     <div class="wp-block-buttons mt-40">

@@ -26,7 +26,7 @@ function vitalisite_render_before_after_block( $attributes ) {
 	ob_start();
 	?>
 	<div class="vitalisite-before-after">
-		<div class="vitalisite-before-after__grid">
+		<div class="vitalisite-before-after__grid reveal-stagger">
 			<div class="vitalisite-before-after__image-wrapper">
 				<?php if ( $before_url ) : ?>
 					<img src="<?php echo esc_url( $before_url ); ?>" alt="<?php echo esc_attr( $before_label ); ?>" loading="lazy">

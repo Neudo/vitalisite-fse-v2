@@ -11,15 +11,15 @@
 <!-- wp:group {"tagName":"section","className":"vitalisite-accordion-wrapper vitalisite-accordion-variant-simple vitalisite-section","layout":{"type":"constrained"}} -->
 <section class="wp-block-group vitalisite-accordion-wrapper vitalisite-accordion-variant-simple vitalisite-section">
 
-    <!-- wp:heading {"textAlign":"center","level":2,"className":"mb-60"} -->
-    <h2 class="wp-block-heading has-text-align-center">Questions Fréquentes</h2>
+    <!-- wp:heading {"textAlign":"center","level":2,"className":"mb-60 reveal-y"} -->
+    <h2 class="wp-block-heading has-text-align-center reveal-y">Questions Fréquentes</h2>
     <!-- /wp:heading -->
 
     <!-- wp:vitalisite-fse/accordion {"variant":"simple"} -->
     <div class="wp-block-vitalisite-fse-accordion vitalisite-accordion-container">
         
         <!-- wp:vitalisite-fse/accordion-item {"summary":"Lorem ipsum dolor sit amet ?"} -->
-        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
             <summary>Lorem ipsum dolor sit amet ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
@@ -30,7 +30,7 @@
         <!-- /wp:vitalisite-fse/accordion-item -->
 
         <!-- wp:vitalisite-fse/accordion-item {"summary":"Duis aute irure dolor in reprehenderit ?"} -->
-        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
             <summary>Duis aute irure dolor in reprehenderit ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
@@ -41,7 +41,7 @@
         <!-- /wp:vitalisite-fse/accordion-item -->
 
         <!-- wp:vitalisite-fse/accordion-item {"summary":"Excepteur sint occaecat cupidatat non proident ?"} -->
-        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item">
+        <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
             <summary>Excepteur sint occaecat cupidatat non proident ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->

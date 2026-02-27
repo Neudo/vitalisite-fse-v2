@@ -12,7 +12,7 @@
 <section class="wp-block-group vitalisite-text-simple vitalisite-section">
 
     <!-- wp:heading {"textAlign":"center","level":2} -->
-    <h2 class="wp-block-heading has-text-align-center">Notre Philosophie</h2>
+    <h2 class="wp-block-heading has-text-align-center reveal-y">Notre Philosophie</h2>
     <!-- /wp:heading -->
 
     <!-- wp:paragraph {"align":"justify"} -->

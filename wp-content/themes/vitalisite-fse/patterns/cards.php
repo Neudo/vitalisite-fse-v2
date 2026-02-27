@@ -13,8 +13,8 @@
 
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
-        <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Lorem Ipsum</h2>
+        <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Lorem Ipsum</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center"} -->
@@ -24,7 +24,7 @@
     <!-- /wp:group -->
 
     <!-- wp:vitalisite-fse/cards-container -->
-    <div class="wp-block-vitalisite-fse-cards-container vitalisite-cards-grid">
+    <div class="wp-block-vitalisite-fse-cards-container vitalisite-cards-grid reveal-stagger">
 
         <!-- wp:vitalisite-fse/card {"title":"Consultation","description":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.","ctaText":"En savoir plus","ctaUrl":"#"} -->
         <div class="wp-block-vitalisite-fse-card vitalisite-card">

@@ -14,8 +14,8 @@
 
     <!-- wp:group {"className":"vitalisite-formations-header","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","alignItems":"center"}} -->
     <div class="wp-block-group vitalisite-formations-header">
-        <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Formations & Diplômes</h2>
+        <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Formations &amp; Diplômes</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center"} -->
@@ -31,8 +31,8 @@
     <!-- wp:group {"className":"vitalisite-timeline","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
     <div class="wp-block-group vitalisite-timeline">
 
-        <!-- wp:group {"className":"vitalisite-timeline-item"} -->
-        <div class="wp-block-group vitalisite-timeline-item">
+        <!-- wp:group {"className":"vitalisite-timeline-item reveal-y"} -->
+        <div class="wp-block-group vitalisite-timeline-item reveal-y">
             <!-- wp:group {"className":"vitalisite-timeline-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
             <div class="wp-block-group vitalisite-timeline-header">
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -61,8 +61,8 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"className":"vitalisite-timeline-item"} -->
-        <div class="wp-block-group vitalisite-timeline-item">
+        <!-- wp:group {"className":"vitalisite-timeline-item reveal-y"} -->
+        <div class="wp-block-group vitalisite-timeline-item reveal-y">
             <!-- wp:group {"className":"vitalisite-timeline-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
             <div class="wp-block-group vitalisite-timeline-header">
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -91,8 +91,8 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"className":"vitalisite-timeline-item"} -->
-        <div class="wp-block-group vitalisite-timeline-item">
+        <!-- wp:group {"className":"vitalisite-timeline-item reveal-y"} -->
+        <div class="wp-block-group vitalisite-timeline-item reveal-y">
             <!-- wp:group {"className":"vitalisite-timeline-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
             <div class="wp-block-group vitalisite-timeline-header">
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->

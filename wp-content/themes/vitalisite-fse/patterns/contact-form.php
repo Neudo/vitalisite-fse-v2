@@ -15,7 +15,7 @@
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
         <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Nous contacter</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Nous contacter</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center"} -->

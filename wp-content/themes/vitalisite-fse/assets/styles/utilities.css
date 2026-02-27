@@ -18,9 +18,32 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: var(--wp--preset--spacing--80); /* Vertical rhythm */
+  /* Espacement horizontal (Small/Medium fluides) */
+  padding-left: var(--wp--preset--spacing--50);
+  padding-right: var(--wp--preset--spacing--50);
+  /* Espacement vertical (Section padding 2XL fluide) - évite les soucis de marge avec des fonds de couleur */
+  padding-top: var(--wp--preset--spacing--80);
+  padding-bottom: var(--wp--preset--spacing--80);
+
+  /* INTERCEPT l'héritage du blockGap global (BO) pour le contenu INTIME de la section */
+  --wp--style--block-gap: var(
+    --wp--preset--spacing--40
+  ); /* Espacement "Small" pour les paragraphes, etc. */
+}
+
+/* Force l'application de ce gap normalisé pour les enfants directs et Layout de WP */
+.vitalisite-section.is-layout-flow > * + *,
+.vitalisite-section .is-layout-flow > * + *,
+.vitalisite-section.is-layout-constrained > * + *,
+.vitalisite-section .is-layout-constrained > * + * {
+  margin-block-start: var(--wp--style--block-gap) !important;
+}
+
+.vitalisite-section.is-layout-flex,
+.vitalisite-section .is-layout-flex,
+.vitalisite-section.is-layout-grid,
+.vitalisite-section .is-layout-grid {
+  gap: var(--wp--style--block-gap) !important;
 }
 
 .vitalisite-section.big-section {

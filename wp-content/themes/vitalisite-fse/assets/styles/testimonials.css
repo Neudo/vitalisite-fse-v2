@@ -99,7 +99,7 @@
 .editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  gap: var(--wp--preset--spacing--50);
 }
 
 .editor-styles-wrapper .vitalisite-testimonials-carousel .swiper-pagination,
@@ -115,7 +115,7 @@
 }
 
 .vitalisite-testimonials-carousel {
-  padding-bottom: 15px;
+  padding-bottom: var(--wp--preset--spacing--40);
 }
 
 .vitalisite-testimonials-carousel .swiper-pagination {
@@ -269,7 +269,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 25px;
+  margin-bottom: var(--wp--preset--spacing--50);
 }
 
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__avatar {

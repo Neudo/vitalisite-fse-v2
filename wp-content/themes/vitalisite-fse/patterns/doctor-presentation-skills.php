@@ -22,8 +22,8 @@
         </div>
         <!-- /wp:column -->
 
-        <!-- wp:column {"verticalAlignment":"center","width":"50%","className":"vitalisite-doctor-cover__right"} -->
-        <div class="wp-block-column is-vertically-aligned-center vitalisite-doctor-cover__right" style="flex-basis:50%">
+        <!-- wp:column {"verticalAlignment":"center","width":"50%","className":"vitalisite-doctor-cover__right reveal-y"} -->
+        <div class="wp-block-column is-vertically-aligned-center vitalisite-doctor-cover__right reveal-y" style="flex-basis:50%">
 
             <!-- wp:group {"backgroundColor":"primary","className":"vitalisite-doctor-cover__card","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}}} -->
             <div class="wp-block-group vitalisite-doctor-cover__card has-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60)">

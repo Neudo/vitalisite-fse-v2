@@ -48,7 +48,7 @@ require_once __DIR__ . '/inc/block-contact-form.php';
 require_once __DIR__ . '/inc/google-reviews-functions.php';
 
 // Debug visuel couleurs (WP_DEBUG uniquement).
-require_once __DIR__ . '/inc/debug-colors.php';
+// require_once __DIR__ . '/inc/debug-colors.php';
 
 // License system & setup wizard.
 require_once __DIR__ . '/inc/license.php';
@@ -267,6 +267,31 @@ function enqueue_scripts() {
 	if ( is_home() || is_archive() || is_search() ) {
 		wp_enqueue_script( 'vitalisite-fse-blog-filter-js', $uri . '/assets/js/blog-filter.js', array(), $version, true );
 	}
+
+	// GSAP + ScrollTrigger (CDN, en-tête pour être dispo tôt)
+	wp_enqueue_script(
+		'gsap',
+		'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
+		array(),
+		'3.12.5',
+		true
+	);
+	wp_enqueue_script(
+		'gsap-scrolltrigger',
+		'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
+		array( 'gsap' ),
+		'3.12.5',
+		true
+	);
+
+	// Animations au scroll
+	wp_enqueue_script(
+		'vitalisite-animations',
+		$uri . '/assets/js/animations.js',
+		array( 'gsap', 'gsap-scrolltrigger' ),
+		$version,
+		true
+	);
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
 
