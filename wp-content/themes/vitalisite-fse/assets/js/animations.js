@@ -26,17 +26,22 @@
   const DEFAULT_START = "top 88%";
   const DEFAULT_EASE = "power2.out";
 
-  // Vérifie si un élément est déjà visible à l'écran (au chargement)
-  const isVisibleOnLoad = (el) => {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
+  // Sélectionne la toute première section/groupe de la page
+  const firstSection = document.querySelector(
+    "main > section, main > .wp-block-group",
+  );
+
+  // Vérifie si un élément est contenu dans la première section
+  const isInFirstSection = (el) => {
+    if (!firstSection) return false;
+    return firstSection.contains(el);
   };
 
   // ==========================================================================
   // .reveal-y — Fade-up simple
   // ==========================================================================
   document.querySelectorAll(".reveal-y").forEach((el) => {
-    if (isVisibleOnLoad(el)) return;
+    if (isInFirstSection(el)) return;
 
     gsap.from(el, {
       scrollTrigger: { trigger: el, start: DEFAULT_START, once: true },
@@ -51,7 +56,7 @@
   // .reveal-stagger — Enfants directs en stagger fade-up
   // ==========================================================================
   document.querySelectorAll(".reveal-stagger").forEach((container) => {
-    if (isVisibleOnLoad(container)) return;
+    if (isInFirstSection(container)) return;
 
     const children = Array.from(container.children);
     if (!children.length) return;
@@ -92,7 +97,7 @@
   // .reveal-count — Count-up numérique
   // ==========================================================================
   document.querySelectorAll(".reveal-count").forEach((el) => {
-    if (isVisibleOnLoad(el)) return;
+    if (isInFirstSection(el)) return;
 
     const raw = el.textContent.trim();
     const target = parseInt(raw, 10);
@@ -116,7 +121,7 @@
   // .reveal-scale-x — Séparateur / trait horizontal
   // ==========================================================================
   document.querySelectorAll(".reveal-scale-x").forEach((el) => {
-    if (isVisibleOnLoad(el)) return;
+    if (isInFirstSection(el)) return;
 
     gsap.from(el, {
       scrollTrigger: { trigger: el, start: "top 90%", once: true },
@@ -131,7 +136,7 @@
   // .reveal-video — Bloc vidéo : fade-up + léger scale-down
   // ==========================================================================
   document.querySelectorAll(".reveal-video").forEach((el) => {
-    if (isVisibleOnLoad(el)) return;
+    if (isInFirstSection(el)) return;
 
     gsap.from(el, {
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
@@ -148,7 +153,7 @@
   //    Cible les deux moitiés du composant custom
   // ==========================================================================
   document.querySelectorAll(".reveal-before-after").forEach((el) => {
-    if (isVisibleOnLoad(el)) return;
+    if (isInFirstSection(el)) return;
 
     const before = el.querySelector(
       ".before-after__before, .ba-before, [data-before]",

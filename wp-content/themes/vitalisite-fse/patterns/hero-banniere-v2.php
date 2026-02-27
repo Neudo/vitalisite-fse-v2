@@ -22,8 +22,8 @@
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"vitalisite-hero__actions"} -->
     <div class="wp-block-buttons vitalisite-hero__actions">
-      <!-- wp:button {"className":"btn-primary-soft"} -->
-      <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
+      <!-- wp:button {"className":"btn-on-primary"} -->
+      <div class="wp-block-button btn-on-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
       <!-- /wp:button -->
 
       <!-- wp:button {"className":"btn-secondary-soft"} -->

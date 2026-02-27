@@ -113,6 +113,20 @@ main {
   border: 2px solid var(--wp--preset--color--primary);
 }
 
+/* Bouton sur fond Primary — toujours lisible quelle que soit la couleur Primary */
+/* Fond = on-primary (blanc si primary foncé, noir si primary clair) */
+/* Texte = primary */
+.btn-on-primary .wp-block-button__link {
+  background-color: var(--wp--preset--color--on-primary);
+  color: var(--wp--preset--color--primary);
+  border: 2px solid var(--wp--preset--color--on-primary);
+}
+
+.btn-on-primary .wp-block-button__link:hover {
+  background-color: transparent;
+  color: var(--wp--preset--color--on-primary);
+}
+
 .btn-secondary-soft .wp-block-button__link {
   border: 2px solid var(--wp--preset--color--surface);
   color: var(--wp--preset--color--on-primary);
