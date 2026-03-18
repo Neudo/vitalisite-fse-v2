@@ -58,12 +58,30 @@
         "medium": "16px",
         "large": "20px"
       }
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Nature Sans",
+          "slug": "nature-sans",
+          "fontFamily": "\"Gill Sans\", \"Trebuchet MS\", \"Segoe UI\", sans-serif"
+        },
+        {
+          "name": "Nature Serif",
+          "slug": "nature-serif",
+          "fontFamily": "\"Palatino Linotype\", \"Book Antiqua\", Palatino, serif"
+        }
+      ]
     }
   },
   "styles": {
     "color": {
       "background": "var:preset|color|bg",
       "text": "var:preset|color|main-text"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|nature-sans",
+      "lineHeight": "1.65"
     },
     "elements": {
       "button": {
@@ -92,7 +110,7 @@
       },
       "heading": {
         "typography": {
-          "fontFamily": "var:preset|font-family|primary",
+          "fontFamily": "var:preset|font-family|nature-serif",
           "fontWeight": "600"
         },
         "color": {

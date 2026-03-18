@@ -155,14 +155,11 @@
   padding: var(--wp--preset--spacing--50);
   margin-bottom: var(--wp--preset--spacing--40);
   border-left: 6px solid var(--wp--preset--color--secondary);
-  transition:
-    transform 0.3s ease,
-    border-left 0.3s ease;
+  transition: border-left 0.3s ease;
   width: 100%;
 }
 
 .vitalisite-timeline-item:hover {
-  transform: translateX(2px);
   border-left: 6px solid var(--wp--preset--color--primary);
 }
 

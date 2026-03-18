@@ -45,6 +45,11 @@
     return firstSection.contains(el);
   };
 
+  const isHandledByStagger = (el) => {
+    if (!el || !el.parentElement) return false;
+    return Boolean(el.parentElement.closest(".reveal-stagger"));
+  };
+
   const setWillChange = (targets) => {
     gsap.set(targets, { willChange: "transform, opacity" });
   };
@@ -172,7 +177,7 @@
   document
     .querySelectorAll(".reveal-y, .vitalisite-accordion-item")
     .forEach((el) => {
-      if (isInFirstSection(el)) return;
+      if (isInFirstSection(el) || isHandledByStagger(el)) return;
 
       gsap.to(el, {
         scrollTrigger: {
@@ -206,14 +211,15 @@
 
     if (!children.length) return;
 
+    gsap.set(children, getInitialRevealState(children[0] || container, { y: 28 }));
+
     gsap.to(children, {
       scrollTrigger: {
         trigger: container,
         start: container.dataset.revealStart || "top 87%",
         once: true,
       },
-      ...getRevealSettings(container, {
-        y: 28,
+      ...getRevealSettings(children[0] || container, {
         duration: 0.72,
       }),
       stagger: parseFloat(container.dataset.revealStagger || DEFAULT_STAGGER),

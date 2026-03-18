@@ -41,14 +41,14 @@
     "typography": {
       "fontFamilies": [
         {
-          "name": "Mineral Mono",
+          "name": "Mineral Accent",
           "slug": "mineral-mono",
           "fontFamily": "ui-monospace, \"SF Mono\", Monaco, \"Cascadia Code\", monospace"
         },
         {
           "name": "Mineral Sans",
           "slug": "mineral-sans",
-          "fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, sans-serif"
+          "fontFamily": "\"Avenir Next Condensed\", \"Arial Narrow\", \"Helvetica Neue\", sans-serif"
         }
       ],
       "fontSizes": [
@@ -87,7 +87,7 @@
       },
       "heading": {
         "typography": {
-          "fontFamily": "var:preset|font-family|mineral-sans",
+          "fontFamily": "var:preset|font-family|mineral-mono",
           "fontWeight": "800",
           "lineHeight": "1.1",
           "letterSpacing": "-0.02em"

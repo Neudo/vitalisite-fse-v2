@@ -82,7 +82,6 @@
 }
 
 .vitalisite-pricing-list-card:hover {
-  transform: translateX(4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   border-color: var(--wp--preset--color--primary);
 }
