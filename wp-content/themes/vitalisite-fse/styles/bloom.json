@@ -34,7 +34,7 @@
         { "name": "Surface 2", "slug": "surface-2", "color": "#F4F1F4" },
         { "name": "Border", "slug": "border", "color": "#E6DEE3" },
 
-        { "name": "Text", "slug": "text", "color": "#14181D" },
+        { "name": "Text", "slug": "main-text", "color": "#14181D" },
         { "name": "Muted Text", "slug": "muted", "color": "#3D4650" }
       ]
     },
@@ -93,11 +93,11 @@
   },
   "styles": {
     "color": {
-      "background": "var(--wp--preset--color--bg)",
-      "text": "var(--wp--preset--color--text)"
+      "background": "var:preset|color|bg",
+      "text": "var:preset|color|main-text"
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--poudre-sans)",
+      "fontFamily": "var:preset|font-family|poudre-sans",
       "lineHeight": "1.65"
     },
     "elements": {
@@ -108,7 +108,7 @@
       },
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--poudre-serif)",
+          "fontFamily": "var:preset|font-family|poudre-serif",
           "lineHeight": "1.12",
           "letterSpacing": "-0.015em"
         }

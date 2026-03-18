@@ -24,7 +24,7 @@
 .vitalisite-contact-form__field label {
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 .vitalisite-contact-form__field label .required {
@@ -42,7 +42,7 @@
   border-radius: min(var(--wp--custom--border-radius--cta, 6px), 12px);
   font-family: inherit;
   font-size: 1rem;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   background-color: var(--wp--preset--color--bg, #fff);
   transition:
     border-color 0.2s ease,

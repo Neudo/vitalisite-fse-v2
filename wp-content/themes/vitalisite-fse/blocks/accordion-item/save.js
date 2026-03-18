@@ -4,7 +4,7 @@ export default function save({ attributes }) {
   const { summary } = attributes;
 
   const blockProps = useBlockProps.save({
-    className: "vitalisite-accordion-item",
+    className: "vitalisite-accordion-item reveal-y",
   });
 
   return (

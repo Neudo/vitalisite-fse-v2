@@ -20,12 +20,12 @@
             <h2 class="wp-block-heading reveal-y">Titre de la section</h2>
             <!-- /wp:heading -->
 
-            <!-- wp:paragraph -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <!-- wp:paragraph {"className":"reveal-y"} -->
+            <p class="reveal-y">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <!-- /wp:paragraph -->
 
-            <!-- wp:buttons -->
-            <div class="wp-block-buttons">
+            <!-- wp:buttons {"className":"reveal-y"} -->
+            <div class="wp-block-buttons reveal-y">
                 <!-- wp:button {"className":"btn-primary"} -->
                 <div class="wp-block-button btn-primary"><a class="wp-block-button__link">En savoir plus</a></div>
                 <!-- /wp:button -->
@@ -36,8 +36,8 @@
 
         <!-- wp:column {"width":"50%"} -->
         <div class="wp-block-column" style="flex-basis:50%">
-            <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-rounded-image"} -->
-            <figure class="wp-block-image size-large vitalisite-rounded-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Medical Team"/></figure>
+            <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-rounded-image reveal-y"} -->
+            <figure class="wp-block-image size-large vitalisite-rounded-image reveal-y"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Medical Team"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

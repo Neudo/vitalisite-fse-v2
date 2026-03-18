@@ -25,18 +25,18 @@
 
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
-        <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Honoraires & Consultations</h2>
+        <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Honoraires & Consultations</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Retrouvez le détail de l'ensemble de mes actes et de leurs tarifications respectives.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Retrouvez le détail de l'ensemble de mes actes et de leurs tarifications respectives.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
     <!-- wp:vitalisite-fse/pricing-list -->
-    <div class="wp-block-vitalisite-fse-pricing-list vitalisite-pricing-list">
+    <div class="wp-block-vitalisite-fse-pricing-list vitalisite-pricing-list reveal-stagger">
         <!-- wp:vitalisite-fse/pricing-item {"title":"Bilan complet et première consultation","description":"Lors de ce premier rendez-vous, nous prenons le temps d'analyser vos besoins en profondeur. Cette séance comprend un interrogatoire médical complet, une évaluation clinique, des tests de mobilité spécifiques et la mise en place d'un axe thérapeutique personnalisé. Vous repartirez avec des conseils clairs à appliquer au quotidien.","price":"80€"} /-->
 
         <!-- wp:vitalisite-fse/pricing-item {"title":"Séance de suivi","description":"Pour les patients ayant déjà effectué un bilan initial. Nous ajustons le plan de traitement en fonction de l'évolution de vos symptômes. Cette consultation dure en moyenne 45 minutes et intègre la pratique de manipulations douces, visant à restituer la mobilité de l'ensemble des systèmes du corps.","price":"60€"} /-->

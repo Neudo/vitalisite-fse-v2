@@ -17,8 +17,8 @@
 
         <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
-            <!-- wp:image {"aspectRatio":"4/5","scale":"cover","className":"vitalisite-doctor-card-v2__avatar"} -->
-            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar"><img alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
+            <!-- wp:image {"aspectRatio":"4/5","scale":"cover","className":"vitalisite-doctor-card-v2__avatar reveal-y"} -->
+            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar reveal-y"><img alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->
@@ -26,8 +26,8 @@
         <!-- wp:column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|60"}}}} -->
         <div class="wp-block-column is-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--60);flex-basis:55%">
             
-            <!-- wp:group {"className":"vitalisite-doctor-card-v2__content","layout":{"type":"flex","orientation":"vertical"}} -->
-            <div class="wp-block-group vitalisite-doctor-card-v2__content">
+            <!-- wp:group {"className":"vitalisite-doctor-card-v2__content reveal-y","layout":{"type":"flex","orientation":"vertical"}} -->
+            <div class="wp-block-group vitalisite-doctor-card-v2__content reveal-y">
                 
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">

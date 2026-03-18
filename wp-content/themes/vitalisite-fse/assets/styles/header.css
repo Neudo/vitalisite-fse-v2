@@ -70,7 +70,7 @@ header {
 }
 
 .vitalisite-header--minimal .wp-block-site-title a {
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -146,7 +146,7 @@ header {
 
 /* Mobile menu button */
 .vitalisite-header--minimal .wp-block-navigation__responsive-container-open {
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   padding: 0.5rem;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -181,11 +181,11 @@ header {
   padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--60);
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--on-primary);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .vitalisite-header__cta .wp-block-button__link:hover {
-  background-color: #0a3278;
+  opacity: 0.8;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(11, 61, 145, 0.25);
 }
@@ -256,7 +256,7 @@ body.wp-admin .vitalisite-header--minimal,
   padding: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   transition:
     background-color 0.2s ease,
     color 0.2s ease;

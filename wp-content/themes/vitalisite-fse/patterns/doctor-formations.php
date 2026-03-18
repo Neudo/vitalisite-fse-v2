@@ -18,8 +18,8 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Formations &amp; Diplômes</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Retrouvez ci-dessous mon parcours universitaire et mes certifications professionnelles.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Retrouvez ci-dessous mon parcours universitaire et mes certifications professionnelles.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->

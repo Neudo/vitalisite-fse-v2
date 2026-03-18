@@ -36,7 +36,7 @@
             <!-- wp:group {"className":"vitalisite-doctor-profile__badge","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
             <div class="wp-block-group vitalisite-doctor-profile__badge">
                 <!-- wp:heading {"textAlign":"center","level":3,"className":"vitalisite-doctor-profile__badge-number"} -->
-                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number">10+</h3>
+                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number reveal-count">10+</h3>
                 <!-- /wp:heading -->
                 <!-- wp:paragraph {"align":"center","className":"vitalisite-doctor-profile__badge-label"} -->
                 <p class="has-text-align-center vitalisite-doctor-profile__badge-label">Années d'expérience</p>
@@ -47,7 +47,7 @@
             <!-- wp:group {"className":"vitalisite-doctor-profile__badge","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
             <div class="wp-block-group vitalisite-doctor-profile__badge">
                 <!-- wp:heading {"textAlign":"center","level":3,"className":"vitalisite-doctor-profile__badge-number"} -->
-                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number">500+</h3>
+                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number reveal-count">500+</h3>
                 <!-- /wp:heading -->
                 <!-- wp:paragraph {"align":"center","className":"vitalisite-doctor-profile__badge-label"} -->
                 <p class="has-text-align-center vitalisite-doctor-profile__badge-label">Patients accompagnés</p>
@@ -58,7 +58,7 @@
             <!-- wp:group {"className":"vitalisite-doctor-profile__badge","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
             <div class="wp-block-group vitalisite-doctor-profile__badge">
                 <!-- wp:heading {"textAlign":"center","level":3,"className":"vitalisite-doctor-profile__badge-number"} -->
-                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number">3</h3>
+                <h3 class="wp-block-heading has-text-align-center vitalisite-doctor-profile__badge-number reveal-count">3</h3>
                 <!-- /wp:heading -->
                 <!-- wp:paragraph {"align":"center","className":"vitalisite-doctor-profile__badge-label"} -->
                 <p class="has-text-align-center vitalisite-doctor-profile__badge-label">Diplômes spécialisés</p>
@@ -69,8 +69,8 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:paragraph {"align":"center","textColor":"muted","style":{"typography":{"lineHeight":"1.8"}}} -->
-        <p class="has-text-align-center has-muted-color has-text-color" style="line-height:1.8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionné par son métier, il accompagne ses patients avec bienveillance et expertise depuis plus de 10 ans. Son approche combine rigueur scientifique et écoute attentive.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y","textColor":"muted","style":{"typography":{"lineHeight":"1.8"}}} -->
+        <p class="has-text-align-center has-muted-color has-text-color reveal-y" style="line-height:1.8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionné par son métier, il accompagne ses patients avec bienveillance et expertise depuis plus de 10 ans. Son approche combine rigueur scientifique et écoute attentive.</p>
         <!-- /wp:paragraph -->
 
     </div>

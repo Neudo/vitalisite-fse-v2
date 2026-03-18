@@ -1,10 +1,10 @@
 /**
  * Vitalisite FSE - Scroll Animations (Class-Based)
  * ================================================
- * GSAP + ScrollTrigger — toutes les animations en Y uniquement.
+ * GSAP + ScrollTrigger — motion system léger, sobre et premium.
  *
  * CLASSE            EFFET
- * .reveal-y         Fade-up (opacity 0→1, y 40→0)
+ * .reveal-y         Fade-up simple et propre
  * .reveal-stagger   Container : ses enfants directs font un stagger fade-up
  * .reveal-parallax  Cover block : l'image + le filtre font un parallax subtil
  * .reveal-count     Nombre : count-up de 0 à la valeur textuelle
@@ -23,13 +23,21 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const DEFAULT_START = "top 88%";
-  const DEFAULT_EASE = "power2.out";
+  const root = document.documentElement;
+  const DEFAULT_START = "top 90%";
+  const DEFAULT_EASE = "power3.out";
+  const DEFAULT_DURATION = 0.78;
+  const DEFAULT_DISTANCE = 32;
+  const DEFAULT_STAGGER = 0.12;
+  const INTRO_MAX_SCROLL = 64;
 
   // Sélectionne la toute première section/groupe de la page
   const firstSection = document.querySelector(
     "main > section, main > .wp-block-group",
   );
+
+  const toArray = (value) => Array.from(value || []);
+  const unique = (items) => Array.from(new Set(items.filter(Boolean)));
 
   // Vérifie si un élément est contenu dans la première section
   const isInFirstSection = (el) => {
@@ -37,20 +45,150 @@
     return firstSection.contains(el);
   };
 
+  const setWillChange = (targets) => {
+    gsap.set(targets, { willChange: "transform, opacity" });
+  };
+
+  const clearAnimatedProps = (targets) => {
+    gsap.set(targets, {
+      clearProps: "transform,opacity,visibility,willChange",
+    });
+  };
+
+  const getRevealSettings = (el, overrides = {}) => {
+    const isSoft = el.classList.contains("reveal-y--soft");
+    const isStrong = el.classList.contains("reveal-y--strong");
+    const y = isSoft ? 18 : isStrong ? 44 : DEFAULT_DISTANCE;
+
+    return {
+      autoAlpha: 1,
+      y: 0,
+      duration: isSoft ? 0.64 : isStrong ? 0.92 : DEFAULT_DURATION,
+      ease: DEFAULT_EASE,
+      force3D: true,
+      overwrite: "auto",
+      ...overrides,
+    };
+  };
+
+  const getInitialRevealState = (el, overrides = {}) => {
+    const isSoft = el.classList.contains("reveal-y--soft");
+    const isStrong = el.classList.contains("reveal-y--strong");
+    const y = isSoft ? 18 : isStrong ? 44 : DEFAULT_DISTANCE;
+
+    return {
+      y,
+      autoAlpha: 0,
+      force3D: true,
+      ...overrides,
+    };
+  };
+
+  const getScrollRevealTargets = () =>
+    unique([
+      ...toArray(
+        document.querySelectorAll(
+          ".reveal-y, .reveal-video, .reveal-before-after, .vitalisite-accordion-item",
+        ),
+      ),
+      ...toArray(document.querySelectorAll(".reveal-stagger")).flatMap((container) =>
+        toArray(container.children).filter(
+          (child) =>
+            !child.hasAttribute("hidden") &&
+            !child.matches("script, style, template"),
+        ),
+      ),
+    ]);
+
+  const runIntroSequence = (introTextTargets, introMediaTargets) => {
+    if (!firstSection || window.scrollY > INTRO_MAX_SCROLL) return;
+
+    if (!introTextTargets.length && !introMediaTargets.length) return;
+
+    setWillChange([...introTextTargets, ...introMediaTargets]);
+
+    const timeline = gsap.timeline({
+      defaults: { ease: DEFAULT_EASE },
+      onComplete() {
+        clearAnimatedProps([...introTextTargets, ...introMediaTargets]);
+      },
+    });
+
+    if (introMediaTargets.length) {
+      timeline.to(
+        introMediaTargets,
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1.05,
+        },
+        0,
+      );
+    }
+
+    if (introTextTargets.length) {
+      timeline.to(
+        introTextTargets,
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.72,
+          stagger: 0.1,
+        },
+        introMediaTargets.length ? 0.08 : 0,
+      );
+    }
+  };
+
+  const introTextTargets = unique([
+    ...toArray(
+      firstSection?.querySelectorAll(
+        ".vitalisite-hero__title, .vitalisite-hero__lead, .vitalisite-hero__actions, .hero-image-bg__content h1, .hero-image-bg__content h2, .hero-image-bg__content p, .hero-image-bg__content .wp-block-buttons, .hero-image-bg__content .vitalisite-social-links, .vitalisite-doctor-cover__card, .vitalisite-doctor-cover .vitalisite-social-links, .reveal-y, .reveal-stagger > *",
+      ) || [],
+    ),
+  ]);
+
+  const introMediaTargets = unique([
+    firstSection?.querySelector(
+      ".hero-side-image .wp-block-image, .vitalisite-hero-custom-bg img, .vitalisite-doctor-cover__photo img",
+    ),
+  ]);
+
+  getScrollRevealTargets().forEach((el) => {
+    gsap.set(el, getInitialRevealState(el));
+  });
+
+  introMediaTargets.forEach((el) => {
+    gsap.set(el, getInitialRevealState(el, { y: 26 }));
+  });
+
+  root.classList.remove("vitalisite-motion-pending");
+
+  runIntroSequence(introTextTargets, introMediaTargets);
+
   // ==========================================================================
   // .reveal-y — Fade-up simple
   // ==========================================================================
-  document.querySelectorAll(".reveal-y").forEach((el) => {
-    if (isInFirstSection(el)) return;
+  document
+    .querySelectorAll(".reveal-y, .vitalisite-accordion-item")
+    .forEach((el) => {
+      if (isInFirstSection(el)) return;
 
-    gsap.from(el, {
-      scrollTrigger: { trigger: el, start: DEFAULT_START, once: true },
-      y: 20,
-      opacity: 0,
-      duration: 0.4,
-      ease: DEFAULT_EASE,
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: el.dataset.revealStart || DEFAULT_START,
+          once: true,
+        },
+        ...getRevealSettings(el),
+        onStart() {
+          setWillChange(el);
+        },
+        onComplete() {
+          clearAnimatedProps(el);
+        },
+      });
     });
-  });
 
   // ==========================================================================
   // .reveal-stagger — Enfants directs en stagger fade-up
@@ -58,16 +196,33 @@
   document.querySelectorAll(".reveal-stagger").forEach((container) => {
     if (isInFirstSection(container)) return;
 
-    const children = Array.from(container.children);
+    const children = unique(
+      Array.from(container.children).filter(
+        (child) =>
+          !child.hasAttribute("hidden") &&
+          !child.matches("script, style, template"),
+      ),
+    );
+
     if (!children.length) return;
 
-    gsap.from(children, {
-      scrollTrigger: { trigger: container, start: "top 85%", once: true },
-      y: 50,
-      opacity: 0,
-      duration: 0.6,
-      ease: DEFAULT_EASE,
-      stagger: 0.1,
+    gsap.to(children, {
+      scrollTrigger: {
+        trigger: container,
+        start: container.dataset.revealStart || "top 87%",
+        once: true,
+      },
+      ...getRevealSettings(container, {
+        y: 28,
+        duration: 0.72,
+      }),
+      stagger: parseFloat(container.dataset.revealStagger || DEFAULT_STAGGER),
+      onStart() {
+        setWillChange(children);
+      },
+      onComplete() {
+        clearAnimatedProps(children);
+      },
     });
   });
 
@@ -76,19 +231,34 @@
   //    Cible : l'enfant .wp-block-cover__image-background ET le .has-background-dim
   // ==========================================================================
   document.querySelectorAll(".reveal-parallax").forEach((cover) => {
-    const targets = cover.querySelectorAll(
+    let targets = toArray(
+      cover.querySelectorAll(
       ".wp-block-cover__image-background, .wp-block-cover__background",
+      ),
     );
+
+    if (!targets.length) {
+      const customHero = cover.closest(".vitalisite-hero-custom-cover");
+      if (customHero) {
+        targets = toArray(
+          customHero.querySelectorAll(
+            ".vitalisite-hero-custom-bg, .vitalisite-hero-custom-bg img",
+          ),
+        );
+      }
+    }
+
     if (!targets.length) return;
 
     gsap.to(targets, {
       scrollTrigger: {
-        trigger: cover,
-        start: "top top",
+        trigger: cover.closest(".vitalisite-hero-custom-cover") || cover,
+        start: "top bottom",
         end: "bottom top",
         scrub: true,
       },
-      y: -80,
+      y: -56,
+      scale: 1.08,
       ease: "none",
     });
   });
@@ -109,7 +279,7 @@
     gsap.to(obj, {
       scrollTrigger: { trigger: el, start: DEFAULT_START, once: true },
       val: target,
-      duration: 1.2,
+      duration: 1,
       ease: DEFAULT_EASE,
       onUpdate() {
         el.textContent = Math.round(obj.val) + suffix;
@@ -127,7 +297,7 @@
       scrollTrigger: { trigger: el, start: "top 90%", once: true },
       scaleX: 0,
       transformOrigin: "left center",
-      duration: 0.6,
+      duration: 0.7,
       ease: DEFAULT_EASE,
     });
   });
@@ -138,13 +308,18 @@
   document.querySelectorAll(".reveal-video").forEach((el) => {
     if (isInFirstSection(el)) return;
 
-    gsap.from(el, {
+    gsap.to(el, {
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
-      y: 60,
-      scale: 0.97,
-      opacity: 0,
-      duration: 0.8,
-      ease: DEFAULT_EASE,
+      ...getRevealSettings(el, {
+        y: 0,
+        duration: 0.82,
+      }),
+      onStart() {
+        setWillChange(el);
+      },
+      onComplete() {
+        clearAnimatedProps(el);
+      },
     });
   });
 
@@ -165,23 +340,35 @@
     const targets = [before, after].filter(Boolean);
     if (!targets.length) {
       // Fallback : anime le bloc entier
-      gsap.from(el, {
+      gsap.to(el, {
         scrollTrigger: { trigger: el, start: DEFAULT_START, once: true },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: DEFAULT_EASE,
+        ...getRevealSettings(el, {
+          y: 0,
+          duration: 0.82,
+        }),
+        onStart() {
+          setWillChange(el);
+        },
+        onComplete() {
+          clearAnimatedProps(el);
+        },
       });
       return;
     }
 
-    gsap.from(targets, {
+    gsap.to(targets, {
       scrollTrigger: { trigger: el, start: DEFAULT_START, once: true },
-      y: 50,
-      opacity: 0,
-      duration: 0.7,
-      ease: DEFAULT_EASE,
-      stagger: 0.2,
+      ...getRevealSettings(el, {
+        y: 0,
+        duration: 0.76,
+      }),
+      stagger: 0.14,
+      onStart() {
+        setWillChange(targets);
+      },
+      onComplete() {
+        clearAnimatedProps(targets);
+      },
     });
   });
 })();

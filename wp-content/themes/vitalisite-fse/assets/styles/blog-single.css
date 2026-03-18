@@ -64,7 +64,7 @@
 .vitalisite-single-content {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -77,7 +77,7 @@
   font-size: 2rem;
   margin-top: 2em;
   margin-bottom: 0.8em;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 .vitalisite-single-content h3 {

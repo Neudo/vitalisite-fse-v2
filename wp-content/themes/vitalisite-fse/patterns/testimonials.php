@@ -18,16 +18,16 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Ce que disent nos patients</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Découvrez les témoignages de nos patients satisfaits.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Découvrez les témoignages de nos patients satisfaits.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:vitalisite-fse/testimonials /-->
+    <!-- wp:vitalisite-fse/testimonials {"className":"reveal-y"} /-->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
-    <div class="wp-block-buttons mt-40">
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
+    <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-primary"} -->
         <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Voir tous les avis</a></div>
         <!-- /wp:button -->

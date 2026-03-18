@@ -14,8 +14,8 @@
     <!-- wp:columns {"verticalAlignment":"center","className":"vitalisite-contact-v3__columns"} -->
     <div class="wp-block-columns are-vertically-aligned-center vitalisite-contact-v3__columns">
 
-        <!-- wp:column {"width":"50%","className":"vitalisite-contact-v3__image"} -->
-        <div class="wp-block-column vitalisite-contact-v3__image" style="flex-basis:50%">
+        <!-- wp:column {"width":"50%","className":"vitalisite-contact-v3__image reveal-y"} -->
+        <div class="wp-block-column vitalisite-contact-v3__image reveal-y" style="flex-basis:50%">
 
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-contact-v3__img"} -->
             <figure class="wp-block-image size-large vitalisite-contact-v3__img">
@@ -26,8 +26,8 @@
         </div>
         <!-- /wp:column -->
 
-        <!-- wp:column {"width":"50%","className":"vitalisite-contact-v3__content"} -->
-        <div class="wp-block-column vitalisite-contact-v3__content" style="flex-basis:50%">
+        <!-- wp:column {"width":"50%","className":"vitalisite-contact-v3__content reveal-y"} -->
+        <div class="wp-block-column vitalisite-contact-v3__content reveal-y" style="flex-basis:50%">
 
             <!-- wp:heading {"level":2} -->
             <h2 class="wp-block-heading">Nous contacter</h2>

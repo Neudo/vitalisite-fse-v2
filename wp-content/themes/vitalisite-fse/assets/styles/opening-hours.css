@@ -29,11 +29,11 @@
 
 .vitalisite-opening-hours__day {
   font-weight: 600;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 .vitalisite-opening-hours__time {
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   opacity: 0.7;
 }
 

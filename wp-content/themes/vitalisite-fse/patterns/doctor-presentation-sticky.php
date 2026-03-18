@@ -12,15 +12,15 @@
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"className":"vitalisite-doctor-sticky__layout"} -->
     <div class="wp-block-columns alignwide vitalisite-doctor-sticky__layout">
         
-        <!-- wp:column {"width":"45%","className":"vitalisite-doctor-sticky__content"} -->
-        <div class="wp-block-column vitalisite-doctor-sticky__content" style="flex-basis:45%">
+        <!-- wp:column {"width":"45%","className":"vitalisite-doctor-sticky__content reveal-y"} -->
+        <div class="wp-block-column vitalisite-doctor-sticky__content reveal-y" style="flex-basis:45%">
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
             <div class="wp-block-group">
                 <!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"700","fontSize":"clamp(2rem, 5vw, 3rem)","lineHeight":"1.1"}}} -->
                 <h2 class="wp-block-heading" style="font-size:clamp(2rem, 5vw, 3rem);font-weight:700;line-height:1.1">Dr. Prénom Nom</h2>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontWeight":"600"}}} -->
+                <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontWeight":"600"},"color":{"text":"var(--wp--preset--color--on-primary)"},"css":"opacity:0.8"}} -->
                 <p style="font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:0.8">Spécialité — Diplôme</p>
                 <!-- /wp:paragraph -->
 
@@ -46,12 +46,12 @@
 
         <!-- wp:column {"width":"55%","className":"vitalisite-doctor-sticky__images"} -->
         <div class="wp-block-column vitalisite-doctor-sticky__images" style="flex-basis:55%">
-            <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img"} -->
-            <figure class="wp-block-image vitalisite-doctor-sticky__img"><img alt="Photo du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+            <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img reveal-y"} -->
+            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img alt="Photo du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
             <!-- /wp:image -->
 
-            <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img"} -->
-            <figure class="wp-block-image vitalisite-doctor-sticky__img"><img alt="Consultation" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+            <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img reveal-y"} -->
+            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img alt="Consultation" style="aspect-ratio:3/4;object-fit:cover"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

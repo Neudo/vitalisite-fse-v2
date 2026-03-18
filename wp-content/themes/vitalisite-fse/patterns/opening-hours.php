@@ -18,16 +18,16 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Nos horaires d'ouverture</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Retrouvez nos horaires de consultation.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Retrouvez nos horaires de consultation.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:vitalisite-fse/opening-hours /-->
+    <!-- wp:vitalisite-fse/opening-hours {"className":"reveal-y"} /-->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
-    <div class="wp-block-buttons mt-40">
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
+    <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-primary"} -->
         <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
         <!-- /wp:button -->

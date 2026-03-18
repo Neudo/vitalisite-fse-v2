@@ -21,7 +21,7 @@ function get_pattern_categories() {
 		'vitalisite-blocks'     => __( 'Vitalisite Blocks', 'vitalisite-fse' ),
 		'vitalisite-header'     => __( 'Header Vitalisite', 'vitalisite-fse' ),
 		'vitalisite-footer'     => __( 'Footer Vitalisite', 'vitalisite-fse' ),
-		'banniere-vitalisite'   => __( 'Bannière Vitalisite', 'vitalisite-fse' ),
+		'hero-vitalisite'       => __( 'Bannières', 'vitalisite-fse' ),
 		'vitalisite-carrousel'  => __( 'Carrousel', 'vitalisite-fse' ),
 		'vitalisite-accordion'  => __( 'FAQ / Accordion', 'vitalisite-fse' ),
 		'vitalisite-cards'           => __( 'Cards', 'vitalisite-fse' ),

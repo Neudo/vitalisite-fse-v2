@@ -17,8 +17,8 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Lorem Ipsum</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->

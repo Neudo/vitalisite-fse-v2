@@ -14,20 +14,20 @@
 
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
-        <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center">Découvrez notre cabinet en vidéo</h2>
+        <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Découvrez notre cabinet en vidéo</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Une visite virtuelle de nos installations et de notre équipe.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Une visite virtuelle de nos installations et de notre équipe.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
     <!-- wp:vitalisite-fse/video {"className":"reveal-video"} /-->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
-    <div class="wp-block-buttons mt-40">
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
+    <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-primary"} -->
         <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
         <!-- /wp:button -->

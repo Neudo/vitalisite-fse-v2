@@ -12,6 +12,15 @@ main {
   margin-top: 0;
 }
 
+html.vitalisite-motion-pending .reveal-y,
+html.vitalisite-motion-pending .reveal-video,
+html.vitalisite-motion-pending .reveal-before-after,
+html.vitalisite-motion-pending .vitalisite-accordion-item,
+html.vitalisite-motion-pending .reveal-stagger > * {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+}
+
 /* Main Section Wrapper - content width + vertical spacing */
 .vitalisite-section {
   max-width: 1290px;
@@ -52,6 +61,13 @@ main {
 
 .vitalisite-section.full-section {
   max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.vitalisite-style--mineral .vitalisite-section.full-section {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Footer spacing */
@@ -99,6 +115,21 @@ main {
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--on-primary);
   border: 2px solid var(--wp--preset--color--primary);
+}
+
+/* Fallback/safeguard: if a primary button is placed on a primary background */
+.has-primary-background-color .btn-primary .wp-block-button__link,
+.hero-bg .btn-primary .wp-block-button__link,
+.btn-primary-on-primary .wp-block-button__link {
+  background-color: var(--wp--preset--color--on-primary);
+  color: var(--wp--preset--color--primary);
+  border-color: var(--wp--preset--color--on-primary);
+}
+.has-primary-background-color .btn-primary .wp-block-button__link:hover,
+.hero-bg .btn-primary .wp-block-button__link:hover,
+.btn-primary-on-primary .wp-block-button__link:hover {
+  background-color: transparent;
+  color: var(--wp--preset--color--on-primary);
 }
 
 .btn-secondary .wp-block-button__link {

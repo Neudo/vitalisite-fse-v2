@@ -48,7 +48,7 @@ require_once __DIR__ . '/inc/block-contact-form.php';
 require_once __DIR__ . '/inc/google-reviews-functions.php';
 
 // Debug visuel couleurs (WP_DEBUG uniquement).
-require_once __DIR__ . '/inc/debug-colors.php';
+// require_once __DIR__ . '/inc/debug-colors.php';
 
 // License system & setup wizard.
 require_once __DIR__ . '/inc/license.php';
@@ -86,6 +86,33 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 // Disable remote patterns from the WordPress.org pattern directory.
 add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+/**
+ * Add an early class on the root element to prevent reveal flashes before GSAP
+ * has initialized. A timeout removes it automatically if JS/GSAP fails.
+ */
+function print_motion_bootstrap_script() {
+	?>
+	<script>
+		(function () {
+			if (
+				window.matchMedia &&
+				window.matchMedia("(prefers-reduced-motion: reduce)").matches
+			) {
+				return;
+			}
+
+			var root = document.documentElement;
+			root.classList.add("vitalisite-motion-pending");
+
+			window.setTimeout(function () {
+				root.classList.remove("vitalisite-motion-pending");
+			}, 3000);
+		})();
+	</script>
+	<?php
+}
+add_action( 'wp_head', __NAMESPACE__ . '\print_motion_bootstrap_script', 1 );
 
 /**
  * Change the post-content block wrapper from <div> to <main>.
@@ -314,7 +341,7 @@ add_action( 'init', __NAMESPACE__ . '\dev_cache_busting' );
 
 // TAMPON FORCE FLUSH
 add_action('init', function() {
-    if ( get_option('fse_flushed_v3') !== 'yes' ) {
+    if ( get_option('fse_flushed_v5') !== 'yes' ) {
         $posts = get_posts([
             'post_type' => 'wp_global_styles',
             'post_status' => 'any',
@@ -330,7 +357,7 @@ add_action('init', function() {
         if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
             \WP_Theme_JSON_Resolver::clean_cached_data();
         }
-        update_option('fse_flushed_v3', 'yes');
+        update_option('fse_flushed_v5', 'yes');
     }
 });
 

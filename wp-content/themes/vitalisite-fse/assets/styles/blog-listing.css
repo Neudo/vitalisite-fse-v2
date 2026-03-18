@@ -34,7 +34,7 @@ ul.vitalisite-blog-categories a {
   display: inline-block;
   padding: 8px 16px;
   background-color: var(--wp--preset--color--surface, #f7f9fa);
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   border-radius: 30px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -98,7 +98,7 @@ ul.vitalisite-blog-categories li.current-cat a {
   gap: 12px;
   margin-bottom: 12px;
   font-size: 0.85rem;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   opacity: 0.7;
 }
 

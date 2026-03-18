@@ -176,7 +176,7 @@
 .vitalisite-google-reviews-header__number {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 .vitalisite-google-reviews-header__stars {
@@ -290,7 +290,7 @@
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__name {
   font-weight: 600;
   font-size: 1rem;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 .vitalisite-testimonial-card--google .vitalisite-testimonial-card__rating {

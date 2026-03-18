@@ -18,8 +18,8 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Nos tarifs</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Des soins adaptés à vos besoins, avec des tarifs transparents.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Des soins adaptés à vos besoins, avec des tarifs transparents.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -102,8 +102,8 @@
     </div>
     <!-- /wp:columns -->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40"} -->
-    <div class="wp-block-buttons mt-40">
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
+    <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-secondary"} -->
         <div class="wp-block-button btn-secondary"><a class="wp-block-button__link" href="#">Voir tous nos tarifs</a></div>
         <!-- /wp:button -->

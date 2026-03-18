@@ -16,8 +16,8 @@
 
         <!-- wp:column {"verticalAlignment":"center","width":"55%","className":"vitalisite-doctor-cover__photo-col"} -->
         <div class="wp-block-column is-vertically-aligned-center vitalisite-doctor-cover__photo-col" style="flex-basis:55%">
-            <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-doctor-cover__photo"} -->
-            <figure class="wp-block-image size-large vitalisite-doctor-cover__photo"><img alt="Photo du praticien"/></figure>
+            <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-doctor-cover__photo reveal-y"} -->
+            <figure class="wp-block-image size-large vitalisite-doctor-cover__photo reveal-y"><img alt="Photo du praticien"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

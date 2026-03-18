@@ -18,13 +18,13 @@
         <h2 class="wp-block-heading has-text-align-center reveal-y">Nous contacter</h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"align":"center"} -->
-        <p class="has-text-align-center">Une question ? N'hésitez pas à nous envoyer un message, nous vous répondrons dans les plus brefs délais.</p>
+        <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
+        <p class="has-text-align-center reveal-y">Une question ? N'hésitez pas à nous envoyer un message, nous vous répondrons dans les plus brefs délais.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:vitalisite-fse/contact-form /-->
+    <!-- wp:vitalisite-fse/contact-form {"className":"reveal-y"} /-->
 
 </section>
 <!-- /wp:group -->

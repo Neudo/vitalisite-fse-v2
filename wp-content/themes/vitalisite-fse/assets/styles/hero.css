@@ -1,3 +1,16 @@
+.vitalisite-section.full-section.hero-side-image,
+.vitalisite-section.full-section.hero-image-bg,
+.vitalisite-section.full-section.hero-centered-bg {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.vitalisite-style--mineral .vitalisite-section.full-section.hero-side-image,
+.vitalisite-style--mineral .vitalisite-section.full-section.hero-image-bg,
+.vitalisite-style--mineral .vitalisite-section.full-section.hero-centered-bg {
+  padding-left: 0;
+  padding-right: 0;
+}
 .vitalisite-hero__inner {
   max-width: 100%;
   margin-left: auto;
@@ -12,8 +25,8 @@
   align-items: center;
 }
 
-.vitalisite-hero.hero-img-bottom .vitalisite-hero__inner {
-  padding-bottom: 0px;
+.vitalisite-hero.hero-image-bottom .vitalisite-hero__inner {
+  padding-bottom: 50px;
 }
 
 .vitalisite-hero__inner--filled {
@@ -75,20 +88,69 @@
 }
 
 .vitalisite-hero__image {
-  margin-top: 32px;
+  margin-top: var(--wp--preset--spacing--60);
+}
+
+.vitalisite-hero__inner + .wp-block-image,
+.vitalisite-hero__inner + figure {
+  margin-top: var(--wp--preset--spacing--60);
 }
 
 .vitalisite-hero__actions {
   gap: 10px !important;
 }
 
-.hero-bg .vitalisite-hero__actions {
+.hero-centered-bg .vitalisite-hero__actions {
   margin-top: 90px;
   align-items: flex-start;
 }
 
+/* Custom substitute for WP Cover Block to avoid block parsing errors */
+.vitalisite-hero-custom-cover {
+  position: relative;
+  width: 100%;
+  max-width: unset !important;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-radius: var(--wp--custom--image-radius, 16px) !important;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.vitalisite-hero-custom-bg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  z-index: 0;
+  margin: 0 !important;
+}
+
+.vitalisite-hero-custom-bg figure,
+.vitalisite-hero-custom-bg .components-resizable-box__container,
+.vitalisite-hero-custom-bg img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.vitalisite-hero-custom-bg img {
+  object-fit: cover;
+  opacity: 0.65; /* Dark overlay effect instead of a separate span */
+}
+
+.vitalisite-hero-custom-cover .hero-image-bg__content {
+  position: relative;
+  z-index: 1;
+}
+
 /* === Bannière Hero (Cover Pattern) === */
-.vitalisite-hero-cover {
+.hero-image-bg {
   border-radius: var(--wp--custom--image-radius, 16px) !important;
   overflow: hidden;
   max-width: unset;
@@ -103,45 +165,46 @@
   padding: 0;
 }
 
-.vitalisite-hero-cover__content {
+.hero-image-bg__content {
   padding: 110px 40px;
   max-width: 100%;
   width: 100%;
-  color: #fff;
+  color: #fff !important;
 }
 
-.vitalisite-hero-cover__content h1,
-.vitalisite-hero-cover__content h2,
-.vitalisite-hero-cover__content p {
-  color: #fff;
+.hero-image-bg__content h1,
+.hero-image-bg__content h2,
+.hero-image-bg__content p,
+.hero-image-bg__content a {
+  color: #fff !important;
 }
 
-.vitalisite-hero-cover__content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
+.hero-image-bg__content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid white;
   margin-bottom: 0;
 }
 
-.vitalisite-hero-cover__content h2 {
+.hero-image-bg__content h2 {
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 400;
   opacity: 0.9;
 }
 
 /* Réseaux sociaux dans la bannière */
-.vitalisite-hero-cover .vitalisite-social-link a {
+.hero-image-bg .vitalisite-social-link a {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
-.vitalisite-hero-cover .vitalisite-social-link a:hover {
+.hero-image-bg .vitalisite-social-link a:hover {
   background: var(--wp--preset--color--primary);
 }
 
 @media (max-width: 781px) {
-  .vitalisite-hero-cover__content {
+  .hero-image-bg__content {
     max-width: 100%;
   }
 }

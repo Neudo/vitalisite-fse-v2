@@ -23,7 +23,7 @@
   cursor: pointer;
   font-weight: 600;
   font-family: var(--wp--preset--font-family--primary);
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,10 +97,14 @@
 
 .wp-block-vitalisite-fse-accordion-item.vitalisite-accordion-item p {
   margin: 0;
-  color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--main-text);
 }
 
 /* Custom Accordion Block Container */
+.vitalisite-accordion-container {
+  padding-top: 50px;
+}
+
 .vitalisite-accordion-container .vitalisite-accordion-item {
   margin-bottom: 4px !important;
   border-bottom: 1px solid var(--wp--preset--color--border);
