@@ -30,7 +30,7 @@
     },
     "buttonUrl": {
       "type": "string",
-      "default": "#"
+      "default": ""
     }
   },
   "supports": {

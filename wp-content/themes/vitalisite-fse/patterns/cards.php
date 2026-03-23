@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Cartes (Legacy Style)
+ * Title: Cartes de prises en charge
  * Slug: vitalisite-fse/cards
- * Description: Grille de 3 cartes avec titre, texte et bouton (style bordé)
+ * Description: Grille de cartes pour presenter les motifs de consultation ou les prises en charge.
  * Categories: vitalisite-cards
  * Keywords: cards, grid, feature, services
  */
@@ -14,11 +14,11 @@
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
         <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
-        <h2 class="wp-block-heading has-text-align-center reveal-y">Lorem Ipsum</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Des prises en charge claires et adaptees</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-        <p class="has-text-align-center reveal-y">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <p class="has-text-align-center reveal-y">Je peux utiliser cette section pour presenter mes specialites, les besoins frequemment rencontres et la maniere dont j'accompagne mes patients.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -26,19 +26,27 @@
     <!-- wp:vitalisite-fse/cards-container -->
     <div class="wp-block-vitalisite-fse-cards-container vitalisite-cards-grid reveal-stagger">
 
-        <!-- wp:vitalisite-fse/card {"title":"Consultation","description":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.","ctaText":"En savoir plus","ctaUrl":"#"} -->
+        <!-- wp:vitalisite-fse/card {"title":"Consultation initiale","description":"Premier rendez-vous pour faire le point sur votre situation, comprendre vos besoins et definir une prise en charge adaptee.","ctaText":"Decouvrir","ctaUrl":""} -->
         <div class="wp-block-vitalisite-fse-card vitalisite-card">
-            <h3 class="wp-block-heading" style="font-weight:300">Consultation</h3>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-            <div class="wp-block-buttons"><div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="#">En savoir plus</a></div></div>
+            <h3 class="wp-block-heading" style="font-weight:300">Consultation initiale</h3>
+            <p>Premier rendez-vous pour faire le point sur votre situation, comprendre vos besoins et definir une prise en charge adaptee.</p>
+            <div class="wp-block-buttons"><div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Decouvrir</a></div></div>
         </div>
         <!-- /wp:vitalisite-fse/card -->
 
-        <!-- wp:vitalisite-fse/card {"title":"Urgences","description":"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.","ctaText":"En savoir plus","ctaUrl":"#"} -->
+        <!-- wp:vitalisite-fse/card {"title":"Suivi personnalise","description":"Consultations de suivi pour ajuster l'accompagnement, repondre a l'evolution des symptomes et maintenir les progres dans la duree.","ctaText":"Decouvrir","ctaUrl":""} -->
         <div class="wp-block-vitalisite-fse-card vitalisite-card">
-            <h3 class="wp-block-heading" style="font-weight:300">Urgences</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-            <div class="wp-block-buttons"><div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="#">En savoir plus</a></div></div>
+            <h3 class="wp-block-heading" style="font-weight:300">Suivi personnalise</h3>
+            <p>Consultations de suivi pour ajuster l'accompagnement, repondre a l'evolution des symptomes et maintenir les progres dans la duree.</p>
+            <div class="wp-block-buttons"><div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Decouvrir</a></div></div>
+        </div>
+        <!-- /wp:vitalisite-fse/card -->
+
+        <!-- wp:vitalisite-fse/card {"title":"Prevention et conseils","description":"Accompagnement, education et recommandations concretes pour prendre soin de votre sante au quotidien en toute serenite.","ctaText":"Decouvrir","ctaUrl":""} -->
+        <div class="wp-block-vitalisite-fse-card vitalisite-card">
+            <h3 class="wp-block-heading" style="font-weight:300">Prevention et conseils</h3>
+            <p>Accompagnement, education et recommandations concretes pour prendre soin de votre sante au quotidien en toute serenite.</p>
+            <div class="wp-block-buttons"><div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Decouvrir</a></div></div>
         </div>
         <!-- /wp:vitalisite-fse/card -->
 

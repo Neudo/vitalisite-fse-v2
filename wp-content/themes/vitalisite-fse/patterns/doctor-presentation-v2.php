@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Présentation docteur (Moderne)
+ * Title: Presentation praticien - Portrait
  * Slug: vitalisite-fse/doctor-presentation-v2
- * Description: Section de présentation du praticien avec un design moderne (image à gauche, texte à droite).
+ * Description: Portrait du praticien avec image a gauche et contenu a droite, pour une presentation immediate et elegante.
  * Categories: vitalisite-doctor
  * Keywords: docteur, presentation, doctor, praticien, equipe, moderne
  */
@@ -18,7 +18,7 @@
         <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
             <!-- wp:image {"aspectRatio":"4/5","scale":"cover","className":"vitalisite-doctor-card-v2__avatar reveal-y"} -->
-            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar reveal-y"><img alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
+            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->
@@ -32,23 +32,23 @@
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">
                     <!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"className":"vitalisite-doctor-card-v2__name"} -->
-                    <h3 class="wp-block-heading vitalisite-doctor-card-v2__name" style="font-style:normal;font-weight:700">Dr. Prénom Nom</h3>
+                    <h3 class="wp-block-heading vitalisite-doctor-card-v2__name" style="font-style:normal;font-weight:700">Dr. Prenom Nom</h3>
                     <!-- /wp:heading -->
 
                     <!-- wp:paragraph {"className":"vitalisite-doctor-card-v2__specialty"} -->
-                    <p class="vitalisite-doctor-card-v2__specialty">Spécialité — Diplôme</p>
+                    <p class="vitalisite-doctor-card-v2__specialty">Specialite du cabinet</p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
 
                 <!-- wp:paragraph {"className":"vitalisite-doctor-card-v2__description"} -->
-                <p class="vitalisite-doctor-card-v2__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionné par son métier, il accompagne ses patients avec bienveillance et expertise depuis plus de 10 ans.</p>
+                <p class="vitalisite-doctor-card-v2__description">Je presente ici ma posture de soin, ma relation au patient et les grands axes de mon accompagnement avec un ton simple et professionnel.</p>
                 <!-- /wp:paragraph -->
 
                 <!-- wp:buttons {"className":"mt-20"} -->
                 <div class="wp-block-buttons mt-20">
                     <!-- wp:button {"className":"btn-primary"} -->
-                    <div class="wp-block-button btn-primary"><a class="wp-block-button__link wp-element-button" href="#">Prendre rendez-vous</a></div>
+                    <div class="wp-block-button btn-primary"><a class="wp-block-button__link wp-element-button">Prendre rendez-vous</a></div>
                     <!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->

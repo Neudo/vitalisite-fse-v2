@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Présentation docteur (Cover + Carte)
+ * Title: Presentation praticien - Carte superposee
  * Slug: vitalisite-fse/doctor-presentation-skills
- * Description: Présentation du praticien avec grande photo à gauche et carte de présentation venant se superposer sur l'image, avec réseaux sociaux en bas.
+ * Description: Presentation du praticien avec grand visuel et carte superposee pour un rendu premium et tres editorial.
  * Categories: vitalisite-doctor
  * Keywords: docteur, presentation, cover, carte, réseaux sociaux, moderne
  */
@@ -17,7 +17,7 @@
         <!-- wp:column {"verticalAlignment":"center","width":"55%","className":"vitalisite-doctor-cover__photo-col"} -->
         <div class="wp-block-column is-vertically-aligned-center vitalisite-doctor-cover__photo-col" style="flex-basis:55%">
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-doctor-cover__photo reveal-y"} -->
-            <figure class="wp-block-image size-large vitalisite-doctor-cover__photo reveal-y"><img alt="Photo du praticien"/></figure>
+            <figure class="wp-block-image size-large vitalisite-doctor-cover__photo reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Photo du praticien"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->
@@ -29,11 +29,11 @@
             <div class="wp-block-group vitalisite-doctor-cover__card has-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60)">
 
                 <!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"700","lineHeight":"1.1"}}} -->
-                <h2 class="wp-block-heading" style="font-weight:700;line-height:1.1">Dr. Prénom Nom</h2>
+                <h2 class="wp-block-heading" style="font-weight:700;line-height:1.1">Dr. Prenom Nom</h2>
                 <!-- /wp:heading -->
 
                 <!-- wp:paragraph {"className":"vitalisite-doctor-cover__specialty"} -->
-                <p class="vitalisite-doctor-cover__specialty">Spécialité — Diplôme</p>
+                <p class="vitalisite-doctor-cover__specialty">Specialite du cabinet</p>
                 <!-- /wp:paragraph -->
 
                 <!-- wp:separator {"className":"vitalisite-doctor-cover__divider"} -->
@@ -41,12 +41,20 @@
                 <!-- /wp:separator -->
 
                 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.8"}}} -->
-                <p style="line-height:1.8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionné par son métier, il accompagne ses patients avec bienveillance et expertise depuis plus de 10 ans.</p>
+                <p style="line-height:1.8">Je peux utiliser cette variante pour valoriser ma specialite, ma posture de soin et une image de cabinet plus haut de gamme.</p>
                 <!-- /wp:paragraph -->
 
                 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.8"}}} -->
-                <p style="line-height:1.8">Son approche combine rigueur scientifique et écoute attentive pour un suivi personnalisé et de qualité.</p>
+                <p style="line-height:1.8">J'y presente mon approche, mes valeurs, mon cadre de consultation et la qualite du suivi propose aux patients.</p>
                 <!-- /wp:paragraph -->
+
+                <!-- wp:buttons -->
+                <div class="wp-block-buttons">
+                    <!-- wp:button {"className":"btn-on-primary"} -->
+                    <div class="wp-block-button btn-on-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
 
             </div>
             <!-- /wp:group -->

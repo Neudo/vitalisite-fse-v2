@@ -1,7 +1,6 @@
 .vitalisite-pricing-grid {
   gap: var(--wp--preset--spacing--40) !important;
   justify-content: center;
-  padding-top: 50px;
 }
 
 .vitalisite-pricing-card {
@@ -53,7 +52,6 @@
   max-width: 900px;
   width: 100%;
   margin: var(--wp--preset--spacing--60) auto 0;
-  padding-top: 50px;
 }
 
 .vitalisite-pricing-list-card {

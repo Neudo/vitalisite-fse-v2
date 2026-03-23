@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Formations docteur
+ * Title: Parcours et formations
  * Slug: vitalisite-fse/doctor-formations
- * Description: Section listant les formations et diplômes du praticien sous forme de cartes.
+ * Description: Section chronologique pour presenter le parcours, les formations et le perfectionnement continu du praticien.
  * Categories: vitalisite-doctor
  * Keywords: docteur, formations, diplomes, parcours, liste
  */
@@ -19,7 +19,7 @@
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-        <p class="has-text-align-center reveal-y">Retrouvez ci-dessous mon parcours universitaire et mes certifications professionnelles.</p>
+        <p class="has-text-align-center reveal-y">Je presente ici les grandes etapes de mon parcours avec des intitules credibles, sobres et faciles a personnaliser.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -38,25 +38,25 @@
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">
                     <!-- wp:heading {"level":4,"className":"vitalisite-timeline-title"} -->
-                    <h4 class="wp-block-heading vitalisite-timeline-title">Diplôme Universitaire (D.U.) Spécialisé</h4>
+                    <h4 class="wp-block-heading vitalisite-timeline-title">Formation principale ou diplome de reference</h4>
                     <!-- /wp:heading -->
                     <!-- wp:paragraph {"className":"vitalisite-timeline-location"} -->
                     <p class="vitalisite-timeline-location">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vitalisite-timeline-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Université René Descartes, Paris
+                        Universite ou institut de formation
                     </p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
                 
                 <!-- wp:paragraph {"className":"vitalisite-timeline-year"} -->
-                <p class="vitalisite-timeline-year">2023 - 2024</p>
+                <p class="vitalisite-timeline-year">2020 - 2022</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
 
             <!-- wp:paragraph {"className":"vitalisite-timeline-desc"} -->
-            <p class="vitalisite-timeline-desc">Formation approfondie sur les nouvelles techniques de soins. Rédaction d'un mémoire sur la patientèle moderne.</p>
+            <p class="vitalisite-timeline-desc">Ajoutez ici une courte description de la formation, de ses apports et de ce qu'elle renforce dans votre pratique au quotidien.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -68,25 +68,25 @@
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">
                     <!-- wp:heading {"level":4,"className":"vitalisite-timeline-title"} -->
-                    <h4 class="wp-block-heading vitalisite-timeline-title">Doctorat en Médecine</h4>
+                    <h4 class="wp-block-heading vitalisite-timeline-title">Perfectionnement ou formation complementaire</h4>
                     <!-- /wp:heading -->
                     <!-- wp:paragraph {"className":"vitalisite-timeline-location"} -->
                     <p class="vitalisite-timeline-location">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vitalisite-timeline-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Faculté de Médecine, Lyon
+                        Centre de formation reconnu
                     </p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
                 
                 <!-- wp:paragraph {"className":"vitalisite-timeline-year"} -->
-                <p class="vitalisite-timeline-year">2016 - 2022</p>
+                <p class="vitalisite-timeline-year">2017 - 2019</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
 
             <!-- wp:paragraph {"className":"vitalisite-timeline-desc"} -->
-            <p class="vitalisite-timeline-desc">Thèse soutenue avec les félicitations du jury. Internat réalisé au CHU avec une spécialisation progressive en médecine polyvalente et accompagnement des patients.</p>
+            <p class="vitalisite-timeline-desc">Cette ligne peut mettre en avant une competence specifique, une approche complementaire ou une expertise plus ciblee.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -98,25 +98,25 @@
                 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">
                     <!-- wp:heading {"level":4,"className":"vitalisite-timeline-title"} -->
-                    <h4 class="wp-block-heading vitalisite-timeline-title">Diplôme de secourisme avancé</h4>
+                    <h4 class="wp-block-heading vitalisite-timeline-title">Formation continue</h4>
                     <!-- /wp:heading -->
                     <!-- wp:paragraph {"className":"vitalisite-timeline-location"} -->
                     <p class="vitalisite-timeline-location">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vitalisite-timeline-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Croix-Rouge Française, Bordeaux
+                        Organisme professionnel
                     </p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
                 
                 <!-- wp:paragraph {"className":"vitalisite-timeline-year"} -->
-                <p class="vitalisite-timeline-year">2015</p>
+                <p class="vitalisite-timeline-year">Chaque annee</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
             
             <!-- wp:paragraph {"className":"vitalisite-timeline-desc"} -->
-            <p class="vitalisite-timeline-desc">Formation aux gestes de premiers secours en équipe, gestion de crise médicale et intervention rapide.</p>
+            <p class="vitalisite-timeline-desc">Je peux utiliser cette derniere ligne pour montrer que ma pratique evolue, se met a jour et s'inscrit dans une demarche de qualite continue.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->

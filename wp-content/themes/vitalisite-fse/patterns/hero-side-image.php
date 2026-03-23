@@ -1,11 +1,11 @@
 <?php
 /**
- * Title: Héro avec image latérale
+ * Title: Banniere avec image laterale
  * Slug: vitalisite-fse/hero-side-image
  * Categories: hero-vitalisite
  * Keywords: hero, split, cta, accueil
  * Block Types: core/group, core/cover
- * Description: Bannière avec image, titre, description et deux CTA optionnels.
+ * Description: Banniere equilibree avec contenu et image, ideale pour presenter un cabinet ou une specialite.
  */
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-side-image vitalisite-section big-section"} -->
@@ -17,11 +17,11 @@
     <!-- wp:column {"verticalAlignment":"center","className":"vitalisite-hero__column"} -->
     <div class="wp-block-column is-vertically-aligned-center vitalisite-hero__column">
       <!-- wp:heading {"level":1,"className":"vitalisite-hero__title reveal-y reveal-y--soft"} -->
-      <h1 class="vitalisite-hero__title reveal-y reveal-y--soft">Lorem ipsum dolor sit amet consectetur</h1>
+      <h1 class="vitalisite-hero__title reveal-y reveal-y--soft">Des consultations personnalisees dans un cadre professionnel et rassurant</h1>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph {"className":"vitalisite-hero__lead reveal-y reveal-y--soft"} -->
-      <p class="vitalisite-hero__lead reveal-y reveal-y--soft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="vitalisite-hero__lead reveal-y reveal-y--soft">J'accompagne mes patients avec une approche claire, accessible et personnalisee, adaptee aux besoins du quotidien.</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:buttons {"className":"vitalisite-hero__actions reveal-y reveal-y--soft"} -->
@@ -31,7 +31,7 @@
         <!-- /wp:button -->
 
         <!-- wp:button {"className":"btn-secondary"} -->
-        <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">En savoir plus</a></div>
+        <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">Decouvrir le cabinet</a></div>
         <!-- /wp:button -->
       </div>
       <!-- /wp:buttons -->
@@ -41,7 +41,7 @@
     <!-- wp:column {"verticalAlignment":"center","className":"vitalisite-hero__column"} -->
     <div class="wp-block-column is-vertically-aligned-center vitalisite-hero__column">
       <!-- wp:image {"sizeSlug":"large","className":"reveal-y"} -->
-      <figure class="wp-block-image size-large reveal-y"><img alt="Équipe médicale souriante" /></figure>
+      <figure class="wp-block-image size-large reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Portrait d'un praticien dans son cabinet" /></figure>
       <!-- /wp:image -->
     </div>
     <!-- /wp:column -->

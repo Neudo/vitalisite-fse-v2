@@ -50,7 +50,6 @@ function render_dynamic_footer( $block_content, $block ) {
 					<p class="vitalisite-footer__heading"><?php echo esc_html__( 'Navigation', 'vitalisite-fse' ); ?></p>
 					<ul class="vitalisite-footer__nav-list">
 						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Accueil', 'vitalisite-fse' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/specialites' ) ); ?>"><?php echo esc_html__( 'Spécialités', 'vitalisite-fse' ); ?></a></li>
 						<li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>"><?php echo esc_html__( 'Contact', 'vitalisite-fse' ); ?></a></li>
 					</ul>
 				</div>

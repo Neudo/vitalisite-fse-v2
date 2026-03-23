@@ -95,7 +95,8 @@ header {
   margin: 0;
 }
 
-.vitalisite-header--minimal .wp-block-navigation-item a {
+.vitalisite-header--minimal .wp-block-navigation-item a,
+.vitalisite-header--minimal .wp-block-navigation-item button {
   color: var(--wp--preset--color--bg);
   text-decoration: none;
   font-size: 0.9375rem;

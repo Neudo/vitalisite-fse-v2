@@ -30,14 +30,22 @@ html.vitalisite-motion-pending .reveal-stagger > * {
   /* Espacement horizontal (Small/Medium fluides) */
   padding-left: var(--wp--preset--spacing--50);
   padding-right: var(--wp--preset--spacing--50);
-  /* Espacement vertical (Section padding 2XL fluide) - évite les soucis de marge avec des fonds de couleur */
-  padding-top: var(--wp--preset--spacing--80);
-  padding-bottom: var(--wp--preset--spacing--80);
+  /* Espacement vertical resserré pour éviter les "trous" entre sections */
+  padding-top: var(--wp--preset--spacing--60);
+  padding-bottom: var(--wp--preset--spacing--60);
 
   /* INTERCEPT l'héritage du blockGap global (BO) pour le contenu INTIME de la section */
   --wp--style--block-gap: var(
-    --wp--preset--spacing--40
-  ); /* Espacement "Small" pour les paragraphes, etc. */
+    --wp--preset--spacing--30
+  ); /* Rythme interne plus compact pour les contenus de section */
+}
+
+/* Les sections gèrent deja leur propre respiration via le padding */
+main.wp-block-post-content.is-layout-flow > .vitalisite-section + .vitalisite-section,
+main.wp-block-post-content.is-layout-constrained
+  > .vitalisite-section
+  + .vitalisite-section {
+  margin-block-start: 0 !important;
 }
 
 /* Force l'application de ce gap normalisé pour les enfants directs et Layout de WP */
@@ -63,6 +71,12 @@ html.vitalisite-motion-pending .reveal-stagger > * {
   max-width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+/* Le premier pattern d'une page n'a pas besoin d'un padding-top de section:
+   l'espace avec le header suffit deja visuellement. */
+main.wp-block-post-content > .vitalisite-section:first-child {
+  padding-top: 0;
 }
 
 .vitalisite-style--mineral .vitalisite-section.full-section {

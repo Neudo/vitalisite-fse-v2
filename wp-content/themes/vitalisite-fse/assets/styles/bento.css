@@ -36,6 +36,17 @@
   margin-block-start: 15px;
 }
 
+.vitalisite-bento-item--span-1 .wp-block-heading,
+.vitalisite-bento-item--span-1 .wp-block-heading a,
+.vitalisite-bento-item--span-1 h1,
+.vitalisite-bento-item--span-1 h2,
+.vitalisite-bento-item--span-1 h3,
+.vitalisite-bento-item--span-1 h4,
+.vitalisite-bento-item--span-1 h5,
+.vitalisite-bento-item--span-1 h6 {
+  color: var(--wp--preset--color--on-primary) !important;
+}
+
 /* Tablet & Desktop (Switch to 3-column grid for 2/3 + 1/3 layout) */
 @media (min-width: 960px) {
   .vitalisite-bento-grid .vitalisite-bento-inner {

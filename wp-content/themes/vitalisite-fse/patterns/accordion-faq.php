@@ -12,40 +12,40 @@
 <section class="wp-block-group vitalisite-accordion-wrapper vitalisite-accordion-variant-simple vitalisite-section">
 
     <!-- wp:heading {"textAlign":"center","level":2,"className":"mb-60 reveal-y"} -->
-    <h2 class="wp-block-heading has-text-align-center reveal-y">Questions Fréquentes</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Questions frequentes</h2>
     <!-- /wp:heading -->
 
     <!-- wp:vitalisite-fse/accordion {"variant":"simple"} -->
     <div class="wp-block-vitalisite-fse-accordion vitalisite-accordion-container">
         
-        <!-- wp:vitalisite-fse/accordion-item {"summary":"Lorem ipsum dolor sit amet ?"} -->
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Quand puis-je prendre rendez-vous ?"} -->
         <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
-            <summary>Lorem ipsum dolor sit amet ?</summary>
+            <summary>Quand puis-je prendre rendez-vous ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                <p>Utilisez cette reponse pour expliquer simplement vos modalites de prise de rendez-vous, vos delais moyens et vos canaux de contact.</p>
                 <!-- /wp:paragraph -->
             </div>
         </details>
         <!-- /wp:vitalisite-fse/accordion-item -->
 
-        <!-- wp:vitalisite-fse/accordion-item {"summary":"Duis aute irure dolor in reprehenderit ?"} -->
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Faut-il preparer quelque chose avant la consultation ?"} -->
         <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
-            <summary>Duis aute irure dolor in reprehenderit ?</summary>
+            <summary>Faut-il preparer quelque chose avant la consultation ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
-                <p>Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                <p>Cette question est ideale pour indiquer les documents utiles, les informations a apporter ou les recommandations avant un premier rendez-vous.</p>
                 <!-- /wp:paragraph -->
             </div>
         </details>
         <!-- /wp:vitalisite-fse/accordion-item -->
 
-        <!-- wp:vitalisite-fse/accordion-item {"summary":"Excepteur sint occaecat cupidatat non proident ?"} -->
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Comment se deroule le suivi ?"} -->
         <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
-            <summary>Excepteur sint occaecat cupidatat non proident ?</summary>
+            <summary>Comment se deroule le suivi ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                <p>Vous pouvez preciser ici le rythme des consultations, les conseils donnes entre deux rendez-vous et la logique globale de votre accompagnement.</p>
                 <!-- /wp:paragraph -->
             </div>
         </details>

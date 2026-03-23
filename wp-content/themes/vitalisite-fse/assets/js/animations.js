@@ -95,7 +95,7 @@
         document.querySelectorAll(
           ".reveal-y, .reveal-video, .reveal-before-after, .vitalisite-accordion-item",
         ),
-      ),
+      ).filter((el) => !isHandledByStagger(el)),
       ...toArray(document.querySelectorAll(".reveal-stagger")).flatMap((container) =>
         toArray(container.children).filter(
           (child) =>

@@ -12,29 +12,29 @@
 <section class="wp-block-group vitalisite-accordion-wrapper accordion-bg vitalisite-section">
 
     <!-- wp:heading {"textAlign":"center","level":2,"className":"mb-60 reveal-y"} -->
-    <h2 class="wp-block-heading has-text-align-center reveal-y">Questions & Réponses</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Questions et reponses</h2>
     <!-- /wp:heading -->
 
     <!-- wp:vitalisite-fse/accordion {"variant":"legacy"} -->
     <div class="wp-block-vitalisite-fse-accordion vitalisite-accordion-container vitalisite-accordion-variant-legacy">
         
-        <!-- wp:vitalisite-fse/accordion-item {"summary":"Lorem ipsum dolor sit amet ?"} -->
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Pour quels besoins consulter ?"} -->
         <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
-            <summary>Lorem ipsum dolor sit amet ?</summary>
+            <summary>Pour quels besoins consulter ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p>Cette premiere question peut servir a presenter les motifs de consultation les plus frequents et les situations pour lesquelles votre cabinet est sollicite.</p>
                 <!-- /wp:paragraph -->
             </div>
         </details>
         <!-- /wp:vitalisite-fse/accordion-item -->
 
-        <!-- wp:vitalisite-fse/accordion-item {"summary":"Ut enim ad minim veniam ?"} -->
+        <!-- wp:vitalisite-fse/accordion-item {"summary":"Le cabinet prend-il en charge tous les profils de patients ?"} -->
         <details class="wp-block-vitalisite-fse-accordion-item vitalisite-accordion-item reveal-y">
-            <summary>Ut enim ad minim veniam ?</summary>
+            <summary>Le cabinet prend-il en charge tous les profils de patients ?</summary>
             <div class="wp-block-group" style="padding:var(--wp--preset--spacing--40)">
                 <!-- wp:paragraph -->
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                <p>Utilisez cette reponse pour preciser votre public, vos specialites et les situations qui peuvent necessiter une orientation complementaire.</p>
                 <!-- /wp:paragraph -->
             </div>
         </details>

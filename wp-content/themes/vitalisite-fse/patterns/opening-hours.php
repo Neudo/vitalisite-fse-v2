@@ -15,11 +15,11 @@
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
         <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center reveal-y">Nos horaires d'ouverture</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Mes horaires de consultation</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-        <p class="has-text-align-center reveal-y">Retrouvez nos horaires de consultation.</p>
+        <p class="has-text-align-center reveal-y">Retrouvez ici mes jours de consultation et les moments ou je peux vous recevoir sur rendez-vous.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -29,7 +29,7 @@
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
     <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-primary"} -->
-        <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
+        <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

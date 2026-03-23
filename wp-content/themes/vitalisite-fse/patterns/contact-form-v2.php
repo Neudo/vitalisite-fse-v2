@@ -18,11 +18,11 @@
         <div class="wp-block-column vitalisite-contact-v2__info reveal-y" style="flex-basis:40%">
 
             <!-- wp:heading {"level":2} -->
-            <h2 class="wp-block-heading">Nous contacter</h2>
+            <h2 class="wp-block-heading">Me contacter</h2>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"className":"vitalisite-contact-v2__lead"} -->
-            <p class="vitalisite-contact-v2__lead">Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner.</p>
+            <p class="vitalisite-contact-v2__lead">Je reste disponible pour repondre a vos questions et vous orienter vers le rendez-vous le plus adapte.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:group {"className":"vitalisite-contact-v2__details","layout":{"type":"flex","flexWrap":"nowrap","orientation":"vertical"}} -->
@@ -31,7 +31,7 @@
                 <!-- wp:group {"className":"vitalisite-contact-v2__detail-item icon-map-pin","layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group vitalisite-contact-v2__detail-item icon-map-pin">
                     <!-- wp:paragraph -->
-                    <p>12 rue de la Santé, 75014 Paris</p>
+                    <p>Adresse du cabinet</p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
@@ -39,7 +39,7 @@
                 <!-- wp:group {"className":"vitalisite-contact-v2__detail-item icon-phone","layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group vitalisite-contact-v2__detail-item icon-phone">
                     <!-- wp:paragraph -->
-                    <p>01 42 42 42 42</p>
+                    <p>Telephone du cabinet</p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
@@ -47,7 +47,7 @@
                 <!-- wp:group {"className":"vitalisite-contact-v2__detail-item icon-clock","layout":{"type":"flex","flexWrap":"nowrap"}} -->
                 <div class="wp-block-group vitalisite-contact-v2__detail-item icon-clock">
                     <!-- wp:paragraph -->
-                    <p>Lun – Ven : 9h – 19h<br>Sam : 9h – 13h</p>
+                    <p>Du lundi au vendredi<br>Sur rendez-vous</p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->

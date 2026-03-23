@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Bento Grid
+ * Title: Bento - Mes atouts
  * Slug: vitalisite-fse/bento-grid
- * Description: Section bento avec carte principale large et carte secondaire latérale
+ * Description: Section bento pour mettre en avant les atouts d'une pratique en solo ou d'une specialite.
  * Categories: vitalisite-text
  * Keywords: grid, bento, grille, modern, features
  */
@@ -21,7 +21,7 @@
                 <!-- wp:column {"width":"45%"} -->
                 <div class="wp-block-column" style="flex-basis:45%">
                     <!-- wp:heading {"level":2,"fontSize":"x-large"} -->
-                    <h2 class="wp-block-heading has-x-large-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    <h2 class="wp-block-heading has-x-large-font-size">Une pratique claire et rassurante</h2>
                     <!-- /wp:heading -->
                 </div>
                 <!-- /wp:column -->
@@ -33,11 +33,11 @@
                 <!-- wp:column {"width":"50%"} -->
                 <div class="wp-block-column" style="flex-basis:50%">
                     <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small"} -->
-                    <p class="has-small-font-size" style="line-height:1.6">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="has-small-font-size" style="line-height:1.6">Je peux mettre en avant ici ce qui structure ma pratique : ecoute, disponibilite, rigueur du suivi et clarte des informations transmises.</p>
                     <!-- /wp:paragraph -->
 
                     <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small"} -->
-                    <p class="has-small-font-size" style="line-height:1.6">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <p class="has-small-font-size" style="line-height:1.6">Le format bento me permet de valoriser ma posture professionnelle sans alourdir la lecture ni surcharger une page d'accueil.</p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:column -->
@@ -47,18 +47,18 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"backgroundColor":"primary","textColor":"on-primary","className":"vitalisite-bento-item vitalisite-bento-item--span-1 reveal-y"} -->
+        <!-- wp:group {"backgroundColor":"primary","textColor":"on-primary","className":"vitalisite-bento-item vitalisite-bento-item--span-1 reveal-y","style":{"elements":{"heading":{"color":{"text":"var:preset|color|on-primary"}}}}} -->
         <div class="wp-block-group has-primary-background-color has-on-primary-color has-text-color has-background vitalisite-bento-item vitalisite-bento-item--span-1 reveal-y">
-            <!-- wp:heading {"level":3,"fontSize":"large"} -->
-            <h3 class="wp-block-heading has-large-font-size">Lorem Ipsum</h3>
+            <!-- wp:heading {"level":3,"fontSize":"large","textColor":"on-primary"} -->
+            <h3 class="wp-block-heading has-on-primary-color has-text-color has-large-font-size">Pourquoi me consulter</h3>
             <!-- /wp:heading -->
 
-            <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small"} -->
-            <p class="has-small-font-size" style="line-height:1.6">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+            <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"on-primary"} -->
+            <p class="has-on-primary-color has-text-color has-small-font-size" style="line-height:1.6">Informations claires, accompagnement personnalise et cadre de consultation professionnel.</p>
             <!-- /wp:paragraph -->
 
-            <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small"} -->
-            <p class="has-small-font-size" style="line-height:1.6">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+            <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"on-primary"} -->
+            <p class="has-on-primary-color has-text-color has-small-font-size" style="line-height:1.6">Une variante tres utile pour presenter mes engagements avec un rendu plus editorial.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->

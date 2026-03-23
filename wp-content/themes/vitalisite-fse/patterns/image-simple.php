@@ -19,15 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="wp-block-group alignwide">
 
 		<!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
-		<h2 class="wp-block-heading has-text-align-center reveal-y">Titre de la section</h2>
+		<h2 class="wp-block-heading has-text-align-center reveal-y">Le cabinet en image</h2>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-		<p class="has-text-align-center reveal-y">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		<p class="has-text-align-center reveal-y">Une section tres simple pour valoriser un espace de consultation, un equipement ou une ambiance de cabinet.</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:image {"sizeSlug":"full","align":"wide","className":"reveal-y"} -->
-		<figure class="wp-block-image size-full alignwide reveal-y"><img alt="" /></figure>
+		<figure class="wp-block-image size-full alignwide reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-1.jpg' ) ); ?>" alt="Vue generale du cabinet" /></figure>
 		<!-- /wp:image -->
 
 	</div>

@@ -19,7 +19,7 @@
 
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-contact-v3__img"} -->
             <figure class="wp-block-image size-large vitalisite-contact-v3__img">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Équipe médicale" />
+                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Accueil du cabinet" />
             </figure>
             <!-- /wp:image -->
 
@@ -30,11 +30,11 @@
         <div class="wp-block-column vitalisite-contact-v3__content reveal-y" style="flex-basis:50%">
 
             <!-- wp:heading {"level":2} -->
-            <h2 class="wp-block-heading">Nous contacter</h2>
+            <h2 class="wp-block-heading">Me contacter</h2>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph -->
-            <p>Une question ? N'hésitez pas à nous envoyer un message, nous vous répondrons dans les plus brefs délais.</p>
+            <p>Une question ? Je vous reponds dans les meilleurs delais et je vous accueille dans un cadre de consultation serein et professionnel.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:vitalisite-fse/contact-form /-->

@@ -25,6 +25,7 @@ class Vitalisite_CPT_Specialities {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ) );
+		add_action( 'template_redirect', array( $this, 'maybe_redirect_archive' ) );
 	}
 
 	public function register_post_type() {
@@ -52,7 +53,7 @@ class Vitalisite_CPT_Specialities {
 			'query_var'          => true,
 			'rewrite'            => array( 'slug' => 'specialites' ),
 			'capability_type'    => 'post',
-			'has_archive'        => true,
+			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => 6,
 			'menu_icon'          => 'dashicons-plus-alt',
@@ -140,6 +141,21 @@ class Vitalisite_CPT_Specialities {
 
 		$args = wp_parse_args( $args, $defaults );
 		return get_posts( $args );
+	}
+
+	public function maybe_redirect_archive() {
+		$archive_path = wp_parse_url( home_url( '/specialites/' ), PHP_URL_PATH );
+		$request_path = isset( $_SERVER['REQUEST_URI'] )
+			? wp_parse_url( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ), PHP_URL_PATH )
+			: '';
+
+		$normalized_archive = trim( (string) $archive_path, '/' );
+		$normalized_request = trim( (string) $request_path, '/' );
+
+		if ( is_post_type_archive( 'specialities' ) || $normalized_request === $normalized_archive ) {
+			wp_safe_redirect( home_url( '/' ), 301 );
+			exit;
+		}
 	}
 }
 

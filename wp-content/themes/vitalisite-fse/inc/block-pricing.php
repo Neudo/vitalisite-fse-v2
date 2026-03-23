@@ -17,7 +17,7 @@ function vitalisite_render_pricing_item_block( $attributes ) {
 	$description = ! empty( $attributes['description'] ) ? $attributes['description'] : '';
 	$price       = ! empty( $attributes['price'] ) ? $attributes['price'] : '';
 	$button_text = ! empty( $attributes['buttonText'] ) ? $attributes['buttonText'] : '';
-	$button_url  = ! empty( $attributes['buttonUrl'] ) ? $attributes['buttonUrl'] : '#';
+	$button_url  = isset( $attributes['buttonUrl'] ) ? (string) $attributes['buttonUrl'] : '';
 
 	ob_start();
 	?>
@@ -38,7 +38,7 @@ function vitalisite_render_pricing_item_block( $attributes ) {
 			<?php endif; ?>
 			
 			<div class="wp-block-button btn-primary">
-				<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $button_url ); ?>">
+				<a class="wp-block-button__link wp-element-button"<?php echo '' !== $button_url ? ' href="' . esc_url( $button_url ) . '"' : ''; ?>>
 					<?php echo esc_html( $button_text ); ?>
 				</a>
 			</div>

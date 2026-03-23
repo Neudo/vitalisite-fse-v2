@@ -1,11 +1,11 @@
 <?php
 /**
- * Title: Héro avec image en bas
+ * Title: Banniere avec image en bas
  * Slug: vitalisite-fse/hero-image-bottom
  * Categories: hero-vitalisite
  * Keywords: hero, bottom, cta, accueil
  * Block Types: core/group
- * Description: Bannière avec image en bas, titre, description et CTA.
+ * Description: Banniere editoriale avec visuel large, ideale pour une page d'accueil de demo.
  */
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"vitalisite-hero hero-image-bottom vitalisite-section"} -->
@@ -13,11 +13,11 @@
   <!-- wp:group {"className":"vitalisite-hero__inner","style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
   <div class="wp-block-group vitalisite-hero__inner">
     <!-- wp:heading {"level":1,"className":"reveal-y reveal-y--soft","style":{"typography":{"fontSize":"clamp(2.25rem, 3vw + 1rem, 3.75rem)","lineHeight":"1.1"}}} -->
-    <h1 class="reveal-y reveal-y--soft" style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Lorem ipsum dolor sit amet</h1>
+    <h1 class="reveal-y reveal-y--soft" style="font-size:clamp(2.25rem, 3vw + 1rem, 3.75rem);line-height:1.1">Un accompagnement rassurant a chaque etape du parcours de soin</h1>
     <!-- /wp:heading -->
 
     <!-- wp:paragraph {"className":"reveal-y reveal-y--soft","style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-    <p class="reveal-y reveal-y--soft" style="margin-top:var(--wp--preset--spacing--30);font-size:1.125rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="reveal-y reveal-y--soft" style="margin-top:var(--wp--preset--spacing--30);font-size:1.125rem">Je vous recois sur rendez-vous dans un cadre de prise en charge serein, avec une approche attentive et personnalisee.</p>
     <!-- /wp:paragraph -->
 
     <!-- wp:buttons {"className":"reveal-y reveal-y--soft","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
@@ -27,15 +27,15 @@
       <!-- /wp:button -->
 
       <!-- wp:button {"className":"btn-secondary"} -->
-      <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">En savoir plus</a></div>
+      <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">Decouvrir les prises en charge</a></div>
       <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->
   </div>
   <!-- /wp:group -->
 
-  <!-- wp:image {"sizeSlug":"large","className":"reveal-y"} -->
-  <figure class="wp-block-image size-large reveal-y"><img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=1600" alt="Équipe médicale en discussion" /></figure>
+  <!-- wp:image {"sizeSlug":"large","align":"center","className":"reveal-y"} -->
+  <figure class="wp-block-image aligncenter size-large reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-2.jpg' ) ); ?>" alt="Espace de consultation lumineux et apaisant" /></figure>
   <!-- /wp:image -->
 </section>
 <!-- /wp:group -->

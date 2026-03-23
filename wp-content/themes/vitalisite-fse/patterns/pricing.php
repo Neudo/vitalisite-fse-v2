@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Tarifs
+ * Title: Tarifs en cartes
  * Slug: vitalisite-fse/pricing
- * Description: Section tarifs avec cartes de prix et CTA.
+ * Description: Section de tarifs compacte pour presenter les principaux actes d'un praticien.
  * Categories: vitalisite-pricing
  * Keywords: pricing, tarifs, prix, cards
  */
@@ -15,11 +15,11 @@
     <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
     <div class="wp-block-group mb-60">
         <!-- wp:heading {"textAlign":"center","level":2} -->
-        <h2 class="wp-block-heading has-text-align-center reveal-y">Nos tarifs</h2>
+        <h2 class="wp-block-heading has-text-align-center reveal-y">Mes tarifs</h2>
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-        <p class="has-text-align-center reveal-y">Des soins adaptés à vos besoins, avec des tarifs transparents.</p>
+        <p class="has-text-align-center reveal-y">Je presente ici mes principaux actes avec une lecture rapide, rassurante et facile a comprendre.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -30,7 +30,7 @@
         <!-- wp:column {"className":"vitalisite-pricing-card"} -->
         <div class="wp-block-column vitalisite-pricing-card">
             <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="wp-block-heading has-text-align-center reveal-y">Consultation initiale</h3>
+            <h3 class="wp-block-heading has-text-align-center reveal-y">Premiere consultation</h3>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__price"} -->
@@ -38,13 +38,13 @@
             <!-- /wp:paragraph -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__desc"} -->
-            <p class="has-text-align-center vitalisite-pricing-card__desc">Bilan complet et plan de traitement personnalisé.</p>
+            <p class="has-text-align-center vitalisite-pricing-card__desc">Temps d'echange, evaluation initiale et proposition d'une prise en charge adaptee.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
                 <!-- wp:button {"className":"btn-primary"} -->
-                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -62,13 +62,13 @@
             <!-- /wp:paragraph -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__desc"} -->
-            <p class="has-text-align-center vitalisite-pricing-card__desc">Suivi régulier et ajustement du traitement.</p>
+            <p class="has-text-align-center vitalisite-pricing-card__desc">Consultation de suivi pour accompagner l'evolution de votre situation.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
                 <!-- wp:button {"className":"btn-primary"} -->
-                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -78,21 +78,21 @@
         <!-- wp:column {"className":"vitalisite-pricing-card"} -->
         <div class="wp-block-column vitalisite-pricing-card">
             <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="wp-block-heading has-text-align-center reveal-y">Forfait 5 séances</h3>
+            <h3 class="wp-block-heading has-text-align-center reveal-y">Bilan approfondi</h3>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__price"} -->
-            <p class="has-text-align-center vitalisite-pricing-card__price">250€</p>
+            <p class="has-text-align-center vitalisite-pricing-card__price">95€</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:paragraph {"align":"center","className":"vitalisite-pricing-card__desc"} -->
-            <p class="has-text-align-center vitalisite-pricing-card__desc">Économisez avec notre forfait de 5 séances de suivi.</p>
+            <p class="has-text-align-center vitalisite-pricing-card__desc">Rendez-vous plus complet lorsque la situation demande un temps d'analyse supplementaire.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
             <div class="wp-block-buttons">
                 <!-- wp:button {"className":"btn-primary"} -->
-                <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">Prendre rendez-vous</a></div>
+                <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -105,7 +105,7 @@
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
     <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-secondary"} -->
-        <div class="wp-block-button btn-secondary"><a class="wp-block-button__link" href="#">Voir tous nos tarifs</a></div>
+        <div class="wp-block-button btn-secondary"><a class="wp-block-button__link">Voir les tarifs detailles</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->

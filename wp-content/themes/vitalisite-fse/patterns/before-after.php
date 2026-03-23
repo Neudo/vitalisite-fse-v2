@@ -19,7 +19,7 @@
         <!-- /wp:heading -->
 
         <!-- wp:paragraph {"align":"center","className":"reveal-y"} -->
-        <p class="has-text-align-center reveal-y">Découvrez les résultats de nos traitements.</p>
+        <p class="has-text-align-center reveal-y">Ce format convient aux pratiques ou les resultats visuels ont une vraie valeur de demonstration, avec toutes les precautions necessaires.</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
@@ -29,7 +29,7 @@
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"mt-40 reveal-y"} -->
     <div class="wp-block-buttons mt-40 reveal-y">
         <!-- wp:button {"className":"btn-primary"} -->
-        <div class="wp-block-button btn-primary"><a class="wp-block-button__link" href="#">En savoir plus</a></div>
+        <div class="wp-block-button btn-primary"><a class="wp-block-button__link">Nous contacter</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->
