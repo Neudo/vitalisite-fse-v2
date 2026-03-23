@@ -18,6 +18,7 @@
   gap: 2rem; /* gap-8 */
   width: 100%;
   justify-content: start;
+  padding-top: 50px;
 }
 
 @media (min-width: 768px) {
@@ -42,7 +43,7 @@
 .vitalisite-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: auto;
 
   /* Legacy visual styles */
@@ -68,15 +69,19 @@
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Card Content Spacing */
-.vitalisite-card > * + * {
-  margin-top: 1.5rem; /* Increased spacing */
+.vitalisite-card > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vitalisite-card .wp-block-buttons {
+  margin-top: auto !important;
 }
 
 /* Heading Style Override */
 .vitalisite-card h3 {
-  margin-bottom: 1rem; /* Explicit spacing below title */
   margin-top: 0;
+  margin-bottom: 0;
   font-weight: 300; /* Ensure thin weight is applied via CSS too if needed */
 }
 

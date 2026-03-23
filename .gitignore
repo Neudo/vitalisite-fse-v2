@@ -49,3 +49,6 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+# Theme exports
+/wp-content/themes/*.zip

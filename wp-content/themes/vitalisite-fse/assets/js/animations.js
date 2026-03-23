@@ -105,10 +105,15 @@
       ),
     ]);
 
-  const runIntroSequence = (introTextTargets, introMediaTargets) => {
-    if (!firstSection || window.scrollY > INTRO_MAX_SCROLL) return;
+  const shouldRunIntroSequence = (introTextTargets, introMediaTargets) => {
+    if (!firstSection || window.scrollY > INTRO_MAX_SCROLL) return false;
+    return Boolean(introTextTargets.length || introMediaTargets.length);
+  };
 
-    if (!introTextTargets.length && !introMediaTargets.length) return;
+  const runIntroSequence = (introTextTargets, introMediaTargets) => {
+    if (!shouldRunIntroSequence(introTextTargets, introMediaTargets)) {
+      return false;
+    }
 
     setWillChange([...introTextTargets, ...introMediaTargets]);
 
@@ -143,6 +148,8 @@
         introMediaTargets.length ? 0.08 : 0,
       );
     }
+
+    return true;
   };
 
   const introTextTargets = unique([
@@ -169,7 +176,7 @@
 
   root.classList.remove("vitalisite-motion-pending");
 
-  runIntroSequence(introTextTargets, introMediaTargets);
+  const hasPlayedIntro = runIntroSequence(introTextTargets, introMediaTargets);
 
   // ==========================================================================
   // .reveal-y — Fade-up simple
@@ -177,7 +184,8 @@
   document
     .querySelectorAll(".reveal-y, .vitalisite-accordion-item")
     .forEach((el) => {
-      if (isInFirstSection(el) || isHandledByStagger(el)) return;
+      if ((hasPlayedIntro && isInFirstSection(el)) || isHandledByStagger(el))
+        return;
 
       gsap.to(el, {
         scrollTrigger: {
@@ -199,7 +207,7 @@
   // .reveal-stagger — Enfants directs en stagger fade-up
   // ==========================================================================
   document.querySelectorAll(".reveal-stagger").forEach((container) => {
-    if (isInFirstSection(container)) return;
+    if (hasPlayedIntro && isInFirstSection(container)) return;
 
     const children = unique(
       Array.from(container.children).filter(
@@ -273,7 +281,7 @@
   // .reveal-count — Count-up numérique
   // ==========================================================================
   document.querySelectorAll(".reveal-count").forEach((el) => {
-    if (isInFirstSection(el)) return;
+    if (hasPlayedIntro && isInFirstSection(el)) return;
 
     const raw = el.textContent.trim();
     const target = parseInt(raw, 10);
@@ -297,7 +305,7 @@
   // .reveal-scale-x — Séparateur / trait horizontal
   // ==========================================================================
   document.querySelectorAll(".reveal-scale-x").forEach((el) => {
-    if (isInFirstSection(el)) return;
+    if (hasPlayedIntro && isInFirstSection(el)) return;
 
     gsap.from(el, {
       scrollTrigger: { trigger: el, start: "top 90%", once: true },
@@ -312,7 +320,7 @@
   // .reveal-video — Bloc vidéo : fade-up + léger scale-down
   // ==========================================================================
   document.querySelectorAll(".reveal-video").forEach((el) => {
-    if (isInFirstSection(el)) return;
+    if (hasPlayedIntro && isInFirstSection(el)) return;
 
     gsap.to(el, {
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
@@ -334,7 +342,7 @@
   //    Cible les deux moitiés du composant custom
   // ==========================================================================
   document.querySelectorAll(".reveal-before-after").forEach((el) => {
-    if (isInFirstSection(el)) return;
+    if (hasPlayedIntro && isInFirstSection(el)) return;
 
     const before = el.querySelector(
       ".before-after__before, .ba-before, [data-before]",

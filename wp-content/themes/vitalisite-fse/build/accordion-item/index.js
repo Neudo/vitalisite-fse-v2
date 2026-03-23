@@ -102,7 +102,7 @@ function save({
     summary
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    className: "vitalisite-accordion-item"
+    className: "vitalisite-accordion-item reveal-y"
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("details", {
     ...blockProps

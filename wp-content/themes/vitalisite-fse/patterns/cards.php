@@ -11,8 +11,8 @@
 <!-- wp:group {"tagName":"section","className":"vitalisite-cards-section vitalisite-section"} -->
 <section class="wp-block-group vitalisite-cards-section vitalisite-section">
 
-    <!-- wp:group {"className":"mb-60","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group mb-60">
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group">
         <!-- wp:heading {"textAlign":"center","level":2,"className":"reveal-y"} -->
         <h2 class="wp-block-heading has-text-align-center reveal-y">Des prises en charge claires et adaptees</h2>
         <!-- /wp:heading -->

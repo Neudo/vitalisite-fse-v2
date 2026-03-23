@@ -27,6 +27,11 @@ html.vitalisite-motion-pending .reveal-stagger > * {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  --vitalisite-space-2xs: var(--wp--preset--spacing--20);
+  --vitalisite-space-xs: var(--wp--preset--spacing--30);
+  --vitalisite-space-sm: var(--wp--preset--spacing--40);
+  --vitalisite-space-md: var(--wp--preset--spacing--50);
+  --vitalisite-space-lg: var(--wp--preset--spacing--60);
   /* Espacement horizontal (Small/Medium fluides) */
   padding-left: var(--wp--preset--spacing--50);
   padding-right: var(--wp--preset--spacing--50);
@@ -34,33 +39,19 @@ html.vitalisite-motion-pending .reveal-stagger > * {
   padding-top: var(--wp--preset--spacing--60);
   padding-bottom: var(--wp--preset--spacing--60);
 
-  /* INTERCEPT l'héritage du blockGap global (BO) pour le contenu INTIME de la section */
-  --wp--style--block-gap: var(
-    --wp--preset--spacing--30
-  ); /* Rythme interne plus compact pour les contenus de section */
+  /* Le contenu interne des patterns garde un rythme fixe, independant du BO */
+  --wp--style--block-gap: var(--wp--preset--spacing--30);
 }
 
-/* Les sections gèrent deja leur propre respiration via le padding */
+/* L'espacement du BO s'applique entre les sections uniquement */
 main.wp-block-post-content.is-layout-flow > .vitalisite-section + .vitalisite-section,
 main.wp-block-post-content.is-layout-constrained
   > .vitalisite-section
   + .vitalisite-section {
-  margin-block-start: 0 !important;
-}
-
-/* Force l'application de ce gap normalisé pour les enfants directs et Layout de WP */
-.vitalisite-section.is-layout-flow > * + *,
-.vitalisite-section .is-layout-flow > * + *,
-.vitalisite-section.is-layout-constrained > * + *,
-.vitalisite-section .is-layout-constrained > * + * {
-  margin-block-start: var(--wp--style--block-gap) !important;
-}
-
-.vitalisite-section.is-layout-flex,
-.vitalisite-section .is-layout-flex,
-.vitalisite-section.is-layout-grid,
-.vitalisite-section .is-layout-grid {
-  gap: var(--wp--style--block-gap) !important;
+  margin-block-start: var(
+    --wp--style--block-gap,
+    var(--wp--preset--spacing--70)
+  ) !important;
 }
 
 .vitalisite-section.big-section {
@@ -82,6 +73,95 @@ main.wp-block-post-content > .vitalisite-section:first-child {
 .vitalisite-style--mineral .vitalisite-section.full-section {
   padding-left: 0;
   padding-right: 0;
+}
+
+/* ==========================================================================
+   Section Rhythm
+   ========================================================================== */
+
+.vitalisite-section .wp-block-heading {
+  margin-block-start: 0;
+}
+
+.vitalisite-section .is-layout-flow,
+.vitalisite-section .is-layout-constrained {
+  --vitalisite-flow-space: var(--vitalisite-space-md);
+}
+
+.vitalisite-section .is-layout-flow > * + *,
+.vitalisite-section .is-layout-constrained > * + * {
+  margin-block-start: var(--vitalisite-flow-space) !important;
+}
+
+.vitalisite-section .is-layout-grid {
+  gap: var(--vitalisite-flow-space, var(--vitalisite-space-md)) !important;
+}
+
+.vitalisite-section .wp-block-columns.is-layout-flex {
+  gap: var(--vitalisite-space-lg) !important;
+}
+
+.vitalisite-section .wp-block-buttons.is-layout-flex {
+  gap: var(--vitalisite-space-xs) !important;
+}
+
+.vitalisite-section .mb-60,
+.vitalisite-section .wp-block-group.mb-60 {
+  --vitalisite-flow-space: var(--vitalisite-space-sm);
+}
+
+.vitalisite-section .wp-block-heading + p,
+.vitalisite-section .wp-block-heading + .wp-block-paragraph {
+  margin-block-start: var(--vitalisite-space-sm) !important;
+}
+
+.vitalisite-section .wp-block-heading + .wp-block-buttons,
+.vitalisite-section p + .wp-block-buttons,
+.vitalisite-section .wp-block-paragraph + .wp-block-buttons {
+  margin-block-start: var(--vitalisite-space-md) !important;
+}
+
+/* Utilitaires de rythme utilises dans les patterns */
+.mb-60 {
+  margin-bottom: var(
+    --vitalisite-space-lg,
+    var(--wp--preset--spacing--60)
+  ) !important;
+}
+
+.mt-20 {
+  margin-top: var(
+    --vitalisite-space-2xs,
+    var(--wp--preset--spacing--20)
+  ) !important;
+}
+
+.mt-40 {
+  margin-top: var(
+    --vitalisite-space-sm,
+    var(--wp--preset--spacing--40)
+  ) !important;
+}
+
+.mt-50 {
+  margin-top: var(
+    --vitalisite-space-md,
+    var(--wp--preset--spacing--50)
+  ) !important;
+}
+
+.mb-40 {
+  margin-bottom: var(
+    --vitalisite-space-sm,
+    var(--wp--preset--spacing--40)
+  ) !important;
+}
+
+.mb-50 {
+  margin-bottom: var(
+    --vitalisite-space-md,
+    var(--wp--preset--spacing--50)
+  ) !important;
 }
 
 /* Footer spacing */

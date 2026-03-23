@@ -9,6 +9,59 @@
   ],
   "settings": {
     "appearanceTools": true,
+    "blocks": {
+      "core/button": {
+        "spacing": {
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/buttons": {
+        "spacing": {
+          "blockGap": false,
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/column": {
+        "spacing": {
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/columns": {
+        "spacing": {
+          "blockGap": false,
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/group": {
+        "spacing": {
+          "blockGap": false,
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/heading": {
+        "spacing": {
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/image": {
+        "spacing": {
+          "margin": false,
+          "padding": false
+        }
+      },
+      "core/paragraph": {
+        "spacing": {
+          "margin": false,
+          "padding": false
+        }
+      }
+    },
     "color": {
       "defaultDuotone": false,
       "defaultGradients": false,

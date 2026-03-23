@@ -26,8 +26,8 @@
         <p class="has-text-align-center has-primary-color has-text-color" style="font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:var(--wp--preset--spacing--30);margin-bottom:0">Specialite du cabinet</p>
         <!-- /wp:paragraph -->
 
-        <!-- wp:group {"className":"vitalisite-doctor-profile__stats","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
-        <div class="wp-block-group vitalisite-doctor-profile__stats">
+        <!-- wp:group {"className":"vitalisite-doctor-profile__stats reveal-stagger","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+        <div class="wp-block-group vitalisite-doctor-profile__stats reveal-stagger">
 
             <!-- wp:group {"className":"vitalisite-doctor-profile__badge","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
             <div class="wp-block-group vitalisite-doctor-profile__badge">
