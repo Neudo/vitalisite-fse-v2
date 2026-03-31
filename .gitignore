@@ -52,3 +52,4 @@ wp-config.php
 
 # Theme exports
 /wp-content/themes/*.zip
+/wp-content/themes/vitalisite-fse/dist/

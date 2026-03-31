@@ -208,6 +208,86 @@
   max-width: 100%;
 }
 
+/* Choice cards */
+.vitalisite-wizard__choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.vitalisite-wizard__choice-card,
+.vitalisite-wizard__page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #dcdcde;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.vitalisite-wizard__choice-card {
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vitalisite-wizard__choice-card:hover {
+  border-color: #2271b1;
+  box-shadow: 0 8px 24px rgba(34, 113, 177, 0.08);
+  transform: translateY(-1px);
+}
+
+.vitalisite-wizard__choice-card:has(input[type="radio"]:checked),
+.vitalisite-wizard__page-card:has(input[type="checkbox"]:checked) {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.15);
+  background: #f7fbff;
+}
+
+.vitalisite-wizard__choice-card input,
+.vitalisite-wizard__page-card input {
+  margin: 0;
+}
+
+.vitalisite-wizard__choice-title,
+.vitalisite-wizard__page-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.vitalisite-wizard__choice-description,
+.vitalisite-wizard__page-card-description,
+.vitalisite-wizard__page-card-meta {
+  color: #50575e;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vitalisite-wizard__page-list {
+  display: grid;
+  gap: 12px;
+}
+
+.vitalisite-wizard__page-card[disabled],
+.vitalisite-wizard__page-card input:disabled {
+  cursor: not-allowed;
+}
+
+.vitalisite-wizard__page-card:has(input:disabled) {
+  background: #f6f7f7;
+}
+
+.vitalisite-wizard__demo-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
 /* Style variations */
 .vitalisite-wizard__variations {
   display: grid;
@@ -294,6 +374,26 @@
   line-height: 1;
 }
 
+.vitalisite-wizard__theme-list {
+  margin: 24px 0;
+}
+
+.vitalisite-wizard__theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+
+.vitalisite-wizard__theme-tags li {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f0f6fc;
+  color: #0a4b78;
+  font-weight: 600;
+}
+
 /* Disabled button */
 .vitalisite-wizard__btn-disabled {
   opacity: 0.5;
@@ -372,6 +472,10 @@
   .vitalisite-wizard__done-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .vitalisite-wizard__choice-grid {
+    grid-template-columns: 1fr;
   }
 
   .vitalisite-wizard__step-label {

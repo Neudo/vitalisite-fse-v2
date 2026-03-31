@@ -14,6 +14,10 @@
     );
     var feedback = document.getElementById("vitalisite-license-feedback");
     var nextBtn = document.getElementById("vitalisite-wizard-next");
+    var selectAllPagesBtn = document.getElementById("vitalisite-select-all-pages");
+    var unselectAllPagesBtn = document.getElementById(
+      "vitalisite-unselect-all-pages",
+    );
 
     /**
      * Unlock the "Suivant" button after successful activation.
@@ -124,7 +128,29 @@
           });
       });
     }
+
+    if (selectAllPagesBtn) {
+      selectAllPagesBtn.addEventListener("click", function () {
+        toggleDemoPagesSelection(true);
+      });
+    }
+
+    if (unselectAllPagesBtn) {
+      unselectAllPagesBtn.addEventListener("click", function () {
+        toggleDemoPagesSelection(false);
+      });
+    }
   });
+
+  function toggleDemoPagesSelection(checked) {
+    var checkboxes = document.querySelectorAll(
+      'input[name="demo_pages[]"]:not(:disabled)',
+    );
+
+    checkboxes.forEach(function (checkbox) {
+      checkbox.checked = checked;
+    });
+  }
 
   function showFeedback(el, message, type) {
     if (!el) return;

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "packages-update": "wp-scripts packages-update"
+    "packages-update": "wp-scripts packages-update",
+    "export:prod": "bash scripts/export-prod.sh"
   },
   "devDependencies": {
     "@wordpress/scripts": "^27.0.0"

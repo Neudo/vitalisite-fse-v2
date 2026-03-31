@@ -52,6 +52,7 @@ require_once __DIR__ . '/inc/google-reviews-functions.php';
 
 // License system & setup wizard.
 require_once __DIR__ . '/inc/license.php';
+require_once __DIR__ . '/inc/demo-pages.php';
 require_once __DIR__ . '/inc/setup-wizard.php';
 require_once __DIR__ . '/inc/theme-updater.php';
 

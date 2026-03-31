@@ -1,0 +1,11 @@
+node_modules
+scripts
+dist
+package.json
+package-lock.json
+webpack.config.js
+replace-colors.js
+CHANGELOG.md
+.distignore
+*.map
+inc/debug-colors.php

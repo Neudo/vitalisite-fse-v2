@@ -1,15 +1,8 @@
 <?php
 /**
- * Vitalisite Setup Wizard.
- *
- * A 4-step guided setup for new theme installations:
- *   1. License activation (next blocked until active)
- *   2. Cabinet info (doctor name, phone, email, address, specialty, appointment URL)
- *   3. Horaires & Réseaux sociaux
- *   4. Personnalisation (how to choose a style variation)
+ * Vitalisite setup wizard.
  *
  * @package Vitalisite_FSE
- * @since   1.0.0
  */
 
 namespace Vitalisite_FSE;
@@ -18,10 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/* ------------------------------------------------------------------ */
-/*  1. Register submenu page under Vitalisite                         */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Register submenu page under Vitalisite.
+ */
 function wizard_menu() {
 	add_submenu_page(
 		'vitalisite-settings',
@@ -34,13 +26,13 @@ function wizard_menu() {
 }
 add_action( 'admin_menu', __NAMESPACE__ . '\wizard_menu' );
 
-/* ------------------------------------------------------------------ */
-/*  2. Redirect to wizard on first activation                         */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Redirect to the wizard after theme activation.
+ */
 function maybe_redirect_to_wizard() {
 	if ( get_option( 'vitalisite_wizard_redirect' ) ) {
 		delete_option( 'vitalisite_wizard_redirect' );
+
 		if ( ! isset( $_GET['activate-multi'] ) ) {
 			wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard' ) );
 			exit;
@@ -59,10 +51,11 @@ function set_wizard_redirect() {
 }
 add_action( 'after_switch_theme', __NAMESPACE__ . '\set_wizard_redirect' );
 
-/* ------------------------------------------------------------------ */
-/*  3. Enqueue wizard assets                                          */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Enqueue wizard assets.
+ *
+ * @param string $hook Current admin page hook.
+ */
 function enqueue_wizard_assets( $hook ) {
 	if ( 'vitalisite_page_vitalisite-wizard' !== $hook ) {
 		return;
@@ -73,34 +66,38 @@ function enqueue_wizard_assets( $hook ) {
 
 	wp_enqueue_style( 'vitalisite-wizard', $uri . '/assets/admin/wizard.css', array(), $version );
 	wp_enqueue_script( 'vitalisite-wizard', $uri . '/assets/admin/wizard.js', array(), $version, true );
-	wp_localize_script( 'vitalisite-wizard', 'vitalisiteWizard', array(
-		'ajaxUrl'       => admin_url( 'admin-ajax.php' ),
-		'nonce'         => wp_create_nonce( 'vitalisite_license_nonce' ),
-		'settingsUrl'   => admin_url( 'admin.php?page=vitalisite-settings' ),
-		'licenseActive' => is_license_active(),
-	) );
+	wp_localize_script(
+		'vitalisite-wizard',
+		'vitalisiteWizard',
+		array(
+			'ajaxUrl'       => admin_url( 'admin-ajax.php' ),
+			'nonce'         => wp_create_nonce( 'vitalisite_license_nonce' ),
+			'settingsUrl'   => admin_url( 'admin.php?page=vitalisite-settings' ),
+			'licenseActive' => is_license_active(),
+		)
+	);
 }
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_wizard_assets' );
 
-/* ------------------------------------------------------------------ */
-/*  4. Render wizard page                                             */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Render the wizard page.
+ */
 function render_wizard_page() {
 	$current_step = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
-	$current_step = max( 1, min( 4, $current_step ) );
+	$current_step = max( 1, min( 7, $current_step ) );
 
 	$steps = array(
 		1 => __( 'Licence', 'vitalisite-fse' ),
-		2 => __( 'Cabinet', 'vitalisite-fse' ),
-		3 => __( 'Horaires & Réseaux', 'vitalisite-fse' ),
-		4 => __( 'Personnalisation', 'vitalisite-fse' ),
+		2 => __( 'Ton', 'vitalisite-fse' ),
+		3 => __( 'Style', 'vitalisite-fse' ),
+		4 => __( 'Pages', 'vitalisite-fse' ),
+		5 => __( 'Cabinet', 'vitalisite-fse' ),
+		6 => __( 'Horaires', 'vitalisite-fse' ),
+		7 => __( 'Thème visuel', 'vitalisite-fse' ),
 	);
 	?>
 	<div class="vitalisite-wizard-wrap">
 		<div class="vitalisite-wizard">
-
-			<!-- Header -->
 			<div class="vitalisite-wizard__header">
 				<h1 class="vitalisite-wizard__title">
 					<span class="dashicons dashicons-heart"></span>
@@ -108,24 +105,23 @@ function render_wizard_page() {
 				</h1>
 			</div>
 
-			<!-- Steps indicator -->
 			<div class="vitalisite-wizard__steps">
-				<?php foreach ( $steps as $num => $label ) :
+				<?php foreach ( $steps as $number => $label ) : ?>
+					<?php
 					$class = 'vitalisite-wizard__step';
-					if ( $num === $current_step ) {
+					if ( $number === $current_step ) {
 						$class .= ' vitalisite-wizard__step--active';
-					} elseif ( $num < $current_step ) {
+					} elseif ( $number < $current_step ) {
 						$class .= ' vitalisite-wizard__step--done';
 					}
-				?>
+					?>
 					<div class="<?php echo esc_attr( $class ); ?>">
-						<span class="vitalisite-wizard__step-number"><?php echo esc_html( $num ); ?></span>
+						<span class="vitalisite-wizard__step-number"><?php echo esc_html( $number ); ?></span>
 						<span class="vitalisite-wizard__step-label"><?php echo esc_html( $label ); ?></span>
 					</div>
 				<?php endforeach; ?>
 			</div>
 
-			<!-- Step content -->
 			<div class="vitalisite-wizard__content">
 				<?php
 				switch ( $current_step ) {
@@ -133,39 +129,72 @@ function render_wizard_page() {
 						render_wizard_step_license();
 						break;
 					case 2:
-						render_wizard_step_cabinet();
+						render_wizard_step_tone();
 						break;
 					case 3:
-						render_wizard_step_hours_social();
+						render_wizard_step_writing_style();
 						break;
 					case 4:
+						render_wizard_step_demo_pages();
+						break;
+					case 5:
+						render_wizard_step_cabinet();
+						break;
+					case 6:
+						render_wizard_step_hours_social();
+						break;
+					case 7:
 						render_wizard_step_personalization();
 						break;
 				}
 				?>
 			</div>
-
 		</div>
 	</div>
 	<?php
 }
 
-/* ------------------------------------------------------------------ */
-/*  Step 1: License                                                   */
-/* ------------------------------------------------------------------ */
+/**
+ * Render a list of choice cards.
+ *
+ * @param string                                   $field_name Field name.
+ * @param string                                   $selected   Selected value.
+ * @param array<string, array<string, string>>     $options    Options list.
+ */
+function render_wizard_choice_cards( $field_name, $selected, array $options ) {
+	?>
+	<div class="vitalisite-wizard__choice-grid">
+		<?php foreach ( $options as $slug => $option ) : ?>
+			<label class="vitalisite-wizard__choice-card">
+				<input
+					type="radio"
+					name="<?php echo esc_attr( $field_name ); ?>"
+					value="<?php echo esc_attr( $slug ); ?>"
+					<?php checked( $selected, $slug ); ?>
+				>
+				<span class="vitalisite-wizard__choice-title"><?php echo esc_html( $option['label'] ); ?></span>
+				<span class="vitalisite-wizard__choice-description"><?php echo esc_html( $option['description'] ); ?></span>
+			</label>
+		<?php endforeach; ?>
+	</div>
+	<?php
+}
 
+/**
+ * Step 1: License.
+ */
 function render_wizard_step_license() {
 	$is_active = is_license_active();
 	$key       = get_license_key();
 	?>
 	<div class="vitalisite-wizard__step-content" data-step="1">
 		<h2><?php esc_html_e( 'Activation de votre licence', 'vitalisite-fse' ); ?></h2>
-		<p><?php esc_html_e( 'Saisissez la clé de licence reçue par email pour activer le thème.', 'vitalisite-fse' ); ?></p>
+		<p><?php esc_html_e( 'Saisissez la clé reçue par e-mail pour activer le thème avant de démarrer la configuration.', 'vitalisite-fse' ); ?></p>
 
 		<?php if ( $is_active ) : ?>
 			<div class="vitalisite-wizard__notice vitalisite-wizard__notice--success">
 				<span class="dashicons dashicons-yes-alt"></span>
-				<?php esc_html_e( 'Licence activée !', 'vitalisite-fse' ); ?>
+				<?php esc_html_e( 'Licence activée.', 'vitalisite-fse' ); ?>
 			</div>
 			<div class="vitalisite-wizard__license-info">
 				<code><?php echo esc_html( substr( $key, 0, 8 ) . '••••••••' ); ?></code>
@@ -191,7 +220,7 @@ function render_wizard_step_license() {
 					<?php esc_html_e( 'Suivant →', 'vitalisite-fse' ); ?>
 				</a>
 			<?php else : ?>
-				<span class="button button-primary button-hero vitalisite-wizard__btn-disabled" id="vitalisite-wizard-next" title="<?php esc_attr_e( 'Activez votre licence pour continuer', 'vitalisite-fse' ); ?>">
+				<span class="button button-primary button-hero vitalisite-wizard__btn-disabled" id="vitalisite-wizard-next" title="<?php esc_attr_e( 'Activez votre licence pour continuer.', 'vitalisite-fse' ); ?>">
 					<?php esc_html_e( 'Suivant →', 'vitalisite-fse' ); ?>
 				</span>
 			<?php endif; ?>
@@ -200,67 +229,19 @@ function render_wizard_step_license() {
 	<?php
 }
 
-/* ------------------------------------------------------------------ */
-/*  Step 2: Cabinet info                                              */
-/* ------------------------------------------------------------------ */
-
-function render_wizard_step_cabinet() {
-	$cabinet = get_option( OPTION_CABINET, array() );
-	$fields  = array(
-		'doctor_name' => array(
-			'label'       => __( 'Nom du praticien', 'vitalisite-fse' ),
-			'placeholder' => 'Dr. Jean Dupont',
-			'type'        => 'text',
-		),
-		'doctor_specialty' => array(
-			'label'       => __( 'Spécialité', 'vitalisite-fse' ),
-			'placeholder' => 'Ostéopathe D.O.',
-			'type'        => 'text',
-		),
-		'phone' => array(
-			'label'       => __( 'Téléphone', 'vitalisite-fse' ),
-			'placeholder' => '01 42 42 42 42',
-			'type'        => 'tel',
-		),
-		'email' => array(
-			'label'       => __( 'Email de contact', 'vitalisite-fse' ),
-			'placeholder' => 'contact@cabinet.fr',
-			'type'        => 'email',
-		),
-		'address' => array(
-			'label'       => __( 'Adresse du cabinet', 'vitalisite-fse' ),
-			'placeholder' => '1 rue de la Liberté, 75013 Paris',
-			'type'        => 'text',
-		),
-		'appointment_url' => array(
-			'label'       => __( 'Lien de prise de RDV', 'vitalisite-fse' ),
-			'placeholder' => 'https://www.doctolib.fr/…',
-			'type'        => 'url',
-		),
-	);
+/**
+ * Step 2: Tone.
+ */
+function render_wizard_step_tone() {
+	$setup = get_demo_setup();
 	?>
 	<div class="vitalisite-wizard__step-content" data-step="2">
-		<h2><?php esc_html_e( 'Informations du cabinet', 'vitalisite-fse' ); ?></h2>
-		<p><?php esc_html_e( 'Ces informations seront utilisées dans le header, footer et les patterns du thème.', 'vitalisite-fse' ); ?></p>
+		<h2><?php esc_html_e( 'Choisissez le ton du site', 'vitalisite-fse' ); ?></h2>
+		<p><?php esc_html_e( 'Ce choix détermine si le site parle à la première personne du singulier ou du pluriel.', 'vitalisite-fse' ); ?></p>
 
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=2' ) ); ?>" class="vitalisite-wizard__form">
-			<?php wp_nonce_field( 'vitalisite_wizard_cabinet', '_wizard_cabinet_nonce' ); ?>
-
-			<?php foreach ( $fields as $id => $field ) :
-				$value = isset( $cabinet[ $id ] ) ? $cabinet[ $id ] : '';
-			?>
-				<div class="vitalisite-wizard__field">
-					<label for="vitalisite_<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
-					<input
-						type="<?php echo esc_attr( $field['type'] ); ?>"
-						id="vitalisite_<?php echo esc_attr( $id ); ?>"
-						name="cabinet[<?php echo esc_attr( $id ); ?>]"
-						value="<?php echo esc_attr( $value ); ?>"
-						placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
-						class="regular-text"
-					>
-				</div>
-			<?php endforeach; ?>
+			<?php wp_nonce_field( 'vitalisite_wizard_tone', '_wizard_tone_nonce' ); ?>
+			<?php render_wizard_choice_cards( 'demo_tone', $setup['tone'], get_demo_tone_options() ); ?>
 
 			<div class="vitalisite-wizard__nav">
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=1' ) ); ?>" class="button">
@@ -275,10 +256,170 @@ function render_wizard_step_cabinet() {
 	<?php
 }
 
-/* ------------------------------------------------------------------ */
-/*  Step 3: Hours & Social                                            */
-/* ------------------------------------------------------------------ */
+/**
+ * Step 3: Writing style.
+ */
+function render_wizard_step_writing_style() {
+	$setup = get_demo_setup();
+	?>
+	<div class="vitalisite-wizard__step-content" data-step="3">
+		<h2><?php esc_html_e( 'Choisissez le style rédactionnel', 'vitalisite-fse' ); ?></h2>
+		<p><?php esc_html_e( 'Le style rédactionnel influence le vocabulaire, l’ambiance et la façon dont les pages démo présentent votre pratique.', 'vitalisite-fse' ); ?></p>
 
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) ); ?>" class="vitalisite-wizard__form">
+			<?php wp_nonce_field( 'vitalisite_wizard_writing_style', '_wizard_writing_style_nonce' ); ?>
+			<?php render_wizard_choice_cards( 'demo_writing_style', $setup['writing_style'], get_demo_writing_style_options() ); ?>
+
+			<div class="vitalisite-wizard__nav">
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=2' ) ); ?>" class="button">
+					<?php esc_html_e( '← Précédent', 'vitalisite-fse' ); ?>
+				</a>
+				<button type="submit" class="button button-primary button-hero">
+					<?php esc_html_e( 'Enregistrer et continuer →', 'vitalisite-fse' ); ?>
+				</button>
+			</div>
+		</form>
+	</div>
+	<?php
+}
+
+/**
+ * Step 4: Demo pages.
+ */
+function render_wizard_step_demo_pages() {
+	$setup         = get_demo_setup();
+	$definitions   = get_demo_pages_definition();
+	$selected      = array_map( 'sanitize_title', (array) $setup['pages'] );
+	$has_selection = ! empty( $selected );
+	?>
+	<div class="vitalisite-wizard__step-content" data-step="4">
+		<h2><?php esc_html_e( 'Génération des pages de démonstration', 'vitalisite-fse' ); ?></h2>
+		<p><?php esc_html_e( 'Choisissez les pages préconstruites à générer. Leur contenu suivra le ton et le style rédactionnel choisis aux étapes précédentes.', 'vitalisite-fse' ); ?></p>
+
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=4' ) ); ?>" class="vitalisite-wizard__form">
+			<?php wp_nonce_field( 'vitalisite_wizard_demo_pages', '_wizard_demo_pages_nonce' ); ?>
+
+			<div class="vitalisite-wizard__demo-actions">
+				<button type="button" class="button" id="vitalisite-select-all-pages">
+					<?php esc_html_e( 'Tout sélectionner', 'vitalisite-fse' ); ?>
+				</button>
+				<button type="button" class="button" id="vitalisite-unselect-all-pages">
+					<?php esc_html_e( 'Tout désélectionner', 'vitalisite-fse' ); ?>
+				</button>
+			</div>
+
+			<div class="vitalisite-wizard__page-list">
+				<?php foreach ( $definitions as $slug => $page ) : ?>
+					<?php
+					$existing = get_page_by_path( $slug, OBJECT, 'page' );
+					$checked  = $has_selection ? in_array( $slug, $selected, true ) : ! ( $existing instanceof \WP_Post );
+					?>
+					<label class="vitalisite-wizard__page-card">
+						<input
+							type="checkbox"
+							name="demo_pages[]"
+							value="<?php echo esc_attr( $slug ); ?>"
+							<?php checked( $checked ); ?>
+							<?php disabled( $existing instanceof \WP_Post ); ?>
+						>
+						<span class="vitalisite-wizard__page-card-title"><?php echo esc_html( $page['label'] ); ?></span>
+						<span class="vitalisite-wizard__page-card-description"><?php echo esc_html( $page['description'] ); ?></span>
+						<?php if ( $existing instanceof \WP_Post ) : ?>
+							<span class="vitalisite-wizard__page-card-meta"><?php esc_html_e( 'Déjà présente sur ce site, elle ne sera pas recréée.', 'vitalisite-fse' ); ?></span>
+						<?php endif; ?>
+					</label>
+				<?php endforeach; ?>
+			</div>
+
+			<div class="vitalisite-wizard__nav">
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) ); ?>" class="button">
+					<?php esc_html_e( '← Précédent', 'vitalisite-fse' ); ?>
+				</a>
+				<button type="submit" class="button button-primary button-hero">
+					<?php esc_html_e( 'Enregistrer et continuer →', 'vitalisite-fse' ); ?>
+				</button>
+			</div>
+		</form>
+	</div>
+	<?php
+}
+
+/**
+ * Step 5: Cabinet info.
+ */
+function render_wizard_step_cabinet() {
+	$cabinet = get_option( OPTION_CABINET, array() );
+	$fields  = array(
+		'doctor_name'      => array(
+			'label'       => __( 'Nom du praticien', 'vitalisite-fse' ),
+			'placeholder' => 'Dr. Jean Dupont',
+			'type'        => 'text',
+		),
+		'doctor_specialty' => array(
+			'label'       => __( 'Spécialité', 'vitalisite-fse' ),
+			'placeholder' => 'Ostéopathe D.O.',
+			'type'        => 'text',
+		),
+		'phone'            => array(
+			'label'       => __( 'Téléphone', 'vitalisite-fse' ),
+			'placeholder' => '01 42 42 42 42',
+			'type'        => 'tel',
+		),
+		'email'            => array(
+			'label'       => __( 'Email de contact', 'vitalisite-fse' ),
+			'placeholder' => 'contact@cabinet.fr',
+			'type'        => 'email',
+		),
+		'address'          => array(
+			'label'       => __( 'Adresse du cabinet', 'vitalisite-fse' ),
+			'placeholder' => '1 rue de la Liberté, 75013 Paris',
+			'type'        => 'text',
+		),
+		'appointment_url'  => array(
+			'label'       => __( 'Lien de prise de rendez-vous', 'vitalisite-fse' ),
+			'placeholder' => 'https://www.doctolib.fr/…',
+			'type'        => 'url',
+		),
+	);
+	?>
+	<div class="vitalisite-wizard__step-content" data-step="5">
+		<h2><?php esc_html_e( 'Informations du cabinet', 'vitalisite-fse' ); ?></h2>
+		<p><?php esc_html_e( 'Ces informations seront réutilisées dans les pages générées, le header, le footer et plusieurs patterns du thème.', 'vitalisite-fse' ); ?></p>
+
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=5' ) ); ?>" class="vitalisite-wizard__form">
+			<?php wp_nonce_field( 'vitalisite_wizard_cabinet', '_wizard_cabinet_nonce' ); ?>
+
+			<?php foreach ( $fields as $id => $field ) : ?>
+				<?php $value = isset( $cabinet[ $id ] ) ? $cabinet[ $id ] : ''; ?>
+				<div class="vitalisite-wizard__field">
+					<label for="vitalisite_<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
+					<input
+						type="<?php echo esc_attr( $field['type'] ); ?>"
+						id="vitalisite_<?php echo esc_attr( $id ); ?>"
+						name="cabinet[<?php echo esc_attr( $id ); ?>]"
+						value="<?php echo esc_attr( $value ); ?>"
+						placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
+						class="regular-text"
+					>
+				</div>
+			<?php endforeach; ?>
+
+			<div class="vitalisite-wizard__nav">
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=4' ) ); ?>" class="button">
+					<?php esc_html_e( '← Précédent', 'vitalisite-fse' ); ?>
+				</a>
+				<button type="submit" class="button button-primary button-hero">
+					<?php esc_html_e( 'Enregistrer et continuer →', 'vitalisite-fse' ); ?>
+				</button>
+			</div>
+		</form>
+	</div>
+	<?php
+}
+
+/**
+ * Step 6: Hours and social links.
+ */
 function render_wizard_step_hours_social() {
 	$hours  = get_option( OPTION_HOURS, array() );
 	$social = get_option( OPTION_SOCIAL, array() );
@@ -294,23 +435,21 @@ function render_wizard_step_hours_social() {
 	);
 
 	$social_fields = array(
-		'facebook'    => array( 'label' => 'Facebook',    'placeholder' => 'https://facebook.com/…' ),
-		'instagram'   => array( 'label' => 'Instagram',   'placeholder' => 'https://instagram.com/…' ),
-		'linkedin'    => array( 'label' => 'LinkedIn',    'placeholder' => 'https://linkedin.com/in/…' ),
-		'doctolib'    => array( 'label' => 'Doctolib',    'placeholder' => 'https://www.doctolib.fr/…' ),
+		'facebook'    => array( 'label' => 'Facebook', 'placeholder' => 'https://facebook.com/…' ),
+		'instagram'   => array( 'label' => 'Instagram', 'placeholder' => 'https://instagram.com/…' ),
+		'linkedin'    => array( 'label' => 'LinkedIn', 'placeholder' => 'https://linkedin.com/in/…' ),
+		'doctolib'    => array( 'label' => 'Doctolib', 'placeholder' => 'https://www.doctolib.fr/…' ),
 		'google_maps' => array( 'label' => 'Google Maps', 'placeholder' => 'https://maps.google.com/…' ),
 	);
 	?>
-	<div class="vitalisite-wizard__step-content" data-step="3">
-		<h2><?php esc_html_e( 'Horaires & Réseaux sociaux', 'vitalisite-fse' ); ?></h2>
-		<p><?php esc_html_e( 'Configurez vos horaires d\'ouverture et vos liens de réseaux sociaux.', 'vitalisite-fse' ); ?></p>
+	<div class="vitalisite-wizard__step-content" data-step="6">
+		<h2><?php esc_html_e( 'Horaires et réseaux', 'vitalisite-fse' ); ?></h2>
+		<p><?php esc_html_e( 'Configurez vos horaires et vos liens utiles. Les pages sélectionnées seront générées quand vous validerez cette étape.', 'vitalisite-fse' ); ?></p>
 
-		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) ); ?>" class="vitalisite-wizard__form">
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=6' ) ); ?>" class="vitalisite-wizard__form">
 			<?php wp_nonce_field( 'vitalisite_wizard_hours_social', '_wizard_hours_social_nonce' ); ?>
 
-			<!-- Hours -->
-			<h3><?php esc_html_e( 'Horaires d\'ouverture', 'vitalisite-fse' ); ?></h3>
-
+			<h3><?php esc_html_e( 'Horaires d’ouverture', 'vitalisite-fse' ); ?></h3>
 			<table class="widefat vitalisite-wizard__hours-table">
 				<thead>
 					<tr>
@@ -321,34 +460,27 @@ function render_wizard_step_hours_social() {
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ( $days as $key => $label ) :
+					<?php foreach ( $days as $key => $label ) : ?>
+						<?php
 						$day_data   = isset( $hours[ $key ] ) ? $hours[ $key ] : array();
 						$is_closed  = ! empty( $day_data['closed'] );
 						$open_time  = isset( $day_data['open'] ) ? $day_data['open'] : '09:00';
 						$close_time = isset( $day_data['close'] ) ? $day_data['close'] : '18:00';
-					?>
-					<tr>
-						<td><strong><?php echo esc_html( $label ); ?></strong></td>
-						<td>
-							<input type="checkbox" name="hours[<?php echo esc_attr( $key ); ?>][closed]" value="1" <?php checked( $is_closed ); ?>>
-						</td>
-						<td>
-							<input type="time" name="hours[<?php echo esc_attr( $key ); ?>][open]" value="<?php echo esc_attr( $open_time ); ?>">
-						</td>
-						<td>
-							<input type="time" name="hours[<?php echo esc_attr( $key ); ?>][close]" value="<?php echo esc_attr( $close_time ); ?>">
-						</td>
-					</tr>
+						?>
+						<tr>
+							<td><strong><?php echo esc_html( $label ); ?></strong></td>
+							<td><input type="checkbox" name="hours[<?php echo esc_attr( $key ); ?>][closed]" value="1" <?php checked( $is_closed ); ?>></td>
+							<td><input type="time" name="hours[<?php echo esc_attr( $key ); ?>][open]" value="<?php echo esc_attr( $open_time ); ?>"></td>
+							<td><input type="time" name="hours[<?php echo esc_attr( $key ); ?>][close]" value="<?php echo esc_attr( $close_time ); ?>"></td>
+						</tr>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
 
-			<!-- Social -->
-			<h3 style="margin-top: 2em;"><?php esc_html_e( 'Réseaux sociaux', 'vitalisite-fse' ); ?></h3>
+			<h3 style="margin-top:2em;"><?php esc_html_e( 'Réseaux sociaux et liens utiles', 'vitalisite-fse' ); ?></h3>
 
-			<?php foreach ( $social_fields as $id => $field ) :
-				$value = isset( $social[ $id ] ) ? $social[ $id ] : '';
-			?>
+			<?php foreach ( $social_fields as $id => $field ) : ?>
+				<?php $value = isset( $social[ $id ] ) ? $social[ $id ] : ''; ?>
 				<div class="vitalisite-wizard__field">
 					<label for="vitalisite_social_<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
 					<input
@@ -363,11 +495,11 @@ function render_wizard_step_hours_social() {
 			<?php endforeach; ?>
 
 			<div class="vitalisite-wizard__nav">
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=2' ) ); ?>" class="button">
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=5' ) ); ?>" class="button">
 					<?php esc_html_e( '← Précédent', 'vitalisite-fse' ); ?>
 				</a>
 				<button type="submit" class="button button-primary button-hero">
-					<?php esc_html_e( 'Enregistrer et continuer →', 'vitalisite-fse' ); ?>
+					<?php esc_html_e( 'Générer les pages et continuer →', 'vitalisite-fse' ); ?>
 				</button>
 			</div>
 		</form>
@@ -375,64 +507,63 @@ function render_wizard_step_hours_social() {
 	<?php
 }
 
-/* ------------------------------------------------------------------ */
-/*  Step 4: Personalization (how to choose a style)                   */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Step 7: Visual theme guidance.
+ */
 function render_wizard_step_personalization() {
 	$styles_dir = get_template_directory() . '/styles';
 	$variations = array();
 
 	foreach ( glob( $styles_dir . '/*.json' ) as $file ) {
-		$slug  = basename( $file, '.json' );
-		$data  = json_decode( file_get_contents( $file ), true );
-		$title = isset( $data['title'] ) ? $data['title'] : ucfirst( $slug );
-		$variations[ $slug ] = $title;
+		$data             = json_decode( file_get_contents( $file ), true );
+		$variations[] = isset( $data['title'] ) ? $data['title'] : ucfirst( basename( $file, '.json' ) );
 	}
 	?>
-	<div class="vitalisite-wizard__step-content" data-step="4">
+	<div class="vitalisite-wizard__step-content" data-step="7">
 		<div class="vitalisite-wizard__done">
 			<span class="vitalisite-wizard__done-icon dashicons dashicons-yes-alt"></span>
-			<h2><?php esc_html_e( 'Configuration terminée !', 'vitalisite-fse' ); ?></h2>
-			<p><?php esc_html_e( 'Votre site est prêt. Il ne reste plus qu\'à choisir le style visuel qui vous correspond.', 'vitalisite-fse' ); ?></p>
+			<h2><?php esc_html_e( 'Configuration terminée', 'vitalisite-fse' ); ?></h2>
+			<p><?php esc_html_e( 'Vos pages démo sont prêtes. Il ne reste plus qu’à choisir la variation visuelle qui correspond à votre identité.', 'vitalisite-fse' ); ?></p>
 		</div>
 
+		<?php if ( ! empty( $variations ) ) : ?>
+			<div class="vitalisite-wizard__theme-list">
+				<strong><?php esc_html_e( 'Variations disponibles :', 'vitalisite-fse' ); ?></strong>
+				<ul class="vitalisite-wizard__theme-tags">
+					<?php foreach ( $variations as $variation ) : ?>
+						<li><?php echo esc_html( $variation ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		<?php endif; ?>
+
 		<div class="vitalisite-wizard__personalization-guide">
-			<h3><?php esc_html_e( 'Comment personnaliser votre site ?', 'vitalisite-fse' ); ?></h3>
-
+			<h3><?php esc_html_e( 'Comment choisir votre thème visuel ?', 'vitalisite-fse' ); ?></h3>
 			<ol class="vitalisite-wizard__guide-steps">
-				<li>
-					<?php
-					printf(
-						esc_html__( 'Ouvrez l\'%s (Apparence → Éditeur)', 'vitalisite-fse' ),
-						'<a href="' . esc_url( admin_url( 'site-editor.php' ) ) . '"><strong>' . esc_html__( 'Éditeur de site', 'vitalisite-fse' ) . '</strong></a>'
-					);
-					?>
-				</li>
-				<li><?php esc_html_e( 'Cliquez sur « Styles » dans le menu latéral gauche', 'vitalisite-fse' ); ?></li>
-				<li><?php esc_html_e( 'Cliquez sur « Parcourir les styles »', 'vitalisite-fse' ); ?></li>
-				<li><?php esc_html_e( 'Choisissez parmi les variations disponibles et cliquez pour appliquer', 'vitalisite-fse' ); ?></li>
-				<li><?php esc_html_e( 'Cliquez sur « Enregistrer » en haut à droite pour sauvegarder', 'vitalisite-fse' ); ?></li>
+				<li><?php esc_html_e( 'Ouvrez l’Éditeur de site depuis Apparence → Éditeur.', 'vitalisite-fse' ); ?></li>
+				<li><?php esc_html_e( 'Cliquez sur “Styles”, puis sur “Parcourir les styles”.', 'vitalisite-fse' ); ?></li>
+				<li><?php esc_html_e( 'Choisissez la variation qui vous convient puis validez-la.', 'vitalisite-fse' ); ?></li>
+				<li><?php esc_html_e( 'Enregistrez ensuite vos changements en haut à droite.', 'vitalisite-fse' ); ?></li>
 			</ol>
-
+		</div>
 
 		<div class="vitalisite-wizard__done-actions">
 			<a href="<?php echo esc_url( admin_url( 'site-editor.php' ) ); ?>" class="button button-primary button-hero">
 				<span class="dashicons dashicons-admin-customizer"></span>
-				<?php esc_html_e( 'Ouvrir l\'éditeur de site', 'vitalisite-fse' ); ?>
+				<?php esc_html_e( 'Ouvrir l’éditeur de site', 'vitalisite-fse' ); ?>
 			</a>
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-settings' ) ); ?>" class="button button-hero">
 				<span class="dashicons dashicons-admin-settings"></span>
 				<?php esc_html_e( 'Réglages Vitalisite', 'vitalisite-fse' ); ?>
 			</a>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="button button-hero" target="_blank">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="button button-hero" target="_blank" rel="noreferrer">
 				<span class="dashicons dashicons-external"></span>
 				<?php esc_html_e( 'Voir le site', 'vitalisite-fse' ); ?>
 			</a>
 		</div>
 
 		<div class="vitalisite-wizard__nav">
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) ); ?>" class="button">
+			<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=6' ) ); ?>" class="button">
 				<?php esc_html_e( '← Précédent', 'vitalisite-fse' ); ?>
 			</a>
 			<span></span>
@@ -441,16 +572,96 @@ function render_wizard_step_personalization() {
 	<?php
 }
 
-/* ------------------------------------------------------------------ */
-/*  5. Handle step 2 form submission (Cabinet)                        */
-/* ------------------------------------------------------------------ */
+/**
+ * Save tone step.
+ */
+function handle_wizard_tone_save() {
+	if ( ! isset( $_POST['_wizard_tone_nonce'] ) ) {
+		return;
+	}
 
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wizard_tone_nonce'] ) ), 'vitalisite_wizard_tone' ) ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	save_demo_setup(
+		array(
+			'tone' => isset( $_POST['demo_tone'] ) ? sanitize_key( wp_unslash( $_POST['demo_tone'] ) ) : 'je',
+		)
+	);
+
+	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) );
+	exit;
+}
+add_action( 'admin_init', __NAMESPACE__ . '\handle_wizard_tone_save' );
+
+/**
+ * Save writing style step.
+ */
+function handle_wizard_writing_style_save() {
+	if ( ! isset( $_POST['_wizard_writing_style_nonce'] ) ) {
+		return;
+	}
+
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wizard_writing_style_nonce'] ) ), 'vitalisite_wizard_writing_style' ) ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	save_demo_setup(
+		array(
+			'writing_style' => isset( $_POST['demo_writing_style'] ) ? sanitize_key( wp_unslash( $_POST['demo_writing_style'] ) ) : 'professionnel',
+		)
+	);
+
+	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=4' ) );
+	exit;
+}
+add_action( 'admin_init', __NAMESPACE__ . '\handle_wizard_writing_style_save' );
+
+/**
+ * Save demo pages step.
+ */
+function handle_wizard_demo_pages_save() {
+	if ( ! isset( $_POST['_wizard_demo_pages_nonce'] ) ) {
+		return;
+	}
+
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wizard_demo_pages_nonce'] ) ), 'vitalisite_wizard_demo_pages' ) ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	save_demo_setup(
+		array(
+			'pages' => isset( $_POST['demo_pages'] ) ? (array) wp_unslash( $_POST['demo_pages'] ) : array(),
+		)
+	);
+
+	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=5' ) );
+	exit;
+}
+add_action( 'admin_init', __NAMESPACE__ . '\handle_wizard_demo_pages_save' );
+
+/**
+ * Save cabinet step.
+ */
 function handle_wizard_cabinet_save() {
 	if ( ! isset( $_POST['_wizard_cabinet_nonce'] ) ) {
 		return;
 	}
 
-	if ( ! wp_verify_nonce( $_POST['_wizard_cabinet_nonce'], 'vitalisite_wizard_cabinet' ) ) {
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wizard_cabinet_nonce'] ) ), 'vitalisite_wizard_cabinet' ) ) {
 		return;
 	}
 
@@ -459,7 +670,7 @@ function handle_wizard_cabinet_save() {
 	}
 
 	$cabinet = get_option( OPTION_CABINET, array() );
-	$input   = isset( $_POST['cabinet'] ) ? (array) $_POST['cabinet'] : array();
+	$input   = isset( $_POST['cabinet'] ) ? (array) wp_unslash( $_POST['cabinet'] ) : array();
 
 	$sanitize_map = array(
 		'doctor_name'      => 'sanitize_text_field',
@@ -472,27 +683,26 @@ function handle_wizard_cabinet_save() {
 
 	foreach ( $sanitize_map as $key => $callback ) {
 		if ( isset( $input[ $key ] ) ) {
-			$cabinet[ $key ] = call_user_func( $callback, wp_unslash( $input[ $key ] ) );
+			$cabinet[ $key ] = call_user_func( $callback, $input[ $key ] );
 		}
 	}
 
 	update_option( OPTION_CABINET, $cabinet );
 
-	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=6' ) );
 	exit;
 }
 add_action( 'admin_init', __NAMESPACE__ . '\handle_wizard_cabinet_save' );
 
-/* ------------------------------------------------------------------ */
-/*  6. Handle step 3 form submission (Hours & Social)                 */
-/* ------------------------------------------------------------------ */
-
+/**
+ * Save hours and social step and generate selected pages.
+ */
 function handle_wizard_hours_social_save() {
 	if ( ! isset( $_POST['_wizard_hours_social_nonce'] ) ) {
 		return;
 	}
 
-	if ( ! wp_verify_nonce( $_POST['_wizard_hours_social_nonce'], 'vitalisite_wizard_hours_social' ) ) {
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wizard_hours_social_nonce'] ) ), 'vitalisite_wizard_hours_social' ) ) {
 		return;
 	}
 
@@ -500,13 +710,12 @@ function handle_wizard_hours_social_save() {
 		return;
 	}
 
-	// Save hours.
-	$hours_input = isset( $_POST['hours'] ) ? (array) $_POST['hours'] : array();
+	$hours_input = isset( $_POST['hours'] ) ? (array) wp_unslash( $_POST['hours'] ) : array();
 	$hours       = get_option( OPTION_HOURS, array() );
 	$day_keys    = array( 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' );
 
 	foreach ( $day_keys as $day ) {
-		$day_data = isset( $hours_input[ $day ] ) ? $hours_input[ $day ] : array();
+		$day_data      = isset( $hours_input[ $day ] ) ? $hours_input[ $day ] : array();
 		$hours[ $day ] = array(
 			'closed' => ! empty( $day_data['closed'] ),
 			'open'   => isset( $day_data['open'] ) ? sanitize_text_field( $day_data['open'] ) : '09:00',
@@ -516,20 +725,22 @@ function handle_wizard_hours_social_save() {
 
 	update_option( OPTION_HOURS, $hours );
 
-	// Save social.
-	$social_input = isset( $_POST['social'] ) ? (array) $_POST['social'] : array();
+	$social_input = isset( $_POST['social'] ) ? (array) wp_unslash( $_POST['social'] ) : array();
 	$social       = get_option( OPTION_SOCIAL, array() );
 	$social_keys  = array( 'facebook', 'instagram', 'linkedin', 'doctolib', 'google_maps' );
 
 	foreach ( $social_keys as $key ) {
 		if ( isset( $social_input[ $key ] ) ) {
-			$social[ $key ] = esc_url_raw( wp_unslash( $social_input[ $key ] ) );
+			$social[ $key ] = esc_url_raw( $social_input[ $key ] );
 		}
 	}
 
 	update_option( OPTION_SOCIAL, $social );
 
-	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=4' ) );
+	$setup = get_demo_setup();
+	install_demo_pages( $setup['tone'], $setup['writing_style'], $setup['pages'] );
+
+	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=7' ) );
 	exit;
 }
 add_action( 'admin_init', __NAMESPACE__ . '\handle_wizard_hours_social_save' );
