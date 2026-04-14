@@ -315,6 +315,9 @@ function render_wizard_step_demo_pages() {
 					$checked  = $has_selection ? in_array( $slug, $selected, true ) : ! ( $existing instanceof \WP_Post );
 					?>
 					<label class="vitalisite-wizard__page-card">
+						<?php if ( $checked && $existing instanceof \WP_Post ) : ?>
+							<input type="hidden" name="demo_pages[]" value="<?php echo esc_attr( $slug ); ?>">
+						<?php endif; ?>
 						<input
 							type="checkbox"
 							name="demo_pages[]"
@@ -330,6 +333,19 @@ function render_wizard_step_demo_pages() {
 					</label>
 				<?php endforeach; ?>
 			</div>
+
+			<label class="vitalisite-wizard__toggle-card">
+				<input
+					type="checkbox"
+					name="add_pages_to_header"
+					value="1"
+					<?php checked( ! empty( $setup['add_pages_to_header'] ) ); ?>
+				>
+				<span>
+					<strong><?php esc_html_e( 'Ajouter les pages sélectionnées dans le header', 'vitalisite-fse' ); ?></strong>
+					<small><?php esc_html_e( 'Si cette option est cochée, les pages générées ou déjà présentes seront ajoutées à la navigation principale du header.', 'vitalisite-fse' ); ?></small>
+				</span>
+			</label>
 
 			<div class="vitalisite-wizard__nav">
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=vitalisite-wizard&step=3' ) ); ?>" class="button">
@@ -644,7 +660,8 @@ function handle_wizard_demo_pages_save() {
 
 	save_demo_setup(
 		array(
-			'pages' => isset( $_POST['demo_pages'] ) ? (array) wp_unslash( $_POST['demo_pages'] ) : array(),
+			'pages'               => isset( $_POST['demo_pages'] ) ? (array) wp_unslash( $_POST['demo_pages'] ) : array(),
+			'add_pages_to_header' => ! empty( $_POST['add_pages_to_header'] ),
 		)
 	);
 
@@ -738,7 +755,7 @@ function handle_wizard_hours_social_save() {
 	update_option( OPTION_SOCIAL, $social );
 
 	$setup = get_demo_setup();
-	install_demo_pages( $setup['tone'], $setup['writing_style'], $setup['pages'] );
+	install_demo_pages( $setup['tone'], $setup['writing_style'], $setup['pages'], ! empty( $setup['add_pages_to_header'] ) );
 
 	wp_safe_redirect( admin_url( 'admin.php?page=vitalisite-wizard&step=7' ) );
 	exit;

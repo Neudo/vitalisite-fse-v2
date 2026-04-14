@@ -288,6 +288,37 @@
   margin-bottom: 18px;
 }
 
+.vitalisite-wizard__toggle-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border: 1px solid #c3dafe;
+  border-radius: 10px;
+  background: #f7fbff;
+}
+
+.vitalisite-wizard__toggle-card input {
+  margin-top: 3px;
+}
+
+.vitalisite-wizard__toggle-card strong,
+.vitalisite-wizard__toggle-card small {
+  display: block;
+}
+
+.vitalisite-wizard__toggle-card strong {
+  color: #1d2327;
+  font-size: 14px;
+}
+
+.vitalisite-wizard__toggle-card small {
+  margin-top: 4px;
+  color: #50575e;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 /* Style variations */
 .vitalisite-wizard__variations {
   display: grid;

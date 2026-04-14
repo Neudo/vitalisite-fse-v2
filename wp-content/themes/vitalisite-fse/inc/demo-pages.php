@@ -98,11 +98,13 @@ function get_demo_pages_definition() {
  * @return array<string, mixed>
  */
 function get_demo_setup() {
-	$saved    = get_option( OPTION_DEMO_SETUP, array() );
+	$saved           = get_option( OPTION_DEMO_SETUP, array() );
+	$has_saved_pages = is_array( $saved ) && array_key_exists( 'pages', $saved );
 	$defaults = array(
-		'tone'          => 'je',
-		'writing_style' => 'professionnel',
-		'pages'         => array_keys( get_demo_pages_definition() ),
+		'tone'                => 'je',
+		'writing_style'       => 'professionnel',
+		'pages'               => array_keys( get_demo_pages_definition() ),
+		'add_pages_to_header' => true,
 	);
 
 	$setup = wp_parse_args( is_array( $saved ) ? $saved : array(), $defaults );
@@ -119,9 +121,11 @@ function get_demo_setup() {
 	$selected_pages = array_map( 'sanitize_title', (array) $setup['pages'] );
 	$setup['pages'] = array_values( array_intersect( $selected_pages, $available ) );
 
-	if ( empty( $setup['pages'] ) ) {
+	if ( empty( $setup['pages'] ) && ! $has_saved_pages ) {
 		$setup['pages'] = $defaults['pages'];
 	}
+
+	$setup['add_pages_to_header'] = ! empty( $setup['add_pages_to_header'] );
 
 	return $setup;
 }
@@ -153,6 +157,10 @@ function save_demo_setup( array $changes ) {
 		$available       = array_keys( get_demo_pages_definition() );
 		$selected_pages  = array_map( 'sanitize_title', (array) $changes['pages'] );
 		$current['pages'] = array_values( array_intersect( $selected_pages, $available ) );
+	}
+
+	if ( isset( $changes['add_pages_to_header'] ) ) {
+		$current['add_pages_to_header'] = ! empty( $changes['add_pages_to_header'] );
 	}
 
 	update_option( OPTION_DEMO_SETUP, $current );
@@ -288,6 +296,25 @@ function build_demo_faq_section( $title, array $items ) {
 }
 
 /**
+ * Build a page hero with a real image block, not a background-only banner.
+ *
+ * @param string $title     Hero title.
+ * @param string $lead      Hero lead.
+ * @param string $secondary Secondary button label.
+ * @return string
+ */
+function build_demo_image_hero( $title, $lead, $secondary = '' ) {
+	return render_demo_pattern_content(
+		'hero-image-bottom',
+		array(
+			'Un accompagnement rassurant a chaque etape du parcours de soin' => $title,
+			'Je vous recois sur rendez-vous dans un cadre de prise en charge serein, avec une approche attentive et personnalisee.' => $lead,
+			'Decouvrir les prises en charge' => $secondary ?: __( 'Découvrir la page', 'vitalisite-fse' ),
+		)
+	);
+}
+
+/**
  * Build the content for a generated page.
  *
  * @param string $slug          Page slug.
@@ -408,6 +435,15 @@ function build_demo_page_home( $tone, $writing_style, array $dynamic ) {
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
+		'slider',
+		array(
+			'Le cabinet en images' => $is_team ? 'Un aperçu du cabinet' : 'Un aperçu de mon cabinet',
+			'Je peux presenter ici le cadre de consultation, l\'ambiance du cabinet et quelques reperes visuels utiles pour aider le patient a se projeter avant son rendez-vous.' => $is_team ? 'Une section visuelle permet aux futurs patients de se projeter dans l’espace de consultation avant même leur premier rendez-vous.' : 'Une section visuelle permet aux futurs patients de se projeter dans l’espace de consultation avant même leur premier rendez-vous.',
+			'Decouvrir le cabinet' => $is_team ? 'Découvrir le cabinet' : 'Découvrir ma pratique',
+		)
+	);
+	$content .= "\n\n";
+	$content .= render_demo_pattern_content(
 		'pricing',
 		array(
 			'Je presente ici mes principaux actes avec une lecture rapide, rassurante et facile a comprendre.' => $is_team ? 'Nous présentons ici les principaux actes du cabinet avec une lecture rapide, rassurante et facile à comprendre.' : 'Je présente ici mes principaux actes avec une lecture rapide, rassurante et facile à comprendre.',
@@ -444,21 +480,19 @@ function build_demo_page_about( $tone, $writing_style, array $dynamic ) {
 		'direct'        => $is_team ? 'Cette page résume notre méthode, notre parcours et les points essentiels pour comprendre rapidement le fonctionnement du cabinet.' : 'Cette page résume ma méthode, mon parcours et les points essentiels pour comprendre rapidement mon fonctionnement.',
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
-		array(
-			'Une prise en charge claire, moderne et attentive' => $is_team ? 'À propos du cabinet' : 'À propos de ma pratique',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $intro[ $writing_style ],
-			'Decouvrir le cabinet' => $is_team ? 'Découvrir le cabinet' : 'Découvrir ma pratique',
-		)
+	$content  = build_demo_image_hero(
+		$is_team ? 'À propos du cabinet' : 'À propos de ma pratique',
+		$intro[ $writing_style ],
+		$is_team ? 'Découvrir le cabinet' : 'Découvrir ma pratique'
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
-		'doctor-presentation-v2',
+		'doctor-presentation-skills',
 		array_merge(
 			$dynamic,
 			array(
-				'Je presente ici ma posture de soin, ma relation au patient et les grands axes de mon accompagnement avec un ton simple et professionnel.' => $is_team ? 'Nous accompagnons nos patients avec une approche attentive, structurée et personnalisée. Chaque consultation est pensée comme un temps d’écoute, d’échange et d’orientation.' : 'J’accompagne mes patients avec une approche attentive, structurée et personnalisée. Chaque consultation est pensée comme un temps d’écoute, d’échange et d’orientation.',
+				'Je peux utiliser cette variante pour valoriser ma specialite, ma posture de soin et une image de cabinet plus haut de gamme.' => $is_team ? 'Nous utilisons cette section pour présenter notre posture de soin, notre spécialité et le cadre dans lequel nous accompagnons les patients.' : 'J’utilise cette section pour présenter ma posture de soin, ma spécialité et le cadre dans lequel j’accompagne mes patients.',
+				'J\'y presente mon approche, mes valeurs, mon cadre de consultation et la qualite du suivi propose aux patients.' => $is_team ? 'Notre approche repose sur une écoute attentive, des explications claires et un suivi pensé pour rester lisible à chaque étape.' : 'Mon approche repose sur une écoute attentive, des explications claires et un suivi pensé pour rester lisible à chaque étape.',
 			)
 		)
 	);
@@ -494,12 +528,10 @@ function build_demo_page_about( $tone, $writing_style, array $dynamic ) {
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
-		'text-image',
+		'image-simple',
 		array(
-			'Titre de la section' => 'Prendre rendez-vous',
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' => $is_team ? 'Vous pouvez nous contacter pour obtenir un premier repère, poser une question pratique ou être orienté vers le rendez-vous le plus adapté.' : 'Vous pouvez me contacter pour obtenir un premier repère, poser une question pratique ou être orienté vers le rendez-vous le plus adapté.',
-			'En savoir plus' => 'Me contacter',
-			'Medical Team' => 'Illustration du cabinet',
+			'Le cabinet en image' => $is_team ? 'Un cabinet pensé pour accueillir' : 'Un espace pensé pour accueillir',
+			'Une section tres simple pour valoriser un espace de consultation, un equipement ou une ambiance de cabinet.' => $is_team ? 'Cette section montre comment valoriser l’ambiance du cabinet, un espace de consultation ou un équipement spécifique sans alourdir la page.' : 'Cette section montre comment valoriser l’ambiance du cabinet, un espace de consultation ou un équipement spécifique sans alourdir la page.',
 		)
 	);
 
@@ -522,8 +554,6 @@ function build_demo_page_pricing( $tone, $writing_style, array $dynamic ) {
 		'chaleureux'    => $is_team ? 'Cette page vous aide à comprendre les principales consultations proposées, dans un esprit de clarté et de confiance.' : 'Cette page vous aide à comprendre les principales consultations proposées, dans un esprit de clarté et de confiance.',
 		'direct'        => $is_team ? 'Retrouvez ici les principaux rendez-vous proposés au cabinet, leurs modalités et leurs tarifs.' : 'Retrouvez ici les principaux rendez-vous proposés, leurs modalités et leurs tarifs.',
 	);
-
-	$text_image = $is_team ? 'Nous prenons le temps d’expliquer le déroulé des consultations, les objectifs du suivi et les modalités pratiques afin que chaque patient sache à quoi s’attendre avant son rendez-vous.' : 'Je prends le temps d’expliquer le déroulé des consultations, les objectifs du suivi et les modalités pratiques afin que chaque patient sache à quoi s’attendre avant son rendez-vous.';
 
 	$faq_items = array(
 		array(
@@ -548,23 +578,10 @@ function build_demo_page_pricing( $tone, $writing_style, array $dynamic ) {
 		),
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
-		array(
-			'Une prise en charge claire, moderne et attentive' => $is_team ? 'Nos tarifs' : 'Mes tarifs',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $hero_intro[ $writing_style ],
-			'Decouvrir le cabinet' => 'Me contacter',
-		)
-	);
-	$content .= "\n\n";
-	$content .= render_demo_pattern_content(
-		'text-image',
-		array(
-			'Titre de la section' => 'Une approche claire avant même le rendez-vous',
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' => $text_image,
-			'En savoir plus' => 'Prendre rendez-vous',
-			'Medical Team' => 'Illustration du cabinet',
-		)
+	$content  = build_demo_image_hero(
+		$is_team ? 'Nos tarifs' : 'Mes tarifs',
+		$hero_intro[ $writing_style ],
+		'Comprendre les consultations'
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
@@ -604,23 +621,19 @@ function build_demo_page_contact( $tone, $writing_style, array $dynamic ) {
 		'direct'        => $is_team ? 'Retrouvez ici nos coordonnées, le formulaire de contact et les horaires du cabinet.' : 'Retrouvez ici mes coordonnées, le formulaire de contact et mes horaires de consultation.',
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
-		array(
-			'Une prise en charge claire, moderne et attentive' => $is_team ? 'Nous contacter' : 'Me contacter',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $hero_intro[ $writing_style ],
-			'Decouvrir le cabinet' => 'Voir les horaires',
-		)
+	$content  = build_demo_image_hero(
+		$is_team ? 'Nous contacter' : 'Me contacter',
+		$hero_intro[ $writing_style ],
+		'Voir les horaires'
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
-		'contact-form-v2',
+		'contact-form-v3',
 		array_merge(
 			$dynamic,
 			array(
 				'Me contacter' => $is_team ? 'Nous contacter' : 'Me contacter',
-				'Je reste disponible pour repondre a vos questions et vous orienter vers le rendez-vous le plus adapte.' => $is_team ? 'Vous pouvez nous joindre pour une question, une demande d’information ou pour être orienté vers le rendez-vous le plus adapté.' : 'Vous pouvez me joindre pour une question, une demande d’information ou pour être orienté vers le rendez-vous le plus adapté.',
-				'Du lundi au vendredi<br>Sur rendez-vous' => 'Du lundi au vendredi<br>Sur rendez-vous',
+				'Une question ? Je vous reponds dans les meilleurs delais et je vous accueille dans un cadre de consultation serein et professionnel.' => $is_team ? 'Une question ? Nous vous répondons dans les meilleurs délais et vous accueillons dans un cadre de consultation serein et professionnel.' : 'Une question ? Je vous réponds dans les meilleurs délais et je vous accueille dans un cadre de consultation serein et professionnel.',
 			)
 		)
 	);
@@ -653,22 +666,17 @@ function build_demo_page_testimonials( $tone, $writing_style, array $dynamic ) {
 		'direct'        => $is_team ? 'Cette page rassemble des retours patients pour illustrer concrètement la qualité du suivi proposé.' : 'Cette page rassemble des retours patients pour illustrer concrètement la qualité du suivi proposé.',
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
-		array(
-			'Une prise en charge claire, moderne et attentive' => $is_team ? 'Les avis de nos patients' : 'Les avis de mes patients',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $hero_intro[ $writing_style ],
-			'Decouvrir le cabinet' => 'Me contacter',
-		)
+	$content  = build_demo_image_hero(
+		$is_team ? 'Les avis de nos patients' : 'Les avis de mes patients',
+		$hero_intro[ $writing_style ],
+		'Comprendre l’expérience patient'
 	);
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
-		'text-image',
+		'video',
 		array(
-			'Titre de la section' => 'Une relation de confiance se construit dans la durée',
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' => $is_team ? 'Chaque témoignage illustre une expérience singulière, mais aussi une même attente : être écouté, compris et accompagné avec sérieux, clarté et attention.' : 'Chaque témoignage illustre une expérience singulière, mais aussi une même attente : être écouté, compris et accompagné avec sérieux, clarté et attention.',
-			'En savoir plus' => 'Prendre rendez-vous',
-			'Medical Team' => 'Illustration du cabinet',
+			'Decouvrez mon cabinet en video' => $is_team ? 'Présenter le cabinet en vidéo' : 'Présenter ma pratique en vidéo',
+			'La video me permet de presenter l\'ambiance du cabinet, mon approche et la relation de confiance que je souhaite installer.' => $is_team ? 'Une vidéo peut compléter les avis patients en donnant un aperçu plus humain de l’ambiance du cabinet, de l’accueil et du cadre de consultation.' : 'Une vidéo peut compléter les avis patients en donnant un aperçu plus humain de ma pratique, de l’accueil et du cadre de consultation.',
 		)
 	);
 	$content .= "\n\n";
@@ -724,24 +732,19 @@ function build_demo_page_faq( $tone, $writing_style, array $dynamic ) {
 		),
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
-		array(
-			'Une prise en charge claire, moderne et attentive' => 'Questions fréquentes',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $hero_intro[ $writing_style ],
-			'Decouvrir le cabinet' => 'Me contacter',
-		)
+	$content  = build_demo_image_hero(
+		'Questions fréquentes',
+		$hero_intro[ $writing_style ],
+		'Préparer le rendez-vous'
 	);
 	$content .= "\n\n";
 	$content .= build_demo_faq_section( 'Avant votre rendez-vous', $faq_items );
 	$content .= "\n\n";
 	$content .= render_demo_pattern_content(
-		'text-image',
+		'contact-form',
 		array(
-			'Titre de la section' => 'Vous ne trouvez pas votre réponse ?',
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' => $is_team ? 'Si votre question concerne votre situation, le déroulé d’un rendez-vous ou le type de consultation à privilégier, nous restons disponibles pour vous orienter simplement.' : 'Si votre question concerne votre situation, le déroulé d’un rendez-vous ou le type de consultation à privilégier, je reste disponible pour vous orienter simplement.',
-			'En savoir plus' => 'Me contacter',
-			'Medical Team' => 'Illustration du cabinet',
+			'Nous contacter' => $is_team ? 'Vous ne trouvez pas votre réponse ?' : 'Vous ne trouvez pas votre réponse ?',
+			'Une question ? N\'hésitez pas à nous envoyer un message, nous vous répondrons dans les plus brefs délais.' => $is_team ? 'Si votre question concerne votre situation, le déroulé d’un rendez-vous ou le type de consultation à privilégier, nous restons disponibles pour vous orienter simplement.' : 'Si votre question concerne votre situation, le déroulé d’un rendez-vous ou le type de consultation à privilégier, je reste disponible pour vous orienter simplement.',
 		)
 	);
 
@@ -765,12 +768,17 @@ function build_demo_page_practical_info( $tone, $writing_style, array $dynamic )
 		'direct'        => 'Horaires, accès et transports : tout ce qu’il faut pour préparer votre rendez-vous rapidement.',
 	);
 
-	$content  = render_demo_pattern_content(
-		'hero-centered-bg',
+	$content  = build_demo_image_hero(
+		'Infos pratiques',
+		$hero_intro[ $writing_style ],
+		'Voir les accès'
+	);
+	$content .= "\n\n";
+	$content .= render_demo_pattern_content(
+		'image-simple',
 		array(
-			'Une prise en charge claire, moderne et attentive' => 'Infos pratiques',
-			"J'accueille chaque patient avec ecoute, rigueur et disponibilite, pour proposer un accompagnement adapte a ses besoins." => $hero_intro[ $writing_style ],
-			'Decouvrir le cabinet' => 'Me contacter',
+			'Le cabinet en image' => 'Préparer votre venue',
+			'Une section tres simple pour valoriser un espace de consultation, un equipement ou une ambiance de cabinet.' => 'Cette section permet de montrer le lieu, l’environnement du cabinet ou un repère visuel utile pour aider les patients à se projeter avant leur rendez-vous.',
 		)
 	);
 	$content .= "\n\n";
@@ -779,6 +787,15 @@ function build_demo_page_practical_info( $tone, $writing_style, array $dynamic )
 		array(
 			'Mes horaires de consultation' => $is_team ? 'Nos horaires de consultation' : 'Mes horaires de consultation',
 			'Retrouvez ici mes jours de consultation et les moments ou je peux vous recevoir sur rendez-vous.' => $is_team ? 'Retrouvez ici les jours de consultation et les moments où nous pouvons vous recevoir sur rendez-vous.' : 'Retrouvez ici mes jours de consultation et les moments où je peux vous recevoir sur rendez-vous.',
+		)
+	);
+	$content .= "\n\n";
+	$content .= render_demo_pattern_content(
+		'slider',
+		array(
+			'Le cabinet en images' => 'Repères visuels',
+			'Je peux presenter ici le cadre de consultation, l\'ambiance du cabinet et quelques reperes visuels utiles pour aider le patient a se projeter avant son rendez-vous.' => 'Le carrousel peut présenter l’entrée, la salle d’attente, la salle de consultation ou tout repère utile pour faciliter la venue au cabinet.',
+			'Decouvrir le cabinet' => 'Voir l’itinéraire',
 		)
 	);
 	$content .= "\n\n";
@@ -803,12 +820,13 @@ function build_demo_page_practical_info( $tone, $writing_style, array $dynamic )
 /**
  * Install selected demo pages.
  *
- * @param string   $tone          Tone slug.
- * @param string   $writing_style Writing style slug.
- * @param string[] $selected_pages Selected page slugs.
+ * @param string   $tone                Tone slug.
+ * @param string   $writing_style       Writing style slug.
+ * @param string[] $selected_pages      Selected page slugs.
+ * @param bool     $add_pages_to_header Whether to add generated pages to header navigation.
  * @return int[] Created page IDs keyed by slug.
  */
-function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', array $selected_pages = array() ) {
+function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', array $selected_pages = array(), $add_pages_to_header = false ) {
 	$definitions = get_demo_pages_definition();
 	$available   = array_keys( $definitions );
 	$pages       = array_values( array_intersect( array_map( 'sanitize_title', $selected_pages ), $available ) );
@@ -867,5 +885,211 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 	);
 	update_option( OPTION_DEMO_PAGES_INSTALLED, $installed );
 
+	if ( $add_pages_to_header ) {
+		add_demo_pages_to_header_navigation( $created );
+	}
+
 	return $created;
+}
+
+/**
+ * Add generated demo pages to the header navigation block.
+ *
+ * @param array<string,int> $page_ids Page IDs keyed by demo page slug.
+ * @return bool
+ */
+function add_demo_pages_to_header_navigation( array $page_ids ) {
+	if ( empty( $page_ids ) || ! post_type_exists( 'wp_navigation' ) ) {
+		return false;
+	}
+
+	$navigation_id = get_header_navigation_post_id();
+	if ( $navigation_id <= 0 ) {
+		return false;
+	}
+
+	$navigation = get_post( $navigation_id );
+	if ( ! $navigation instanceof \WP_Post || 'wp_navigation' !== $navigation->post_type ) {
+		return false;
+	}
+
+	$definitions       = get_demo_pages_definition();
+	$existing_page_ids = get_navigation_page_ids_from_content( (string) $navigation->post_content );
+	$new_links         = array();
+
+	foreach ( $definitions as $slug => $definition ) {
+		if ( empty( $page_ids[ $slug ] ) ) {
+			continue;
+		}
+
+		$page_id = absint( $page_ids[ $slug ] );
+		if ( in_array( $page_id, $existing_page_ids, true ) ) {
+			continue;
+		}
+
+		$url = get_permalink( $page_id );
+		if ( ! $url ) {
+			continue;
+		}
+
+		$new_links[] = build_navigation_page_link_block(
+			$definition['label'],
+			$page_id,
+			$url
+		);
+	}
+
+	if ( empty( $new_links ) ) {
+		return false;
+	}
+
+	$content = trim( (string) $navigation->post_content );
+	$content = '' === $content ? implode( "\n", $new_links ) : $content . "\n" . implode( "\n", $new_links );
+
+	$result = wp_update_post(
+		array(
+			'ID'           => $navigation_id,
+			'post_content' => wp_slash( $content ),
+		),
+		true
+	);
+
+	return ! is_wp_error( $result );
+}
+
+/**
+ * Build a serialized navigation-link block for a page.
+ *
+ * @param string $label   Link label.
+ * @param int    $page_id Page ID.
+ * @param string $url     Page URL.
+ * @return string
+ */
+function build_navigation_page_link_block( $label, $page_id, $url ) {
+	$attrs = array(
+		'label'          => $label,
+		'type'           => 'page',
+		'id'             => absint( $page_id ),
+		'url'            => $url,
+		'kind'           => 'post-type',
+		'isTopLevelLink' => true,
+	);
+
+	return '<!-- wp:navigation-link ' . wp_json_encode( $attrs ) . ' /-->';
+}
+
+/**
+ * Get the wp_navigation post referenced by the header template part.
+ *
+ * @return int
+ */
+function get_header_navigation_post_id() {
+	$content = get_header_template_part_content();
+	$ref     = '' !== $content ? find_navigation_ref_in_blocks( parse_blocks( $content ) ) : 0;
+
+	if ( $ref > 0 && 'wp_navigation' === get_post_type( $ref ) ) {
+		return $ref;
+	}
+
+	$navigation_posts = get_posts(
+		array(
+			'fields'                 => 'ids',
+			'no_found_rows'          => true,
+			'post_status'            => 'publish',
+			'post_type'              => 'wp_navigation',
+			'posts_per_page'         => 2,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		)
+	);
+
+	return 1 === count( $navigation_posts ) ? (int) $navigation_posts[0] : 0;
+}
+
+/**
+ * Get header template part content from the customized template or theme file.
+ *
+ * @return string
+ */
+function get_header_template_part_content() {
+	if ( function_exists( 'get_block_template' ) ) {
+		$template = get_block_template( get_stylesheet() . '//header', 'wp_template_part' );
+		if ( $template && ! empty( $template->content ) ) {
+			return (string) $template->content;
+		}
+	}
+
+	$file = get_theme_file_path( 'parts/header.html' );
+	if ( is_readable( $file ) ) {
+		$content = file_get_contents( $file );
+		return false === $content ? '' : (string) $content;
+	}
+
+	return '';
+}
+
+/**
+ * Find the first core/navigation ref inside parsed blocks.
+ *
+ * @param array<int,array<string,mixed>> $blocks Parsed blocks.
+ * @return int
+ */
+function find_navigation_ref_in_blocks( array $blocks ) {
+	foreach ( $blocks as $block ) {
+		if ( 'core/navigation' === ( $block['blockName'] ?? '' ) && ! empty( $block['attrs']['ref'] ) ) {
+			return absint( $block['attrs']['ref'] );
+		}
+
+		if ( ! empty( $block['innerBlocks'] ) && is_array( $block['innerBlocks'] ) ) {
+			$ref = find_navigation_ref_in_blocks( $block['innerBlocks'] );
+			if ( $ref > 0 ) {
+				return $ref;
+			}
+		}
+	}
+
+	return 0;
+}
+
+/**
+ * Extract page IDs already present in a navigation post.
+ *
+ * @param string $content Navigation post content.
+ * @return int[]
+ */
+function get_navigation_page_ids_from_content( $content ) {
+	$page_ids = array();
+	$blocks   = parse_blocks( $content );
+
+	foreach ( $blocks as $block ) {
+		$page_ids = array_merge( $page_ids, get_navigation_page_ids_from_block( $block ) );
+	}
+
+	return array_values( array_unique( array_map( 'absint', $page_ids ) ) );
+}
+
+/**
+ * Extract page IDs recursively from a navigation block.
+ *
+ * @param array<string,mixed> $block Parsed block.
+ * @return int[]
+ */
+function get_navigation_page_ids_from_block( array $block ) {
+	$page_ids = array();
+
+	if (
+		'core/navigation-link' === ( $block['blockName'] ?? '' )
+		&& 'page' === ( $block['attrs']['type'] ?? '' )
+		&& ! empty( $block['attrs']['id'] )
+	) {
+		$page_ids[] = absint( $block['attrs']['id'] );
+	}
+
+	if ( ! empty( $block['innerBlocks'] ) && is_array( $block['innerBlocks'] ) ) {
+		foreach ( $block['innerBlocks'] as $inner_block ) {
+			$page_ids = array_merge( $page_ids, get_navigation_page_ids_from_block( $inner_block ) );
+		}
+	}
+
+	return $page_ids;
 }

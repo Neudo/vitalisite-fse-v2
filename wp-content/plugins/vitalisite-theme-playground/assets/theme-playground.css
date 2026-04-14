@@ -1,0 +1,343 @@
+#vitalisite-theme-playground-root {
+  --vtp-bg: #ffffff;
+  --vtp-text: #111827;
+  --vtp-muted: #5b6472;
+  --vtp-border: #d8dee8;
+  --vtp-soft: #f5f7fa;
+  --vtp-accent: #0f766e;
+  --vtp-accent-text: #ffffff;
+  --vtp-error: #b42318;
+  color: var(--vtp-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+#vitalisite-theme-playground-root * {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+#vitalisite-theme-playground-root .vtp-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(220px, calc(100vw - 36px));
+}
+
+#vitalisite-theme-playground-root .vtp-button,
+#vitalisite-theme-playground-root .vtp-purchase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--vtp-accent);
+  border-radius: 8px;
+  background: var(--vtp-accent);
+  color: var(--vtp-accent-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 12px 14px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
+  text-align: center;
+  text-decoration: none;
+}
+
+#vitalisite-theme-playground-root .vtp-button:hover,
+#vitalisite-theme-playground-root .vtp-button:focus-visible {
+  background: #115e59;
+  outline: 3px solid rgba(15, 118, 110, 0.24);
+  outline-offset: 2px;
+}
+
+#vitalisite-theme-playground-root .vtp-purchase {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+#vitalisite-theme-playground-root .vtp-purchase:hover,
+#vitalisite-theme-playground-root .vtp-purchase:focus-visible {
+  background: #374151;
+  border-color: #374151;
+  color: #ffffff;
+  outline: 3px solid rgba(55, 65, 81, 0.22);
+  outline-offset: 2px;
+}
+
+#vitalisite-theme-playground-root .vtp-purchase--footer {
+  box-shadow: none;
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+#vitalisite-theme-playground-root .vtp-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(17, 24, 39, 0.54);
+  padding: 24px;
+}
+
+#vitalisite-theme-playground-root.is-open .vtp-overlay {
+  display: flex;
+}
+
+#vitalisite-theme-playground-root .vtp-dialog {
+  width: min(980px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  border: 1px solid var(--vtp-border);
+  border-radius: 8px;
+  background: var(--vtp-bg);
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.28);
+}
+
+.admin-bar #vitalisite-theme-playground-root .vtp-dialog {
+  max-height: calc(100vh - 80px);
+}
+
+#vitalisite-theme-playground-root .vtp-header,
+#vitalisite-theme-playground-root .vtp-footer {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--vtp-border);
+  padding: 18px 20px;
+}
+
+#vitalisite-theme-playground-root .vtp-footer {
+  min-height: 60px;
+  align-items: center;
+  border-top: 1px solid var(--vtp-border);
+  border-bottom: 0;
+  padding-block: 12px;
+}
+
+#vitalisite-theme-playground-root .vtp-header__text {
+  min-width: 0;
+}
+
+#vitalisite-theme-playground-root .vtp-kicker,
+#vitalisite-theme-playground-root .vtp-intro,
+#vitalisite-theme-playground-root .vtp-status,
+#vitalisite-theme-playground-root .vtp-card__source {
+  margin: 0;
+  color: var(--vtp-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#vitalisite-theme-playground-root .vtp-kicker {
+  margin-bottom: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#vitalisite-theme-playground-root .vtp-title {
+  margin: 0 0 6px;
+  color: var(--vtp-text);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+#vitalisite-theme-playground-root .vtp-close,
+#vitalisite-theme-playground-root .vtp-apply {
+  border: 1px solid var(--vtp-border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--vtp-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 10px 12px;
+}
+
+#vitalisite-theme-playground-root .vtp-close:hover,
+#vitalisite-theme-playground-root .vtp-close:focus-visible,
+#vitalisite-theme-playground-root .vtp-apply:hover,
+#vitalisite-theme-playground-root .vtp-apply:focus-visible {
+  border-color: var(--vtp-accent);
+  color: var(--vtp-accent);
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+  outline-offset: 2px;
+}
+
+#vitalisite-theme-playground-root .vtp-apply {
+  background: var(--vtp-accent);
+  border-color: var(--vtp-accent);
+  color: var(--vtp-accent-text);
+}
+
+#vitalisite-theme-playground-root .vtp-apply:hover,
+#vitalisite-theme-playground-root .vtp-apply:focus-visible {
+  background: #115e59;
+  color: var(--vtp-accent-text);
+}
+
+#vitalisite-theme-playground-root .vtp-apply:disabled,
+#vitalisite-theme-playground-root.is-busy button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+#vitalisite-theme-playground-root .vtp-body {
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  padding: 20px;
+}
+
+.admin-bar #vitalisite-theme-playground-root .vtp-body {
+  max-height: calc(100vh - 252px);
+}
+
+#vitalisite-theme-playground-root .vtp-group + .vtp-group {
+  margin-top: 24px;
+}
+
+#vitalisite-theme-playground-root .vtp-group__title {
+  margin: 0 0 10px;
+  color: var(--vtp-text);
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+#vitalisite-theme-playground-root .vtp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+#vitalisite-theme-playground-root .vtp-card {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--vtp-border);
+  border-radius: 8px;
+  background: var(--vtp-bg);
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active {
+  border-color: var(--vtp-accent);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.14);
+}
+
+#vitalisite-theme-playground-root .vtp-swatches {
+  display: flex;
+  flex: 0 0 42px;
+  flex-direction: column;
+  min-height: 120px;
+  background: var(--vtp-soft);
+}
+
+#vitalisite-theme-playground-root .vtp-swatches--empty {
+  background:
+    linear-gradient(135deg, transparent 45%, var(--vtp-border) 45%, var(--vtp-border) 55%, transparent 55%),
+    var(--vtp-soft);
+}
+
+#vitalisite-theme-playground-root .vtp-swatch {
+  flex: 1 1 0;
+  min-height: 16px;
+}
+
+#vitalisite-theme-playground-root .vtp-card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+}
+
+#vitalisite-theme-playground-root .vtp-card__title {
+  margin: 0;
+  color: var(--vtp-text);
+  font-size: 16px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+#vitalisite-theme-playground-root .vtp-card__source {
+  overflow-wrap: anywhere;
+}
+
+#vitalisite-theme-playground-root .vtp-card__footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+#vitalisite-theme-playground-root .vtp-card__status {
+  min-height: 1em;
+  color: var(--vtp-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#vitalisite-theme-playground-root .vtp-status.is-error {
+  color: var(--vtp-error);
+  font-weight: 700;
+}
+
+#vitalisite-theme-playground-root .vtp-empty {
+  margin: 0;
+  color: var(--vtp-muted);
+}
+
+@media (max-width: 600px) {
+  #vitalisite-theme-playground-root .vtp-launcher {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100vw - 24px);
+  }
+
+  #vitalisite-theme-playground-root .vtp-overlay {
+    padding: 10px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-dialog {
+    max-height: calc(100vh - 20px);
+  }
+
+  .admin-bar #vitalisite-theme-playground-root .vtp-dialog {
+    max-height: calc(100vh - 56px);
+  }
+
+  #vitalisite-theme-playground-root .vtp-header,
+  #vitalisite-theme-playground-root .vtp-footer {
+    padding: 14px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #vitalisite-theme-playground-root .vtp-body {
+    max-height: calc(100vh - 190px);
+    padding: 14px;
+  }
+
+  .admin-bar #vitalisite-theme-playground-root .vtp-body {
+    max-height: calc(100vh - 226px);
+  }
+
+  #vitalisite-theme-playground-root .vtp-grid {
+    grid-template-columns: 1fr;
+  }
+}
