@@ -112,7 +112,7 @@ function filter_patterns() {
 			$name        = isset( $pattern['name'] ) ? $pattern['name'] : '';
 			$cats        = isset( $pattern['categories'] ) ? $pattern['categories'] : array();
 			$has_allowed = array_intersect( $cats, $allowed_slugs );
-			$is_theme    = str_starts_with( $name, 'vitalisite-fse/' );
+			$is_theme    = 0 === strpos( $name, 'vitalisite-fse/' );
 
 			if ( ! $is_theme && empty( $has_allowed ) ) {
 				$registry->unregister( $name );

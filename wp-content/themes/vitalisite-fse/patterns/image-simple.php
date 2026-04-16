@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- /wp:paragraph -->
 
 		<!-- wp:image {"sizeSlug":"full","align":"wide","className":"reveal-y"} -->
-		<figure class="wp-block-image size-full alignwide reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-1.jpg' ) ); ?>" alt="Vue generale du cabinet" /></figure>
+		<figure class="wp-block-image size-full alignwide reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-1.jpg' ) ); ?>" alt="Vue generale du cabinet" /></figure>
 		<!-- /wp:image -->
 
 	</div>

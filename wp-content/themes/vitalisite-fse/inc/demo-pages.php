@@ -93,6 +93,23 @@ function get_demo_pages_definition() {
 }
 
 /**
+ * Get the preferred order of demo pages in the main navigation.
+ *
+ * @return string[]
+ */
+function get_demo_navigation_order() {
+	return array(
+		'accueil',
+		'a-propos',
+		'tarifs',
+		'temoignages',
+		'faq',
+		'infos-pratiques',
+		'contact',
+	);
+}
+
+/**
  * Get demo setup state.
  *
  * @return array<string, mixed>
@@ -818,6 +835,191 @@ function build_demo_page_practical_info( $tone, $writing_style, array $dynamic )
 }
 
 /**
+ * Get navigation post IDs referenced by the theme header templates.
+ *
+ * @return int[]
+ */
+function get_theme_navigation_post_ids() {
+	$refs  = array();
+	$files = array(
+		get_theme_file_path( 'parts/header.html' ),
+		get_theme_file_path( 'templates/index.html' ),
+	);
+
+	foreach ( $files as $file ) {
+		if ( ! file_exists( $file ) ) {
+			continue;
+		}
+
+		$contents = file_get_contents( $file );
+		if ( false === $contents ) {
+			continue;
+		}
+
+		if ( preg_match_all( '/"ref"\s*:\s*(\d+)/', $contents, $matches ) ) {
+			foreach ( $matches[1] as $match ) {
+				$refs[] = (int) $match;
+			}
+		}
+	}
+
+	$refs = array_values( array_unique( array_filter( $refs ) ) );
+
+	$valid_ids = array();
+	foreach ( $refs as $ref ) {
+		$post = get_post( $ref );
+		if ( $post instanceof \WP_Post && 'wp_navigation' === $post->post_type ) {
+			$valid_ids[] = (int) $post->ID;
+		}
+	}
+
+	if ( ! empty( $valid_ids ) ) {
+		return array_values( array_unique( $valid_ids ) );
+	}
+
+	$fallback_ids = get_posts(
+		array(
+			'post_type'              => 'wp_navigation',
+			'post_status'            => 'publish',
+			'posts_per_page'         => -1,
+			'fields'                 => 'ids',
+			'orderby'                => 'ID',
+			'order'                  => 'ASC',
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		)
+	);
+
+	return array_map( 'intval', $fallback_ids );
+}
+
+/**
+ * Build a navigation link block for a generated page.
+ *
+ * @param int    $page_id Page ID.
+ * @param string $url     Page URL.
+ * @return string
+ */
+function build_demo_navigation_link_block( $page_id, $url ) {
+	$attributes = array(
+		'label' => get_the_title( $page_id ),
+		'type'  => 'page',
+		'id'    => (int) $page_id,
+		'url'   => $url,
+		'kind'  => 'post-type',
+	);
+
+	return array(
+		'blockName'    => 'core/navigation-link',
+		'attrs'        => $attributes,
+		'innerBlocks'  => array(),
+		'innerHTML'    => '',
+		'innerContent' => array(),
+	);
+}
+
+/**
+ * Add generated pages to the existing navigation used by the header.
+ *
+ * @param array<string,int> $page_ids Generated page IDs keyed by slug.
+ */
+function sync_demo_pages_to_navigation( array $page_ids ) {
+	if ( empty( $page_ids ) ) {
+		return;
+	}
+
+	$navigation_ids = get_theme_navigation_post_ids();
+	$order_map      = array_flip( get_demo_navigation_order() );
+
+	if ( empty( $navigation_ids ) ) {
+		return;
+	}
+
+	foreach ( $navigation_ids as $navigation_id ) {
+		$content          = (string) get_post_field( 'post_content', $navigation_id );
+		$parsed_blocks    = parse_blocks( $content );
+		$other_blocks     = array();
+		$existing_demo    = array();
+		$desired_demo_ids = array();
+
+		foreach ( $page_ids as $slug => $page_id ) {
+			$page_id = (int) $page_id;
+			$url     = get_permalink( $page_id );
+
+			if ( ! $url ) {
+				continue;
+			}
+
+			$desired_demo_ids[ $slug ] = array(
+				'id'  => $page_id,
+				'url' => $url,
+			);
+		}
+
+		foreach ( $parsed_blocks as $block ) {
+			$block_name = isset( $block['blockName'] ) ? $block['blockName'] : null;
+			$attrs      = isset( $block['attrs'] ) && is_array( $block['attrs'] ) ? $block['attrs'] : array();
+			$link_id    = isset( $attrs['id'] ) ? (int) $attrs['id'] : 0;
+
+			if ( 'core/navigation-link' !== $block_name || ! $link_id ) {
+				$other_blocks[] = $block;
+				continue;
+			}
+
+			$matched_slug = false;
+			foreach ( $desired_demo_ids as $slug => $item ) {
+				if ( (int) $item['id'] === $link_id ) {
+					$matched_slug = $slug;
+					break;
+				}
+			}
+
+			if ( false === $matched_slug ) {
+				$other_blocks[] = $block;
+				continue;
+			}
+
+			$existing_demo[ $matched_slug ] = $block;
+		}
+
+		uksort(
+			$desired_demo_ids,
+			static function ( $left, $right ) use ( $order_map ) {
+				$left_order  = isset( $order_map[ $left ] ) ? $order_map[ $left ] : 999;
+				$right_order = isset( $order_map[ $right ] ) ? $order_map[ $right ] : 999;
+
+				return $left_order <=> $right_order;
+			}
+		);
+
+		$ordered_demo_blocks = array();
+		foreach ( $desired_demo_ids as $slug => $item ) {
+			if ( isset( $existing_demo[ $slug ] ) ) {
+				$ordered_demo_blocks[] = $existing_demo[ $slug ];
+				continue;
+			}
+
+			$ordered_demo_blocks[] = build_demo_navigation_link_block( $item['id'], $item['url'] );
+		}
+
+		$updated_blocks = array_merge( $ordered_demo_blocks, $other_blocks );
+		$updated        = implode( "\n\n", array_map( 'serialize_block', $updated_blocks ) );
+
+		if ( trim( $updated ) === trim( $content ) ) {
+			continue;
+		}
+
+		wp_update_post(
+			array(
+				'ID'           => $navigation_id,
+				'post_content' => $updated,
+			)
+		);
+	}
+}
+
+/**
  * Install selected demo pages.
  *
  * @param string   $tone                Tone slug.
@@ -873,6 +1075,8 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', (int) $created['accueil'] );
 	}
+
+	sync_demo_pages_to_navigation( $created );
 
 	$installed = get_option( OPTION_DEMO_PAGES_INSTALLED, array() );
 	$installed = array_values(

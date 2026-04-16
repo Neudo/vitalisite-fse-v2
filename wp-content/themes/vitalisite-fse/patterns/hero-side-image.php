@@ -41,7 +41,7 @@
     <!-- wp:column {"verticalAlignment":"center","className":"vitalisite-hero__column"} -->
     <div class="wp-block-column is-vertically-aligned-center vitalisite-hero__column">
       <!-- wp:image {"sizeSlug":"large","className":"reveal-y"} -->
-      <figure class="wp-block-image size-large reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Portrait d'un praticien dans son cabinet" /></figure>
+      <figure class="wp-block-image size-large reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Portrait d'un praticien dans son cabinet" /></figure>
       <!-- /wp:image -->
     </div>
     <!-- /wp:column -->

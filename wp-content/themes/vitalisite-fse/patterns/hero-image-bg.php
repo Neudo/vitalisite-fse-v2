@@ -15,7 +15,7 @@
     <div class="wp-block-group vitalisite-hero-custom-cover">
 
         <!-- wp:image {"sizeSlug":"large","className":"vitalisite-hero-custom-bg"} -->
-        <figure class="wp-block-image size-large vitalisite-hero-custom-bg"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-1.jpg' ) ); ?>" alt="Ambiance lumineuse d'un cabinet de sante" /></figure>
+        <figure class="wp-block-image size-large vitalisite-hero-custom-bg"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-2.jpg' ) ); ?>" alt="Ambiance lumineuse d'un cabinet de sante" /></figure>
         <!-- /wp:image -->
 
         <!-- wp:group {"className":"hero-image-bg__content reveal-parallax","layout":{"type":"default"}} -->

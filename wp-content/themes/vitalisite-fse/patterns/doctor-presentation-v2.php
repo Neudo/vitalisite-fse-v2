@@ -18,7 +18,7 @@
         <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
             <!-- wp:image {"aspectRatio":"4/5","scale":"cover","className":"vitalisite-doctor-card-v2__avatar reveal-y"} -->
-            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
+            <figure class="wp-block-image vitalisite-doctor-card-v2__avatar reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Photo du praticien" style="aspect-ratio:4/5;object-fit:cover"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

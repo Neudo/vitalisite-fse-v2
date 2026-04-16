@@ -55,11 +55,11 @@
         <!-- wp:column {"width":"55%","className":"vitalisite-doctor-sticky__images"} -->
         <div class="wp-block-column vitalisite-doctor-sticky__images" style="flex-basis:55%">
             <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img reveal-y"} -->
-            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Salle de consultation du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-3.jpg' ) ); ?>" alt="Salle de consultation du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
             <!-- /wp:image -->
 
             <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"vitalisite-doctor-sticky__img reveal-y"} -->
-            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Materiel et espace d'accueil du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+            <figure class="wp-block-image vitalisite-doctor-sticky__img reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Materiel et espace d'accueil du cabinet" style="aspect-ratio:3/4;object-fit:cover"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

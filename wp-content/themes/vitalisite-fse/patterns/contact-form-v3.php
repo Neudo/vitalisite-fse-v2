@@ -19,7 +19,7 @@
 
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-contact-v3__img"} -->
             <figure class="wp-block-image size-large vitalisite-contact-v3__img">
-                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Accueil du cabinet" />
+                <img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-4.jpg' ) ); ?>" alt="Accueil du cabinet" />
             </figure>
             <!-- /wp:image -->
 

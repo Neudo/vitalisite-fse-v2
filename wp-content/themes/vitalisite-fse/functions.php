@@ -70,6 +70,105 @@ function is_dev_mode() {
 }
 
 /**
+ * Return a theme asset URL with automatic cache busting based on file mtime.
+ *
+ * @param string $relative_path Relative path from the theme root.
+ * @return string
+ */
+function theme_asset_uri( $relative_path ) {
+	$relative_path = ltrim( (string) $relative_path, '/' );
+	$file_path     = get_theme_file_path( $relative_path );
+	$file_uri      = get_theme_file_uri( $relative_path );
+
+	if ( ! file_exists( $file_path ) ) {
+		return $file_uri;
+	}
+
+	return add_query_arg( 'ver', (string) filemtime( $file_path ), $file_uri );
+}
+
+/**
+ * Refresh placeholder image URLs inside generated pages when theme images change.
+ *
+ * This rewrites stored image URLs in page content so browsers receive a new URL
+ * whenever a placeholder asset is replaced.
+ */
+function maybe_refresh_placeholder_image_urls() {
+	if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	$placeholder_files = glob( get_template_directory() . '/assets/images/placeholder-slider-*.jpg' );
+
+	if ( empty( $placeholder_files ) ) {
+		return;
+	}
+
+	sort( $placeholder_files );
+
+	$signature_parts = array();
+	$replacements    = array(
+		'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80' => theme_asset_uri( 'assets/images/placeholder-slider-5.jpg' ),
+	);
+
+	foreach ( $placeholder_files as $file_path ) {
+		$basename            = basename( $file_path );
+		$signature_parts[]   = $basename . ':' . filemtime( $file_path );
+		$replacements[ $basename ] = theme_asset_uri( 'assets/images/' . $basename );
+	}
+
+	$signature      = md5( implode( '|', $signature_parts ) );
+	$stored_version = (string) get_option( 'vitalisite_placeholder_images_signature', '' );
+
+	if ( $signature === $stored_version ) {
+		return;
+	}
+
+	$page_ids = get_posts(
+		array(
+			'post_type'              => 'page',
+			'post_status'            => array( 'publish', 'draft', 'pending', 'private' ),
+			'posts_per_page'         => -1,
+			'fields'                 => 'ids',
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		)
+	);
+
+	$theme_slug = preg_quote( get_stylesheet(), '#' );
+
+	foreach ( $page_ids as $page_id ) {
+		$content = (string) get_post_field( 'post_content', $page_id );
+		$updated = $content;
+
+		foreach ( $replacements as $needle => $replacement ) {
+			if ( 0 === strpos( $needle, 'http' ) ) {
+				$updated = str_replace( $needle, $replacement, $updated );
+				continue;
+			}
+
+			$pattern = '#https?://[^"\'\\s)]+/wp-content/themes/' . $theme_slug . '/assets/images/' . preg_quote( $needle, '#' ) . '(?:\\?ver=[^"\'\\s)]+)?#';
+			$updated = preg_replace( $pattern, $replacement, $updated );
+		}
+
+		if ( $updated === $content ) {
+			continue;
+		}
+
+		wp_update_post(
+			array(
+				'ID'           => $page_id,
+				'post_content' => $updated,
+			)
+		);
+	}
+
+	update_option( 'vitalisite_placeholder_images_signature', $signature );
+}
+add_action( 'admin_init', __NAMESPACE__ . '\maybe_refresh_placeholder_image_urls' );
+
+/**
  * Theme setup: editor styles, remove core patterns.
  */
 function setup() {

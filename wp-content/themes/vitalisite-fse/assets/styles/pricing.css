@@ -26,6 +26,13 @@
   border-color: var(--wp--preset--color--primary);
 }
 
+.vitalisite-pricing-card .wp-block-heading,
+.vitalisite-pricing-list-card__content h3 {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
 .vitalisite-pricing-card .wp-block-buttons {
   margin-top: auto;
   padding-top: var(--wp--preset--spacing--50);

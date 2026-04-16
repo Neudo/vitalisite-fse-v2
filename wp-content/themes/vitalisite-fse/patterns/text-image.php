@@ -21,7 +21,7 @@
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"className":"reveal-y"} -->
-            <p class="reveal-y">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="reveal-y">Ce bloc permet de présenter simplement une approche, une méthode de consultation ou une information importante, avec un texte clair et une image de cabinet rassurante.</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:buttons {"className":"reveal-y"} -->
@@ -37,7 +37,7 @@
         <!-- wp:column {"width":"50%"} -->
         <div class="wp-block-column" style="flex-basis:50%">
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"vitalisite-rounded-image reveal-y"} -->
-            <figure class="wp-block-image size-large vitalisite-rounded-image reveal-y"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Medical Team"/></figure>
+            <figure class="wp-block-image size-large vitalisite-rounded-image reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-5.jpg' ) ); ?>" alt="Illustration du cabinet"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->

@@ -35,7 +35,7 @@
   <!-- /wp:group -->
 
   <!-- wp:image {"sizeSlug":"large","align":"center","className":"reveal-y"} -->
-  <figure class="wp-block-image aligncenter size-large reveal-y"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/placeholder-slider-2.jpg' ) ); ?>" alt="Espace de consultation lumineux et apaisant" /></figure>
+  <figure class="wp-block-image aligncenter size-large reveal-y"><img src="<?php echo esc_url( \Vitalisite_FSE\theme_asset_uri( 'assets/images/placeholder-slider-2.jpg' ) ); ?>" alt="Espace de consultation lumineux et apaisant" /></figure>
   <!-- /wp:image -->
 </section>
 <!-- /wp:group -->
