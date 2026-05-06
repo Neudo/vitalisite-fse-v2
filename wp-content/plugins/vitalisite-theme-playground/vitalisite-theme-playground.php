@@ -98,16 +98,16 @@ final class Plugin {
 				'labels'      => array(
 					'button'          => __( 'Personnaliser la demo', TEXT_DOMAIN ),
 					'purchase'        => __( 'Obtenir le thème', TEXT_DOMAIN ),
-					'title'           => __( 'Theme playground', TEXT_DOMAIN ),
-					'intro'           => __( 'Choisissez un style. Le choix reste uniquement dans ce navigateur.', TEXT_DOMAIN ),
+					'title'           => __( 'Personnaliser le site', TEXT_DOMAIN ),
+					'intro'           => __( "Cliquez sur un style pour modifier l'apparence du site en temps réel.", TEXT_DOMAIN ),
 					'close'           => __( 'Fermer', TEXT_DOMAIN ),
 					'apply'           => __( 'Appliquer', TEXT_DOMAIN ),
 					'active'          => __( 'Actif', TEXT_DOMAIN ),
 					'applying'        => __( 'Application du style...', TEXT_DOMAIN ),
-					'reloading'       => __( 'Style applique. Rechargement...', TEXT_DOMAIN ),
+					'reloading'       => __( 'Rechargement...', TEXT_DOMAIN ),
 					'empty'           => __( 'Aucun style disponible.', TEXT_DOMAIN ),
 					'source'          => __( 'Source', TEXT_DOMAIN ),
-					'activeStyleText' => __( 'Selection', TEXT_DOMAIN ),
+					'activeStyleText' => __( 'Style actif', TEXT_DOMAIN ),
 				),
 			)
 		);
@@ -176,10 +176,15 @@ final class Plugin {
 		foreach ( self::get_styles() as $slug => $style ) {
 			$kind = self::get_style_kind( $style );
 
+			// Only include base and complete styles (exclude color and typography).
+			if ( ! in_array( $kind, array( 'base', 'complete' ), true ) ) {
+				continue;
+			}
+
 			$styles[ $slug ] = array(
 				'slug'     => $slug,
 				'title'    => $style['title'],
-				'group'    => $style['group'],
+				'group'    => __( 'Styles', TEXT_DOMAIN ),
 				'kind'     => $kind,
 				'source'   => $style['source'],
 				'swatches' => $style['swatches'],

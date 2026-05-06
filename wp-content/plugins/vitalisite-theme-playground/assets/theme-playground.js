@@ -250,23 +250,26 @@
     var content = createNode("div", "vtp-card__content");
     appendText(content, "h3", "vtp-card__title", style.title || style.slug);
 
-    var source = createNode("p", "vtp-card__source");
-    source.textContent = text("source", "Source") + " : " + (style.source || "");
-    content.appendChild(source);
-
     var footer = createNode("div", "vtp-card__footer");
-    var status = appendText(footer, "span", "vtp-card__status", isActive ? text("active", "Actif") : "");
 
-    if (!isActive) {
-      status.setAttribute("aria-hidden", "true");
-    }
-
-    var button = createNode("button", "vtp-apply", text("apply", "Appliquer"));
+    var button = createNode("button", "vtp-apply", isActive ? text("active", "Actif") : text("apply", "Appliquer"));
     button.type = "button";
     button.dataset.style = style.slug;
     button.disabled = isActive;
-    button.addEventListener("click", function () {
-      applyStyle(style);
+
+    function handleApply(event) {
+      event.stopPropagation();
+      if (!isActive) {
+        applyStyle(style);
+      }
+    }
+
+    button.addEventListener("click", handleApply);
+
+    card.addEventListener("click", function () {
+      if (!isActive && !isBusy) {
+        applyStyle(style);
+      }
     });
 
     footer.appendChild(button);
@@ -283,10 +286,15 @@
     }
 
     var groups = groupStyles(styles);
+    var groupNames = Object.keys(groups);
+    var isSingleGroup = groupNames.length === 1;
 
-    Object.keys(groups).forEach(function (groupName) {
+    groupNames.forEach(function (groupName) {
       var section = createNode("section", "vtp-group");
-      appendText(section, "h3", "vtp-group__title", groupName);
+
+      if (!isSingleGroup) {
+        appendText(section, "h3", "vtp-group__title", groupName);
+      }
 
       var grid = createNode("div", "vtp-grid");
       groups[groupName].forEach(function (style) {
@@ -311,11 +319,12 @@
     });
   }
 
-  function setStatus(message) {
+  function setStatus(message, isLoading) {
     var status = root.querySelector(".vtp-status");
 
     if (status) {
       status.textContent = message || "";
+      status.classList.toggle("is-loading", Boolean(isLoading));
     }
   }
 
@@ -347,14 +356,14 @@
     var nextSelection = getNextSelection(style);
 
     setBusy(true);
-    setStatus(text("applying", "Application du style..."));
+    setStatus(text("applying", "Application du style..."), true);
     writeStoredSelection(nextSelection);
     writeSelectionCookie(nextSelection);
-    setStatus(text("reloading", "Style applique. Rechargement..."));
 
     window.setTimeout(function () {
+      setStatus(text("reloading", "Rechargement..."), true);
       window.location.reload();
-    }, 120);
+    }, 200);
   }
 
   function openModal() {
@@ -405,8 +414,10 @@
     appendText(headerText, "h2", "vtp-title", text("title", "Theme playground")).id = "vtp-title";
     appendText(headerText, "p", "vtp-intro", text("intro", "Choisissez un style."));
 
-    var close = createNode("button", "vtp-close", text("close", "Fermer"));
+    var close = createNode("button", "vtp-close");
     close.type = "button";
+    close.innerHTML = "&#10005;";
+    close.setAttribute("aria-label", text("close", "Fermer"));
     close.addEventListener("click", closeModal);
 
     header.appendChild(headerText);

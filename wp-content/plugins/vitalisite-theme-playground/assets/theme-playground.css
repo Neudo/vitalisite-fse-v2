@@ -1,31 +1,38 @@
 #vitalisite-theme-playground-root {
   --vtp-bg: #ffffff;
   --vtp-text: #111827;
-  --vtp-muted: #5b6472;
-  --vtp-border: #d8dee8;
-  --vtp-soft: #f5f7fa;
+  --vtp-muted: #6b7280;
+  --vtp-border: #e5e7eb;
+  --vtp-soft: #f9fafb;
   --vtp-accent: #0f766e;
+  --vtp-accent-light: rgba(15, 118, 110, 0.08);
   --vtp-accent-text: #ffffff;
-  --vtp-error: #b42318;
+  --vtp-error: #dc2626;
+  --vtp-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --vtp-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --vtp-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --vtp-radius: 12px;
+  --vtp-radius-sm: 8px;
+  --vtp-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--vtp-text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 #vitalisite-theme-playground-root * {
   box-sizing: border-box;
-  letter-spacing: 0;
+  letter-spacing: inherit;
 }
 
 #vitalisite-theme-playground-root .vtp-launcher {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 20px;
+  bottom: 20px;
   z-index: 99998;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: min(220px, calc(100vw - 36px));
+  gap: 10px;
+  width: min(200px, calc(100vw - 40px));
 }
 
 #vitalisite-theme-playground-root .vtp-button,
@@ -33,76 +40,97 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--vtp-accent);
-  border-radius: 8px;
-  background: var(--vtp-accent);
-  color: var(--vtp-accent-text);
+  gap: 8px;
+  border: none;
+  border-radius: 50px;
+  background: #3b82f6;
+  color: #ffffff;
   cursor: pointer;
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1;
-  padding: 12px 14px;
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
+  padding: 14px 20px;
+  box-shadow: var(--vtp-shadow-lg), 0 0 0 1px rgba(59, 130, 246, 0.1);
   text-align: center;
   text-decoration: none;
+  transition: all var(--vtp-transition);
+  transform: translateY(0);
 }
 
 #vitalisite-theme-playground-root .vtp-button:hover,
 #vitalisite-theme-playground-root .vtp-button:focus-visible {
-  background: #115e59;
-  outline: 3px solid rgba(15, 118, 110, 0.24);
-  outline-offset: 2px;
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: var(--vtp-shadow-lg), 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+#vitalisite-theme-playground-root .vtp-button:active {
+  transform: translateY(0);
 }
 
 #vitalisite-theme-playground-root .vtp-purchase {
-  border-color: #111827;
-  background: #111827;
-  color: #ffffff;
+  background: var(--vtp-text);
+  box-shadow: var(--vtp-shadow);
 }
 
 #vitalisite-theme-playground-root .vtp-purchase:hover,
 #vitalisite-theme-playground-root .vtp-purchase:focus-visible {
   background: #374151;
-  border-color: #374151;
-  color: #ffffff;
-  outline: 3px solid rgba(55, 65, 81, 0.22);
-  outline-offset: 2px;
+  transform: translateY(-2px);
+  box-shadow: var(--vtp-shadow-lg), 0 0 0 3px rgba(17, 24, 39, 0.1);
 }
 
 #vitalisite-theme-playground-root .vtp-purchase--footer {
   box-shadow: none;
   font-size: 13px;
-  padding: 10px 12px;
+  padding: 12px 20px;
+  border-radius: var(--vtp-radius-sm);
 }
 
 #vitalisite-theme-playground-root .vtp-overlay {
   position: fixed;
   inset: 0;
   z-index: 99999;
-  display: none;
+  display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: rgba(17, 24, 39, 0.54);
+  background: rgba(17, 24, 39, 0);
   padding: 24px;
+  padding-top: 5vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: background 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(0);
 }
 
 #vitalisite-theme-playground-root.is-open .vtp-overlay {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 #vitalisite-theme-playground-root .vtp-dialog {
-  width: min(980px, 100%);
-  max-height: calc(100vh - 48px);
+  width: min(900px, 100%);
+  max-height: calc(100vh - 10vh - 24px);
   overflow: hidden;
-  border: 1px solid var(--vtp-border);
-  border-radius: 8px;
+  border: none;
+  border-radius: var(--vtp-radius);
   background: var(--vtp-bg);
-  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.28);
+  box-shadow: var(--vtp-shadow-lg), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#vitalisite-theme-playground-root.is-open .vtp-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .admin-bar #vitalisite-theme-playground-root .vtp-dialog {
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 10vh - 56px);
 }
 
 #vitalisite-theme-playground-root .vtp-header,
@@ -112,15 +140,16 @@
   align-items: flex-start;
   justify-content: space-between;
   border-bottom: 1px solid var(--vtp-border);
-  padding: 18px 20px;
+  padding: 20px 24px;
 }
 
 #vitalisite-theme-playground-root .vtp-footer {
-  min-height: 60px;
+  min-height: 64px;
   align-items: center;
   border-top: 1px solid var(--vtp-border);
   border-bottom: 0;
-  padding-block: 12px;
+  padding-block: 16px;
+  background: var(--vtp-soft);
 }
 
 #vitalisite-theme-playground-root .vtp-header__text {
@@ -129,8 +158,7 @@
 
 #vitalisite-theme-playground-root .vtp-kicker,
 #vitalisite-theme-playground-root .vtp-intro,
-#vitalisite-theme-playground-root .vtp-status,
-#vitalisite-theme-playground-root .vtp-card__source {
+#vitalisite-theme-playground-root .vtp-status {
   margin: 0;
   color: var(--vtp-muted);
   font-size: 13px;
@@ -138,205 +166,392 @@
 }
 
 #vitalisite-theme-playground-root .vtp-kicker {
-  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  background: var(--vtp-accent-light);
+  color: var(--vtp-accent);
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
 }
 
 #vitalisite-theme-playground-root .vtp-title {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   color: var(--vtp-text);
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.2;
 }
 
-#vitalisite-theme-playground-root .vtp-close,
-#vitalisite-theme-playground-root .vtp-apply {
-  border: 1px solid var(--vtp-border);
-  border-radius: 8px;
-  background: #ffffff;
-  color: var(--vtp-text);
+#vitalisite-theme-playground-root .vtp-intro {
+  font-size: 14px;
+}
+
+#vitalisite-theme-playground-root .vtp-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--vtp-soft);
+  color: var(--vtp-muted);
   cursor: pointer;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-  padding: 10px 12px;
+  font-size: 18px;
+  transition: all var(--vtp-transition);
+  flex-shrink: 0;
 }
 
 #vitalisite-theme-playground-root .vtp-close:hover,
-#vitalisite-theme-playground-root .vtp-close:focus-visible,
-#vitalisite-theme-playground-root .vtp-apply:hover,
-#vitalisite-theme-playground-root .vtp-apply:focus-visible {
-  border-color: var(--vtp-accent);
-  color: var(--vtp-accent);
-  outline: 3px solid rgba(15, 118, 110, 0.16);
-  outline-offset: 2px;
+#vitalisite-theme-playground-root .vtp-close:focus-visible {
+  background: var(--vtp-border);
+  color: var(--vtp-text);
 }
 
 #vitalisite-theme-playground-root .vtp-apply {
+  border: none;
+  border-radius: var(--vtp-radius-sm);
   background: var(--vtp-accent);
-  border-color: var(--vtp-accent);
   color: var(--vtp-accent-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 16px;
+  transition: all var(--vtp-transition);
+  white-space: nowrap;
 }
 
 #vitalisite-theme-playground-root .vtp-apply:hover,
 #vitalisite-theme-playground-root .vtp-apply:focus-visible {
   background: #115e59;
-  color: var(--vtp-accent-text);
+  transform: translateY(-1px);
+  box-shadow: var(--vtp-shadow);
+}
+
+#vitalisite-theme-playground-root .vtp-apply:active {
+  transform: translateY(0);
 }
 
 #vitalisite-theme-playground-root .vtp-apply:disabled,
 #vitalisite-theme-playground-root.is-busy button:disabled {
   cursor: not-allowed;
-  opacity: 0.58;
+  opacity: 0.5;
+  transform: none;
 }
 
 #vitalisite-theme-playground-root .vtp-body {
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 10vh - 180px);
   overflow: auto;
-  padding: 20px;
+  padding: 24px;
+  scroll-behavior: smooth;
 }
 
 .admin-bar #vitalisite-theme-playground-root .vtp-body {
-  max-height: calc(100vh - 252px);
+  max-height: calc(100vh - 10vh - 212px);
 }
 
 #vitalisite-theme-playground-root .vtp-group + .vtp-group {
-  margin-top: 24px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--vtp-border);
 }
 
 #vitalisite-theme-playground-root .vtp-group__title {
-  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
   color: var(--vtp-text);
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+#vitalisite-theme-playground-root .vtp-group__title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--vtp-border);
 }
 
 #vitalisite-theme-playground-root .vtp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 #vitalisite-theme-playground-root .vtp-card {
   display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--vtp-border);
-  border-radius: 8px;
+  border: 2px solid var(--vtp-border);
+  border-radius: var(--vtp-radius);
   background: var(--vtp-bg);
+  transition: all var(--vtp-transition);
+  cursor: pointer;
+}
+
+#vitalisite-theme-playground-root .vtp-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--vtp-shadow);
+  transform: translateY(-2px);
 }
 
 #vitalisite-theme-playground-root .vtp-card.is-active {
   border-color: var(--vtp-accent);
-  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.14);
+  background: linear-gradient(to bottom, var(--vtp-accent-light) 0%, var(--vtp-bg) 100%);
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active:hover {
+  border-color: var(--vtp-accent);
+  box-shadow: 0 0 0 3px var(--vtp-accent-light);
 }
 
 #vitalisite-theme-playground-root .vtp-swatches {
   display: flex;
-  flex: 0 0 42px;
-  flex-direction: column;
-  min-height: 120px;
-  background: var(--vtp-soft);
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 16px 16px 0;
+  min-height: auto;
+  background: transparent;
 }
 
 #vitalisite-theme-playground-root .vtp-swatches--empty {
-  background:
-    linear-gradient(135deg, transparent 45%, var(--vtp-border) 45%, var(--vtp-border) 55%, transparent 55%),
-    var(--vtp-soft);
+  justify-content: center;
+  min-height: 40px;
+  background: transparent;
+}
+
+#vitalisite-theme-playground-root .vtp-swatches--empty::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--vtp-soft);
+  border: 2px dashed var(--vtp-border);
 }
 
 #vitalisite-theme-playground-root .vtp-swatch {
-  flex: 1 1 0;
-  min-height: 16px;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), var(--vtp-shadow-sm);
+  transition: transform var(--vtp-transition);
+}
+
+#vitalisite-theme-playground-root .vtp-card:hover .vtp-swatch {
+  transform: scale(1.1);
 }
 
 #vitalisite-theme-playground-root .vtp-card__content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
-  padding: 14px;
+  padding: 16px;
 }
 
 #vitalisite-theme-playground-root .vtp-card__title {
   margin: 0;
   color: var(--vtp-text);
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.3;
   overflow-wrap: anywhere;
 }
 
 #vitalisite-theme-playground-root .vtp-card__source {
-  overflow-wrap: anywhere;
+  display: none;
 }
 
 #vitalisite-theme-playground-root .vtp-card__footer {
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: auto;
 }
 
-#vitalisite-theme-playground-root .vtp-card__status {
-  min-height: 1em;
+#vitalisite-theme-playground-root .vtp-card.is-active {
+  cursor: default;
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active:hover {
+  transform: none;
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active .vtp-swatch {
+  transform: none;
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active .vtp-apply {
+  background: var(--vtp-accent-light);
   color: var(--vtp-accent);
-  font-size: 12px;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active .vtp-apply::before {
+  content: "✓";
+  margin-right: 6px;
   font-weight: 700;
-  line-height: 1.2;
+}
+
+#vitalisite-theme-playground-root .vtp-card.is-active .vtp-apply:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#vitalisite-theme-playground-root .vtp-status {
+  font-size: 13px;
 }
 
 #vitalisite-theme-playground-root .vtp-status.is-error {
   color: var(--vtp-error);
-  font-weight: 700;
+  font-weight: 600;
+}
+
+#vitalisite-theme-playground-root .vtp-status.is-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#vitalisite-theme-playground-root .vtp-status.is-loading::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--vtp-border);
+  border-top-color: var(--vtp-accent);
+  border-radius: 50%;
+  animation: vtp-spin 0.8s linear infinite;
+}
+
+@keyframes vtp-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #vitalisite-theme-playground-root .vtp-empty {
   margin: 0;
+  padding: 32px;
+  text-align: center;
   color: var(--vtp-muted);
+  background: var(--vtp-soft);
+  border-radius: var(--vtp-radius);
 }
 
 @media (max-width: 600px) {
   #vitalisite-theme-playground-root .vtp-launcher {
-    right: 12px;
-    bottom: 12px;
-    max-width: calc(100vw - 24px);
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    max-width: none;
+  }
+
+  #vitalisite-theme-playground-root .vtp-button {
+    padding: 12px 16px;
+    font-size: 12px;
   }
 
   #vitalisite-theme-playground-root .vtp-overlay {
-    padding: 10px;
+    padding: 0;
+    padding-top: 0;
+    align-items: flex-end;
   }
 
   #vitalisite-theme-playground-root .vtp-dialog {
-    max-height: calc(100vh - 20px);
+    max-height: 85vh;
+    border-radius: var(--vtp-radius) var(--vtp-radius) 0 0;
+    transform: translateY(100%);
+  }
+
+  #vitalisite-theme-playground-root.is-open .vtp-dialog {
+    transform: translateY(0);
   }
 
   .admin-bar #vitalisite-theme-playground-root .vtp-dialog {
-    max-height: calc(100vh - 56px);
+    max-height: calc(85vh - 32px);
   }
 
   #vitalisite-theme-playground-root .vtp-header,
   #vitalisite-theme-playground-root .vtp-footer {
-    padding: 14px;
+    padding: 16px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-title {
+    font-size: 18px;
   }
 
   #vitalisite-theme-playground-root .vtp-footer {
     align-items: stretch;
     flex-direction: column;
+    gap: 12px;
   }
 
   #vitalisite-theme-playground-root .vtp-body {
-    max-height: calc(100vh - 190px);
-    padding: 14px;
+    max-height: calc(85vh - 180px);
+    padding: 16px;
   }
 
   .admin-bar #vitalisite-theme-playground-root .vtp-body {
-    max-height: calc(100vh - 226px);
+    max-height: calc(85vh - 212px);
   }
 
+  #vitalisite-theme-playground-root .vtp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-card__content {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-swatches {
+    padding: 12px 12px 0;
+    gap: 6px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-swatch {
+    width: 22px;
+    height: 22px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-card__title {
+    font-size: 13px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-apply {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  #vitalisite-theme-playground-root .vtp-group + .vtp-group {
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 400px) {
   #vitalisite-theme-playground-root .vtp-grid {
     grid-template-columns: 1fr;
   }
