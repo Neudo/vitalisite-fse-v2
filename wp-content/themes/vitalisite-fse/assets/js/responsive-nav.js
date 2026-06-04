@@ -88,6 +88,7 @@
     var sourceList = nav.querySelector(".wp-block-navigation__container");
     if (sourceList) {
       var clonedList = sourceList.cloneNode(true);
+      prepareDrawerNav(clonedList);
       navContent.appendChild(clonedList);
     }
 
@@ -105,6 +106,37 @@
         closeDrawer();
       }
     });
+  }
+
+  function prepareDrawerNav(clonedList) {
+    clonedList.classList.remove("wp-block-navigation");
+
+    var interactiveNodes = clonedList.querySelectorAll("*");
+    for (var i = 0; i < interactiveNodes.length; i++) {
+      var node = interactiveNodes[i];
+      var attributes = Array.prototype.slice.call(node.attributes);
+
+      for (var j = 0; j < attributes.length; j++) {
+        if (attributes[j].name.indexOf("data-wp-") === 0) {
+          node.removeAttribute(attributes[j].name);
+        }
+      }
+
+      if (node.getAttribute("tabindex") === "-1") {
+        node.removeAttribute("tabindex");
+      }
+    }
+
+    var submenuToggles = clonedList.querySelectorAll(
+      ".wp-block-navigation-submenu__toggle"
+    );
+    for (var k = 0; k < submenuToggles.length; k++) {
+      var toggle = submenuToggles[k];
+      var label = document.createElement("span");
+      label.className = toggle.className;
+      label.innerHTML = toggle.innerHTML;
+      toggle.parentNode.replaceChild(label, toggle);
+    }
   }
 
   function openDrawer() {
@@ -129,6 +161,8 @@
 
   function checkOverflow() {
     if (measuring || !flexContainer) return;
+    if (drawer && drawer.classList.contains("is-open")) return;
+
     measuring = true;
 
     var clone = flexContainer.cloneNode(true);
@@ -159,10 +193,11 @@
     }
 
     document.body.appendChild(clone);
+    var isBelowWpMobileBreakpoint = window.innerWidth < 600;
     var isWrapping = clone.scrollWidth > clone.clientWidth;
     document.body.removeChild(clone);
 
-    if (isWrapping) {
+    if (isBelowWpMobileBreakpoint || isWrapping) {
       header.classList.remove(CLASS_DESKTOP);
       header.classList.add(CLASS_MOBILE);
       buildDrawer();
