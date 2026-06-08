@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 const OPTION_DEMO_SETUP           = 'vitalisite_demo_setup';
 const OPTION_DEMO_PAGES_INSTALLED = 'vitalisite_demo_pages_installed';
+const META_DEMO_PAGE_GENERATED    = '_vitalisite_demo_page_generated';
 
 /**
  * Get available tone options.
@@ -215,10 +216,74 @@ function render_demo_pattern_content( $slug, array $replacements = array() ) {
  */
 function apply_demo_replacements( $content, array $replacements ) {
 	if ( empty( $replacements ) ) {
+		return normalize_demo_generated_copy( $content );
+	}
+
+	return normalize_demo_generated_copy( strtr( $content, $replacements ) );
+}
+
+/**
+ * Normalize common French copy issues in generated demo content.
+ *
+ * Pattern source files still contain a number of ASCII-only fallback strings.
+ * This pass keeps generated pages credible even when a block is rendered
+ * without a custom replacement.
+ *
+ * @param string $content Generated block content.
+ * @return string
+ */
+function normalize_demo_generated_copy( $content ) {
+	if ( '' === $content ) {
 		return $content;
 	}
 
-	return strtr( $content, $replacements );
+	return strtr(
+		$content,
+		array(
+			'Dr. Prenom Nom' => 'Dr. Prénom Nom',
+			'Specialite du cabinet' => 'Spécialité du cabinet',
+			'Telephone du cabinet' => 'Téléphone du cabinet',
+			'Un accompagnement rassurant a chaque etape du parcours de soin' => 'Un accompagnement rassurant à chaque étape du parcours de soin',
+			'Je vous recois sur rendez-vous dans un cadre de prise en charge serein, avec une approche attentive et personnalisee.' => 'Je vous reçois sur rendez-vous dans un cadre de prise en charge serein, avec une approche attentive et personnalisée.',
+			'Des consultations personnalisees dans un cadre professionnel et rassurant' => 'Des consultations personnalisées dans un cadre professionnel et rassurant',
+			"J'accompagne mes patients avec une approche claire, accessible et personnalisee, adaptee aux besoins du quotidien." => "J'accompagne mes patients avec une approche claire, accessible et personnalisée, adaptée aux besoins du quotidien.",
+			'Je peux mettre en avant ici ce qui structure ma pratique : ecoute, disponibilite, rigueur du suivi et clarte des informations transmises.' => 'Je peux mettre en avant ici ce qui structure ma pratique : écoute, disponibilité, rigueur du suivi et clarté des informations transmises.',
+			'Informations claires, accompagnement personnalise et cadre de consultation professionnel.' => 'Informations claires, accompagnement personnalisé et cadre de consultation professionnel.',
+			'Une variante tres utile pour presenter mes engagements avec un rendu plus editorial.' => 'Une variante très utile pour présenter mes engagements avec un rendu plus éditorial.',
+			'Des prises en charge claires et adaptees' => 'Des prises en charge claires et adaptées',
+			"Je peux utiliser cette section pour presenter mes specialites, les besoins frequemment rencontres et la maniere dont j'accompagne mes patients." => "Je peux utiliser cette section pour présenter mes spécialités, les besoins fréquemment rencontrés et la manière dont j'accompagne mes patients.",
+			'Premier rendez-vous pour faire le point sur votre situation, comprendre vos besoins et definir une prise en charge adaptee.' => 'Premier rendez-vous pour faire le point sur votre situation, comprendre vos besoins et définir une prise en charge adaptée.',
+			'Suivi personnalise' => 'Suivi personnalisé',
+			"Consultations de suivi pour ajuster l'accompagnement, repondre a l'evolution des symptomes et maintenir les progres dans la duree." => "Consultations de suivi pour ajuster l'accompagnement, répondre à l'évolution des symptômes et maintenir les progrès dans la durée.",
+			'Prevention et conseils' => 'Prévention et conseils',
+			'Accompagnement, education et recommandations concretes pour prendre soin de votre sante au quotidien en toute serenite.' => 'Accompagnement, éducation et recommandations concrètes pour prendre soin de votre santé au quotidien en toute sérénité.',
+			'Decouvrir le cabinet' => 'Découvrir le cabinet',
+			'Je peux presenter ici le cadre de consultation, l\'ambiance du cabinet et quelques reperes visuels utiles pour aider le patient a se projeter avant son rendez-vous.' => 'Je peux présenter ici le cadre de consultation, l’ambiance du cabinet et quelques repères visuels utiles pour aider le patient à se projeter avant son rendez-vous.',
+			'Je presente ici mes principaux actes avec une lecture rapide, rassurante et facile a comprendre.' => 'Je présente ici mes principaux actes avec une lecture rapide, rassurante et facile à comprendre.',
+			'Voir les tarifs detailles' => 'Voir les tarifs détaillés',
+			'Les avis patients renforcent la confiance et donnent un apercu concret de l\'experience de consultation.' => 'Les avis patients renforcent la confiance et donnent un aperçu concret de l’expérience de consultation.',
+			'Je peux utiliser cette variante pour valoriser ma specialite, ma posture de soin et une image de cabinet plus haut de gamme.' => 'Je peux utiliser cette variante pour valoriser ma spécialité, ma posture de soin et une image de cabinet plus haut de gamme.',
+			'J\'y presente mon approche, mes valeurs, mon cadre de consultation et la qualite du suivi propose aux patients.' => 'J’y présente mon approche, mes valeurs, mon cadre de consultation et la qualité du suivi proposé aux patients.',
+			'Je presente ici les grandes etapes de mon parcours avec des intitules credibles, sobres et faciles a personnaliser.' => 'Je présente ici les grandes étapes de mon parcours avec des intitulés crédibles, sobres et faciles à personnaliser.',
+			'Formation principale ou diplome de reference' => 'Formation principale ou diplôme de référence',
+			'Universite ou institut de formation' => 'Université ou institut de formation',
+			'Perfectionnement ou formation complementaire' => 'Perfectionnement ou formation complémentaire',
+			'Cette ligne peut mettre en avant une competence specifique, une approche complementaire ou une expertise plus ciblee.' => 'Cette ligne peut mettre en avant une compétence spécifique, une approche complémentaire ou une expertise plus ciblée.',
+			'Chaque annee' => 'Chaque année',
+			'Je peux utiliser cette derniere ligne pour montrer que ma pratique evolue, se met a jour et s\'inscrit dans une demarche de qualite continue.' => 'Je peux utiliser cette dernière ligne pour montrer que ma pratique évolue, se met à jour et s’inscrit dans une démarche de qualité continue.',
+			'Une section tres simple pour valoriser un espace de consultation, un equipement ou une ambiance de cabinet.' => 'Une section très simple pour valoriser un espace de consultation, un équipement ou une ambiance de cabinet.',
+			'Je detaille ici mes consultations pour permettre une lecture simple des modalites et des tarifs.' => 'Je détaille ici mes consultations pour permettre une lecture simple des modalités et des tarifs.',
+			'Premiere consultation' => 'Première consultation',
+			"Ce premier rendez-vous permet de faire le point sur votre situation, d'identifier vos besoins et de definir une prise en charge claire. C'est le temps ideal pour presenter le contexte, poser vos questions et construire un accompagnement adapte." => "Ce premier rendez-vous permet de faire le point sur votre situation, d'identifier vos besoins et de définir une prise en charge claire. C'est le temps idéal pour présenter le contexte, poser vos questions et construire un accompagnement adapté.",
+			"Destinee aux patients deja suivis, cette consultation permet d'ajuster l'accompagnement, de faire le point sur l'evolution des symptomes et de proposer des recommandations concretes entre deux rendez-vous." => "Destinée aux patients déjà suivis, cette consultation permet d'ajuster l'accompagnement, de faire le point sur l'évolution des symptômes et de proposer des recommandations concrètes entre deux rendez-vous.",
+			'Bilan approfondi ou acte specifique' => 'Bilan approfondi ou acte spécifique',
+			'Cette formule convient lorsque la situation demande davantage de temps d\'analyse, un bilan plus complet ou un accompagnement cible. Elle permet de valoriser un acte plus technique tout en restant tres lisible pour le patient.' => 'Cette formule convient lorsque la situation demande davantage de temps d’analyse, un bilan plus complet ou un accompagnement ciblé. Elle permet de valoriser un acte plus technique tout en restant très lisible pour le patient.',
+			'Une question ? Je vous reponds dans les meilleurs delais et je vous accueille dans un cadre de consultation serein et professionnel.' => 'Une question ? Je vous réponds dans les meilleurs délais et je vous accueille dans un cadre de consultation serein et professionnel.',
+			'Retrouvez ici mes jours de consultation et les moments ou je peux vous recevoir sur rendez-vous.' => 'Retrouvez ici mes jours de consultation et les moments où je peux vous recevoir sur rendez-vous.',
+			'Decouvrez mon cabinet en video' => 'Découvrez mon cabinet en vidéo',
+			'La video me permet de presenter l\'ambiance du cabinet, mon approche et la relation de confiance que je souhaite installer.' => 'La vidéo me permet de présenter l’ambiance du cabinet, mon approche et la relation de confiance que je souhaite installer.',
+		)
+	);
 }
 
 /**
@@ -309,7 +374,7 @@ function build_demo_faq_section( $title, array $items ) {
 <!-- /wp:group -->
 	<?php
 
-	return trim( ob_get_clean() );
+	return normalize_demo_generated_copy( trim( ob_get_clean() ) );
 }
 
 /**
@@ -341,25 +406,35 @@ function build_demo_image_hero( $title, $lead, $secondary = '' ) {
  */
 function build_demo_page_content( $slug, $tone = 'je', $writing_style = 'professionnel' ) {
 	$dynamic = get_demo_dynamic_replacements( $tone );
+	$content = '';
 
 	switch ( $slug ) {
 		case 'accueil':
-			return build_demo_page_home( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_home( $tone, $writing_style, $dynamic );
+			break;
 		case 'a-propos':
-			return build_demo_page_about( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_about( $tone, $writing_style, $dynamic );
+			break;
 		case 'tarifs':
-			return build_demo_page_pricing( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_pricing( $tone, $writing_style, $dynamic );
+			break;
 		case 'contact':
-			return build_demo_page_contact( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_contact( $tone, $writing_style, $dynamic );
+			break;
 		case 'temoignages':
-			return build_demo_page_testimonials( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_testimonials( $tone, $writing_style, $dynamic );
+			break;
 		case 'faq':
-			return build_demo_page_faq( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_faq( $tone, $writing_style, $dynamic );
+			break;
 		case 'infos-pratiques':
-			return build_demo_page_practical_info( $tone, $writing_style, $dynamic );
+			$content = build_demo_page_practical_info( $tone, $writing_style, $dynamic );
+			break;
 		default:
-			return '';
+			$content = '';
 	}
+
+	return normalize_demo_generated_copy( $content );
 }
 
 /**
@@ -1032,6 +1107,7 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 	$definitions = get_demo_pages_definition();
 	$available   = array_keys( $definitions );
 	$pages       = array_values( array_intersect( array_map( 'sanitize_title', $selected_pages ), $available ) );
+	$installed   = array_values( array_intersect( array_map( 'sanitize_title', (array) get_option( OPTION_DEMO_PAGES_INSTALLED, array() ) ), $available ) );
 
 	if ( empty( $pages ) ) {
 		return array();
@@ -1043,6 +1119,23 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 		$existing = get_page_by_path( $slug, OBJECT, 'page' );
 
 		if ( $existing instanceof \WP_Post ) {
+			$is_generated_page = in_array( $slug, $installed, true ) || (bool) get_post_meta( $existing->ID, META_DEMO_PAGE_GENERATED, true );
+
+			if ( $is_generated_page ) {
+				$page_content = build_demo_page_content( $slug, $tone, $writing_style );
+
+				if ( '' !== trim( $page_content ) ) {
+					wp_update_post(
+						array(
+							'ID'           => (int) $existing->ID,
+							'post_title'   => $definitions[ $slug ]['label'],
+							'post_content' => $page_content,
+						)
+					);
+					update_post_meta( $existing->ID, META_DEMO_PAGE_GENERATED, 1 );
+				}
+			}
+
 			$created[ $slug ] = (int) $existing->ID;
 			continue;
 		}
@@ -1068,6 +1161,7 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 			continue;
 		}
 
+		update_post_meta( $page_id, META_DEMO_PAGE_GENERATED, 1 );
 		$created[ $slug ] = (int) $page_id;
 	}
 
@@ -1078,7 +1172,6 @@ function install_demo_pages( $tone = 'je', $writing_style = 'professionnel', arr
 
 	sync_demo_pages_to_navigation( $created );
 
-	$installed = get_option( OPTION_DEMO_PAGES_INSTALLED, array() );
 	$installed = array_values(
 		array_unique(
 			array_merge(
